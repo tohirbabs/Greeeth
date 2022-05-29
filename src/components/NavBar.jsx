@@ -1,146 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
+import HamMenu from '../../assets/HamMenu';
+import ShopIcon from '../../assets/ShopIcon';
 
-export function NavBar() {
+function NavBar() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <header className="border-b border-gray-100">
-      <div
-        className="flex items-center justify-between h-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8"
-      >
-        <div className="flex items-center">
-          <button type="button" className="p-2 sm:mr-4 lg:hidden">
-            <svg
-              className="w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
 
-          <a href="/" className="flex">
-            <span className="inline-block w-32 h-10 bg-gray-200 rounded-lg" />
-          </a>
-        </div>
-
-        <div className="flex items-center justify-end flex-1">
-          <nav
-            className="hidden lg:uppercase lg:text-gray-500 lg:tracking-wide lg:font-bold lg:text-xs lg:space-x-4 lg:flex"
+    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-transparent ">
+      <div className="container  mx-12 flex flex-wrap items-center justify-between ">
+        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <a
+            className="text-4xl font-bold leading-relaxed inline-block mr-4 py-4 whitespace-nowrap uppercase text-white"
+            href="#pageLink"
           >
-            <a
-              href="/about"
-              className="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-red-700 hover:border-current"
-            >
-              About
-            </a>
-
-            <a
-              href="/news"
-              className="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-red-700 hover:border-current"
-            >
-              News
-            </a>
-
-            <a
-              href="/products"
-              className="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-red-700 hover:border-current"
-            >
-              Products
-            </a>
-
-            <a
-              href="/contact"
-              className="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-red-700 hover:border-current"
-            >
-              Contact
-            </a>
-          </nav>
-
-          <div className="flex items-center ml-8">
-            <div
-              className="flex items-center border-gray-100 divide-x divide-gray-100 border-x"
-            >
-              <span>
-                <a
-                  href="/cart"
-                  className="block p-6 border-b-4 border-transparent hover:border-red-700"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                    />
-                  </svg>
-
-                  <span className="sr-only">Cart</span>
-                </a>
-              </span>
-
-              <span>
-                <a
-                  href="/account"
-                  className="block p-6 border-b-4 border-transparent hover:border-red-700"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-
-                  <span className="sr-only"> Account </span>
-                </a>
-              </span>
-
-              <span className="hidden sm:block">
-                <a
-                  href="/search"
-                  className="block p-6 border-b-4 border-transparent hover:border-red-700"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-
-                  <span className="sr-only"> Search </span>
-                </a>
-              </span>
-            </div>
-          </div>
+            GREEETH
+          </a>
+          <button
+            className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            type="button"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+          >
+            <HamMenu />
+            {/* <i className="fas fa-bars" /> */}
+          </button>
+        </div>
+        <div
+          className={
+              `lg:flex flex-grow items-center${navbarOpen ? ' flex' : ' hidden'}`
+            }
+          id="example-navbar-danger"
+        >
+          <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+            <li className="nav-item  py-2">
+              <a
+                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                href="#somelinks"
+              >
+                <span className="ml-2 py-4">What we do</span>
+              </a>
+            </li>
+            <li className="nav-item  py-2">
+              <a
+                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                href="#somelinks"
+              >
+                <i className="fab fa-twitter text-lg leading-lg text-white opacity-75" /><span className="ml-2"> <ShopIcon />Shop</span>
+              </a>
+            </li>
+            <li className="nav-item py-2">
+              <a
+                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                href="#somelinks"
+              >
+                <span className="ml-2 bg-white text-green-900 p-4 rounded-xl">Donate</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </header>
+    </nav>
   );
 }
+
+export default NavBar;
