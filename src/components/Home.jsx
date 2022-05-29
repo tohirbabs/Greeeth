@@ -4,15 +4,12 @@ import TreeBG from '../../assets/TreeBG.png';
 function Home() {
   return (
     <section className="relative bg-white">
-
       <img
         className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full sm:opacity-100"
         src={TreeBG}
         alt="Page background with Trees"
       />
-
-      {/* <div className="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-white sm:to-transparent" /> */}
-
+      <div className="rect" />
       <div className="relative max-w-screen-xl px-4 py-10 mx-auto lg:h-screen lg:items-center lg:flex text-white">
         <div className="max-w-xl text-center sm:text-left">
           <h1 className="text-3xl  sm:text-5xl">
@@ -28,7 +25,7 @@ function Home() {
 
           <div className="flex flex-wrap gap-4 mt-8 text-center">
 
-            <a className="block w-full px-12 py-3 text-sm font-medium bg-white rounded shadow text-rose-600 sm:w-auto hover:text-rose-700 active:text-rose-500 focus:outline-none focus:ring" href="/about">
+            <a className="block w-full px-12 py-3 text-sm font-medium bg-white rounded shadow text-rose-600 sm:w-auto hover:text-rose-700 active:text-rose-500 focus:outline-none focus:ring animate-bounce" href="/about">
               Learn More
             </a>
           </div>
