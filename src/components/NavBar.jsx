@@ -52,7 +52,7 @@ function NavBar() {
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                 href="#somelinks"
               >
-                <span className="ml-2 bg-white text-green-900 p-4 rounded-xl">Donate</span>
+                <span className="ml-2 bg-white text-green-900 p-4 rounded-lg hover:text-white hover:bg-green-900 hover:border-white hover:border-2">Donate</span>
               </a>
             </li>
           </ul>
