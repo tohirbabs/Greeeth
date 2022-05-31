@@ -1,30 +1,39 @@
-import React, { useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Toast } from 'primereact/toast';
-import TreeBG from '../../assets/TreeBG.jpg';
+import React from 'react';
+import TreeBG from '../../assets/TreeBG.png';
+import NavBar from './NavBar.jsx';
 
-export function Home() {
-  const toast = useRef(null);
-  const showMsg = () => {
-    toast.current.show({ severity: 'warn', summary: 'Thanks for your visit 👋', detail: 'Page design is in progress. Please come back later', life: 5000 });
-  };
+function Home() {
   return (
-    <div className="grid grid-nogutter surface-0 text-800">
-      <div className="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
-        <Toast ref={toast} />
-        <section>
-          <span className="block text-6xl font-bold mb-1">IBM Call-For-Code 2022</span>
-          <div className="text-6xl text-primary font-bold mb-3">Project placeholder: GREEETH</div>
-          <p className="mt-0 mb-4 text-700 line-height-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <section className="relative bg-white">
 
-          <Button label="Learn More" type="button" className="mr-3 p-button-raised shadow-8" onClick={() => showMsg()} />
-          <Button label="Live Demo" type="button" className="p-button-outlined shadow-8" onClick={() => showMsg()} />
-        </section>
+      <img
+        className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full sm:opacity-100"
+        src={TreeBG}
+        alt="Page background with Trees"
+      />
+      <div className="rect" />
+      <NavBar />
+      <div className="relative max-w-screen-xl px-2 py-2 ml-12 lg:h-screen lg:items-center lg:flex text-white">
+        <div className="max-w-xl text-left sm:text-left">
+          <h1 className="text-3xl  sm:text-5xl">
+            Offset your carbon
+            blueprint with GREEETH.
+          </h1>
+
+          <p className="max-w-lg mt-4 sm:leading-relaxed sm:text-xl">
+            The best way for individuals and companies to plant trees,
+            offset their carbon footprint and restore ecosystem.
+          </p>
+
+          <div className="flex flex-wrap gap-4 mt-8 text-center">
+
+            <a className="block w-1/2 px-12 py-3 text-sm font-semibold bg-white rounded-lg shadow text-green-900 sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce" href="/about">
+              Plant now
+            </a>
+          </div>
+        </div>
       </div>
-      <div className="col-12 md:col-6 overflow-hidden">
-        <img src={TreeBG} alt="hero-1" className="md:ml-auto block md:h-full" style={{ clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)' }} />
-        {/* <img src={TreeBG} alt="hero-1" className="md:ml-auto block md:h-full" style={{ clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)' }} /> */}
-      </div>
-    </div>
+    </section>
   );
 }
+export default Home;

@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import Home from './components/Home';
-import 'primereact/resources/themes/saga-green/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
+import Solution from './components/Solution';
+import HowItWorks from './components/HowItWorks';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Home />
+      <Solution />
+      <HowItWorks />
     </div>
   );
 }
