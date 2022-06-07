@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Solution from './components/Solution';
 import HowItWorks from './components/HowItWorks';
 import PlantByHuman from './components/PlantByHuman';
+import PlantWithDrone from './components/PlantWithDrone';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Solution />
       <HowItWorks />
       <PlantByHuman />
+      <PlantWithDrone />
     </div>
   );
 }
