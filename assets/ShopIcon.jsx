@@ -3,7 +3,7 @@ import * as React from 'react';
 
 function ShopIcon(props) {
   return (
-    <svg className="" viewBox="0 0 512 512" {...props}>
+    <svg className="" width={32} height={32} viewBox="0 0 512 512" {...props}>
       <title>Bag Handle</title>
       <path
         fill="none"
