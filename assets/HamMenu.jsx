@@ -2,6 +2,7 @@ import * as React from 'react';
 
 function HamMenu(props) {
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <svg width={22} height={22} viewBox="-32 0 512 512" {...props}>
       <path
         fill="currentColor"
