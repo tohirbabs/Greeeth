@@ -42,6 +42,30 @@ function NavBar() {
               <a
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                 href="#somelinks"
+              >
+                <span className="ml-2 py-4">Get involved</span>
+              </a>
+            </li>
+            <li className="nav-item  py-2">
+              <a
+                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                href="#somelinks"
+              >
+                <span className="ml-2 py-4">Map</span>
+              </a>
+            </li>
+            <li className="nav-item  py-2">
+              <a
+                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75 mr-28"
+                href="#somelinks"
+              >
+                <span className="ml-2 py-4">Crypto</span>
+              </a>
+            </li>
+            <li className="nav-item  py-2">
+              <a
+                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                href="#somelinks"
               ><span className="ml-2"> <ShopIcon />Shop</span>
               </a>
             </li>
@@ -50,7 +74,15 @@ function NavBar() {
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                 href="#somelinks"
               >
-                <span className="ml-2 bg-white text-green-900 p-4 rounded-lg hover:text-white hover:bg-green-900 hover:border-white hover:border-2">Donate</span>
+                <span className="ml-2 bg-white text-green-900 p-4 rounded-lg hover:text-white hover:bg-transparent hover:border-white hover:border-2">Donate</span>
+              </a>
+            </li>
+            <li className="nav-item py-2">
+              <a
+                className="px-3 py-2 flex  items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                href="#somelinks"
+              >
+                <span className="ml-2 text-white p-4 rounded-lg hover:text-green-900 hover:bg-white hover:border-white hover:border-2 border-white border-2">Sign in</span>
               </a>
             </li>
           </ul>
