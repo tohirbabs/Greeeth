@@ -17,39 +17,56 @@ function Solution() {
             <div className="flex flex-col text-center group">
               <div className="w-56 h-56 mx-auto overflow-hidden md:w-40 md:h-40 lg:w-56 lg:h-56">
                 <img
-                  className="w-full object-cover rounded-lg mx-auto transition duration-300 group-hover:scale-[1.4]"
+                  className="w-full object-cover rounded-lg mx-auto"
                   src={Solution1}
                   alt="Growing plant"
                   loading="lazy"
                 />
               </div>
-              <div className="text-sm text-gray-500 mx-auto max-w-56">We plant trees for carbon offset,protect wild life, and forest restoration</div>
+              <div className="block text-sm text-gray-500 mx-auto max-w-52 text-left">
+                <p className="mb-2">
+                  Plant tree to offset your  carbon footprint and remove your potential impact on climate change.
+                </p>
+                <p>
+                  Your carbon footprint is caused by your daily activities and action.
+                </p>
+              </div>
             </div>
             <div className="text-center group">
               <div className="w-56 h-56 mx-auto overflow-hidden md:w-40 md:h-40 lg:w-56 lg:h-56">
                 <img
                   className="w-full object-cover rounded-lg mx-auto transition duration-300 group-hover:scale-[1.4]"
                   src={Solution2}
-                  alt="Blocks in virtual worls"
+                  alt="Blocks in virtual world"
                   loading="lazy"
                 />
               </div>
 
-              <span className="block text-sm text-gray-500 mx-auto max-w-56">Connect to blockchain/ Virtual world</span>
+              <div className="block text-sm text-gray-500 mx-auto max-w-52 text-left">
+                <p className="mb-2">
+                  Each planted tree is connected to the blockchain for transparency, accountability, traceability, and having a single forest/tree data.
+                </p>
+
+              </div>
 
             </div>
             <div className="text-center group">
               <div className="w-56 h-36 mx-auto overflow-hidden md:w-40 md:h-40 lg:w-56 lg:h-56 ">
                 <img
-                  className="w-full object-cover rounded-lg mx-auto hover:rotate-6"
+                  className="w-full object-cover rounded-lg mx-auto"
                   src={Solution3}
                   alt="Pins on map"
                   loading="lazy"
                 />
               </div>
-
-              <span className="block text-sm text-gray-500 mx-auto max-w-56">Track</span>
-
+              <div className="block text-sm text-gray-500 mx-auto max-w-52 text-left">
+                <p className="mb-2">
+                  Planted tree(s) can be tracked and viewed on the platform.
+                </p>
+                <p>
+                  Sponsors can get details and data of the tree (I.e CO2, captured, maintenance data, and tree health). You can virtually travel to every tree planted and monitor the performance.
+                </p>
+              </div>
             </div>
           </div>
         </div>

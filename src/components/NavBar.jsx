@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import HamMenu from '../../assets/HamMenu';
-import ShopIcon from '../../assets/ShopIcon';
+import { HamMenu, ShopIcon, Logo } from '../../assets';
 
 function NavBar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
 
-    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-transparent ">
+    <nav className="relative flex flex-wrap items-center justify-between px-2 bg-transparent ">
       <div className="container  mx-12 flex flex-wrap items-center justify-between ">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <a
-            className="text-4xl font-bold leading-relaxed inline-block mr-4 py-4 whitespace-nowrap uppercase text-white"
+            className="text-4xl font-bold leading-relaxed inline-block mr-4 whitespace-nowrap uppercase text-white"
             href="/"
           >
-            GREEETH
+            <Logo />
           </a>
           <button
             className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"

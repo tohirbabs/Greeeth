@@ -20,7 +20,7 @@ function HowItWorks() {
                 </g>
               </g>
             </svg>
-
+            <p className="text-xl font-bold text-shadow-lg text-green-800 group-hover:text-white">1</p>
             <p className="my-4 px-2 text-md font-medium  group-hover:text-white">
               Detect planting location
             </p>
@@ -34,6 +34,7 @@ function HowItWorks() {
                 <path d="m16.5.5-11 10" /><path d="m5.5 10.5v5l3-3" />
               </g>
             </svg>
+            <p className="text-xl font-bold text-shadow-lg text-green-800 group-hover:text-white">2</p>
             <p className="my-4 px-2 text-md font-medium  group-hover:text-white">
               Send planting location to user
             </p>
@@ -43,6 +44,7 @@ function HowItWorks() {
             <svg xmlns="http://www.w3.org/2000/svg" className="object-cover w-12 h-12 mx-auto my-2 text-green-800  group-hover:text-white" viewBox="0 0 512 512"><title>Leaf</title>
               <path d="M321.89 171.42C233 114 141 155.22 56 65.22c-19.8-21-8.3 235.5 98.1 332.7 77.79 71 197.9 63.08 238.4-5.92s18.28-163.17-70.61-220.58zM173 253c86 81 175 129 292 147" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" />
             </svg>
+            <p className="text-xl font-bold text-shadow-lg text-green-800 group-hover:text-white">3</p>
             <p className="my-4 px-2 text-md font-medium  group-hover:text-white">
               User plants tree
             </p>
@@ -55,6 +57,7 @@ function HowItWorks() {
                 <path d="m4.5 7.5 3 3 8-8" />
               </g>
             </svg>
+            <p className="text-xl font-bold text-shadow-lg text-green-800 group-hover:text-white">4</p>
             <p className="my-4 px-2 text-md font-medium  group-hover:text-white">
               Confirmation
             </p>
@@ -70,6 +73,7 @@ function HowItWorks() {
               </mask>
               <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#svgIDa)" />
             </svg>
+            <p className="text-xl font-bold text-shadow-lg text-green-800 group-hover:text-white">5</p>
             <p className="my-4 px-2 text-md font-medium  group-hover:text-white">
               Connect to blockchain and virtual world
             </p>
@@ -79,6 +83,7 @@ function HowItWorks() {
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16" className="object-cover w-12 h-12 mx-auto my-2 text-green-800  group-hover:text-white">
               <path fill="currentColor" d="M3.5 2A1.5 1.5 0 0 0 2 3.5v1.193c0 .52.27 1.002.711 1.275l3.866 2.39a3 3 0 1 0 2.846 0l3.866-2.39A1.5 1.5 0 0 0 14 4.693V3.5A1.5 1.5 0 0 0 12.5 2h-9ZM6 6.826V3h4v3.826L8.263 7.9a.5.5 0 0 1-.526 0L6 6.826ZM8 9a2 2 0 1 1 0 4a2 2 0 0 1 0-4Z" />
             </svg>
+            <p className="text-xl font-bold text-shadow-lg text-green-800 group-hover:text-white">6</p>
             <p className="my-4 px-2 text-md font-medium  group-hover:text-white">
               User get rewarded
             </p>
