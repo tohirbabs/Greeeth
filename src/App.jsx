@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Home, Solution, HowItWorks, PlantByHuman, PlantWithDrone, ManageEmission } from './components';
+import { Home, Solution, HowItWorks, PlantByHuman, PlantWithDrone, ManageEmission, Footer } from './components';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <PlantByHuman />
       <PlantWithDrone />
       <ManageEmission />
+      <Footer />
     </div>
   );
 }
