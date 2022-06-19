@@ -6,7 +6,7 @@ import Solution3 from '../../assets/Solution3.jpg';
 function Solution() {
   return (
     <div>
-      <div className="py-20 bg-gray-50">
+      <div className="py-28 bg-gray-50">
         <div className="container mx-auto px-6 md:px-12">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-center text-2xl text-gray-900 font-bold md:text-4xl">Solution</h2>

@@ -1,36 +1,29 @@
 import React from 'react';
-import TreeBG from '../../assets/TreeBG.png';
-import NavBar from './NavBar.jsx';
+import Trees from '../../assets/Trees.png';
 
 function Home() {
   return (
-    <section className="relative bg-white">
-
+    <section className="relative bg-white -mb-1">
       <img
-        className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full sm:opacity-100"
-        src={TreeBG}
-        alt="Page background with Trees"
+        className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-auto opacity-25 sm:opacity-100"
+        src={Trees}
+        alt="Trees Background"
       />
-      <div className="rect" />
-      <NavBar />
-      <div className="relative max-w-screen-xl px-2 py-2 ml-12 lg:h-screen lg:items-center lg:flex text-white">
-        <div className="max-w-xl text-left sm:text-left">
-          <h1 className="text-3xl  sm:text-5xl">
-            Offset your carbon
-            blueprint with GREEETH.
+
+      <div className="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-white sm:to-transparent" />
+
+      <div className="relative max-w-screen-xl px-4 py-32 ml-12 lg:h-screen lg:items-center lg:flex">
+        <div className="max-w-xl sm:text-left">
+          <h1 className="text-3xl font-extrabold sm:text-5xl">
+            Understanding the process
           </h1>
 
           <p className="max-w-lg mt-4 sm:leading-relaxed sm:text-xl">
-            The best way for individuals and companies to plant trees,
-            offset their carbon footprint and restore ecosystem.
+            The best way for individuals and companies to plant trees,  offset their carbon footprint and restore ecosystem.
           </p>
-
-          <div className="flex flex-wrap gap-4 mt-8 text-center">
-
-            <a className="block w-1/2 px-12 py-3 text-sm font-semibold bg-white rounded-lg shadow text-green-900 sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce" href="/about">
-              Plant now
-            </a>
-          </div>
+          <a className="block max-w-1/2 px-8 py-3 text-sm font-medium text-white rounded shadow bg-rose-600 sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring" href="/get-started">
+            Plant NOW
+          </a>
         </div>
       </div>
     </section>
