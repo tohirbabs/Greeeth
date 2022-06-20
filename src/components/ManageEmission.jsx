@@ -61,7 +61,7 @@ function ManageEmission() {
           <div className="py-8 sm:px-8 md:px-12">
             <p className="flex relative py-1 text-lg  font-bold text-left items-center">
               <object type="image/svg+xml" data={Chart} className="max-w-12 mr-4 text-left" alt="Chart Icon" />
-              <p className="text-left">Analyze</p>
+              <p className="text-left">Analyse</p>
 
             </p>
           </div>
