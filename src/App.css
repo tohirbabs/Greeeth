@@ -29,7 +29,7 @@
   border-width: 0.15rem;
 }
 .BG1{
-  background-image: url(../assets/BG1.jpg);
+  /* background-image: url(../assets/BG1.jpg); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
