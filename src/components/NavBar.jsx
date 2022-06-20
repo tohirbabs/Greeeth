@@ -63,6 +63,14 @@ function NavBar() {
             </li>
             <li className="nav-item  py-2">
               <a
+                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75 mr-28"
+                href="/process"
+              >
+                <span className="ml-2 py-4">PROCESS</span>
+              </a>
+            </li>
+            <li className="nav-item  py-2">
+              <a
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                 href="#somelinks"
               ><span className="ml-2"> <ShopIcon />Shop</span>

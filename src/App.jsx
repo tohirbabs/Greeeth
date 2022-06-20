@@ -1,18 +1,18 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { Home, Solution, HowItWorks, PlantByHuman, PlantWithDrone, ManageEmission, Footer } from './components';
+import MainPage from './screens/MainPage';
+import Process from './screens/Process';
 
 function App() {
   return (
     <div className="App">
-      {/* <NavBar /> */}
-      <Home />
-      <Solution />
-      <HowItWorks />
-      <PlantByHuman />
-      <PlantWithDrone />
-      <ManageEmission />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/process" element={<Process />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
