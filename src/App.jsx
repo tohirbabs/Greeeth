@@ -1,13 +1,17 @@
 import React from 'react';
 import './App.css';
-import { NavBar, Home, DetectLocation, Footer } from './components';
+import { Home, Solution, HowItWorks, PlantByHuman, PlantWithDrone, ManageEmission, Footer } from './components';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      {/* <NavBar /> */}
       <Home />
-      <DetectLocation />
+      <Solution />
+      <HowItWorks />
+      <PlantByHuman />
+      <PlantWithDrone />
+      <ManageEmission />
       <Footer />
     </div>
   );
