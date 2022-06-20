@@ -10,7 +10,19 @@
 }
 .gButton{
   background-color: #028000;
-  border: 0.1px solid #008000;
-  justify-content: center;
-  align-items: center;
+}
+.gButton:hover{
+  border: 0.1px solid #028000;
+  color: #028000; 
+  background-color: white;
+  border-style: solid;
+  border-block-color:#028000 ;
+  border-width: 0.15rem;
+}
+.BG1{
+  background-image: url(../assets/BG1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 }
