@@ -9,3 +9,4 @@ export { default as Footer } from './Footer';
 export { default as DetectLocation } from './DetectLocation';
 export { default as UnderstandProcess } from './UnderstandProcess';
 export { default as SendLocation } from './SendLocation';
+export { default as ProcessSection } from './ProcessSection';
