@@ -38,7 +38,7 @@ function PlantersHome() {
             alt="Tree illustration"
             width={350}
             height={500}
-            loading="lazy"
+            // loading="lazy"
             className="mx-auto"
           />
         </div>
