@@ -26,7 +26,7 @@ function PlantersHome() {
 
             <div className="flex flex-wrap gap-4 mt-10 text-center">
               <a
-                className="block w-1/2 px-30 py-4 text-sm font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+                className="block w-1/2 px-30 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
                 href="/about"
               >
                 Plant now
