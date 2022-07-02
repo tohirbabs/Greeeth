@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<MainPage />} /> */}
-          <Route path="/process" element={<Process />} />
-          <Route path="/" element={<Planters />} />
+          <Route path="/" element={<Process />} />
+          <Route path="/process" element={<Planters />} />
         </Routes>
       </BrowserRouter>
     </div>
