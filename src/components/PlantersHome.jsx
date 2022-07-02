@@ -1,5 +1,5 @@
 import React from "react";
-import TreeBG from "../../assets/TreeBG.png";
+import TreeBG from "../../assets/t1.png";
 import NavBar from "./NavBar.jsx";
 
 function PlantersHome() {
@@ -34,7 +34,7 @@ function PlantersHome() {
             </div>
           </div>
           <img
-            src="/assets/t1.png"
+            src={TreeBG}
             alt="Tree illustration"
             width={350}
             height={500}
