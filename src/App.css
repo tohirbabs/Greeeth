@@ -26,6 +26,14 @@ a {
   color: #393939;
 }
 
+.top {
+  padding: 0.6rem;
+  background-color: #dcefb5;
+  /* color: #393939; */
+  width: max-content;
+  border-radius: 5px;
+}
+
 .bg-lgreen {
   background-color: #008000;
 }
