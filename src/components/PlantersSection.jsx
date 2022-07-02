@@ -72,7 +72,7 @@ const componentsArray = [
 function PlantersSection() {
   function PlantersInfo({ Pic, TextList }) {
     return (
-      <div className="bg-white BG1 max-w-xl px-6 flex flex-col items-center mb-30">
+      <div className="bg-white BG1 max-w-xl px-2 flex flex-col items-center mb-30">
         <div className="md:5/12 lg:w-8/12 mb-8">
           <img
             src={Pic}
