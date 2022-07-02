@@ -2,26 +2,21 @@ import React from "react";
 import TreeBG from "../../assets/t1.png";
 import NavBar from "./NavBar.jsx";
 
-function PlantersHome() {
+function ProcessHome() {
   return (
     <section className="relative bg-white lg:h-screen flex flex-col">
-      {/* <img
-        className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full sm:opacity-100"
-        src={TreeBG}
-        alt="Page background with Trees"
-      /> */}
       <div className="rect" />
       <NavBar />
       <div className="relative flex flex-wrap flex-grow items-center justify-center ">
         <div className="container  mx-6 my-3 flex  flex-wrap items-center justify-between max-w-screen-xl px-2 py-2 ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
           <div className="max-w-6/11 text-left sm:text-left darkgreen">
             <h1 className="text-6xl  sm:(text-7xl !leading-tight) font-medium capitalize lgreen">
-              Planters complete tree-planting tasks & get Paid.
+              Understanding The Process
             </h1>
 
             <p className="max-w-10/12 mt-6 sm:leading-relaxed sm:text-xl">
-              Our platform offers easy-to-implement technology, information, and
-              tips on planting.
+              The best way for individuals and companies to plant trees, offset
+              their carbon footprint and restore ecosystem.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-10 text-center">
@@ -46,4 +41,4 @@ function PlantersHome() {
     </section>
   );
 }
-export default PlantersHome;
+export default ProcessHome;
