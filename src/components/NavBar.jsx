@@ -4,8 +4,8 @@ import { HamMenu, ShopIcon, Logo, GreenLogo } from "../../assets";
 function NavBar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="relative flex flex-wrap items-center justify-center px-2 bg-transparent ">
-      <div className="container  mx-6 my-3 flex flex-wrap items-center justify-between max-w-screen-xl">
+    <nav className="relative flex flex-wrap items-center justify-center px-2 bg-transparent shadow-lg ">
+      <div className="container  mx-6 flex flex-wrap items-center justify-between max-w-screen-xl">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <a
             className="text-4xl font-medium leading-relaxed inline-block mr-4 whitespace-nowrap  text-zinc-800"
@@ -31,7 +31,7 @@ function NavBar() {
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li className="nav-item  py-2">
               <a
-                className="px-3 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
+                className="px-7 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
                 <span className="ml-2 py-4">What we do</span>
@@ -39,7 +39,7 @@ function NavBar() {
             </li>
             <li className="nav-item  py-2">
               <a
-                className="px-3 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
+                className="px-7 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
                 <span className="ml-2 py-4">Get involved</span>
@@ -47,7 +47,7 @@ function NavBar() {
             </li>
             <li className="nav-item  py-2">
               <a
-                className="px-3 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
+                className="px-7 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
                 <span className="ml-2 py-4">Map</span>
@@ -55,7 +55,7 @@ function NavBar() {
             </li>
             <li className="nav-item  py-2">
               <a
-                className="px-3 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75 mr-28"
+                className="px-7 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75 mr-35"
                 href="#somelinks"
               >
                 <span className="ml-2 py-4">Crypto</span>

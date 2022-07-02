@@ -8,11 +8,13 @@ import {
   ManageEmission,
   Footer,
 } from "../components";
+import PlantersSection from "../components/PlantersSection";
 
 function Planters() {
   return (
     <div>
       <PlantersHome />
+      <PlantersSection />
       {/* <Solution />
       <HowItWorks />
       <PlantByHuman />
