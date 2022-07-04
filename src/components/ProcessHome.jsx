@@ -1,5 +1,5 @@
 import React from "react";
-import TreeBG from "../../assets/t1.png";
+import TreeBG from "../../assets/processtrees.png";
 import NavBar from "./NavBar.jsx";
 
 function ProcessHome() {
@@ -7,9 +7,9 @@ function ProcessHome() {
     <section className="relative bg-white lg:h-screen flex flex-col">
       <div className="rect" />
       <NavBar />
-      <div className="relative flex flex-wrap flex-grow items-center justify-center ">
+      <div className="relative flex flex-wrap flex-grow items-center justify-center grad-lgreen">
         <div className="container  mx-6 my-3 flex  flex-wrap items-center justify-between max-w-screen-xl px-2 py-2 ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
-          <div className="max-w-6/11 text-left sm:text-left darkgreen">
+          <div className="max-w-5/11 my-auto text-left sm:text-left darkgreen">
             <h1 className="text-6xl  sm:(text-7xl !leading-tight) font-medium capitalize lgreen">
               Understanding The Process
             </h1>
@@ -31,10 +31,10 @@ function ProcessHome() {
           <img
             src={TreeBG}
             alt="Tree illustration"
-            width={350}
-            height={500}
+            // width={600}
+            // height={600}
             // loading="lazy"
-            className="mx-auto"
+            className="absolute right-0 -top-70px w-55vw"
           />
         </div>
       </div>

@@ -19,7 +19,7 @@ function ProcessSection({ BG, Pix, TextList, Index }) {
                 />
               </div>
               <div className="text-left md:6/12 lg:w-6/12 ml-12">
-                <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">
+                <h2 className="text-2xl lgreen font-bold md:text-4xl">
                   {TextList.title}
                 </h2>
                 <ul className="mt-6 text-gray-600 list-disc leading-loose">
@@ -32,7 +32,7 @@ function ProcessSection({ BG, Pix, TextList, Index }) {
           ) : (
             <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
               <div className="text-left md:6/12 lg:w-6/12 ml-12">
-                <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">
+                <h2 className="text-2xl lgreen font-bold md:text-4xl">
                   {TextList.title}
                 </h2>
                 <ul className="mt-6 text-gray-600 list-disc leading-loose">
