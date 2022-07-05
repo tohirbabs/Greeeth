@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<MainPage />} /> */}
           <Route path="/" element={<Process />} />
           <Route path="/process" element={<Planters />} />
         </Routes>
