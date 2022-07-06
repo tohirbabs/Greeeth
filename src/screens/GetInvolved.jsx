@@ -8,12 +8,14 @@ import {
   ManageEmission,
   Footer,
   GetInvolvedHome,
+  NavBar,
 } from "../components";
 import GetInvolvedSection from "../components/GetInvolvedSection";
 
 function GetInvolved() {
   return (
     <div>
+      <NavBar />
       <GetInvolvedHome />
       <GetInvolvedSection />
       {/* <Solution />
