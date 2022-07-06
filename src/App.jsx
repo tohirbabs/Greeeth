@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+
+import "../dist/output.css";
 import MainPage from "./screens/MainPage";
 import Process from "./screens/Process";
 import Planters from "./screens/Planters";
