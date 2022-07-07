@@ -33,6 +33,10 @@ a {
   color: #393939;
 }
 
+.border-bt {
+  border-bottom: #3e7307 2px solid;
+}
+
 .top {
   padding: 0.6rem;
   background-color: #dcefb5;
