@@ -5,3 +5,6 @@ export { default as Pix4 } from "./Pix4.png";
 export { default as Pix5 } from "./Pix5.png";
 export { default as Pix6 } from "./Pix6.png";
 export { default as Pix7 } from "./Pix7.png";
+export { default as co2 } from "./co2.png";
+export { default as gift } from "./gift.png";
+export { default as calc } from "./calculate.png";
