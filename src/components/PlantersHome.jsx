@@ -12,7 +12,7 @@ function PlantersHome() {
       /> */}
       <div className="rect" />
       <NavBar />
-      <div className="relative flex flex-wrap flex-grow items-center justify-center ">
+      <div className="relative grad-lgreen flex flex-wrap flex-grow items-center justify-center ">
         <div className="container  mx-6 my-3 flex  flex-wrap items-center justify-between max-w-screen-xl px-2 py-2 ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
           <div className="max-w-6/11 text-left sm:text-left darkgreen">
             <h1 className="text-6xl  sm:(text-7xl !leading-tight) font-medium capitalize lgreen">

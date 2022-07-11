@@ -31,9 +31,9 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            {/* <Route path="/" element={<Process />} /> */}
+            <Route path="/process" element={<Process />} />
             <Route path="/" element={<GetInvolved />} />
-            <Route path="/process" element={<Planters />} />
+            <Route path="/planters" element={<Planters />} />
           </Routes>
         </BrowserRouter>
       </div>

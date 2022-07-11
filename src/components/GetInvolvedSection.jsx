@@ -12,7 +12,11 @@ import {
   co2,
   gift,
   calc,
+  charity,
+  government,
 } from "../../assets/GetInvolved";
+
+import Carousel from "./Carousel";
 
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
@@ -98,14 +102,11 @@ const componentsArray = [
 ];
 
 function GetInvolvedSection() {
-  const {
-    setshowCompanies,
-    showCompanies,
-    setshowIndividuals,
-    showIndividuals,
-  } = useContext(PageContext);
+  const {} = useContext(PageContext);
   const [showNgos, setshowNgos] = useState(false);
   const [showGo, setshowGo] = useState(false);
+  const [showIndividuals, setshowIndividuals] = useState(false);
+  const [showCompanies, setshowCompanies] = useState(true);
   function CompaniesList({ Pix, TextList, Index }) {
     return (
       <div className="BG-lgreen ">
@@ -291,6 +292,84 @@ function GetInvolvedSection() {
     );
   };
 
+  const Ngos = () => {
+    return (
+      <div className="BG-lgreen ">
+        <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
+          <div className="container flex items-center max-w-screen-xl m-auto py-20 px-15 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
+            <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
+              <div className="text-left md:6/12 lg:w-6/12 ml-12">
+                <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                  Non Governmental Organizations
+                </h2>
+                <div className="mt-6 text-gray-600 leading-loose">
+                  Non-governmental Organizations can promote and sponsor tree
+                  planting and other carbon offsetting projects to tackle
+                  environmental issues and protect diversity.
+                </div>
+                <div className="flex flex-wrap gap-4 mt-10 text-center">
+                  <a
+                    className="block w-1/2 px-30 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                    href="/about"
+                  >
+                    Read More . . .
+                  </a>
+                </div>
+              </div>
+              <div className="md:6/12 lg:w-6/12">
+                <img
+                  src={charity}
+                  alt="Location pins illustration"
+                  loading="lazy"
+                  className="mx-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const Gos = () => {
+    return (
+      <div className="BG-lgreen ">
+        <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
+          <div className="container flex items-center max-w-screen-xl m-auto py-20 px-15 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
+            <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
+              <div className="text-left md:6/12 lg:w-6/12 ml-12">
+                <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                  Governmental Organizations
+                </h2>
+                <div className="mt-6 text-gray-600 leading-loose">
+                  Governmental Organizations can promote and sponsor tree
+                  planting and other carbon offsetting projects to tackle
+                  environmental issues.
+                </div>
+                <div className="flex flex-wrap gap-4 mt-10 text-center">
+                  <a
+                    className="block w-1/2 px-30 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                    href="/about"
+                  >
+                    Read More . . .
+                  </a>
+                </div>
+              </div>
+              <div className="md:6/12 lg:w-6/12">
+                <img
+                  src={government}
+                  alt="Location pins illustration"
+                  loading="lazy"
+                  className="mx-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const HeaderLink = ({ item, index }) => {
     const [current, setCurrent] = useState(false);
     return (
@@ -300,7 +379,7 @@ function GetInvolvedSection() {
         href={item.href}
         className={classNames(
           item.current ? " lgreen border-bt" : "darkgrey hover:lgreen ",
-          "px-3 py-3 flex items-center"
+          "px-3 py-3 flex items-center cursor-pointer"
         )}
         aria-current={item.current ? "page" : undefined}
       >
@@ -331,12 +410,14 @@ function GetInvolvedSection() {
                         onClick={() => {
                           setshowIndividuals(false);
                           setshowCompanies(true);
+                          setshowNgos(false);
+                          setshowGo(false);
                         }}
                         className={classNames(
                           showCompanies
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
-                          "px-3 py-3 flex items-center"
+                          "px-3 py-3 flex items-center cursor-pointer"
                         )}
                         aria-current={showCompanies ? "page" : undefined}
                       >
@@ -356,12 +437,14 @@ function GetInvolvedSection() {
                         onClick={() => {
                           setshowIndividuals(true);
                           setshowCompanies(false);
+                          setshowNgos(false);
+                          setshowGo(false);
                         }}
                         className={classNames(
                           showIndividuals
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
-                          "px-3 py-3 flex items-center"
+                          "px-3 py-3 flex items-center cursor-pointer"
                         )}
                         aria-current={showIndividuals ? "page" : undefined}
                       >
@@ -382,8 +465,14 @@ function GetInvolvedSection() {
                           showNgos
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
-                          "px-3 py-3 flex items-center"
+                          "px-3 py-3 flex items-center cursor-pointer"
                         )}
+                        onClick={() => {
+                          setshowIndividuals(false);
+                          setshowCompanies(false);
+                          setshowNgos(true);
+                          setshowGo(false);
+                        }}
                         aria-current={showNgos ? "page" : undefined}
                       >
                         <span
@@ -401,8 +490,14 @@ function GetInvolvedSection() {
                           showGo
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
-                          "px-3 py-3 flex items-center"
+                          "px-3 py-3 flex items-center cursor-pointer"
                         )}
+                        onClick={() => {
+                          setshowIndividuals(false);
+                          setshowCompanies(false);
+                          setshowNgos(false);
+                          setshowGo(true);
+                        }}
                         aria-current={showGo ? "page" : undefined}
                       >
                         <span
@@ -464,6 +559,10 @@ function GetInvolvedSection() {
           <Companies />
         ) : showIndividuals ? (
           <Individuals />
+        ) : showNgos ? (
+          <Ngos />
+        ) : showGo ? (
+          <Gos />
         ) : (
           <Companies />
         )}
