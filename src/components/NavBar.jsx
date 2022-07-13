@@ -233,7 +233,7 @@ function NavBar() {
             <li className="nav-item  ml-2 py-2 flex items-center ">
               <a
                 className="px-3 flex  items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
-                href="auth/sign-in"
+                href="/auth/sign-in"
               >
                 <span className="ml-2 text-zinc-800 py-2 px-5 rounded-lg hover:text-white hover-bg-lgreen hover:border-white hover:border-2 bd-lgreen border-2">
                   Sign in

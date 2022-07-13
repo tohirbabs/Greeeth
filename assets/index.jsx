@@ -4,6 +4,8 @@ export { default as Calculator } from "./Calculator.svg";
 export { default as Chart } from "./Chart.svg";
 export { default as Cloud } from "./Cloud.svg";
 export { default as google } from "./google.svg";
+export { default as facebook } from "./facebook.png";
+export { default as linkedin } from "./linkedin.png";
 export { default as Monitor } from "./Monitor.svg";
 export { default as Speedometer } from "./Speedometer.svg";
 export { default as Logo } from "./Logo.jsx";

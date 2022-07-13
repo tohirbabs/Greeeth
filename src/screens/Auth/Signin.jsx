@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { google } from "../../../assets";
+import { google, facebook, linkedin } from "../../../assets";
 
 const Signin = () => {
   const [showsignin, setShowsignin] = useState(true);
@@ -26,8 +26,22 @@ const Signin = () => {
                       It's good to see you again, come in using your favourite
                       social network
                     </h6>
-                    <div className="bg-white min-wid active:bg-blueGray-50 text-blueGray-700 font-normal p-2 rounded-full outline-none focus:outline-none m-1 mt-4 shadow hover:shadow-md inline-flex items-center ease-linear transition-all duration-150">
-                      <img alt="..." className="w-6" src={google} />
+                    <div className="flex justify-center gap-2rem mt-4">
+                      <img
+                        alt="..."
+                        className="w-10 bg-white min-wid  p-2 rounded-full inline-flex items-center "
+                        src={google}
+                      />
+                      <img
+                        alt="..."
+                        className="w-10 bg-white min-wid  rounded-full inline-flex items-center "
+                        src={facebook}
+                      />
+                      <img
+                        alt="..."
+                        className="w-10 bg-white min-wid  rounded-full inline-flex items-center "
+                        src={linkedin}
+                      />
                     </div>
                   </div>
                   <hr className="m-4 border-b-1 border-blueGray-300" />
@@ -130,68 +144,8 @@ const Signin = () => {
         }
         id="signup"
       >
-        {/* <div className="max-w-8/11 text-center darkgreen">
-          <h1 className="login__header header text-4xl  sm:(text-4xl !leading-tight) font-medium capitalize text-lgreen">
-            Create a new account
-          </h1>
-          <p className="mt-6 sm:leading-relaxed sm:text-xl text-white">
-            You can use your favourite social network
-          </p>
-          <div className="social-media__container">
-            <span className="">
-              <i className={`bx bxs-user bx-sm`}></i>
-            </span>
-            <span className="">
-              <i className={`bx bxs-user bx-sm`}></i>
-            </span>
-
-            <span className="">
-              <i className={`bx bxs-user bx-sm`}></i>
-            </span>
-          </div>
-        </div>
-
-        <fieldset className="form">
-          <legend className="form__legend">OR</legend>
-          <form action="" className="form__body form-login">
-            <div className="input__group">
-              <input
-                className="form__input form__input-half"
-                type="text"
-                placeholder="First Name"
-              />
-              <input
-                className="form__input form__input-half"
-                type="text"
-                placeholder="Last Name"
-              />
-            </div>
-            <div className="input__group">
-              <input
-                className="form__input form__input-half"
-                type="email"
-                placeholder="Email"
-              />
-              <input
-                className="form__input form__input-half"
-                type="password"
-                placeholder=" Password"
-              />
-              <input
-                className="form__input form__input-half"
-                type="password"
-                placeholder=" Retype Password"
-              />
-            </div>
-            <div className="input__group">
-              <input className="form__input-checkbox" type="checkbox" /> I have
-              read the <a href="#">terms and conditions</a>
-            </div>
-            <button className="btn">Sign up</button>
-          </form>
-        </fieldset> */}
         <div className="lg:flex font-sec m-auto ">
-          <div className=" xl:max-w-screen-lg bg-bluegrey-200">
+          <div className=" xl:max-w-screen-lg bg-bluegrey-200 min-w-500px">
             <div className="flex text-left content-center items-center justify-center h-full">
               <div className="w-full px-4">
                 <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
@@ -202,8 +156,22 @@ const Signin = () => {
                     <h6 className="text-blueGray-500 text-base font-bold text-center flex flex-col w-5/7">
                       you can use your favourite social network
                     </h6>
-                    <div className="bg-white min-wid active:bg-blueGray-50 text-blueGray-700 font-normal p-2 rounded-full outline-none focus:outline-none m-1 mt-4 shadow hover:shadow-md inline-flex items-center ease-linear transition-all duration-150">
-                      <img alt="..." className="w-6" src={google} />
+                    <div className="flex justify-center gap-2rem mt-4">
+                      <img
+                        alt="..."
+                        className="w-10 bg-white min-wid  p-2 rounded-full inline-flex items-center "
+                        src={google}
+                      />
+                      <img
+                        alt="..."
+                        className="w-10 bg-white min-wid  rounded-full inline-flex items-center "
+                        src={facebook}
+                      />
+                      <img
+                        alt="..."
+                        className="w-10 bg-white min-wid  rounded-full inline-flex items-center "
+                        src={linkedin}
+                      />
                     </div>
                   </div>
                   <hr className="m-4 border-b-1 border-blueGray-300" />

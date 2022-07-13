@@ -105,6 +105,10 @@ a {
   width: max-content;
 }
 
+.min-wit {
+  min-width: 500px;
+}
+
 .forestBG {
   background-image: url("/assets/company\ forest.png");
   background-size: cover;
