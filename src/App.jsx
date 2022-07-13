@@ -11,6 +11,7 @@ import Volunteers from "./screens/GetInvolved/Volunteers";
 import Schools from "./screens/GetInvolved/Schools";
 import Planters from "./screens/GetInvolved/Planters";
 import Partners from "./screens/GetInvolved/Partners";
+import Ambassadors from "./screens/GetInvolved/Ambassadors";
 
 export const PageContext = createContext({
   showCompanies: "",
@@ -41,6 +42,7 @@ function App() {
             <Route path="/get-involved/schools" element={<Schools />} />
             <Route path="/get-involved/planters" element={<Planters />} />
             <Route path="/get-involved/partners" element={<Partners />} />
+            <Route path="/get-involved/ambassadors" element={<Ambassadors />} />
           </Routes>
         </BrowserRouter>
       </div>
