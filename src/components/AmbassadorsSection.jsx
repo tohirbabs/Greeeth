@@ -57,7 +57,6 @@ function AmbassadorsSection() {
 
   return (
     <>
-      {" "}
       <section className="relative grad-lgreen flex flex-col pt-20">
         <h2 className="text-4xl  sm:(text-5xl !leading-tight) font-medium capitalize lgreen">
           What will you gain?

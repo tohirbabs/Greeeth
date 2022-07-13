@@ -178,39 +178,39 @@ function NavBar() {
           id="navbar-danger"
         >
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-            <li className="nav-item ml-8 py-4 px-2 flex items-center">
+            <li className="nav-item ml-8 py-2 px-2 flex items-center">
               <DropdownNavItem
                 itemName="What We Do"
                 itemMenu={getInvolvedMenuItems}
               />
             </li>
-            <li className="nav-item ml-8 py-4 px-2 flex items-center">
+            <li className="nav-item ml-8 py-2 px-2 flex items-center">
               <DropdownNavItem
                 itemName="Get Involved"
                 itemMenu={getInvolvedMenuItems}
               />
             </li>
 
-            <li className="nav-item  ml-4 py-4 px-2 flex items-center ">
+            <li className="nav-item  ml-4 py-2 px-2 flex items-center ">
               <a
-                className="px-4 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
+                className="px-4 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
-                <span className="ml-2 py-4">Map</span>
+                <span className="ml-2 py-2">Map</span>
               </a>
             </li>
-            <li className="nav-item ml-4 py-4 px-2 flex items-center ">
+            <li className="nav-item ml-4 py-2 px-2 flex items-center ">
               <a
-                className="px-4 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
+                className="px-4flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
                 href="/process"
               >
-                <span className="ml-2 py-4">Process</span>
+                <span className="ml-2 py-2">Process</span>
               </a>
             </li>
 
-            <li className="nav-item   ml-20 py-4 flex items-center ">
+            <li className="nav-item   ml-20 py-2 flex items-center ">
               <a
-                className="px-3 py-2 flex items-center text-base  font-normal leading-snug text-zinc-800 hover:opacity-75"
+                className="px-3flex items-center text-base  font-normal leading-snug text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
                 <span className="ml-2">
@@ -220,9 +220,9 @@ function NavBar() {
                 </span>
               </a>
             </li>
-            <li className="nav-item  ml-2 py-4 flex items-center ">
+            <li className="nav-item  ml-2 py-2 flex items-center ">
               <a
-                className="px-3 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
+                className="px-3  flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
                 <span className="ml-2 bg-lgreen text-white py-2 px-5 rounded-lg hover:text-zinc-800 hover:bg-transparent hover-bd-lgreen hover:border-2">
@@ -230,10 +230,10 @@ function NavBar() {
                 </span>
               </a>
             </li>
-            <li className="nav-item  ml-2 py-4 flex items-center ">
+            <li className="nav-item  ml-2 py-2 flex items-center ">
               <a
-                className="px-3 py-2 flex  items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
-                href="#somelinks"
+                className="px-3 flex  items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
+                href="auth/sign-in"
               >
                 <span className="ml-2 text-zinc-800 py-2 px-5 rounded-lg hover:text-white hover-bg-lgreen hover:border-white hover:border-2 bd-lgreen border-2">
                   Sign in
