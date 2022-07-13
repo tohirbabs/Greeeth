@@ -71,9 +71,9 @@ function NavBar() {
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                       "block px-4 py-2 text-sm"
                     )}
-                    href="#"
+                    href="/get-involved/sponsors"
                   >
-                    Companies
+                    Sponsor
                   </a>
                 )}
               </Menu.Item>
@@ -88,9 +88,48 @@ function NavBar() {
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                       "block px-4 py-2 text-sm"
                     )}
-                    href="#"
+                    href="/get-involved/volunteers"
                   >
-                    Individuals
+                    Volunteers
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                    href="/get-involved/schools"
+                  >
+                    Schools
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                    href="/get-involved/partners"
+                  >
+                    Partners
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                    href="/get-involved/planters"
+                  >
+                    Planters
                   </a>
                 )}
               </Menu.Item>
@@ -103,20 +142,7 @@ function NavBar() {
                     )}
                     href="#"
                   >
-                    NGOs
-                  </a>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                    href="#"
-                  >
-                    Governmental Organizations
+                    Ambassador
                   </a>
                 )}
               </Menu.Item>
@@ -152,47 +178,37 @@ function NavBar() {
           id="navbar-danger"
         >
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-            <li className="nav-item ml-2 py-4 px-2 flex items-center">
+            <li className="nav-item ml-8 py-4 px-2 flex items-center">
               <DropdownNavItem
                 itemName="What We Do"
                 itemMenu={getInvolvedMenuItems}
               />
             </li>
-            <li className="nav-item ml-2 py-4 px-2 flex items-center">
-              <a
-                className="px-2 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
-                href="/"
-              >
-                <span className="ml-2 py-4">Get Involved</span>
-              </a>
+            <li className="nav-item ml-8 py-4 px-2 flex items-center">
+              <DropdownNavItem
+                itemName="Get Involved"
+                itemMenu={getInvolvedMenuItems}
+              />
             </li>
 
-            <li className="nav-item  ml-2 py-4 px-2 flex items-center ">
+            <li className="nav-item  ml-4 py-4 px-2 flex items-center ">
               <a
-                className="px-2 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
+                className="px-4 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
                 <span className="ml-2 py-4">Map</span>
               </a>
             </li>
-            <li className="nav-item ml-2 py-4 px-2 flex items-center ">
+            <li className="nav-item ml-4 py-4 px-2 flex items-center ">
               <a
-                className="px-2 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
+                className="px-4 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
                 href="/process"
               >
                 <span className="ml-2 py-4">Process</span>
               </a>
             </li>
-            <li className="nav-item ml-2 py-4 px-2 flex items-center mr-20">
-              <a
-                className="px-2 py-2 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
-                href="/planters"
-              >
-                <span className="ml-2 py-4">Planters</span>
-              </a>
-            </li>
 
-            <li className="nav-item   ml-2 py-4 flex items-center ">
+            <li className="nav-item   ml-20 py-4 flex items-center ">
               <a
                 className="px-3 py-2 flex items-center text-base  font-normal leading-snug text-zinc-800 hover:opacity-75"
                 href="#somelinks"

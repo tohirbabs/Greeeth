@@ -1,7 +1,7 @@
 import React from "react";
 import TreeBG from "../../assets/sponsor.png";
 
-function GetInvolvedHome() {
+function SponsorsHome() {
   return (
     <section className=" grad-lgreen flex-wrap items-center justify-center h-viewheight flex flex-col">
       <div className="container  mx-6 my-3 flex flex-col flex-wrap items-center justify-around max-w-screen-xl px-2 py-2 ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
@@ -24,4 +24,4 @@ function GetInvolvedHome() {
     </section>
   );
 }
-export default GetInvolvedHome;
+export default SponsorsHome;

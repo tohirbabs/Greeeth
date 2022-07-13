@@ -7,14 +7,17 @@ import {
   PlantWithDrone,
   ManageEmission,
   Footer,
-} from "../components";
-import PlantersSection from "../components/PlantersSection";
+  NavBar,
+} from "../../components";
+import SponsorsHome from "../../components/SponsorsHome";
+import SponsorsSection from "../../components/SponsorsSection";
 
-function Planters() {
+function Sponsors() {
   return (
     <div>
-      <PlantersHome />
-      <PlantersSection />
+      <NavBar />
+      <SponsorsHome />
+      <SponsorsSection />
       {/* <Solution />
       <HowItWorks />
       <PlantByHuman />
@@ -25,4 +28,4 @@ function Planters() {
   );
 }
 
-export default Planters;
+export default Sponsors;

@@ -13,4 +13,3 @@ export { default as UnderstandProcess } from "./UnderstandProcess";
 export { default as SendLocation } from "./SendLocation";
 export { default as ProcessSection } from "./ProcessSection";
 export { default as ProcessHome } from "./ProcessHome";
-export { default as GetInvolvedHome } from "./GetInvolvedHome";

@@ -101,7 +101,7 @@ const componentsArray = [
   },
 ];
 
-function GetInvolvedSection() {
+function SponsorsSection() {
   const {} = useContext(PageContext);
   const [showNgos, setshowNgos] = useState(false);
   const [showGo, setshowGo] = useState(false);
@@ -571,4 +571,4 @@ function GetInvolvedSection() {
   );
 }
 
-export default GetInvolvedSection;
+export default SponsorsSection;

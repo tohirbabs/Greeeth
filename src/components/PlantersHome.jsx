@@ -5,12 +5,6 @@ import NavBar from "./NavBar.jsx";
 function PlantersHome() {
   return (
     <section className="relative bg-white lg:h-screen flex flex-col">
-      {/* <img
-        className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full sm:opacity-100"
-        src={TreeBG}
-        alt="Page background with Trees"
-      /> */}
-      <div className="rect" />
       <NavBar />
       <div className="relative grad-lgreen flex flex-wrap flex-grow items-center justify-center ">
         <div className="container  mx-6 my-3 flex  flex-wrap items-center justify-between max-w-screen-xl px-2 py-2 ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">

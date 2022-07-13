@@ -6,8 +6,11 @@ import "./App.css";
 import "../dist/output.css";
 import MainPage from "./screens/MainPage";
 import Process from "./screens/Process";
-import Planters from "./screens/Planters";
-import GetInvolved from "./screens/GetInvolved";
+import Sponsors from "./screens/GetInvolved/Sponsors";
+import Volunteers from "./screens/GetInvolved/Volunteers";
+import Schools from "./screens/GetInvolved/Schools";
+import Planters from "./screens/GetInvolved/Planters";
+import Partners from "./screens/GetInvolved/Partners";
 
 export const PageContext = createContext({
   showCompanies: "",
@@ -32,8 +35,12 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/process" element={<Process />} />
-            <Route path="/" element={<GetInvolved />} />
-            <Route path="/planters" element={<Planters />} />
+            <Route path="/" element={<Sponsors />} />
+            <Route path="/get-involved/sponsors" element={<Sponsors />} />
+            <Route path="/get-involved/volunteers" element={<Volunteers />} />
+            <Route path="/get-involved/schools" element={<Schools />} />
+            <Route path="/get-involved/planters" element={<Planters />} />
+            <Route path="/get-involved/partners" element={<Partners />} />
           </Routes>
         </BrowserRouter>
       </div>
