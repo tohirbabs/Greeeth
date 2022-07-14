@@ -13,6 +13,7 @@ import Planters from "./screens/GetInvolved/Planters";
 import Partners from "./screens/GetInvolved/Partners";
 import Ambassadors from "./screens/GetInvolved/Ambassadors";
 import Signin from "./screens/Auth/Signin";
+import Layout from "./components/Layout";
 
 export const PageContext = createContext({
   showCompanies: "",
@@ -34,19 +35,24 @@ function App() {
       }}
     >
       <div className="App">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Sponsors />} />
-            <Route path="/process" element={<Process />} />
-            <Route path="/auth/sign-in" element={<Signin />} />
-            <Route path="/get-involved/sponsors" element={<Sponsors />} />
-            <Route path="/get-involved/volunteers" element={<Volunteers />} />
-            <Route path="/get-involved/schools" element={<Schools />} />
-            <Route path="/get-involved/planters" element={<Planters />} />
-            <Route path="/get-involved/partners" element={<Partners />} />
-            <Route path="/get-involved/ambassadors" element={<Ambassadors />} />
-          </Routes>
-        </BrowserRouter>
+        <Layout>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Sponsors />} />
+              <Route path="/process" element={<Process />} />
+              <Route path="/auth/sign-in" element={<Signin />} />
+              <Route path="/get-involved/sponsors" element={<Sponsors />} />
+              <Route path="/get-involved/volunteers" element={<Volunteers />} />
+              <Route path="/get-involved/schools" element={<Schools />} />
+              <Route path="/get-involved/planters" element={<Planters />} />
+              <Route path="/get-involved/partners" element={<Partners />} />
+              <Route
+                path="/get-involved/ambassadors"
+                element={<Ambassadors />}
+              />
+            </Routes>
+          </BrowserRouter>
+        </Layout>
       </div>
     </PageContext.Provider>
   );

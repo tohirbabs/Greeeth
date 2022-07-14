@@ -48,6 +48,9 @@ a {
   width: max-content;
   border-radius: 5px;
 }
+.ligreen {
+  color: #028000;
+}
 
 .bg-lgreen {
   background-color: #008000;
