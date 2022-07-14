@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { createContext, useState, useContext, useMemo } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { createContext, useState, useContext, useMemo, use } from "react";
 import "./App.css";
 
 import "../dist/output.css";
@@ -15,25 +15,11 @@ import Ambassadors from "./screens/GetInvolved/Ambassadors";
 import Signin from "./screens/Auth/Signin";
 import Layout from "./components/Layout";
 
-export const PageContext = createContext({
-  showCompanies: "",
-  setshowCompanies: () => {},
-  showIndividuals: "",
-  setshowIndividuals: () => {},
-});
+export const PageContext = createContext({});
 
 function App() {
-  const [showCompanies, setshowCompanies] = useState(true);
-  const [showIndividuals, setshowIndividuals] = useState(false);
   return (
-    <PageContext.Provider
-      value={{
-        showCompanies,
-        setshowCompanies,
-        showIndividuals,
-        setshowIndividuals,
-      }}
-    >
+    <PageContext.Provider value={{}}>
       <div className="App">
         <Layout>
           <BrowserRouter>
