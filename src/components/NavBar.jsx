@@ -57,7 +57,7 @@ function NavBar() {
 
             <li className=" ml-2  flex items-center ">
               <a
-                className="px-2 flex items-center text-sm font-medium  text-zinc-800 hover:opacity-75"
+                className="px-2 flex items-center text-base   text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
                 <span className="ml-2 py-2">Map</span>
@@ -65,7 +65,7 @@ function NavBar() {
             </li>
             <li className="ml-2 flex items-center ">
               <a
-                className="px-2 flex items-center text-sm font-medium  text-zinc-800 hover:opacity-75"
+                className="px-2 flex items-center text-base   text-zinc-800 hover:opacity-75"
                 href="/process"
               >
                 <span className="ml-2 py-2">Process</span>
@@ -74,7 +74,7 @@ function NavBar() {
 
             <li className="  ml-4 flex items-center ">
               <a
-                className="px-3 flex items-center text-sm font-medium  text-zinc-800 hover:opacity-75"
+                className="px-3 flex items-center text-base   text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
                 <ShopIcon />
@@ -82,7 +82,7 @@ function NavBar() {
             </li>
             <li className=" ml-2 flex items-center ">
               <a
-                className="px-3  flex items-center text-sm font-medium  text-zinc-800 hover:opacity-75"
+                className="px-3  flex items-center text-base   text-zinc-800 hover:opacity-75"
                 href="#somelinks"
               >
                 <span className="ml-2 bg-lgreen text-white py-2 px-5 rounded-lg hover:text-zinc-800 hover:bg-transparent hover-bd-lgreen hover:border-1">
@@ -92,7 +92,7 @@ function NavBar() {
             </li>
             <li className=" ml-2 flex items-center ">
               <a
-                className="px-3 flex  items-center text-sm font-medium  text-zinc-800 hover:opacity-75"
+                className="px-3 flex  items-center text-base   text-zinc-800 hover:opacity-75"
                 href="/auth/sign-in"
               >
                 <span className="ml-2 text-zinc-800 py-2 px-5 rounded-lg hover:text-white hover-bg-lgreen hover:border-white hover:border-1 bd-lgreen border-1">
