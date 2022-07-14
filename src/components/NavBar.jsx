@@ -194,7 +194,7 @@ function NavBar() {
             <li className="nav-item  ml-4 py-2 px-2 flex items-center ">
               <a
                 className="px-4 flex items-center text-base  font-medium leading-snug text-zinc-800 hover:opacity-75"
-                href="#somelinks"
+                href="/map"
               >
                 <span className="ml-2 py-2">Map</span>
               </a>

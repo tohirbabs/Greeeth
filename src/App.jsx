@@ -1,23 +1,24 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { createContext, useState, useContext, useMemo } from "react";
-import "./App.css";
+import React, { createContext, useState, useContext, useMemo } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import "../dist/output.css";
-import MainPage from "./screens/MainPage";
-import Process from "./screens/Process";
-import Sponsors from "./screens/GetInvolved/Sponsors";
-import Volunteers from "./screens/GetInvolved/Volunteers";
-import Schools from "./screens/GetInvolved/Schools";
-import Planters from "./screens/GetInvolved/Planters";
-import Partners from "./screens/GetInvolved/Partners";
-import Ambassadors from "./screens/GetInvolved/Ambassadors";
-import Signin from "./screens/Auth/Signin";
+import './App.css';
+
+import '../dist/output.css';
+import MainPage from './screens/MainPage';
+import Process from './screens/Process';
+import Sponsors from './screens/GetInvolved/Sponsors';
+import Volunteers from './screens/GetInvolved/Volunteers';
+import Schools from './screens/GetInvolved/Schools';
+import Planters from './screens/GetInvolved/Planters';
+import Partners from './screens/GetInvolved/Partners';
+import Ambassadors from './screens/GetInvolved/Ambassadors';
+import Signin from './screens/Auth/Signin';
+import InteractMap from './screens/InteractMap';
 
 export const PageContext = createContext({
-  showCompanies: "",
+  showCompanies: '',
   setshowCompanies: () => {},
-  showIndividuals: "",
+  showIndividuals: '',
   setshowIndividuals: () => {},
 });
 
@@ -45,6 +46,7 @@ function App() {
             <Route path="/get-involved/planters" element={<Planters />} />
             <Route path="/get-involved/partners" element={<Partners />} />
             <Route path="/get-involved/ambassadors" element={<Ambassadors />} />
+            <Route path="/map" element={<InteractMap />} />
           </Routes>
         </BrowserRouter>
       </div>
