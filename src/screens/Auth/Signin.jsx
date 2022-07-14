@@ -6,7 +6,7 @@ const Signin = () => {
   const [showsignin, setShowsignin] = useState(true);
 
   return (
-    <div className="main-page">
+    <div className="main-page absolute top-0 bottom-0  w-screen z-100">
       <div
         className={
           showsignin ? "smooth login bg-login" : "smooth login hide-view"

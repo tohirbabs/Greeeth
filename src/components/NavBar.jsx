@@ -18,7 +18,7 @@ function NavBar() {
 
   return (
     <>
-      <nav className="absolute w-screen z-100 flex items-center justify-center p-4 bg-white shadow-md ">
+      <nav className="absolute w-screen flex items-center justify-center p-4 bg-white shadow-md ">
         <div className="container  sm:mx-6 flex items-center justify-between max-w-screen-xl">
           <div className="w-full py-3 sm:py-0 relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <a
