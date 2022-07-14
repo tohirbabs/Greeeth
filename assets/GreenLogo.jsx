@@ -33,7 +33,7 @@ function SvgComponent(props) {
           />
         </g>
       </svg>
-      <span className="px-1 text-2xl ligreen font-bold">Greeth</span>
+      <span className="ml-1 text-2xl ligreen font-bold">Greeth</span>
     </>
   );
 }
