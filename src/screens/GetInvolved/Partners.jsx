@@ -6,10 +6,8 @@ import PartnersSection from "../../components/PartnersSection";
 function Partners() {
   return (
     <div>
-      <NavBar />
       <PartnersHome />
       <PartnersSection />
-      <Footer />
     </div>
   );
 }

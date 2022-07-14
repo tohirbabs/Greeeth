@@ -7,7 +7,6 @@ function Planters() {
     <div>
       <PlantersHome />
       <PlantersSection />
-      <Footer />
     </div>
   );
 }

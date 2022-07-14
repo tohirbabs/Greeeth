@@ -8,10 +8,8 @@ import PartnersSection from "../../components/PartnersSection";
 function Ambassadors() {
   return (
     <div>
-      <NavBar />
       <AmbassadorsHome />
       <AmbassadorsSection />
-      <Footer />
     </div>
   );
 }

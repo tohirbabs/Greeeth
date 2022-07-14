@@ -15,15 +15,8 @@ import SponsorsSection from "../../components/SponsorsSection";
 function Sponsors() {
   return (
     <div>
-      <NavBar />
       <SponsorsHome />
       <SponsorsSection />
-      {/* <Solution />
-      <HowItWorks />
-      <PlantByHuman />
-      <PlantWithDrone />
-      <ManageEmission /> */}
-      <Footer />
     </div>
   );
 }
