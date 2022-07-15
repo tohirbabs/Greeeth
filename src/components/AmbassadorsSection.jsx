@@ -61,7 +61,7 @@ function AmbassadorsSection() {
         <h2 className="text-4xl  sm:(text-5xl !leading-tight) font-medium capitalize lgreen">
           What will you gain?
         </h2>
-        <div className="relative flex flex-col items-center justify-center gap-2rem mt-2rem">
+        <div className="relative flex lg:flex-row flex-col items-center justify-center gap-2rem mt-2rem">
           {componentsArray.map((comp, i) => (
             <AmbassadorsInfo
               Pic={comp.Illustration}
