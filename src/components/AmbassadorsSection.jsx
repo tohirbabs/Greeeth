@@ -37,7 +37,7 @@ const componentsArray = [
 function AmbassadorsSection() {
   function AmbassadorsInfo({ Pic, TextList }) {
     return (
-      <div className="bg-white BG1 w-3/11 px-2 flex flex-col items-center justify-center py-1rem mb-30 h-310px card">
+      <div className="bg-white BG1 lg:w-3/11 px-2 flex flex-col items-center justify-center py-1rem lg:mb-30 mb-10 h-310px card">
         <div className="md:5/12 lg:w-8/12 mb-8">
           <img
             src={Pic}
@@ -61,7 +61,7 @@ function AmbassadorsSection() {
         <h2 className="text-4xl  sm:(text-5xl !leading-tight) font-medium capitalize lgreen">
           What will you gain?
         </h2>
-        <div className="relative flex items-center justify-center gap-2rem mt-2rem">
+        <div className="relative flex flex-col items-center justify-center gap-2rem mt-2rem">
           {componentsArray.map((comp, i) => (
             <AmbassadorsInfo
               Pic={comp.Illustration}

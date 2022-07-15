@@ -36,7 +36,7 @@ const componentsArray = [
 function PartnersSection() {
   function PartnersInfo({ Pic, TextList }) {
     return (
-      <div className="bg-white BG1 max-w-xl px-2 flex flex-col items-center justify-center py-1rem mb-30 h-445px ">
+      <div className="bg-transparent BG1 max-w-xl px-2 flex flex-col items-center justify-center py-1rem lg:mb-30 mb-10 h-445px ">
         <div className="md:5/12 lg:w-8/12 mb-8">
           <img
             src={Pic}
