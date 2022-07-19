@@ -61,6 +61,8 @@ const componentsArray = [
     Illustration: Pix1,
     TextList: {
       title: "Offset your carbon footprint",
+      link: "Offset-your-carbon-footprint",
+
       text: "Offset your company's carbon emissions by planting a tree. ",
     },
   },
@@ -68,6 +70,7 @@ const componentsArray = [
     Illustration: Pix2,
     TextList: {
       title: "Corporate gifting to customers",
+      link: "Corporate-gifting-to-customers",
       text: "Give your clients a thoughtful gift like a tree that you plant in their honor. ",
     },
   },
@@ -75,6 +78,7 @@ const componentsArray = [
     Illustration: Pix3,
     TextList: {
       title: "Use as Employee engagement",
+      link: "Use-as-Employee-engagement",
       text: "Plant a forest and distribute a tree from it to each employee.",
     },
   },
@@ -82,6 +86,7 @@ const componentsArray = [
     Illustration: Pix4,
     TextList: {
       title: "Unique Reward ",
+      link: "Unique-Reward",
       text: "Reward respondents with newly planted trees for completing a survey. ",
     },
   },
@@ -89,6 +94,7 @@ const componentsArray = [
     Illustration: Pix5,
     TextList: {
       title: "Loyalty Program to Customers ",
+      link: "Loyalty-Program-to-Customers",
       text: "Provide clients with a way to convert points into trees to reduce your financial burden. ",
     },
   },
@@ -96,6 +102,7 @@ const componentsArray = [
     Illustration: Pix7,
     TextList: {
       title: "Use Tree in Corporate Social Responsibility (CSR) ",
+      link: "Use-Tree-in-Corporate-Social-Responsibility-(CSR)",
       text: "Offset your company's carbon emissions by planting a tree. ",
     },
   },
@@ -124,7 +131,7 @@ function SponsorsSection() {
                   <div className="flex flex-wrap gap-4 mt-10 text-center">
                     <a
                       className="block w-3/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                      href="/about"
+                      href={`get-involved/sponsors/companies/${TextList.link}`}
                     >
                       Read More . . .
                     </a>
@@ -161,7 +168,7 @@ function SponsorsSection() {
                   <div className="flex flex-wrap gap-4 mt-10 text-center">
                     <a
                       className="block w-3/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                      href="/about"
+                      href={`get-involved/sponsors/companies/${TextList.link}`}
                     >
                       Read More . . .
                     </a>

@@ -17,6 +17,16 @@ import Sponsors from "./screens/GetInvolved/Sponsors/Sponsors";
 import SponsorApply from "./screens/GetInvolved/Sponsors/Apply";
 import SchoolsApply from "./components/SchoolsApply";
 import AmbassadorsApply from "./components/AmbassadorsApply";
+import Companies1 from "./screens/GetInvolved/Sponsors/Companies1";
+import Companies2 from "./screens/GetInvolved/Sponsors/Companies2";
+
+import Companies3 from "./screens/GetInvolved/Sponsors/Companies3";
+
+import Companies4 from "./screens/GetInvolved/Sponsors/Companies4";
+
+import Companies5 from "./screens/GetInvolved/Sponsors/Companies5";
+
+import Companies6 from "./screens/GetInvolved/Sponsors/Companies6";
 
 export const PageContext = createContext({});
 
@@ -35,6 +45,31 @@ function App() {
                 path="/get-involved/sponsors/apply"
                 element={<SponsorApply />}
               />
+              <Route
+                path="/get-involved/sponsors/companies/Offset-your-carbon-footprint"
+                element={<Companies1 />}
+              />
+              <Route
+                path="/get-involved/sponsors/companies/Corporate-gifting-to-customers"
+                element={<Companies2 />}
+              />
+              <Route
+                path="/get-involved/sponsors/companies/Use-as-Employee-engagement"
+                element={<Companies3 />}
+              />
+              <Route
+                path="/get-involved/sponsors/companies/Unique-Reward"
+                element={<Companies4 />}
+              />
+              <Route
+                path="/get-involved/sponsors/companies/Loyalty-Program-to-Customers"
+                element={<Companies5 />}
+              />
+              <Route
+                path="/get-involved/sponsors/companies/Use-Tree-in-Corporate-Social-Responsibility-(CSR)"
+                element={<Companies6 />}
+              />
+
               <Route path="/get-involved/volunteers" element={<Volunteers />} />
               <Route path="/get-involved/schools" element={<Schools />} />
               <Route
