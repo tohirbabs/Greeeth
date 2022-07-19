@@ -123,7 +123,7 @@ function SponsorsSection() {
                   </div>
                   <div className="flex flex-wrap gap-4 mt-10 text-center">
                     <a
-                      className="block w-1/2 px-30 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                      className="block w-3/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                       href="/about"
                     >
                       Read More . . .
@@ -160,7 +160,7 @@ function SponsorsSection() {
                   </div>
                   <div className="flex flex-wrap gap-4 mt-10 text-center">
                     <a
-                      className="block w-1/2 px-30 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                      className="block w-3/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                       href="/about"
                     >
                       Read More . . .

@@ -16,7 +16,7 @@ function AmbassadorsHome() {
           <div className="gap-4 mt-10 mx-auto text-center w-1/2">
             <a
               className="block py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
-              href="/about"
+              href="/get-involved/Ambassadors/apply"
             >
               Apply for free
             </a>

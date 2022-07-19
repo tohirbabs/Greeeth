@@ -149,6 +149,18 @@ a {
   overflow: hidden;
   color: white;
 }
+@media (max-width: 700px) {
+  .main-page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: stretch;
+    justify-content: space-between;
+    max-height: 100vh;
+    overflow: hidden;
+    color: white;
+  }
+}
 
 .form {
   padding: 4rem 0;
@@ -232,7 +244,7 @@ a {
   background-position: center;
 }
 .switch__header {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .switch__text-container {
   text-align: center;

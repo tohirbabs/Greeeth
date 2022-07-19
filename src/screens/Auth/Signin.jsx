@@ -14,7 +14,7 @@ const Signin = () => {
         id="login"
       >
         <div className="lg:flex font-sec m-auto ">
-          <div className=" xl:max-w-screen-lg bg-bluegrey-200">
+          <div className=" xl:max-w-screen-lg w-screen bg-bluegrey-200">
             <div className="flex text-left content-center items-center justify-center h-full">
               <div className="w-full px-4">
                 <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
@@ -111,23 +111,23 @@ const Signin = () => {
       <div
         className={
           showsignin
-            ? "switch bg-lgreen min-w-430px"
-            : "switch bg-lgreen min-w-430px"
+            ? "switch bg-lgreen w-screen lg:w-430px pt-2"
+            : "switch bg-lgreen w-screen  lg:w-430px pt-2"
         }
       >
         <div className="switch__text-container w-3/4" id="switch-text">
-          <h1 className="text-2xl  sm:(text-3xl !leading-tight)  capitalize ">
+          <h1 className="text-xl  sm:(text-3xl !leading-tight)  capitalize ">
             {showsignin ? "Not yet a member?" : "Already a member?"}
           </h1>
-          <p className="mt-6 sm:leading-relaxed sm:text-base">
+          <p className="lg:mt-6 mt-2 leading-snug sm:leading-relaxed sm:text-base">
             {showsignin
               ? "Sign up and discover what we can do for you to save the planet"
               : "Sign in and save the planet"}
           </p>
         </div>
-        <div className="gap-4 mt-10 mx-auto text-center">
+        <div className=" mt-4 mx-auto text-center">
           <button
-            className="block px-15 py-3 text-base font-normal bg-white rounded-xl shadow-md text-lgreen sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+            className="block lg:px-15 lg:py-3 px-8 py-2 text-base font-normal bg-white rounded-xl shadow-md text-lgreen sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
             onClick={() => {
               setShowsignin(!showsignin);
             }}

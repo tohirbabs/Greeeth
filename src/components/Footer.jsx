@@ -18,7 +18,7 @@ function Footer() {
               </div>
             </div>
             <div className="col-span-8 md:col-span-6 lg:col-span-5">
-              <div className="md:pl-16 pb-16 grid grid-cols-2 gap-6 sm:grid-cols-3 text-white text-left">
+              <div className="md:pl-16 lg:pb-16 pb-4 grid grid-cols-2 gap-6 sm:grid-cols-3 text-white text-left">
                 <div>
                   <h6 className="text-lg font-bold uppercase ">What we do</h6>
                   <ul className="list-inside text-base mt-5 lg:mt-10 space-y-4 ">
