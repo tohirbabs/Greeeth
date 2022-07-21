@@ -16,12 +16,11 @@ import {
   government,
 } from "../../assets/GetInvolved";
 
-import Carousel from "./Carousel";
-
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import Carouseler from "./Carousel";
 
 const user = {
   name: "Tom Cook",
@@ -278,7 +277,7 @@ function SponsorsSection() {
                 <div className="flex flex-wrap gap-4 mt-10 text-center">
                   <a
                     className="block sm:w-1/2 w-full  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                    href="/about"
+                    href="get-involved/sponsors/individuals/gift-tree"
                   >
                     Read More . . .
                   </a>
@@ -295,6 +294,10 @@ function SponsorsSection() {
             </div>
           </div>
         </div>
+        <h2 className="text-2xl lgreen font-bold md:text-4xl">
+          Special Ocassions
+        </h2>
+        <Carouseler />
       </div>
     );
   };

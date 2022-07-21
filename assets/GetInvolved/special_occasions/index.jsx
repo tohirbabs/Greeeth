@@ -1,0 +1,10 @@
+export { default as annivesaries } from "./annivesaries.png";
+export { default as birthdays } from "./birthdays.png";
+export { default as christmas } from "./christmas.png";
+export { default as easter } from "./easter.png";
+export { default as engagements } from "./engagements.png";
+export { default as graduations } from "./graduations.png";
+export { default as mothersday } from "./mothersday.png";
+export { default as retirement } from "./retirement.png";
+export { default as valentine } from "./valentine.png";
+export { default as weddings } from "./weddings.png";

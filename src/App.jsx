@@ -27,6 +27,7 @@ import Companies4 from "./screens/GetInvolved/Sponsors/Companies4";
 import Companies5 from "./screens/GetInvolved/Sponsors/Companies5";
 
 import Companies6 from "./screens/GetInvolved/Sponsors/Companies6";
+import Individuals1 from "./screens/GetInvolved/Sponsors/Individuals1";
 
 export const PageContext = createContext({});
 
@@ -68,6 +69,10 @@ function App() {
               <Route
                 path="/get-involved/sponsors/companies/Use-Tree-in-Corporate-Social-Responsibility-(CSR)"
                 element={<Companies6 />}
+              />
+              <Route
+                path="/get-involved/sponsors/individuals/gift-tree"
+                element={<Individuals1 />}
               />
 
               <Route path="/get-involved/volunteers" element={<Volunteers />} />
