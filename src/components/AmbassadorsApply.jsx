@@ -49,7 +49,7 @@ function AmbassadorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -65,7 +65,7 @@ function AmbassadorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g JohnDoe@xyz.com"
                 required
               />
             </div>
@@ -80,7 +80,7 @@ function AmbassadorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="Select your gender"
                 required
               />
             </div>
@@ -95,7 +95,7 @@ function AmbassadorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder=""
                 required
               />
             </div>
@@ -112,7 +112,7 @@ function AmbassadorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -127,7 +127,7 @@ function AmbassadorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -143,7 +143,7 @@ function AmbassadorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g +123840637788"
                 required
               />
             </div>
@@ -158,7 +158,7 @@ function AmbassadorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder=""
                 required
               />
             </div>
@@ -174,7 +174,7 @@ function AmbassadorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -189,7 +189,7 @@ function AmbassadorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -204,7 +204,7 @@ function AmbassadorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -219,7 +219,7 @@ function AmbassadorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -235,7 +235,7 @@ function AmbassadorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-60 p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="Why do you want to become a Greeeth Ambassador? "
                 required
               />
             </div>
@@ -250,7 +250,7 @@ function AmbassadorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-30 p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="Enter the name of your favorite Tree"
                 required
               />
             </div>

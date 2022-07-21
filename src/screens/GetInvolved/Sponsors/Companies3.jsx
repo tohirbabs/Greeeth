@@ -4,15 +4,15 @@ import offset from "../../../../assets/GetInvolved/distribute.png";
 const Companies3 = () => {
   return (
     <section className=" grad-lgreen  items-center justify-center  flex flex-col">
-      <div className="container h-viewheight  lg:mx-6 my-3 flex flex-col flex-wrap items-center justify-around lg:max-w-screen-xl px-2 py-2 lg:ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
+      <div className="container h-50vh  lg:mx-6 my-3 flex flex-col flex-wrap items-center justify-around lg:max-w-screen-xl px-2 py-2 lg:ml-12  lg:w-6/10  lg:items-center lg:flex text-zinc-800">
         <img
           src={offset}
           alt="Tree illustration"
           className="mx-auto lg:max-w-10/11"
         />
       </div>
-      <div className="lg:max-w-screen-lg mb-40 leading-loose lgreen text-left text-lg">
-        <h1 className="text-6xl  sm:(text-7xl !leading-tight) font-medium capitalize text-center lgreen">
+      <div className="lg:max-w-screen-lg mb-40 mt-10 mx-4 leading-loose lgreen text-left text-lg">
+        <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize text-center lgreen">
           Use as Employee engagement
         </h1>
         <p className="mt-4">

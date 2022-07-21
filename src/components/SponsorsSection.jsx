@@ -119,9 +119,9 @@ function SponsorsSection() {
       <div className="BG-lgreen ">
         <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
           {Index % 2 === 0 ? (
-            <div className="container flex items-center max-w-screen-xl m-auto py-20 px-15 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
+            <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 md:px-15 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
               <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
-                <div className="text-left md:6/12 lg:w-6/12 ml-12">
+                <div className="text-left md:6/12 lg:w-6/12 md:ml-12 mx-3">
                   <h2 className="text-2xl lgreen font-bold md:text-4xl">
                     {TextList.title}
                   </h2>
@@ -130,14 +130,14 @@ function SponsorsSection() {
                   </div>
                   <div className="flex flex-wrap gap-4 mt-10 text-center">
                     <a
-                      className="block w-3/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                      className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                       href={`get-involved/sponsors/companies/${TextList.link}`}
                     >
                       Read More . . .
                     </a>
                   </div>
                 </div>
-                <div className="md:6/12 lg:w-6/12">
+                <div className="md:6/12 lg:w-6/12 w-8/10 mx-auto">
                   <img
                     src={Pix}
                     alt="Location pins illustration"
@@ -148,9 +148,9 @@ function SponsorsSection() {
               </div>
             </div>
           ) : (
-            <div className="container flex items-center max-w-screen-xl m-auto py-20 text-gray-600 md:px-12 xl:px-22  bg-white w-screen">
+            <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-white w-screen">
               <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                <div className="md:5/12 lg:w-6/12">
+                <div className="md:5/12 lg:w-6/12 w-9/10 mx-auto">
                   <img
                     src={Pix}
                     alt="Location pins illustration"
@@ -158,7 +158,7 @@ function SponsorsSection() {
                     className="mx-auto"
                   />
                 </div>
-                <div className="text-left md:6/12 lg:w-6/12 ml-12">
+                <div className="text-left md:6/12 lg:w-6/12 md:ml-12 mx-3">
                   <h2 className="text-2xl lgreen font-bold md:text-4xl">
                     {TextList.title}
                   </h2>
@@ -167,7 +167,7 @@ function SponsorsSection() {
                   </div>
                   <div className="flex flex-wrap gap-4 mt-10 text-center">
                     <a
-                      className="block w-3/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                      className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                       href={`get-involved/sponsors/companies/${TextList.link}`}
                     >
                       Read More . . .
@@ -208,7 +208,7 @@ function SponsorsSection() {
     return (
       <div className="BG-lgreen ">
         <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
-          <div className="container flex items-center max-w-screen-xl m-auto py-20 px-15 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
+          <div className="container flex items-center max-w-screen-xl m-auto sm:py-20 sm:px-15 pb-10 px-5 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
             <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
               <div className="md:6/12 lg:w-6/12">
                 <img
@@ -218,7 +218,7 @@ function SponsorsSection() {
                   className="mx-auto"
                 />
               </div>
-              <div className="text-left md:6/12 lg:w-6/12 ml-12">
+              <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
                 <h2 className="text-2xl lgreen font-bold md:text-4xl">
                   Offset your CO2 emission
                 </h2>
@@ -237,9 +237,9 @@ function SponsorsSection() {
               </div>
             </div>
           </div>
-          <div className="container flex items-center max-w-screen-xl m-auto py-20 text-gray-600 md:px-12 xl:px-22  bg-white w-screen">
+          <div className="container flex items-center max-w-screen-xl m-auto sm:py-20 py-10px-5 text-gray-600 md:px-12 xl:px-22  bg-white w-screen">
             <div className="space-y-6 md:space-y-0 md:flex flex-col md:gap-6 lg:items-center lg:gap-12">
-              <div className="text-center  ml-12">
+              <div className="text-center  sm:ml-12">
                 <h2 className="text-2xl lgreen font-bold md:text-4xl">
                   Calculate your carbon emission
                 </h2>
@@ -264,9 +264,9 @@ function SponsorsSection() {
               </div>
             </div>
           </div>
-          <div className="container  BG-lgreen flex items-center max-w-screen-xl m-auto py-20 text-gray-600 md:px-12 xl:px-22  w-screen">
+          <div className="container  BG-lgreen flex items-center max-w-screen-xl m-auto py-10 sm:py-20 px-5 text-gray-600 md:px-12 xl:px-22  w-screen">
             <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-              <div className="text-left md:6/12 lg:w-6/12 ml-12">
+              <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
                 <h2 className="text-2xl lgreen font-bold md:text-4xl">
                   Gift tree
                 </h2>
@@ -277,7 +277,7 @@ function SponsorsSection() {
                 </div>
                 <div className="flex flex-wrap gap-4 mt-10 text-center">
                   <a
-                    className="block w-1/2 px-30 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                    className="block sm:w-1/2 w-full  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                     href="/about"
                   >
                     Read More . . .
@@ -302,10 +302,10 @@ function SponsorsSection() {
   const Ngos = () => {
     return (
       <div className="BG-lgreen ">
-        <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
-          <div className="container flex items-center max-w-screen-xl m-auto py-20 px-15 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
+        <div className=" sm:py-10 flex  flex-col  flex-wrapitems-center justify-center BG1">
+          <div className="container flex items-center max-w-screen-xl m-auto sm:py-20 py-10 px-5 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
             <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
-              <div className="text-left md:6/12 lg:w-6/12 ml-12">
+              <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
                 <h2 className="text-2xl lgreen font-bold md:text-4xl">
                   Non Governmental Organizations
                 </h2>
@@ -316,7 +316,7 @@ function SponsorsSection() {
                 </div>
                 <div className="flex flex-wrap gap-4 mt-10 text-center">
                   <a
-                    className="block w-1/2 px-30 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                    className="block sm:w-1/2 w-full py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                     href="/about"
                   >
                     Read More . . .
@@ -341,10 +341,10 @@ function SponsorsSection() {
   const Gos = () => {
     return (
       <div className="BG-lgreen ">
-        <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
-          <div className="container flex items-center max-w-screen-xl m-auto py-20 px-15 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
+        <div className=" sm:py-10 flex  flex-col  flex-wrapitems-center justify-center BG1">
+          <div className="container flex items-center max-w-screen-xl m-auto sm:py-20 py-10 px-5 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
             <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
-              <div className="text-left md:6/12 lg:w-6/12 ml-12">
+              <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
                 <h2 className="text-2xl lgreen font-bold md:text-4xl">
                   Governmental Organizations
                 </h2>
@@ -355,7 +355,7 @@ function SponsorsSection() {
                 </div>
                 <div className="flex flex-wrap gap-4 mt-10 text-center">
                   <a
-                    className="block w-1/2 px-30 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                    className="block w-full sm:w-1/2 sm:px-30 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                     href="/about"
                   >
                     Read More . . .
@@ -409,10 +409,10 @@ function SponsorsSection() {
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center justify-center h-16">
+              <div className="flex items-center justify-center  lg:h-16">
                 <div className="flex items-center">
-                  <div className="hidden md:block">
-                    <div className="ml-10 flex items-baseline space-x-20">
+                  <div className="block">
+                    <div className="sm:ml-10 flex w-menu flex-col md:flex-row items-baseline space-x-20">
                       <div
                         onClick={() => {
                           setshowIndividuals(false);
@@ -451,7 +451,7 @@ function SponsorsSection() {
                           showIndividuals
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
-                          "px-3 py-3 flex items-center cursor-pointer"
+                          "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
                         )}
                         aria-current={showIndividuals ? "page" : undefined}
                       >
@@ -472,7 +472,7 @@ function SponsorsSection() {
                           showNgos
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
-                          "px-3 py-3 flex items-center cursor-pointer"
+                          "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
                         )}
                         onClick={() => {
                           setshowIndividuals(false);
@@ -497,7 +497,7 @@ function SponsorsSection() {
                           showGo
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
-                          "px-3 py-3 flex items-center cursor-pointer"
+                          "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
                         )}
                         onClick={() => {
                           setshowIndividuals(false);
@@ -521,17 +521,6 @@ function SponsorsSection() {
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="-mr-2 flex md:hidden">
-                  {/* Mobile menu button */}
-                  <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XIcon className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                    )}
-                  </Disclosure.Button>
                 </div>
               </div>
             </div>

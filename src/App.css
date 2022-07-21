@@ -160,6 +160,9 @@ a {
     overflow: hidden;
     color: white;
   }
+  .w-menu {
+    width: 90vw !important;
+  }
 }
 
 .form {

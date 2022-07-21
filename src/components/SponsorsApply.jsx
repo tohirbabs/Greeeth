@@ -60,7 +60,6 @@ function SponsorsApply() {
   const {} = useContext(PageContext);
   const [showNgos, setshowNgos] = useState(false);
   const [showGo, setshowGo] = useState(false);
-  const [showIndividuals, setshowIndividuals] = useState(false);
   const [showCompanies, setshowCompanies] = useState(true);
   function CompaniesList({ Pix, TextList, Index }) {
     return (
@@ -149,7 +148,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="Enter the name of your company"
                 required
               />
             </div>
@@ -164,7 +163,7 @@ function SponsorsApply() {
                 type="password"
                 id="password"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="•••••••••"
+                placeholder="Select the no of employee(s)"
                 required
               />
             </div>
@@ -180,7 +179,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="Select the type of Industry"
                 required
               />
             </div>
@@ -195,7 +194,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g JohnDoe@xyz.com"
                 required
               />
             </div>
@@ -210,7 +209,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="Enter your company address"
                 required
               />
             </div>
@@ -226,7 +225,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -241,7 +240,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -257,7 +256,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder=""
                 required
               />
             </div>
@@ -272,7 +271,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g +123840637788"
                 required
               />
             </div>
@@ -288,7 +287,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder="e.g www.greeethxyz.com"
                   required
                 />
               </div>
@@ -303,7 +302,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -318,7 +317,7 @@ function SponsorsApply() {
                   type="text"
                   id="company"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Flowbite"
+                  placeholder=""
                   required
                 />
               </div>
@@ -333,9 +332,7 @@ function SponsorsApply() {
                   type="tel"
                   id="phone"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="123-45-678"
-                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                  required
+                  placeholder=""
                 />
               </div>
               <div>
@@ -349,8 +346,7 @@ function SponsorsApply() {
                   type="url"
                   id="website"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="flowbite.com"
-                  required
+                  placeholder=""
                 />
               </div>
               <div>
@@ -384,7 +380,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -399,7 +395,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -415,7 +411,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g JohnDoe@xyz.com"
                 required
               />
             </div>
@@ -430,7 +426,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder=""
                 required
               />
             </div>
@@ -447,7 +443,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -462,7 +458,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -478,7 +474,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g JohnDoe@xyz.com"
                 required
               />
             </div>
@@ -493,7 +489,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder=""
                 required
               />
             </div>
@@ -509,7 +505,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -524,7 +520,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -539,7 +535,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -554,7 +550,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -615,7 +611,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="Enter the name of your organization"
                 required
               />
             </div>
@@ -630,7 +626,7 @@ function SponsorsApply() {
                 type="password"
                 id="password"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="•••••••••"
+                placeholder="e.g JohnDoe@xyz.com"
                 required
               />
             </div>
@@ -647,7 +643,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -662,7 +658,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -679,7 +675,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g +123840637788"
                 required
               />
             </div>
@@ -695,7 +691,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder="e.g www.greeethxyz.com"
                   required
                 />
               </div>
@@ -710,7 +706,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -725,7 +721,7 @@ function SponsorsApply() {
                   type="text"
                   id="company"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Flowbite"
+                  placeholder=""
                   required
                 />
               </div>
@@ -740,8 +736,7 @@ function SponsorsApply() {
                   type="tel"
                   id="phone"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="123-45-678"
-                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                  placeholder=""
                   required
                 />
               </div>
@@ -756,7 +751,7 @@ function SponsorsApply() {
                   type="url"
                   id="website"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="flowbite.com"
+                  placeholder=""
                   required
                 />
               </div>
@@ -791,7 +786,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -806,7 +801,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -837,7 +832,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder=""
                 required
               />
             </div>
@@ -854,7 +849,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -869,7 +864,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -885,7 +880,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g +123840637788"
                 required
               />
             </div>
@@ -900,7 +895,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder=""
                 required
               />
             </div>
@@ -916,7 +911,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -931,7 +926,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -946,7 +941,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -961,7 +956,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1002,7 +997,6 @@ function SponsorsApply() {
       </div>
     );
   };
-
   const Gos = () => {
     return (
       <div className="BG-lgreen ">
@@ -1022,7 +1016,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="Enter the name of your organization"
                 required
               />
             </div>
@@ -1037,7 +1031,7 @@ function SponsorsApply() {
                 type="password"
                 id="password"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="•••••••••"
+                placeholder="e.g JohnDoe@xyz.com"
                 required
               />
             </div>
@@ -1054,7 +1048,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1069,7 +1063,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1086,7 +1080,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g +123840637788"
                 required
               />
             </div>
@@ -1102,7 +1096,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder="e.g www.greeethxyz.com"
                   required
                 />
               </div>
@@ -1117,7 +1111,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1132,7 +1126,7 @@ function SponsorsApply() {
                   type="text"
                   id="company"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Flowbite"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1147,8 +1141,7 @@ function SponsorsApply() {
                   type="tel"
                   id="phone"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="123-45-678"
-                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1163,7 +1156,7 @@ function SponsorsApply() {
                   type="url"
                   id="website"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="flowbite.com"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1198,7 +1191,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1213,7 +1206,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1244,7 +1237,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder=""
                 required
               />
             </div>
@@ -1261,7 +1254,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1276,7 +1269,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1292,7 +1285,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder="e.g +123840637788"
                 required
               />
             </div>
@@ -1307,7 +1300,7 @@ function SponsorsApply() {
                 type="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="john.doe@company.com"
+                placeholder=""
                 required
               />
             </div>
@@ -1323,7 +1316,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1338,7 +1331,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1353,7 +1346,7 @@ function SponsorsApply() {
                   type="text"
                   id="first_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="John"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1368,7 +1361,7 @@ function SponsorsApply() {
                   type="text"
                   id="last_name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Doe"
+                  placeholder=""
                   required
                 />
               </div>
@@ -1431,13 +1424,12 @@ function SponsorsApply() {
           {({ open }) => (
             <>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-center h-16">
+                <div className="flex items-center justify-center  lg:h-16">
                   <div className="flex items-center">
-                    <div className="hidden md:block">
-                      <div className="ml-10 flex items-baseline space-x-20">
+                    <div className="block">
+                      <div className="sm:ml-10 flex w-menu flex-col md:flex-row items-baseline space-x-20">
                         <div
                           onClick={() => {
-                            setshowIndividuals(false);
                             setshowCompanies(true);
                             setshowNgos(false);
                             setshowGo(false);
@@ -1462,42 +1454,15 @@ function SponsorsApply() {
                             Companies
                           </span>
                         </div>
-                        <div
-                          onClick={() => {
-                            setshowIndividuals(true);
-                            setshowCompanies(false);
-                            setshowNgos(false);
-                            setshowGo(false);
-                          }}
-                          className={classNames(
-                            showIndividuals
-                              ? " lgreen border-bt"
-                              : "darkgrey hover:lgreen ",
-                            "px-3 py-3 flex items-center cursor-pointer"
-                          )}
-                          aria-current={showIndividuals ? "page" : undefined}
-                        >
-                          <span
-                            className={classNames(
-                              showIndividuals ? " lgreen" : "  text-gray-400",
-                              "inline-flex items-center justify-center h-10 w-12"
-                            )}
-                          >
-                            <i className={`bx bxs-user bx-sm`}></i>
-                          </span>
-                          <span className=" text-base font-medium">
-                            Individuals
-                          </span>
-                        </div>
+
                         <div
                           className={classNames(
                             showNgos
                               ? " lgreen border-bt"
                               : "darkgrey hover:lgreen ",
-                            "px-3 py-3 flex items-center cursor-pointer"
+                            "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
                           )}
                           onClick={() => {
-                            setshowIndividuals(false);
                             setshowCompanies(false);
                             setshowNgos(true);
                             setshowGo(false);
@@ -1519,10 +1484,9 @@ function SponsorsApply() {
                             showGo
                               ? " lgreen border-bt"
                               : "darkgrey hover:lgreen ",
-                            "px-3 py-3 flex items-center cursor-pointer"
+                            "px-3 py-3 !ml-0 sm:!ml-75px  flex items-center cursor-pointer"
                           )}
                           onClick={() => {
-                            setshowIndividuals(false);
                             setshowCompanies(false);
                             setshowNgos(false);
                             setshowGo(true);
@@ -1544,8 +1508,8 @@ function SponsorsApply() {
                       </div>
                     </div>
                   </div>
-                  <div className="-mr-2 flex md:hidden">
-                    {/* Mobile menu button */}
+                  {/* <div className="-mr-2 flex md:hidden">
+                    Mobile menu button
                     <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -1557,7 +1521,7 @@ function SponsorsApply() {
                         />
                       )}
                     </Disclosure.Button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               {/* 
@@ -1589,8 +1553,6 @@ function SponsorsApply() {
         <main>
           {showCompanies ? (
             <Companies />
-          ) : showIndividuals ? (
-            <Individuals />
           ) : showNgos ? (
             <Ngos />
           ) : showGo ? (
