@@ -19,13 +19,20 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from rest_framework_swagger.views import get_swagger_view
-
+from rest_framework.routers import SimpleRouter
+from projects.views import *
 schema_view = get_swagger_view(title='Greeeth API')
+
+
+router = SimpleRouter()
+router.register('projectdetails',viewset=ProjectDetails,basename="project_details")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('authentication.urls')),
     path('trees/',include('trees.urls')),
     path('maintainance/',include('maintainance.urls')),
+    path('projects/',include('projects.urls')),
     path('docs/', schema_view),
+    path('',include(router.urls))
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
