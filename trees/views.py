@@ -10,4 +10,4 @@ class TreePlantation(ListCreateAPIView):
         return self.request.user.trees_planted.all()
 
     def perform_create(self, serializer):
-        serializer.save(planter=self.request.user)
+        return serializer.save(planter=self.request.user)

@@ -34,5 +34,6 @@ urlpatterns = [
     path('maintainance/',include('maintainance.urls')),
     path('projects/',include('projects.urls')),
     path('docs/', schema_view),
-    path('',include(router.urls))
+    path('',include(router.urls)),
+    path('awards/',include('awarding.urls'))
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

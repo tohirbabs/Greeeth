@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'trees',
     'maintainance',
     'projects',
+    'awarding',
 
 ]
 
