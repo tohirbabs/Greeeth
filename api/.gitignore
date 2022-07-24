@@ -1,0 +1,6 @@
+venv
+.env
+media/*
+
+gmail-auth.json
+token.pickle
