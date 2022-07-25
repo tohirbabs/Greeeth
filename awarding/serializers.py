@@ -6,3 +6,11 @@ class AwardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Award
         fields = '__all__'
+
+
+class AwardEditSerializer(serializers.ModelSerializer):
+    name = serializers.StringRelatedField(read_only=True)
+
+    class Meta:
+        model = Award
+        fields = ['name','points']

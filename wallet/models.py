@@ -32,7 +32,7 @@ class Wallet(models.Model):
         self.save()
 
 class Credit(models.Model):
-    wallet = models.ForeignKey(Wallet,related_name="debits",on_delete=models.CASCADE)
+    wallet = models.ForeignKey(Wallet,related_name="credits",on_delete=models.CASCADE)
     point = models.DecimalField(max_digits=100,decimal_places=2)
     credited_on = models.DateTimeField(auto_now_add=True)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE,related_name='credits')
@@ -49,6 +49,7 @@ class Debit(models.Model):
     content_object = GenericForeignKey('content_type', 'object_id')
 
 
-@receiver(post_save,sender=[Credit,Debit])
+@receiver(post_save,sender=Credit)
+@receiver(post_save,sender=Debit)
 def updateWalletBalance(self, instance, **kwargs):
     instance.wallet.updateWallet()
