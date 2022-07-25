@@ -24,7 +24,7 @@ function NavBar() {
             className="flex items-center px-2 inline-block mr-4 whitespace-nowrap  text-zinc-800"
             href="/"
           >
-            <GreenLogo />
+            <GreenLogo color="#028000" />
           </a>
           <button
             className="cursor-pointer px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"

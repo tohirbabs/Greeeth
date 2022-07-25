@@ -20,7 +20,8 @@ import {
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import Carouseler from "./Carousel";
+// import Carouseler from "./Carousel";
+import Carousel from "./Carousel";
 
 const user = {
   name: "Tom Cook",
@@ -294,10 +295,8 @@ function SponsorsSection() {
             </div>
           </div>
         </div>
-        <h2 className="text-2xl lgreen font-bold md:text-4xl">
-          Special Ocassions
-        </h2>
-        <Carouseler />
+
+        <Carousel />
       </div>
     );
   };

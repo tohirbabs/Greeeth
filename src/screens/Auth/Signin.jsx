@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { google, facebook, linkedin } from "../../../assets";
+import { google, facebook, linkedin, GreenLogo } from "../../../assets";
 
 const Signin = () => {
   const [showsignin, setShowsignin] = useState(true);
@@ -118,6 +118,7 @@ const Signin = () => {
           }
         >
           <div className="switch__text-container w-3/4" id="switch-text">
+            <GreenLogo color="white" />
             <h1 className="text-xl  sm:(text-3xl !leading-tight)  capitalize ">
               {showsignin ? "Not yet a member?" : "Already a member?"}
             </h1>
