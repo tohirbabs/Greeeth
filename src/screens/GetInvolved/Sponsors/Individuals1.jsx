@@ -1,6 +1,8 @@
+import Carosel from "carousel-react-rcdev";
 import React from "react";
 import offset from "../../../../assets/GetInvolved/gift.png";
-import Carouseler from "../../../components/Carousel";
+import Carousel from "../../../components/Carousel";
+// import Carouseler from "../../../components/Carousel";
 
 const Individuals1 = () => {
   return (
@@ -52,10 +54,7 @@ const Individuals1 = () => {
           in group initiatives—by giving trees.
         </p>
       </div>
-      <h2 className="text-2xl lgreen font-bold md:text-4xl">
-        Special Ocassions
-      </h2>
-      <Carouseler />
+      <Carousel />
     </section>
   );
 };
