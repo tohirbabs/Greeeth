@@ -117,8 +117,16 @@ const Signin = () => {
               : "switch bg-lgreen w-screen  lg:w-430px pt-2"
           }
         >
-          <div className="switch__text-container w-3/4" id="switch-text">
-            <GreenLogo color="white" />
+          <div
+            className="switch__text-container w-3/4 flex flex-col items-center"
+            id="switch-text"
+          >
+            <a
+              className="flex items-center px-2 inline-block whitespace-nowrap sm:mb-20 my-2  text-zinc-800"
+              href="/"
+            >
+              <GreenLogo color="white" />
+            </a>
             <h1 className="text-xl  sm:(text-3xl !leading-tight)  capitalize ">
               {showsignin ? "Not yet a member?" : "Already a member?"}
             </h1>
