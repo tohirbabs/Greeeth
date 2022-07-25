@@ -3,5 +3,6 @@ from .views import *
 from django.urls import path,include
 
 urlpatterns = [
-    path('<int:pk>',AwardEdit.as_view())
+    path('',AwardCreate.as_view()),
+    path('<int:code>',AwardEdit.as_view())
 ]
