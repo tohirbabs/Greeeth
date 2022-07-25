@@ -19,21 +19,22 @@ const componentsArray = [
     // background: BG1,
     Illustration: pic1,
     TextList: {
-      title: "Take part in offsetting projects",
+      title: "Earn digital badge & certificate.",
     },
   },
   {
     // background: BG2,
     Illustration: pic2,
     TextList: {
-      title: "Integrate tree planting on your website checkout",
+      title: "Have trees planted by the company on your behalf ",
     },
   },
   {
     // background: BG3,
     Illustration: pic3,
     TextList: {
-      title: "Donate a percentage of sales to plant a tree",
+      title:
+        "Earn our coin which can be used to purchase on our marketplace/shop",
     },
   },
 ];
