@@ -16,6 +16,7 @@ import {
   Pix6,
   Pix7,
   Pix8,
+  comp,
 } from "../../assets/Process";
 
 const componentsArray = [
@@ -24,6 +25,7 @@ const componentsArray = [
     Illustration: Pix1,
     TextList: {
       title: "Detect planting location",
+      subtitle: "",
       items: [
         "Get data of vulnurable location",
         "We check for plantable area",
@@ -39,6 +41,7 @@ const componentsArray = [
     Illustration: Pix2,
     TextList: {
       title: "Send planting location to user",
+      subtitle: "",
       items: [
         "We send planting location to users closer to the location mapped out for planting ",
         "Users can also take part in planting project ",
@@ -51,6 +54,7 @@ const componentsArray = [
     Illustration: Pix3,
     TextList: {
       title: "Autogenerative Planting Pattern",
+      subtitle: "",
       items: [
         "Planters get recommended tree type and planting pattern that will benefit the environment and fight climate change.",
         "Planting pattern can be customised by sponsor (e.g  Organization name).",
@@ -62,6 +66,7 @@ const componentsArray = [
     Illustration: Pix4,
     TextList: {
       title: "Planting type (A) ",
+      subtitle: "Planting By Human",
       items: [
         "Planters plant the tree and geotag it on the platform and get on-field data",
         "GPS coordinates",
@@ -76,6 +81,7 @@ const componentsArray = [
     Illustration: Pix5,
     TextList: {
       title: "Planting type (B)",
+      subtitle: "Autonomous Seed Firing Drone",
       items: [
         "We use an unmanned autonomous drone to plant seeds by firing when planting in a large area or location that is not easily accessible by human.",
         "We can plant up to 100,000 seed pod daily, which is faster and easier than planting by a human. ",
@@ -90,6 +96,7 @@ const componentsArray = [
     Illustration: Pix6,
     TextList: {
       title: "Confirmation",
+      subtitle: "",
       items: [
         "Our platform automatically confirm the tree planted by cross-checking the coordinate and validates the task.",
         "IPlanters closer to the location can also verify the task of the tree planted for further verification",
@@ -100,12 +107,10 @@ const componentsArray = [
     background: BG5,
     Illustration: Pix7,
     TextList: {
-      title: "Blockchain",
+      title: "Cloud Database",
       items: [
-        "Trees planted get connected to the blockchain and are visible in the virtual world (3D Simulated environment).",
+        "Trees planted get connected to our database and are visible on the interactive map",
         "This will improve the forest database and would help improve sustainability, transparency, connectivity, and accessibility to the public and government.",
-        "Having the data on blockchain will save time and money",
-        "Blockchain usage will help maintain transparency in data, timestamp, and tamper-proof. Thus ensuring data protection concerning privacy",
       ],
     },
   },
@@ -113,9 +118,10 @@ const componentsArray = [
     background: BG6,
     Illustration: Pix8,
     TextList: {
-      title: "Planters get paid",
+      title: "Planters get rewarded",
+      subtitle: "",
       items: [
-        " Planters get paid for the planting task carried out when confirmed. Money can be withdrawn in fiat currency or cryptocurrency.",
+        " Planters get rewarded in ponit(s) for the planting task carried out when confirmed. Money can be withdrawn in fiat currency or cryptocurrency.",
         " Planters will also be rewarded for other tasks carried out.",
       ],
     },
@@ -128,49 +134,59 @@ function ProcessSection() {
       <div className="BG-lgreen">
         <div
           className="py-20 flex flex-wrapitems-center justify-center BG1"
-          style={{ backgroundImage: `url(${BG})` }}
+          // style={{ backgroundImage: `url(${BG})` }}
         >
-          <div className="container flex  flex-col items-center max-w-screen-xl m-auto px-15 text-gray-600 md:px-12 xl:px-22">
+          <div className="container flex  flex-col items-center  m-auto sm:px-15 px-4 text-gray-600 md:px-12 xl:px-22">
             {Index % 2 === 0 ? (
-              <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                <div className="md:5/12 lg:w-6/12">
-                  <img
-                    src={Pix}
-                    alt="Location pins illustration"
-                    loading="lazy"
-                    className="mx-auto"
-                  />
-                </div>
-                <div className="text-left md:6/12 lg:w-6/12 ml-12">
-                  <h2 className="text-2xl lgreen font-bold md:text-4xl">
-                    {TextList.title}
-                  </h2>
-                  <ul className="mt-6 text-gray-600 list-disc leading-loose">
-                    {TextList.items.map((item) => (
-                      <li key={item.i}>{item}</li>
-                    ))}
-                  </ul>
+              <div className="">
+                <div className="space-y-6 p-4 md:space-y-0 md:flex md:gap-4 lg:items-center lg:gap-6">
+                  <div className="md:5/12 lg:w-6/12">
+                    <img
+                      src={Pix}
+                      alt="Location pins illustration"
+                      loading="lazy"
+                      className="mx-auto"
+                    />
+                  </div>
+                  <div className="text-left md:6/12 lg:w-6/12 ml-12">
+                    <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                      {TextList.title}
+                    </h2>
+                    <h2 className="text-xl text-gray-600 font-bold md:text-3xl">
+                      {TextList.subtitle}
+                    </h2>
+                    <ul className="mt-6 text-gray-600 list-disc leading-loose">
+                      {TextList.items.map((item) => (
+                        <li key={item.i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             ) : (
-              <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                <div className="text-left md:6/12 lg:w-6/12 ml-12">
-                  <h2 className="text-2xl lgreen font-bold md:text-4xl">
-                    {TextList.title}
-                  </h2>
-                  <ul className="mt-6 text-gray-600 list-disc leading-loose">
-                    {TextList.items.map((item) => (
-                      <li key={item.i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="md:6/12 lg:w-6/12">
-                  <img
-                    src={Pix}
-                    alt="Location pins illustration"
-                    loading="lazy"
-                    className="mx-auto"
-                  />
+              <div className="bg-white w-100vw flex justify-center">
+                <div className="space-y-6  max-w-screen-xl sm:p-10 p-4 md:space-y-0 md:flex md:gap-4 lg:items-center lg:gap-6">
+                  <div className="text-left md:6/12 lg:w-6/12 ml-12">
+                    <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                      {TextList.title}
+                    </h2>
+                    <h2 className="text-xl text-gray-600 font-bold md:text-3xl">
+                      {TextList.subtitle}
+                    </h2>
+                    <ul className="mt-6 text-gray-600 list-disc leading-loose">
+                      {TextList.items.map((item) => (
+                        <li key={item.i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="md:6/12 lg:w-6/12">
+                    <img
+                      src={Pix}
+                      alt="Location pins illustration"
+                      loading="lazy"
+                      className="mx-auto"
+                    />
+                  </div>
                 </div>
               </div>
             )}
@@ -189,7 +205,14 @@ function ProcessSection() {
           Index={i}
         />
       ))}
-      <div className="max-w-screen-xl text-center py-30 px-20 m-auto">
+
+      <div className="max-w-screen-xl text-center py-30 sm:px-20 px-4 m-auto">
+        <img
+          src={comp}
+          alt="Location pins illustration"
+          loading="lazy"
+          className="mx-auto"
+        />
         <h2 className="text-2xl lgreen font-bold md:text-4xl">
           With this solution, we will create:
         </h2>

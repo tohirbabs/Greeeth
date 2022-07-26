@@ -1,0 +1,35 @@
+import React from "react";
+import TreeBG from "../../assets/GetInvolved/Pix1.png";
+
+function BenefitsHome() {
+  return (
+    <section className=" grad-lgreen flex-wrap items-center justify-center h-viewheight flex flex-col">
+      <div className="container overflow-hidden h-full  lg:mx-6 my-3 flex flex-col items-center sm:justify-between justify-arounf lg:max-w-screen-xl px-2 py-2 lg:ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
+        <div className="lg:max-w-6/11 text-center darkgreen">
+          <h1 className="text-4xl  sm:(text-5xl !leading-tight) font-medium capitalize lgreen">
+            Benefits of Trees
+          </h1>
+
+          <p className="mt-6 sm:leading-relaxed px-2 sm:text-xl">
+            Companies, Individuals, Non-Governmental Organization and
+            Governmental Organizations
+          </p>
+          <div className="gap-4 mt-10 mx-auto text-center w-1/2">
+            <a
+              className="block  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+              href="/get-involved/sponsors/apply"
+            >
+              Sponsor
+            </a>
+          </div>
+        </div>
+        <img
+          src={TreeBG}
+          alt="Tree illustration"
+          className="mx-auto lg:max-w-6/11"
+        />
+      </div>
+    </section>
+  );
+}
+export default BenefitsHome;

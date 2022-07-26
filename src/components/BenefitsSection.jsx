@@ -108,7 +108,7 @@ const componentsArray = [
   },
 ];
 
-function SponsorsSection() {
+function BenefitsSection() {
   const {} = useContext(PageContext);
   const [showNgos, setshowNgos] = useState(false);
   const [showGo, setshowGo] = useState(false);
@@ -407,7 +407,7 @@ function SponsorsSection() {
 
   return (
     <div className="min-h-full">
-      <Disclosure as="nav" className="shadow-md">
+      {/* <Disclosure as="nav" className="shadow-md">
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -526,47 +526,56 @@ function SponsorsSection() {
                 </div>
               </div>
             </div>
-            {/* 
-            <Disclosure.Panel className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "block px-3 py-2 rounded-md text-base font-medium"
-                    )}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
-              </div>
-            </Disclosure.Panel> */}
+           
           </>
         )}
-      </Disclosure>
+      </Disclosure> */}
 
       <header className="bg-white shadow"></header>
       <main>
-        {showCompanies ? (
-          <Companies />
-        ) : showIndividuals ? (
-          <Individuals />
-        ) : showNgos ? (
-          <Ngos />
-        ) : showGo ? (
-          <Gos />
-        ) : (
-          <Companies />
-        )}
+        <div className="flex flex-col px-4 mx-auto sm:flex-row lg:max-w-screen-lg mb-40 mt-10 gap-10 leading-loose lgreen text-left text-lg">
+          <div className="">
+            <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+              Trees Are Our Only Source of Oxygen
+            </h1>
+            <p className="mt-4 text-gray-600 text-base">
+              Creatures on the earth are alive because they inhale oxygen from
+              the air, which helps run their bodily mechanisms and exhale carbon
+              dioxide as a by-product of the function of the body. Nature's only
+              source of oxygen is the trees. Through a process called
+              photosynthesis, trees prepare food for their survival.
+            </p>
+            <p className="mt-4 text-gray-600 text-base">
+              This process requires carbon dioxide from the air as a material
+              and produces oxygen as a by-product. Trees emit this gas into the
+              air, increasing its proportion and thereby meeting the need of the
+              living creatures. An acre of land full of mature trees can produce
+              enough oxygen for 18 people in a year.
+            </p>
+          </div>
+          <div className="">
+            <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+              Trees Absorb Other Harmful Gases
+            </h1>
+            <p className="mt-4 text-gray-600 text-base">
+              Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
+              ammonia, and ozone from the air and purify them. They filter
+              particulates out of the air and trap them on their barks and
+              leaves.
+            </p>
+            <p className="mt-4 text-gray-600 text-base">
+              Trees and shrubs, like all plants, also help to protect us from
+              pollutants by acting as natural filters. Harmful heavy metals,
+              nitrogen, potassium, and phosphorus on our land surfaces can
+              contaminate our water, but the roots of shrubs intercept these
+              pollutants. This is why it is especially important to plant shrubs
+              on land that borders water - this is called the riparian zone.
+            </p>
+          </div>
+        </div>
       </main>
     </div>
   );
 }
 
-export default SponsorsSection;
+export default BenefitsSection;

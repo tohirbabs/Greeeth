@@ -28,6 +28,7 @@ import Companies5 from "./screens/GetInvolved/Sponsors/Companies5";
 
 import Companies6 from "./screens/GetInvolved/Sponsors/Companies6";
 import Individuals1 from "./screens/GetInvolved/Sponsors/Individuals1";
+import Benefits from "./screens/GetInvolved/Sponsors/Benefits";
 
 export const PageContext = createContext({});
 
@@ -91,6 +92,7 @@ function App() {
                 path="/get-involved/Ambassadors/apply"
                 element={<AmbassadorsApply />}
               />
+              <Route path="/get-involved/benefits" element={<Benefits />} />
             </Routes>
           </BrowserRouter>
         </Layout>
