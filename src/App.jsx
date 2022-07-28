@@ -29,6 +29,7 @@ import Companies5 from "./screens/GetInvolved/Sponsors/Companies5";
 import Companies6 from "./screens/GetInvolved/Sponsors/Companies6";
 import Individuals1 from "./screens/GetInvolved/Sponsors/Individuals1";
 import Benefits from "./screens/GetInvolved/Sponsors/Benefits";
+import { LandingPage } from "./components";
 
 export const PageContext = createContext({});
 
@@ -39,7 +40,7 @@ function App() {
         <Layout>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Sponsors />} />
+              <Route path="/" element={<LandingPage />} />
               <Route path="/process" element={<Process />} />
               <Route path="/auth/sign-in" element={<Signin />} />
               <Route path="/get-involved/sponsors" element={<Sponsors />} />
