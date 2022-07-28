@@ -115,7 +115,7 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-      <div className="container bg-milkgreen h-full pt-20   flex flex-col items-center justify-around lg:max-w-screen-xl px-2 py-2  lg:h-full  lg:items-center lg:flex text-zinc-800">
+      <div className="container bg-milkgreen h-full pt-20   flex flex-col items-center justify-around  px-2 py-2  lg:h-full  lg:items-center lg:flex text-zinc-800">
         <div className="lg:max-w-9/11 text-center darkgreen">
           <h1 className="text-3xl  sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
             Manage your carbon emission
