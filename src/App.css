@@ -60,6 +60,9 @@ a {
 .bg-lgreen {
   background-color: #008000;
 }
+.bg-milkgreen {
+  background-color: #f2fff2;
+}
 
 .hover-bg-lgreen:hover {
   background-color: #008000;
