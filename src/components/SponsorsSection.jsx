@@ -131,7 +131,7 @@ function SponsorsSection() {
                   <div className="flex flex-wrap gap-4 mt-10 text-center">
                     <a
                       className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                      href={`get-involved/sponsors/companies/${TextList.link}`}
+                      href={`sponsors/companies/${TextList.link}`}
                     >
                       Read More . . .
                     </a>
@@ -168,7 +168,7 @@ function SponsorsSection() {
                   <div className="flex flex-wrap gap-4 mt-10 text-center">
                     <a
                       className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                      href={`get-involved/sponsors/companies/${TextList.link}`}
+                      href={`sponsors/companies/${TextList.link}`}
                     >
                       Read More . . .
                     </a>
@@ -278,7 +278,7 @@ function SponsorsSection() {
                 <div className="flex flex-wrap gap-4 mt-10 text-center">
                   <a
                     className="block sm:w-1/2 w-full  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                    href="get-involved/sponsors/individuals/gift-tree"
+                    href="sponsors/individuals/gift-tree"
                   >
                     Read More . . .
                   </a>
