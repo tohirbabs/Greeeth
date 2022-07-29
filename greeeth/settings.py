@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'maintainance',
     'projects',
     'awarding',
-    'wallet'
+    'wallet',
+    'treeshare',
 
 ]
 
