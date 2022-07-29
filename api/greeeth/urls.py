@@ -33,6 +33,7 @@ urlpatterns = [
     path('trees/',include('trees.urls')),
     path('maintainance/',include('maintainance.urls')),
     path('projects/',include('projects.urls')),
+    path('treeshare/',include('treeshare.urls')),
     path('docs/', schema_view),
     path('',include(router.urls)),
     path('awards/',include('awarding.urls'))
