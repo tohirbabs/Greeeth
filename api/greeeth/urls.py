@@ -35,6 +35,7 @@ urlpatterns = [
     path('projects/',include('projects.urls')),
     path('treeshare/',include('treeshare.urls')),
     path('docs/', schema_view),
+    path('wallet/',include('wallet.urls')),
     path('',include(router.urls)),
     path('awards/',include('awarding.urls'))
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

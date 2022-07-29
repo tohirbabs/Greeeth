@@ -13,7 +13,7 @@ from django.contrib.contenttypes.models import ContentType
 
 class Wallet(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name="wallet")
-    balance = models.DecimalField(max_digits=100,decimal_places=2)
+    balance = models.DecimalField(max_digits=100,decimal_places=2,default=0)
 
     @property
     def total_debit(self):

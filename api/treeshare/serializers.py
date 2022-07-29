@@ -15,8 +15,9 @@ class TreeAcceptSerializer(serializers.ModelSerializer):
     share_code = serializers.StringRelatedField(read_only=True)
     recepient = serializers.StringRelatedField(read_only=True)
     received_on = serializers.DateTimeField(read_only=True)
+    status = serializers.StringRelatedField(read_only=True)
 
 
     class Meta:
         model = TreeShare
-        fields = ['tree','share_code','recepient','received_on'],
+        fields = ['tree','share_code','recepient','received_on','status'],
