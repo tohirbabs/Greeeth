@@ -6,6 +6,9 @@ import reduce from "../../assets/landing/reduce.png";
 import offemission from "../../assets/landing/offemission.png";
 import monitor from "../../assets/landing/monitor.png";
 import analyze from "../../assets/landing/analyze.png";
+import garden from "../../assets/landing/garden.png";
+import plant from "../../assets/landing/plant.png";
+import droneplant from "../../assets/landing/drone plant.png";
 
 const LandingPage = () => {
   const componentsArray = [
@@ -73,68 +76,142 @@ const LandingPage = () => {
   }
 
   return (
-    <div>
-      <section className=" grad-lgreen flex-wrap items-center justify-center  flex flex-col">
-        <div className="container h-full  lg:mx-6 my-3 flex flex-col items-center justify-around lg:max-w-screen-xl px-2 py-2 lg:ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
-          <div className="lg:max-w-9/11 text-center darkgreen">
-            <h1 className="text-3xl  sm:(text-7xl !leading-tight) font-medium capitalize text-zinc-800">
-              Offset your carbon blueprint with
-              <span className="lgreen"> GREEETH</span>
-            </h1>
+    <div className="bg-milkgreen flex justify-center">
+      <div className="container flex flex-col items-center">
+        <section className=" grad-lgreen flex-wrap items-center justify-center  flex flex-col">
+          <div className="h-full  lg:mx-6 my-3 flex flex-col items-center justify-around lg:max-w-screen-xl px-2 py-2 lg:ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
+            <div className="lg:max-w-9/11 text-center darkgreen">
+              <h1 className="text-3xl  sm:(text-7xl !leading-tight) font-medium capitalize text-zinc-800">
+                Offset your carbon blueprint with
+                <span className="lgreen"> GREEETH</span>
+              </h1>
 
-            <p className="mt-6 sm:leading-relaxed px-2 sm:text-xl">
-              The best way for individuals and organizations to plant trees,
-              offset their carbon footprint to save the planet.
-            </p>
-            <div className="gap-4 mt-10 mx-auto text-center w-1/2">
-              <a
-                className="block  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
-                href="/get-involved/sponsors/apply"
-              >
-                Plant Now
-              </a>
+              <p className="mt-6 sm:leading-relaxed px-2 sm:text-xl">
+                The best way for individuals and organizations to plant trees,
+                offset their carbon footprint to save the planet.
+              </p>
+              <div className="gap-4 mt-10 mx-auto text-center w-1/2">
+                <a
+                  className="block  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+                  href="/get-involved/sponsors/apply"
+                >
+                  Plant Now
+                </a>
+              </div>
+            </div>
+            <div className="relative ">
+              <img
+                src={Drone}
+                alt="Tree illustration"
+                className="absolute left-0 sm:(top-30 w-13rem) top-10 w-7rem"
+              />
+
+              <img
+                src={TreeBG}
+                alt="Tree illustration"
+                className="mx-auto lg:max-w-7/11"
+              />
+              <img
+                src={Drone}
+                alt="Tree illustration"
+                className="absolute right-0 top-0 sm:w-13rem w-7rem"
+              />
             </div>
           </div>
-          <div className="relative ">
-            <img
-              src={Drone}
-              alt="Tree illustration"
-              className="absolute left-0 sm:(top-30 w-13rem) top-10 w-7rem"
-            />
+        </section>
+        <div className="pt-20 flex flex-col items-center justify-center  px-2 py-2    lg:items-center lg:flex text-zinc-800">
+          <div className="lg:max-w-9/11 text-center darkgreen">
+            <h1 className="text-3xl  sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
+              Manage your carbon emission
+            </h1>
 
-            <img
-              src={TreeBG}
-              alt="Tree illustration"
-              className="mx-auto lg:max-w-7/11"
-            />
-            <img
-              src={Drone}
-              alt="Tree illustration"
-              className="absolute right-0 top-0 sm:w-13rem w-7rem"
-            />
+            <p className="mt-6 sm:leading-relaxed px-2 sm:text-lg">
+              Take a step to measure and manage your carbon emission for
+              yourself, your household, and your organization to mitigate the
+              potential emission on the climate system.
+            </p>
+          </div>
+          <div className="relative flex flex-wrap lg:flex-row flex-col items-center justify-center gap-1rem mt-2rem">
+            {componentsArray.map((comp, i) => (
+              <AmbassadorsInfo
+                Pic={comp.Illustration}
+                TextList={comp.TextList}
+                Index={i}
+              />
+            ))}
           </div>
         </div>
-      </section>
-      <div className="container bg-milkgreen h-full pt-20   flex flex-col items-center justify-around  px-2 py-2  lg:h-full  lg:items-center lg:flex text-zinc-800">
-        <div className="lg:max-w-9/11 text-center darkgreen">
-          <h1 className="text-3xl  sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
-            Manage your carbon emission
-          </h1>
-
-          <p className="mt-6 sm:leading-relaxed px-2 sm:text-lg">
-            Take a step to measure and manage your carbon emission for yourself,
-            your household, and your organization to mitigate the potential
-            emission on the climate system.
-          </p>
+        <div className="flex flex-col items-center max-w-screen-xl m-auto sm:py-20 sm:px-15 pb-10 px-5 text-gray-600 md:px-12 xl:px-22  w-screen">
+          <div className="space-y-6 md:space-y-0 md:flex justify-center py-5rem m-auto md:gap-6 lg:items-center lg:gap-12 ">
+            <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
+              <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                Plant by human
+              </h2>
+              <div className="mt-6 text-gray-600 leading-loose">
+                Allows trees to be planted in locations easily accessible by
+                human . Planters plants the tree wirb selected planting pattern
+                and geo-tag with our Geospatial technology getting the GPS
+                coordinate. Tree planted is visible in the 3D environment with
+                the planting process and tree data which can be seen by the
+                sponsors.
+              </div>
+            </div>
+            <div className="md:6/12 lg:w-6/12">
+              <img
+                src={garden}
+                alt="Location pins illustration"
+                loading="lazy"
+                className="mx-auto"
+              />
+            </div>
+          </div>
+          <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
+            <div className="md:6/12 lg:w-6/12">
+              <img
+                src={droneplant}
+                alt="Location pins illustration"
+                loading="lazy"
+                className="mx-auto"
+              />
+            </div>
+            <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
+              <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                Plant by drone
+              </h2>
+              <div className="mt-6 text-gray-600 leading-loose">
+                We use unmanned drone to plant tree on a large area (e.g Forest)
+                or location that are not easily accessible by human by seed
+                bombing or seed firing with predefined planting patterns. Trees
+                planted are geo-tag with our Geospatial technology getting the
+                GPS coordinate. Tree planted is visible in the 3D environment
+                with the planting process and tree data which can be seen by the
+                sponsors.
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="relative flex flex-wrap lg:flex-row flex-col items-center justify-center gap-1rem mt-2rem">
-          {componentsArray.map((comp, i) => (
-            <AmbassadorsInfo
-              Pic={comp.Illustration}
-              TextList={comp.TextList}
-              Index={i}
+        <div className="BG1 max-w-3xl px-2 flex flex-col items-center mb-30">
+          <h2 className="text-3xl my-2rem lgreen font-bold md:text-5xl">
+            Virtual Tree
+          </h2>
+          <div className="md:4/12 lg:w-6/12 mb-8">
+            <img
+              src={plant}
+              alt="Location pins illustration"
+              loading="lazy"
+              className="mx-auto bg-white px-2rem py-1rem rounded-2xl shadow-md"
             />
-          ))}
+          </div>
+          <div className="text-center max-w-9/12">
+            <h2 className="text-2xl lgreen font-bold md:text-4xl">
+              Virtual Tree
+            </h2>
+            <p className="mt-6 text-gray-900 list-disc">
+              For every tree planted a virtual tree is generated with longitude
+              and latitude of the planted tree. The tree can be gifted and sent
+              on the platform.
+            </p>
+          </div>
         </div>
       </div>
     </div>
