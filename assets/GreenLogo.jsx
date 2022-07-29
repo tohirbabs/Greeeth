@@ -39,7 +39,7 @@ function SvgComponent(props) {
         }}
         className="ml-1 text-3xl  font-bold"
       >
-        Greeth
+        Greeeth
       </span>
     </>
   );

@@ -457,9 +457,71 @@ function SponsorsApply() {
                 <option>Select Industry</option>
                 <option value="one">Accounting</option>
                 <option value="two">Airlines/Aviation</option>
-                <option value="three">Animation</option>
-                <option value="four">Architecture & Planning</option>
-                <option value="five">Arts & Crafts</option>
+                <option value="three">Alternative Dispute Resolution</option>
+                <option value="four">Alternative Medicine</option>
+                <option value="five">Animation</option>
+                <option value="five">Apparel & Fashion</option>
+                <option value="five">Architecture & Planning</option>
+                <option value="five">Arts and Crafts</option>
+                <option value="one">Automotive</option>
+                <option value="two">Aviation & Aerospace</option>
+                <option value="three">Banking</option>
+                <option value="four">Biotechnology</option>
+                <option value="five">Blockchain & Cryptocurrencies</option>
+                <option value="five">Broadcast Media </option>
+                <option value="five">Building Materials </option>
+                <option value="five">Business Supplies and Equipment </option>
+                <option value="one">Capital Markets</option>
+                <option value="two">Chemicals </option>
+                <option value="three">Civic & Social Organization </option>
+                <option value="four">Civil Engineering </option>
+                <option value="five">Commercial Real Estate</option>
+                <option value="five">Computer & Network Security</option>
+                <option value="five">Computer Games</option>
+                <option value="five">Computer Hardware</option>
+                <option value="one">Computer Networking</option>
+                <option value="two">Computer Software</option>
+                <option value="three">Construction</option>
+                <option value="four">Consumer Electronics</option>
+                <option value="five">Consumer Services</option>
+                <option value="five">Cosmetics</option>
+                <option value="five">Dairy</option>
+                <option value="five">Defense & Space</option>
+                {/* Design Education Management E-Learning Electrical/Electronic
+                Manufacturing Entertainment Environmental Services Events
+                Services Executive Office Facilities Services Farming Financial
+                Services Fine Art Fishery Food & Beverages Food Production
+                Fund-Raising Furniture Gambling & Casinos Glass, Ceramics &
+                Concrete Government Administration Government Relations Graphic
+                Design Health, Wellness and Fitness Higher Education Hospital &
+                Health Care Hospitality Human Resources Import and Export
+                Individual & Family Services Industrial Automation Information
+                Services Information Technology and Services Insurance
+                International Affairs International Trade and Development
+                Internet Investment Banking Investment Management Judiciary Law
+                Enforcement Law Practice Legal Services Legislative Office
+                Leisure, Travel & Tourism Libraries Logistics and Supply Chain
+                Luxury Goods & Jewelry Machinery Management Consulting Maritime
+                Market Research Marketing and Advertising Mechanical or
+                Industrial Engineering Media Production Medical Devices Medical
+                Practice Mental Health Care Military Mining & Metals Motion
+                Pictures and Film Museums and Institutions Music Nanotechnology
+                Newspapers Nonprofit Organization Management Oil & Energy Online
+                Media Outsourcing/Offshoring Package/Freight Delivery Packaging
+                and Containers Paper & Forest Products Performing Arts
+                Pharmaceuticals Philanthropy Photography Plastics Political
+                Organization Primary/Secondary Education Printing Professional
+                Training & Coaching Program Development Public Policy Public
+                Relations and Communications Public Safety Publishing Railroad
+                Manufacture Ranching Real Estate Recreational Facilities and
+                Services Religious Institutions Renewables & Environment
+                Research Restaurants Retail Security and Investigations
+                Semiconductors Shipbuilding Sporting Goods Sports Staffing and
+                Recruiting Supermarkets Telecommunications Textiles Think Tanks
+                Tobacco Translation and Localization
+                Transportation/Trucking/Railroad Utilities Venture Capital &
+                Private Equity Veterinary Warehousing Waste & Recycling
+                Wholesale Wine and Spirits Wireless Writing and Editing Other */}
               </select>
             </div>
             <div class="mb-6">

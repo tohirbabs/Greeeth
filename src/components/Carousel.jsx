@@ -14,7 +14,7 @@ let data = {
   resources: [
     {
       title: "Birthdays",
-      link: "https://twitter.com/kendalmintcode",
+      link: "/",
       imageUrl: birthdays,
     },
     {
@@ -24,18 +24,18 @@ let data = {
     },
     {
       title: "Weddings",
-      link: "https://twitter.com/kendalmintcode",
+      link: "/",
       imageUrl: weddings,
     },
 
     {
       title: "Valentine",
-      link: "https://twitter.com/kendalmintcode",
+      link: "/",
       imageUrl: valentine,
     },
     {
       title: "Easter",
-      link: "https://twitter.com/kendalmintcode",
+      link: "/",
       imageUrl: easter,
     },
   ],
