@@ -25,4 +25,4 @@ class AcceptTree(UpdateAPIView):
 
 
     def perform_update(self, serializer):
-        return serializers.save(recepient=self.request.user,received_on=datetime.now())
+        return serializers.save(recepient=self.request.user,received_on=datetime.now(),status='shared')
