@@ -19,6 +19,7 @@ import track from "../../assets/landing/track.png";
 import legal from "../../assets/landing/legal.png";
 import illegal from "../../assets/landing/illegal.png";
 import shop from "../../assets/landing/shop.png";
+import map from "../../assets/landing/map.png";
 
 import droneplant from "../../assets/landing/drone plant.png";
 
@@ -386,6 +387,21 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
+        <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-white w-screen">
+          <div className="space-y-6 md:space-y-0 px-4 lg:items-center">
+            <h1 className="text-3xl text-left sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
+              Interactive map to explore
+            </h1>
+            <div className="mx-auto">
+              <img
+                src={map}
+                alt="Location pins illustration"
+                loading="lazy"
+                className="mx-auto my-4"
+              />
+            </div>
+          </div>
+        </div>
         <div className="py-20 flex flex-col items-center justify-center  px-2  lg:items-center lg:flex text-zinc-800">
           <div className="lg:max-w-9/11 text-left darkgreen">
             <h1 className="text-3xl text-left sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
@@ -429,6 +445,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+
         <div className="relative forestBG centerize w-100vw">
           <h2 className="text-4xl md:leading-relaxed my-2rem font-bold md:text-7xl sm:w-10/12 px-2 text-white">
             The Fastest Way To Offset Carbon Emission.
