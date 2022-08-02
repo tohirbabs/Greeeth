@@ -18,6 +18,7 @@ import maintain from "../../assets/landing/maintain.png";
 import track from "../../assets/landing/track.png";
 import legal from "../../assets/landing/legal.png";
 import illegal from "../../assets/landing/illegal.png";
+import shop from "../../assets/landing/shop.png";
 
 import droneplant from "../../assets/landing/drone plant.png";
 
@@ -385,7 +386,7 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
-        <div className="pt-20 flex flex-col items-center justify-center  px-2 py-2    lg:items-center lg:flex text-zinc-800">
+        <div className="py-20 flex flex-col items-center justify-center  px-2  lg:items-center lg:flex text-zinc-800">
           <div className="lg:max-w-9/11 text-left darkgreen">
             <h1 className="text-3xl text-left sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
               Other services we offer
@@ -400,6 +401,38 @@ const LandingPage = () => {
               />
             ))}
           </div>
+        </div>
+        <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-white w-screen">
+          <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+            <div className="md:5/12 lg:w-6/12 w-9/10 mx-auto">
+              <img
+                src={shop}
+                alt="Location pins illustration"
+                loading="lazy"
+                className="mx-auto"
+              />
+            </div>
+            <div className="text-left md:6/12 lg:w-6/12 md:ml-12 mx-3">
+              <h2 className="text-2xl lgreen font-bold md:text-4xl">Shop</h2>
+              <div className="mt-6 text-gray-600 leading-loose">
+                Represent carbon offsetting in real world and show that you care
+                about it by purchasing carbon neutral and zero carbon product.
+              </div>
+              <div className="flex flex-wrap gap-4 mt-10 text-center">
+                <a
+                  className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                  href="/shop"
+                >
+                  Go to Shop
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative forestBG centerize w-100vw">
+          <h2 className="text-4xl md:leading-relaxed my-2rem font-bold md:text-7xl sm:w-10/12 px-2 text-white">
+            The Fastest Way To Offset Carbon Emission.
+          </h2>
         </div>
       </div>
     </div>
