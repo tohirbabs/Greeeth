@@ -1,4 +1,3 @@
-import React from "react";
 import TreeBG from "../../assets/landing/home-bg.png";
 import Drone from "../../assets/landing/Drone.png";
 import calc from "../../assets/landing/calc.png";
@@ -19,11 +18,104 @@ import track from "../../assets/landing/track.png";
 import legal from "../../assets/landing/legal.png";
 import illegal from "../../assets/landing/illegal.png";
 import shop from "../../assets/landing/shop.png";
+import shoper from "../../assets/landing/shoper.png";
 import map from "../../assets/landing/map.png";
 
 import droneplant from "../../assets/landing/drone plant.png";
 
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom";
+
+// import Steps from "./Steps";
+
 const LandingPage = () => {
+  function Facts() {
+    const [activeSlide, setActiveSlide] = useState(1);
+
+    useEffect(() => {
+      // This variable prevents race condition
+      let current = 1;
+      const cycleReviews = () => {
+        if (current === 3) {
+          current = 1;
+        } else {
+          current += 1;
+        }
+        setActiveSlide(current);
+      };
+      // intervalId identified so it can be canceled on unmount
+      const intervalId = setInterval(() => {
+        cycleReviews();
+      }, 10000);
+      // Removes interval on unmount
+      return () => clearInterval(intervalId);
+    }, []);
+
+    const reviews = [
+      {
+        name: "Jonathan D.",
+        citation: "Sale Closed in 2019",
+        quote:
+          "Planting trees remains one of the cheapest, most effective means of drawing excess carbon  from the atmosphere.",
+      },
+      {
+        name: "Peter C.",
+        citation: "Sale Closed in 2019",
+        quote:
+          " In recent times, half of all amphibians are at risk of extinction due to climate change. Many argue that extinction is a natural phenomenon, claiming about five species per year.",
+      },
+      {
+        name: "Paulette H.",
+        citation: "Sale Closed in 2019",
+        quote:
+          " Above 600,000 deaths occur worldwide every year due to climate change. 95% of these deaths take place in developing countries.",
+      },
+    ];
+
+    return (
+      <>
+        <h2 className="text-3xl mt-5rem lgreen font-bold md:text-5xl">Facts</h2>
+        <div className="Facts">
+          <ul className="carousel__list">
+            {reviews.map((review, index) => {
+              const { citation, name, quote } = review;
+              const count = index + 1;
+              return (
+                <li
+                  className={`carousel__item
+                ${count === activeSlide ? " active" : ""}
+                ${count < activeSlide ? " left" : ""}
+                ${count > activeSlide ? " right" : ""}
+              `}
+                  key={count}
+                >
+                  <blockquote className="carousel__quote">
+                    {/* <cite>
+                    <span className="carousel__name">{name}</span>
+                    <span className="carousel__citation">{citation}</span>
+                  </cite> */}
+                    <p className="text-xl bold">"{quote}"</p>
+                  </blockquote>
+                </li>
+              );
+            })}
+            <li className="carousel__indicator">
+              <span
+                className={`carousel__dot${activeSlide === 1 ? " active" : ""}`}
+              />
+              <span
+                className={`carousel__dot${activeSlide === 2 ? " active" : ""}`}
+              />
+              <span
+                className={`carousel__dot${activeSlide === 3 ? " active" : ""}`}
+              />
+            </li>
+          </ul>
+          {/* <p>Active Slide = {activeSlide}</p> */}
+        </div>
+      </>
+    );
+  }
   const componentsArray = [
     {
       // background: BG1,
@@ -151,6 +243,115 @@ const LandingPage = () => {
     },
   ];
 
+  const Steps = () => {
+    return (
+      <div className="w-90vw py-6">
+        <div className="flex">
+          <div className="bg-white BG1 lg:w-3/11 px-5 h-370px flex flex-col items-flex-start justify-center mx-2 py-3rem lg:mb-4 mb-4 card">
+            <div className="mb-8">
+              <img
+                src={calc}
+                alt="Location pins illustration"
+                loading="lazy"
+                className="w-3rem"
+              />
+            </div>
+            <div className="text-left ">
+              <h2 className="text-2xl lgreen my-2 font-bold md:text-3xl">
+                Detect planting location
+              </h2>
+            </div>
+          </div>
+
+          <div className="w-1/4">
+            <div className="relative mb-2">
+              <div className="absolute flex align-center items-center align-middle content-center sect">
+                <div className="w-full bg-gray-200 rounded items-center align-middle align-center flex-1">
+                  <div className="w-0 bg-green-300 py-1 rounded w-full"></div>
+                </div>
+              </div>
+
+              <div className="bg-white BG1 lg:w-3/11 px-5 h-370px flex flex-col items-flex-start justify-center mx-2 py-3rem lg:mb-4 mb-4 card">
+                <div className="mb-8">
+                  <img
+                    src={calc}
+                    alt="Location pins illustration"
+                    loading="lazy"
+                    className="w-3rem"
+                  />
+                </div>
+                <div className="text-left ">
+                  <h2 className="text-2xl lgreen my-2 font-bold md:text-3xl">
+                    Detect planting location
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-xs text-center md:text-base">Add User</div>
+          </div>
+
+          <div className="w-1/4">
+            <div className="relative mb-2">
+              <div className="absolute flex align-center items-center align-middle content-center sect">
+                <div className="w-full bg-gray-200 rounded items-center align-middle align-center flex-1">
+                  <div className="w-0 bg-green-300 py-1 rounded w-1/3"></div>
+                </div>
+              </div>
+
+              <div className="w-10 h-10 mx-auto bg-white border-2 border-gray-200 rounded-full text-lg text-white flex items-center">
+                <span className="text-center text-gray-600 w-full">
+                  {/* <svg
+                    className="w-full fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      className="heroicon-ui"
+                      d="M9 4.58V4c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v.58a8 8 0 0 1 1.92 1.11l.5-.29a2 2 0 0 1 2.74.73l1 1.74a2 2 0 0 1-.73 2.73l-.5.29a8.06 8.06 0 0 1 0 2.22l.5.3a2 2 0 0 1 .73 2.72l-1 1.74a2 2 0 0 1-2.73.73l-.5-.3A8 8 0 0 1 15 19.43V20a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-.58a8 8 0 0 1-1.92-1.11l-.5.29a2 2 0 0 1-2.74-.73l-1-1.74a2 2 0 0 1 .73-2.73l.5-.29a8.06 8.06 0 0 1 0-2.22l-.5-.3a2 2 0 0 1-.73-2.72l1-1.74a2 2 0 0 1 2.73-.73l.5.3A8 8 0 0 1 9 4.57zM7.88 7.64l-.54.51-1.77-1.02-1 1.74 1.76 1.01-.17.73a6.02 6.02 0 0 0 0 2.78l.17.73-1.76 1.01 1 1.74 1.77-1.02.54.51a6 6 0 0 0 2.4 1.4l.72.2V20h2v-2.04l.71-.2a6 6 0 0 0 2.41-1.4l.54-.51 1.77 1.02 1-1.74-1.76-1.01.17-.73a6.02 6.02 0 0 0 0-2.78l-.17-.73 1.76-1.01-1-1.74-1.77 1.02-.54-.51a6 6 0 0 0-2.4-1.4l-.72-.2V4h-2v2.04l-.71.2a6 6 0 0 0-2.41 1.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+                    />
+                  </svg> */}
+                </span>
+              </div>
+            </div>
+
+            <div className="text-xs text-center md:text-base">Setting</div>
+          </div>
+
+          <div className="w-1/4">
+            <div className="relative mb-2">
+              <div className="absolute flex align-center items-center align-middle content-center sect">
+                <div className="w-full bg-gray-200 rounded items-center align-middle align-center flex-1">
+                  <div className="w-0 bg-green-300 py-1 rounded"></div>
+                </div>
+              </div>
+
+              <div className="w-10 h-10 mx-auto bg-white border-2 border-gray-200 rounded-full text-lg text-white flex items-center">
+                <span className="text-center text-gray-600 w-full">
+                  {/* <svg
+                    className="w-full fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      className="heroicon-ui"
+                      d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-2.3-8.7l1.3 1.29 3.3-3.3a1 1 0 0 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-2-2a1 1 0 0 1 1.4-1.42z"
+                    />
+                  </svg> */}
+                </span>
+              </div>
+            </div>
+
+            <div className="text-xs text-center md:text-base">Finished</div>
+          </div>
+        </div>
+      </div>
+    );
+  };
   function TreesInfo({ Pic, TextList }) {
     return (
       <div className="bg-white BG1 lg:w-3/11 px-5 text-center sm:h-28rem flex flex-col items-flex-start justify-center mx-2 py-1rem lg:mb-4 mb-4 card">
@@ -257,6 +458,7 @@ const LandingPage = () => {
             </div>
           </div>
         </section>
+
         <div className="pt-20 flex flex-col items-center justify-center  px-2 py-2    lg:items-center lg:flex text-zinc-800">
           <div className="lg:max-w-9/11 text-center darkgreen">
             <h1 className="text-3xl  sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
@@ -279,6 +481,16 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
+        <div className="pt-20 flex flex-col items-center justify-center  px-2 py-2    lg:items-center lg:flex text-zinc-800">
+          <div className="lg:max-w-9/11 text-center darkgreen">
+            <h1 className="text-3xl  sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
+              How Greeeth Tree Planting Works
+            </h1>
+          </div>
+
+          {/* <Steps /> */}
+        </div>
+
         <div className="flex flex-col items-center max-w-screen-xl m-auto sm:py-20 sm:px-15 pb-10 px-5 text-gray-600 md:px-12">
           <div className="space-y-6 md:space-y-0 md:flex justify-center py-5rem m-auto md:gap-6 lg:items-center lg:gap-12 ">
             <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
@@ -387,6 +599,8 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
+
+        <Facts />
         <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-white w-screen">
           <div className="space-y-6 md:space-y-0 px-4 lg:items-center">
             <h1 className="text-3xl text-left sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
@@ -422,7 +636,7 @@ const LandingPage = () => {
           <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
             <div className="md:5/12 lg:w-6/12 w-9/10 mx-auto">
               <img
-                src={shop}
+                src={shoper}
                 alt="Location pins illustration"
                 loading="lazy"
                 className="mx-auto"
