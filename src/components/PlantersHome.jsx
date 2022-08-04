@@ -6,7 +6,7 @@ function PlantersHome() {
   return (
     <section className=" grad-lgreen flex-wrap items-center justify-center h-viewheight flex flex-col">
       <div className="container h-full  lg:mx-6 my-3 flex flex-col lg:flex-wrap items-center justify-around lg:max-w-screen-xl px-2 py-2 lg:ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
-        <div className="lg:max-w-6/11 text-center darkgreen">
+        <div className="lg:max-w-6/11 text-center sm:text-left darkgreen">
           <h1 className="text-3xl  sm:(text-7xl !leading-tight) font-medium capitalize lgreen">
             Planters complete tree-planting tasks & get Paid.
           </h1>
@@ -16,7 +16,7 @@ function PlantersHome() {
             tips on planting.
           </p>
 
-          <div className="flex justify-center flex-wrap lg:gap-4 mt-10 text-center">
+          <div className="flex justify-center sm:justify-start flex-wrap lg:gap-4 mt-10 text-center">
             <a
               className="block w-1/2 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
               href="/about"
