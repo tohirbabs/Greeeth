@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { createContext, useState, useContext, useMemo, use } from "react";
 import "./App.css";
+import "./slider.css";
 
 import "../dist/output.css";
 import MainPage from "./screens/MainPage";
@@ -31,6 +32,8 @@ import Individuals1 from "./screens/GetInvolved/Sponsors/Individuals1";
 import Benefits from "./screens/GetInvolved/Sponsors/Benefits";
 import { LandingPage } from "./components";
 import OtherServices from "./components/OtherServices";
+import Overview from "./screens/dashboard/Overview";
+import Wallet from "./screens/dashboard/Wallet";
 
 export const PageContext = createContext({});
 
@@ -96,6 +99,8 @@ function App() {
                 element={<AmbassadorsApply />}
               />
               <Route path="/get-involved/benefits" element={<Benefits />} />
+              <Route path="/dashboard/overview" element={<Overview />} />
+              <Route path="/dashboard/wallet" element={<Wallet />} />
             </Routes>
           </BrowserRouter>
         </Layout>
