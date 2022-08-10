@@ -1,10 +1,10 @@
 import * as React from "react";
 
-function SvgComponent(props) {
+function SvgComponent({ small }) {
   return (
     <svg
-      width="150"
-      height="100"
+      width={small ? "55" : "150"}
+      height={small ? "30" : "100"}
       viewBox="0 0 250 216"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

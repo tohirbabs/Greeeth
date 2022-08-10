@@ -4,12 +4,15 @@ import { Cycleicon } from "./Dashboard/Cycleicon";
 import Dashicon from "./Dashboard/Dashicon";
 import { Footprinticon } from "./Dashboard/Footprinticon";
 import { Goalicon } from "./Dashboard/Goalicon";
-import { Logouticon } from "./Dashboard/Logout.png";
+// import { Logouticon } from "./Dashboard/Logout.png";
 import { Offseticon } from "./Dashboard/Offseticon";
 import { Projecticon } from "./Dashboard/Projecticon";
-import { Treeicon } from "./Dashboard/Treeico";
+// import { Treeicon } from "./Dashboard/Treeico";
 import { Walleticon } from "./Dashboard/Walleticon";
 import FootLogo from "../../assets/FootLogo";
+// import { Treeicon } from "./Dashboard/Treeicon";
+// import { Logouticon } from "./Dashboard/Logouticon";
+// import { Offseticon } from "./Dashboard/Offseticon";
 
 const Sidebar = () => {
   return (
@@ -43,10 +46,10 @@ const Sidebar = () => {
             <Projecticon />
             <p className="text-white hidden sm:block">Project</p>
           </div>
-          <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+          {/* <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
             <Treeicon />
             <p className="text-white hidden sm:block">Trees</p>
-          </div>
+          </div> */}
           <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
             <Cycleicon />
             <p className="text-white hidden sm:block">Life cycle analysis</p>
@@ -59,10 +62,10 @@ const Sidebar = () => {
             <Badgeicon />
             <p className="text-white hidden sm:block">Badge</p>
           </div>
-          <div className="flex items-center my-2 mt-10 sm:p-4 p-1 sm:gap-2">
+          {/* <div className="flex items-center my-2 mt-10 sm:p-4 p-1 sm:gap-2">
             <Logouticon />
             <p className="text-white hidden sm:block">Log out</p>
-          </div>
+          </div> */}
         </ul>
       </div>
     </div>
