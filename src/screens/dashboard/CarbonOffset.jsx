@@ -11,6 +11,7 @@ import BarChart from "../../components/BarChart";
 import { DonutChart } from "../../components/DonutChart";
 import { Tabler } from "../../components/Table";
 import { Tables } from "../../components/Tables";
+import { PieChart } from "../../components/PieChart";
 // import DonutChart from "../../components/DonutChart";
 
 // import Map from "../../components/Dashboard/Map";
@@ -62,7 +63,7 @@ const CarbonOffset = () => {
               <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
                 CarbonOffset
               </h3>
-              <DonutChart />
+              <PieChart />
             </div>
             <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
               <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">

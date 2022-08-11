@@ -42,73 +42,182 @@ function App() {
   return (
     <PageContext.Provider value={{}}>
       <div className="App">
-        <Layout>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/other-services" element={<OtherServices />} />
-              <Route path="/process" element={<Process />} />
-              <Route path="/auth/sign-in" element={<Signin />} />
-              <Route path="/get-involved/sponsors" element={<Sponsors />} />
-              <Route
-                path="/get-involved/sponsors/apply"
-                element={<SponsorApply />}
-              />
-              <Route
-                path="/get-involved/sponsors/companies/Offset-your-carbon-footprint"
-                element={<Companies1 />}
-              />
-              <Route
-                path="/get-involved/sponsors/companies/Corporate-gifting-to-customers"
-                element={<Companies2 />}
-              />
-              <Route
-                path="/get-involved/sponsors/companies/Use-as-Employee-engagement"
-                element={<Companies3 />}
-              />
-              <Route
-                path="/get-involved/sponsors/companies/Unique-Reward"
-                element={<Companies4 />}
-              />
-              <Route
-                path="/get-involved/sponsors/companies/Loyalty-Program-to-Customers"
-                element={<Companies5 />}
-              />
-              <Route
-                path="/get-involved/sponsors/companies/Use-Tree-in-Corporate-Social-Responsibility-(CSR)"
-                element={<Companies6 />}
-              />
-              <Route
-                path="/get-involved/sponsors/individuals/gift-tree"
-                element={<Individuals1 />}
-              />
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Layout>
+                  <LandingPage />
+                </Layout>
+              }
+            />
+            <Route
+              path="/other-services"
+              element={
+                <Layout>
+                  <OtherServices />
+                </Layout>
+              }
+            />
+            <Route
+              path="/process"
+              element={
+                <Layout>
+                  <Process />
+                </Layout>
+              }
+            />
+            <Route
+              path="/auth/sign-in"
+              element={
+                <Layout>
+                  <Signin />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/sponsors"
+              element={
+                <Layout>
+                  <Sponsors />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/sponsors/apply"
+              element={
+                <Layout>
+                  <SponsorApply />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/sponsors/companies/Offset-your-carbon-footprint"
+              element={
+                <Layout>
+                  <Companies1 />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/sponsors/companies/Corporate-gifting-to-customers"
+              element={
+                <Layout>
+                  <Companies2 />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/sponsors/companies/Use-as-Employee-engagement"
+              element={
+                <Layout>
+                  <Companies3 />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/sponsors/companies/Unique-Reward"
+              element={
+                <Layout>
+                  <Companies4 />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/sponsors/companies/Loyalty-Program-to-Customers"
+              element={
+                <Layout>
+                  <Companies5 />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/sponsors/companies/Use-Tree-in-Corporate-Social-Responsibility-(CSR)"
+              element={
+                <Layout>
+                  <Companies6 />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/sponsors/individuals/gift-tree"
+              element={
+                <Layout>
+                  <Individuals1 />
+                </Layout>
+              }
+            />
 
-              <Route path="/get-involved/volunteers" element={<Volunteers />} />
-              <Route path="/get-involved/schools" element={<Schools />} />
-              <Route
-                path="/get-involved/schools/apply"
-                element={<SchoolsApply />}
-              />
-              <Route path="/get-involved/planters" element={<Planters />} />
-              <Route path="/get-involved/partners" element={<Partners />} />
-              <Route
-                path="/get-involved/ambassadors"
-                element={<Ambassadors />}
-              />
-              <Route
-                path="/get-involved/Ambassadors/apply"
-                element={<AmbassadorsApply />}
-              />
-              <Route path="/get-involved/benefits" element={<Benefits />} />
-              <Route path="/dashboard/overview" element={<Overview />} />
-              <Route path="/dashboard/wallet" element={<Wallet />} />
-              <Route
-                path="/dashboard/carbon-offset"
-                element={<CarbonOffset />}
-              />
-            </Routes>
-          </BrowserRouter>
-        </Layout>
+            <Route
+              path="/get-involved/volunteers"
+              element={
+                <Layout>
+                  <Volunteers />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/schools"
+              element={
+                <Layout>
+                  <Schools />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/schools/apply"
+              element={
+                <Layout>
+                  <SchoolsApply />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/planters"
+              element={
+                <Layout>
+                  <Planters />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/partners"
+              element={
+                <Layout>
+                  <Partners />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/ambassadors"
+              element={
+                <Layout>
+                  <Ambassadors />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/Ambassadors/apply"
+              element={
+                <Layout>
+                  <AmbassadorsApply />
+                </Layout>
+              }
+            />
+            <Route
+              path="/get-involved/benefits"
+              element={
+                <Layout>
+                  <Benefits />
+                </Layout>
+              }
+            />
+            <Route path="/dashboard/overview" element={<Overview />} />
+            <Route path="/dashboard/wallet" element={<Wallet />} />
+            <Route path="/dashboard/carbon-offset" element={<CarbonOffset />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </PageContext.Provider>
   );
