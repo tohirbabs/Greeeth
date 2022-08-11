@@ -60,6 +60,10 @@ a {
 .bg-lgreen {
   background-color: #008000;
 }
+
+.bg-lightgreen {
+  background-color: #f9fff9;
+}
 .bg-grey {
   background-color: #c9d2c6;
 }
@@ -439,4 +443,8 @@ a {
   width: calc(100% - 2.5rem - 1rem);
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.dash-card {
+  background-color: white;
 }

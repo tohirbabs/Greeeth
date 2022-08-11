@@ -16,7 +16,7 @@ import FootLogo from "../../assets/FootLogo";
 
 const Sidebar = () => {
   return (
-    <div className="bg-lgreen sm:px-8 sm:py-10 p-2 flex-none">
+    <div className="bg-lgreen sm:px-8 sm:py-10 py-2 flex-none">
       <div className="sm:block hidden">
         <FootLogo />
       </div>
@@ -24,45 +24,45 @@ const Sidebar = () => {
         <FootLogo small={true} />
       </div>
 
-      <div className="mt-16 pl-4 sm:pl-0">
-        <ul>
-          <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+      <div className="mt-16 sm:pl-4  sm:pl-0">
+        <ul className="mx-auto">
+          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
             <Dashicon clr="white" />
             <p className="text-white hidden sm:block">Overview</p>
           </div>
-          <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
             <Walleticon />
             <p className="text-white hidden sm:block">Wallet</p>
           </div>
-          <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
             <Footprinticon />
             <p className="text-white hidden sm:block">Carbon footprint</p>
           </div>
-          <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
             <Offseticon />
             <p className="text-white hidden sm:block">Carbon offset</p>
           </div>
-          <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
             <Projecticon />
             <p className="text-white hidden sm:block">Project</p>
           </div>
-          {/* <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+          {/* <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
             <Treeicon />
             <p className="text-white hidden sm:block">Trees</p>
           </div> */}
-          <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
             <Cycleicon />
             <p className="text-white hidden sm:block">Life cycle analysis</p>
           </div>
-          <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
             <Goalicon />
             <p className="text-white hidden sm:block">Goal</p>
           </div>
-          <div className="flex items-center my-2 sm:p-4 p-1 sm:gap-2">
+          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
             <Badgeicon />
             <p className="text-white hidden sm:block">Badge</p>
           </div>
-          {/* <div className="flex items-center my-2 mt-10 sm:p-4 p-1 sm:gap-2">
+          {/* <div className="flex items-center justify-center sm:justify-start my-6 mt-10 sm:p-4 p-1 sm:gap-2">
             <Logouticon />
             <p className="text-white hidden sm:block">Log out</p>
           </div> */}
