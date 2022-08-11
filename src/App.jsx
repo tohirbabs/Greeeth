@@ -34,6 +34,7 @@ import { LandingPage } from "./components";
 import OtherServices from "./components/OtherServices";
 import Overview from "./screens/dashboard/Overview";
 import Wallet from "./screens/dashboard/Wallet";
+import CarbonOffset from "./screens/dashboard/CarbonOffset";
 
 export const PageContext = createContext({});
 
@@ -101,6 +102,10 @@ function App() {
               <Route path="/get-involved/benefits" element={<Benefits />} />
               <Route path="/dashboard/overview" element={<Overview />} />
               <Route path="/dashboard/wallet" element={<Wallet />} />
+              <Route
+                path="/dashboard/carbon-offset"
+                element={<CarbonOffset />}
+              />
             </Routes>
           </BrowserRouter>
         </Layout>
