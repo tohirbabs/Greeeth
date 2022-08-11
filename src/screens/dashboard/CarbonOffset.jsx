@@ -10,6 +10,7 @@ import Slider from "rc-slider";
 import BarChart from "../../components/BarChart";
 import { DonutChart } from "../../components/DonutChart";
 import { Tabler } from "../../components/Table";
+import { Tables } from "../../components/Tables";
 // import DonutChart from "../../components/DonutChart";
 
 // import Map from "../../components/Dashboard/Map";
@@ -45,7 +46,7 @@ const CarbonOffset = () => {
                 </h3>
                 <div className="shadow rounded max-w-80vw">
                   {/* <Map /> */}
-                  <Tabler />
+                  <Tables />
                 </div>
               </div>
               <div className="text-left sm:mb-10 mb-5 mt-4 flex flex-1 flex-col">
