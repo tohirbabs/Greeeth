@@ -16,7 +16,7 @@ import FootLogo from "../../assets/FootLogo";
 
 const Sidebar = () => {
   return (
-    <div className="bg-lgreen sm:px-8 sm:py-10 py-2 flex-none">
+    <div className="bg-lgreen sm:px-8 sm:py-10 py-2 fixed min-h-100vh">
       <div className="sm:block hidden">
         <FootLogo />
       </div>

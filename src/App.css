@@ -5,8 +5,7 @@
 .App {
   text-align: center;
   font-family: "DM Sans", "Inter", sans-serif;
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 5000px;
+
   min-height: 100vh;
   color: #393939;
 }

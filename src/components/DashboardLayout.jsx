@@ -4,12 +4,13 @@ import TopBar from "./TopBar";
 
 const DashboardLayout = ({ children }) => {
   return (
-    <div className="flex">
+    <div className="flex bg-lightgreen">
       <Sidebar />
-
-      <div className="flex-1 bg-lightgreen sm:px-10 px-2">
+      <div className="sm:ml-257px ml-50px flex-1">
         <TopBar />
-        <main>{children}</main>
+        <div className=" bg-lightgreen sm:px-10 px-2 mt-90px">
+          <main>{children}</main>
+        </div>
       </div>
     </div>
   );

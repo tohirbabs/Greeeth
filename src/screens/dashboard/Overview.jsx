@@ -192,7 +192,7 @@ const Overview = () => {
                 <h3 className="font-bold sm:text-2xl py-2 sm:p-4 ">
                   Carbon footprint
                 </h3>
-                <div className="dash-card sm:min-h-[170px] min-h-115px flex-1  rounded flex flex-col justify-between shadow relative">
+                <div className="dash-card sm:min-h-[170px] min-h-115px flex-1  rounded flex flex-col justify-between shadow">
                   <div className="sm:p-6 sm:pb-4 p-2">
                     <div className="flex items-center lgreen">
                       <p className="sm:text-2xl font-bold pr-2">
@@ -210,7 +210,7 @@ const Overview = () => {
                 <h3 className="font-bold sm:text-2xl py-2 sm:p-4 ">
                   Carbon offset
                 </h3>
-                <div className="dash-card min-h-115px sm:min-h-[170px] rounded flex flex-col justify-between shadow relative">
+                <div className="dash-card min-h-115px sm:min-h-[170px] rounded flex flex-col justify-between shadow">
                   <div className="sm:p-6 sm:pb-4 p-2">
                     <div className="flex items-center lgreen">
                       <p className=" sm:text-2xl font-bold pr-2">
