@@ -33,29 +33,23 @@ export const options = {
   },
 };
 
-const labels = ["2019", "2020", "2021", "2022"];
+const labels = ["Jan", "Feb", "Mar", "Apr"];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: "CO2 Footprint (Tons of CO2)",
+      label: "Amount Purchased",
 
       //   barPercentage: 0.5,
 
-      data: [99, 55, 46, 80],
+      data: [70, 99, 55, 46],
       backgroundColor: "#008000",
-    },
-    {
-      label: "CO2 Offset (Tons of CO2)",
-
-      data: [69, 50, 76, 72],
-      backgroundColor: "rgba(0, 128, 0, 0.5)",
     },
   ],
 };
 
-export function BarChart() {
+export function BarCharter() {
   return (
     <div className="bg-white shadow rounded sm:p-4">
       <Bar options={options} data={data} />
@@ -63,4 +57,4 @@ export function BarChart() {
   );
 }
 
-export default BarChart;
+export default BarCharter;

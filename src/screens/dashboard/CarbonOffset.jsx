@@ -12,6 +12,7 @@ import { DonutChart } from "../../components/DonutChart";
 import { Tabler } from "../../components/Table";
 import { Tables } from "../../components/Tables";
 import { PieChart } from "../../components/PieChart";
+import BarCharted from "../../components/BarCharted";
 // import DonutChart from "../../components/DonutChart";
 
 // import Map from "../../components/Dashboard/Map";
@@ -32,18 +33,18 @@ const CarbonOffset = () => {
                   CarbonOffset
                 </h3>
                 <div className="dash-card p-2 sm:p-6 sm:pt-8 sm:pr-15 sm:pb-20 rounded shadow flex-1 px-2">
-                  <p className="font-bold sm:text-xl">Balance</p>
+                  <p className="font-bold sm:text-xl">Offsetted</p>
                   <div className="flex items-center lgreen">
                     <p className=" sm:text-4xl text-base font-bold pr-2">
                       300,000
                     </p>
-                    <p>Points</p>
+                    <p>KG</p>
                   </div>
                 </div>
               </div>
               <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
                 <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-                  CarbonOffset
+                  Offset Breakdown
                 </h3>
                 <div className="shadow rounded max-w-80vw">
                   {/* <Map /> */}
@@ -54,26 +55,26 @@ const CarbonOffset = () => {
                 <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
                   Amount purchased per months
                 </h3>
-                <BarChart />
+                <BarCharted />
               </div>
             </div>
           </div>
           <div className="flex flex-1 flex-col gap-4 sm:max-w-500px max-w-80vw">
             <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
               <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-                CarbonOffset
+                Total Emission/offset
               </h3>
               <PieChart />
             </div>
             <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
               <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-                CarbonOffset
+                Total Earned
               </h3>
               <DonutChart />
             </div>
             <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
               <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-                CarbonOffset
+                Compensated Emissions
               </h3>
               <DonutChart />
             </div>

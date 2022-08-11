@@ -2,8 +2,8 @@ import React from "react";
 
 export const Tabler = () => {
   return (
-    <table class="w-full">
-      <tr class="w-1/2 bg-indigo-300">
+    <table class="w-full ">
+      <tr class="w-1/2 bg-[#3E7307] text-white">
         <th class="p-2 ">Date</th>
         <th class="p-2 text-center">Ponits</th>
         <th class="p-2 text-center pr-4">Purpose</th>
