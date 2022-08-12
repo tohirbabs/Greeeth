@@ -8,7 +8,7 @@ const DashboardLayout = ({ children }) => {
       <Sidebar />
       <div className="sm:ml-257px ml-50px flex-1">
         <TopBar />
-        <div className=" bg-lightgreen sm:px-10 px-2 mt-90px">
+        <div className=" bg-lightgreen sm:px-10 px-2 ">
           <main>{children}</main>
         </div>
       </div>

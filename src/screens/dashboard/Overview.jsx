@@ -18,7 +18,7 @@ function classNames(...classes) {
 const Overview = () => {
   return (
     <DashboardLayout>
-      <div className="sm:my-12 my-6">
+      <div className="sm:my-12 my-2">
         <div className="flex flex-wrap sm:gap-6 gap-2">
           <div className="sm:px-6 px-2 py-2 border-2 text-sm sm:text-base font-bold rounded-md bg-white text-lgreen">
             Plant New Trees
@@ -38,7 +38,7 @@ const Overview = () => {
                   <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
                     Wallet
                   </h3>
-                  <div className="dash-card p-2 sm:p-6 sm:pt-8 sm:pr-15 sm:pb-20 rounded shadow flex-1 px-5">
+                  <div className="dash-card p-2 sm:p-6 sm:pt-8 sm:pr-15 sm:pb-18 rounded-lg shadow flex-1 px-5">
                     <p className="font-bold sm:text-xl">Balance</p>
                     <div className="flex items-center lgreen">
                       <p className=" sm:text-4xl text-base font-bold pr-2">
@@ -52,7 +52,7 @@ const Overview = () => {
                   <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
                     Debit
                   </h3>
-                  <div className="dash-card rounded shadow ">
+                  <div className="dash-card rounded-lg shadow ">
                     <div className="sm:p-6 sm:pb-4 p-4">
                       <div className="flex items-center lgreen">
                         <p className=" sm:text-4xl font-bold pr-2">300</p>
@@ -61,7 +61,7 @@ const Overview = () => {
                       <p>2021</p>
                     </div>
 
-                    <div className="bg-lgreen text-white rounded p-2 text-sm sm:text-base text-right">
+                    <div className="bg-lgreen text-white rounded-lg p-2 text-sm sm:text-base text-right">
                       Total 5000 Point
                     </div>
                   </div>
@@ -72,7 +72,7 @@ const Overview = () => {
                 <h3 className="font-bold sm:text-2xl text-xl sm:p-4 p-2 ">
                   Trees Planted
                 </h3>
-                <div className="dash-card p-4 sm:pb-20 rounded shadow ">
+                <div className="dash-card p-4 sm:pb-18 rounded-lg shadow ">
                   <Menu as="div" className="relative text-left">
                     <div>
                       <Menu.Button className="flex justify-between items-center w-full sm:p-4 p-2 font-medium lgreen focus:outline-none ">
@@ -90,7 +90,7 @@ const Overview = () => {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-lg-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
                           <Menu.Item>
                             {({ active }) => (
@@ -143,7 +143,7 @@ const Overview = () => {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-lg-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
                           <Menu.Item>
                             {({ active }) => (
@@ -179,9 +179,15 @@ const Overview = () => {
                     </Transition>
                   </Menu>
 
-                  <div className="lgreen p-2 sm:p-4">Trees Planted: 20</div>
-                  <div className="lgreen p-2 sm:p-4">Trees Gifted: 200</div>
-                  <div className="lgreen p-2 sm:p-4">Trees Received: 200</div>
+                  <div className="lgreen font-bold p-2 sm:p-4">
+                    Trees Planted: 20
+                  </div>
+                  <div className="lgreen font-bold p-2 sm:p-4">
+                    Trees Gifted: 200
+                  </div>
+                  <div className="lgreen font-bold p-2 sm:p-4">
+                    Trees Received: 200
+                  </div>
                 </div>
               </div>
             </div>
@@ -192,7 +198,7 @@ const Overview = () => {
                 <h3 className="font-bold sm:text-2xl py-2 sm:p-4 ">
                   Carbon footprint
                 </h3>
-                <div className="dash-card sm:min-h-[170px] min-h-115px flex-1  rounded flex flex-col justify-between shadow">
+                <div className="dash-card sm:min-h-[160px] min-h-115px flex-1  rounded-lg flex flex-col justify-between shadow">
                   <div className="sm:p-6 sm:pb-4 p-2">
                     <div className="flex items-center lgreen">
                       <p className="sm:text-2xl font-bold pr-2">
@@ -201,7 +207,7 @@ const Overview = () => {
                     </div>
                   </div>
 
-                  <div className="self-end m-2 border text-lgreen w-max  rounded p-2 text-sm sm:text-base text-right">
+                  <div className="self-end m-2 border text-lgreen w-max  rounded-lg p-2 text-sm sm:text-base text-right">
                     See details
                   </div>
                 </div>
@@ -210,7 +216,7 @@ const Overview = () => {
                 <h3 className="font-bold sm:text-2xl py-2 sm:p-4 ">
                   Carbon offset
                 </h3>
-                <div className="dash-card min-h-115px sm:min-h-[170px] rounded flex flex-col justify-between shadow">
+                <div className="dash-card min-h-115px sm:min-h-[160px] rounded-lg flex flex-col justify-between shadow">
                   <div className="sm:p-6 sm:pb-4 p-2">
                     <div className="flex items-center lgreen">
                       <p className=" sm:text-2xl font-bold pr-2">
@@ -219,7 +225,7 @@ const Overview = () => {
                     </div>
                   </div>
 
-                  <div className="self-end m-2 border text-lgreen w-max  rounded p-2 text-sm sm:text-base text-right">
+                  <div className="self-end m-2 border text-lgreen w-max  rounded-lg p-2 text-sm sm:text-base text-right">
                     See details
                   </div>
                 </div>

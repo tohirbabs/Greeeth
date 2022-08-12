@@ -32,7 +32,7 @@ const CarbonOffset = () => {
                 <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
                   CarbonOffset
                 </h3>
-                <div className="dash-card p-2 sm:p-6 sm:pt-8 sm:pr-15 sm:pb-20 rounded shadow flex-1 px-2">
+                <div className="dash-card p-4 pl-8 pb-10 sm:p-6 sm:pt-8 sm:pr-15 sm:pb-20 rounded shadow flex-1 px-2">
                   <p className="font-bold sm:text-xl">Offsetted</p>
                   <div className="flex items-center lgreen">
                     <p className=" sm:text-4xl text-base font-bold pr-2">
@@ -46,7 +46,7 @@ const CarbonOffset = () => {
                 <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
                   Offset Breakdown
                 </h3>
-                <div className="shadow rounded max-w-80vw">
+                <div className="shadow bg-white rounded max-w-80vw">
                   {/* <Map /> */}
                   <Tables />
                 </div>
@@ -84,7 +84,7 @@ const CarbonOffset = () => {
           <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
             CarbonOffset
           </h3>
-          <div className="shadow rounded max-w-80vw">
+          <div className="shadow bg-white rounded max-w-80vw">
             {/* <Map /> */}
             <Tabler />
           </div>

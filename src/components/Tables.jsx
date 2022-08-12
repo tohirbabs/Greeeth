@@ -2,7 +2,7 @@ import React from "react";
 
 export const Tables = () => {
   return (
-    <table class="w-full">
+    <table class="w-full text-sm sm:text-base">
       <tr class="w-1/2 bg-[#3E7307] text-white">
         <th class="p-2 ">S/N</th>
         <th class="p-2 text-center">Month</th>
