@@ -35,6 +35,7 @@ import OtherServices from "./components/OtherServices";
 import Overview from "./screens/dashboard/Overview";
 import Wallet from "./screens/dashboard/Wallet";
 import CarbonOffset from "./screens/dashboard/CarbonOffset";
+import CarbonFootprint from "./screens/dashboard/CarbonFootprint";
 
 export const PageContext = createContext({});
 
@@ -216,6 +217,10 @@ function App() {
             <Route path="/dashboard/overview" element={<Overview />} />
             <Route path="/dashboard/wallet" element={<Wallet />} />
             <Route path="/dashboard/carbon-offset" element={<CarbonOffset />} />
+            <Route
+              path="/dashboard/carbon-footprint"
+              element={<CarbonFootprint />}
+            />
           </Routes>
         </BrowserRouter>
       </div>
