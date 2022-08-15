@@ -36,6 +36,7 @@ import Overview from "./screens/dashboard/Overview";
 import Wallet from "./screens/dashboard/Wallet";
 import CarbonOffset from "./screens/dashboard/CarbonOffset";
 import CarbonFootprint from "./screens/dashboard/CarbonFootprint";
+import { Footprint } from "./screens/Footprint";
 
 export const PageContext = createContext({});
 
@@ -220,6 +221,14 @@ function App() {
             <Route
               path="/dashboard/carbon-footprint"
               element={<CarbonFootprint />}
+            />
+            <Route
+              path="/calculate-footprint"
+              element={
+                <Layout>
+                  <Footprint />
+                </Layout>
+              }
             />
           </Routes>
         </BrowserRouter>
