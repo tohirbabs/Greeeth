@@ -1,4 +1,4 @@
-export function FreightList({ Pix, TextList, Index }) {
+export function WeightList({ Pix, TextList, Index }) {
   return (
     <div className="BG-lgreen ">
       <div className="py-5  flex  flex-col  flex-wrapitems-center justify-center BG1">

@@ -1,57 +1,12 @@
 import React from "react";
 import { useState, useContext } from "react";
-import ForestBG from "../../assets/company forest.png";
 import { PageContext } from "../App";
-import {
-  Pix1,
-  Pix2,
-  Pix3,
-  Pix4,
-  Pix5,
-  Pix7,
-  co2,
-  gift,
-  calc,
-  charity,
-  government,
-} from "../../assets/GetInvolved";
+import { Pix1, Pix2, Pix3, Pix4, Pix5, Pix7 } from "../../assets/GetInvolved";
 
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Disclosure } from "@headlessui/react";
 // import Carouseler from "./Carousel";
-import Carousel from "./Carousel";
 import { FreightList } from "./FlightList";
-
-const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
-
-const navigation = [
-  {
-    name: "Companies",
-    href: "#",
-
-    icon: "building-house",
-  },
-  { name: "Individuals", href: "#", icon: "user" },
-  { name: "NGOs", href: "#", icon: "building-house" },
-  {
-    name: "Governmental Organizations",
-    href: "#",
-
-    icon: "building-house",
-  },
-];
-const userNavigation = [
-  { name: "Your Profile", href: "#", icon: "building-house" },
-  { name: "Settings", href: "#", icon: "user" },
-  { name: "Sign out", href: "#", icon: "building-house" },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -213,12 +168,59 @@ const freightArray = [
   },
 ];
 
+const wasteArray = [
+  {
+    Illustration: Pix1,
+    TextList: {
+      title: "Construction Waste",
+      link: "How much Motorbike do you use at home in KWh",
+
+      text: "How much Motorbike do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix2,
+    TextList: {
+      title: "Electrical Waste",
+      link: "Corporate-gifting-to-customers",
+      text: "How much Natural Gas do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix3,
+    TextList: {
+      title: "General Waste",
+      link: "Use-as-Employee-engagement",
+      text: "How much How much heating oil do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix4,
+    TextList: {
+      title: "Plastic Waste",
+      link: "Unique-Reward",
+      text: "How much Coal do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix4,
+    TextList: {
+      title: "Metal Waste",
+      link: "Unique-Reward",
+      text: "How much Coal do you use at home in KWh",
+    },
+  },
+];
+
 function FootprintSection() {
   const {} = useContext(PageContext);
-  const [showNgos, setshowNgos] = useState(false);
-  const [showGo, setshowGo] = useState(false);
-  const [showIndividuals, setshowIndividuals] = useState(false);
-  const [showCompanies, setshowCompanies] = useState(true);
+  const [showWaste, setshowWaste] = useState(false);
+  const [showTransport, setshowTransport] = useState(false);
+  const [showHome, setshowHome] = useState(false);
+  const [showWelcome, setshowWelcome] = useState(true);
+  const [showCloth, setshowCloth] = useState(false);
+  const [showSec, setshowSec] = useState(false);
+
   function CompaniesList({ Pix, TextList, Index }) {
     return (
       <div className="BG-lgreen ">
@@ -787,40 +789,15 @@ function FootprintSection() {
 
   const Gos = () => {
     return (
-      <div className="BG-lgreen ">
-        <div className=" sm:py-10 flex  flex-col  flex-wrapitems-center justify-center BG1">
-          <div className="container flex items-center max-w-screen-xl m-auto sm:py-20 py-10 px-5 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
-            <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
-              <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
-                <h2 className="text-2xl lgreen font-bold md:text-4xl">
-                  Governmental Organizations
-                </h2>
-                <div className="mt-6 text-gray-600 leading-loose">
-                  Governmental Organizations can promote and sponsor tree
-                  planting and other carbon offsetting projects to tackle
-                  environmental issues.
-                </div>
-                <div className="flex flex-wrap gap-4 mt-10 text-center">
-                  <a
-                    className="block w-full sm:w-1/2  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                    href="/about"
-                  >
-                    Read More . . .
-                  </a>
-                </div>
-              </div>
-              <div className="md:6/12 lg:w-6/12">
-                <img
-                  src={government}
-                  alt="Location pins illustration"
-                  loading="lazy"
-                  className="mx-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <>
+        {wasteArray.map((comp, i) => (
+          <FreightList
+            Pix={comp.Illustration}
+            TextList={comp.TextList}
+            Index={i}
+          />
+        ))}
+      </>
     );
   };
 
@@ -862,22 +839,24 @@ function FootprintSection() {
                     <div className="sm:ml-10 flex w-menu flex-col md:flex-row items-baseline space-x-20">
                       <div
                         onClick={() => {
-                          setshowIndividuals(false);
-                          setshowCompanies(true);
-                          setshowNgos(false);
-                          setshowGo(false);
+                          setshowHome(false);
+                          setshowWelcome(true);
+                          setshowWaste(false);
+                          setshowTransport(false);
+                          setshowCloth(false);
+                          setshowSec(false);
                         }}
                         className={classNames(
-                          showCompanies
+                          showWelcome
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
                           "px-3 py-3 flex items-center cursor-pointer"
                         )}
-                        aria-current={showCompanies ? "page" : undefined}
+                        aria-current={showWelcome ? "page" : undefined}
                       >
                         <span
                           className={classNames(
-                            showCompanies ? " lgreen" : "  text-gray-400",
+                            showWelcome ? " lgreen" : "  text-gray-400",
                             "inline-flex items-center justify-center h-10 w-12"
                           )}
                         >
@@ -887,22 +866,24 @@ function FootprintSection() {
                       </div>
                       <div
                         onClick={() => {
-                          setshowIndividuals(true);
-                          setshowCompanies(false);
-                          setshowNgos(false);
-                          setshowGo(false);
+                          setshowHome(true);
+                          setshowWelcome(false);
+                          setshowWaste(false);
+                          setshowTransport(false);
+                          setshowCloth(false);
+                          setshowSec(false);
                         }}
                         className={classNames(
-                          showIndividuals
+                          showHome
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
                           "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
                         )}
-                        aria-current={showIndividuals ? "page" : undefined}
+                        aria-current={showHome ? "page" : undefined}
                       >
                         <span
                           className={classNames(
-                            showIndividuals ? " lgreen" : "  text-gray-400",
+                            showHome ? " lgreen" : "  text-gray-400",
                             "inline-flex items-center justify-center h-10 w-12"
                           )}
                         >
@@ -914,22 +895,24 @@ function FootprintSection() {
                       </div>
                       <div
                         className={classNames(
-                          showNgos
+                          showTransport
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
                           "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
                         )}
                         onClick={() => {
-                          setshowIndividuals(false);
-                          setshowCompanies(false);
-                          setshowNgos(true);
-                          setshowGo(false);
+                          setshowHome(false);
+                          setshowWelcome(false);
+                          setshowWaste(false);
+                          setshowTransport(true);
+                          setshowCloth(false);
+                          setshowSec(false);
                         }}
-                        aria-current={showNgos ? "page" : undefined}
+                        aria-current={showTransport ? "page" : undefined}
                       >
                         <span
                           className={classNames(
-                            showNgos ? " lgreen" : "  text-gray-400",
+                            showTransport ? " lgreen" : "  text-gray-400",
                             "inline-flex items-center justify-center h-10 w-12"
                           )}
                         >
@@ -942,22 +925,24 @@ function FootprintSection() {
 
                       <div
                         className={classNames(
-                          showGo
+                          showWaste
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
                           "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
                         )}
                         onClick={() => {
-                          setshowIndividuals(false);
-                          setshowCompanies(false);
-                          setshowNgos(false);
-                          setshowGo(true);
+                          setshowHome(false);
+                          setshowWelcome(false);
+                          setshowWaste(true);
+                          setshowTransport(false);
+                          setshowCloth(false);
+                          setshowSec(false);
                         }}
-                        aria-current={showGo ? "page" : undefined}
+                        aria-current={showWaste ? "page" : undefined}
                       >
                         <span
                           className={classNames(
-                            showGo ? " lgreen" : "  text-gray-400",
+                            showWaste ? " lgreen" : "  text-gray-400",
                             "inline-flex items-center justify-center h-10 w-12"
                           )}
                         >
@@ -967,22 +952,24 @@ function FootprintSection() {
                       </div>
                       <div
                         className={classNames(
-                          showGo
+                          showCloth
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
                           "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
                         )}
                         onClick={() => {
-                          setshowIndividuals(false);
-                          setshowCompanies(false);
-                          setshowNgos(false);
-                          setshowGo(true);
+                          setshowHome(false);
+                          setshowWelcome(false);
+                          setshowWaste(false);
+                          setshowTransport(false);
+                          setshowCloth(true);
+                          setshowSec(false);
                         }}
-                        aria-current={showGo ? "page" : undefined}
+                        aria-current={showCloth ? "page" : undefined}
                       >
                         <span
                           className={classNames(
-                            showGo ? " lgreen" : "  text-gray-400",
+                            showCloth ? " lgreen" : "  text-gray-400",
                             "inline-flex items-center justify-center h-10 w-12"
                           )}
                         >
@@ -995,22 +982,24 @@ function FootprintSection() {
 
                       <div
                         className={classNames(
-                          showGo
+                          showSec
                             ? " lgreen border-bt"
                             : "darkgrey hover:lgreen ",
                           "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
                         )}
                         onClick={() => {
-                          setshowIndividuals(false);
-                          setshowCompanies(false);
-                          setshowNgos(false);
-                          setshowGo(true);
+                          setshowHome(false);
+                          setshowWelcome(false);
+                          setshowWaste(false);
+                          setshowTransport(false);
+                          setshowCloth(false);
+                          setshowSec(true);
                         }}
-                        aria-current={showGo ? "page" : undefined}
+                        aria-current={showSec ? "page" : undefined}
                       >
                         <span
                           className={classNames(
-                            showGo ? " lgreen" : "  text-gray-400",
+                            showSec ? " lgreen" : "  text-gray-400",
                             "inline-flex items-center justify-center h-10 w-12"
                           )}
                         >
@@ -1052,13 +1041,13 @@ function FootprintSection() {
 
       <header className="bg-white shadow"></header>
       <main>
-        {showCompanies ? (
+        {showWelcome ? (
           <Companies />
-        ) : showIndividuals ? (
+        ) : showHome ? (
           <Individuals />
-        ) : showNgos ? (
+        ) : showWaste ? (
           <Ngos />
-        ) : showGo ? (
+        ) : showTransport ? (
           <Gos />
         ) : (
           <Companies />
