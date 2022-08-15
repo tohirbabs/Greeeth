@@ -22,6 +22,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 // import Carouseler from "./Carousel";
 import Carousel from "./Carousel";
+import { FreightList } from "./FlightList";
 
 const user = {
   name: "Tom Cook",
@@ -112,6 +113,102 @@ const componentsArray = [
       title: "Wood",
       link: "Use-Tree-in-Corporate-Social-Responsibility-(CSR)",
       text: "How much Wood do you use at home in KWh",
+    },
+  },
+];
+
+const flightsArray = [
+  {
+    Illustration: Pix1,
+    TextList: {
+      title: "Motorbike",
+      link: "How much Motorbike do you use at home in KWh",
+
+      text: "How much Motorbike do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix2,
+    TextList: {
+      title: "Bus",
+      link: "Corporate-gifting-to-customers",
+      text: "How much Natural Gas do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix3,
+    TextList: {
+      title: "Subway",
+      link: "Use-as-Employee-engagement",
+      text: "How much How much heating oil do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix4,
+    TextList: {
+      title: "Taxi",
+      link: "Unique-Reward",
+      text: "How much Coal do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix5,
+    TextList: {
+      title: "Rail",
+      link: "Loyalty-Program-to-Customers",
+      text: "How much LPG do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix7,
+    TextList: {
+      title: "Sea",
+      link: "Use-Tree-in-Corporate-Social-Responsibility-(CSR)",
+      text: "How much Propane do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix7,
+    TextList: {
+      title: "Fuel",
+      link: "Use-Tree-in-Corporate-Social-Responsibility-(CSR)",
+      text: "How much Wood do you use at home in KWh",
+    },
+  },
+];
+
+const freightArray = [
+  {
+    Illustration: Pix1,
+    TextList: {
+      title: "Road Freight",
+      link: "How much Motorbike do you use at home in KWh",
+
+      text: "How much Motorbike do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix2,
+    TextList: {
+      title: "Air Freight",
+      link: "Corporate-gifting-to-customers",
+      text: "How much Natural Gas do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix3,
+    TextList: {
+      title: "Rail Freight",
+      link: "Use-as-Employee-engagement",
+      text: "How much How much heating oil do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix4,
+    TextList: {
+      title: "Sea Freight",
+      link: "Unique-Reward",
+      text: "How much Coal do you use at home in KWh",
     },
   },
 ];
@@ -603,7 +700,7 @@ function FootprintSection() {
           Expenses and Freight.
         </p>
         <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
-          <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 md:px-15 text-gray-600  md:px-12 xl:px-22 bg-white  w-screen">
+          <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 md:px-15 text-gray-600  md:px-12 xl:px-22 BG-lgreen  w-screen">
             <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
               <div className="text-left md:6/12 lg:w-6/12 md:ml-12 mx-3">
                 <h2 className="text-2xl lgreen font-bold md:text-4xl">
@@ -670,6 +767,20 @@ function FootprintSection() {
             </div>
           </div>
         </div>
+        {flightsArray.map((comp, i) => (
+          <CompaniesList
+            Pix={comp.Illustration}
+            TextList={comp.TextList}
+            Index={i}
+          />
+        ))}
+        {freightArray.map((comp, i) => (
+          <FreightList
+            Pix={comp.Illustration}
+            TextList={comp.TextList}
+            Index={i}
+          />
+        ))}
       </div>
     );
   };
