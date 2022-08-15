@@ -60,50 +60,58 @@ const componentsArray = [
   {
     Illustration: Pix1,
     TextList: {
-      title: "Offset your carbon footprint",
-      link: "Offset-your-carbon-footprint",
+      title: "Electricity",
+      link: "How much Electricity do you use at home in KWh",
 
-      text: "Offset your company's carbon emissions by planting a tree. ",
+      text: "How much Electricity do you use at home in KWh",
     },
   },
   {
     Illustration: Pix2,
     TextList: {
-      title: "Corporate gifting to customers",
+      title: "Natural Gas",
       link: "Corporate-gifting-to-customers",
-      text: "Give your clients a thoughtful gift like a tree that you plant in their honor. ",
+      text: "How much Natural Gas do you use at home in KWh",
     },
   },
   {
     Illustration: Pix3,
     TextList: {
-      title: "Use as Employee engagement",
+      title: "Heating Oil",
       link: "Use-as-Employee-engagement",
-      text: "Plant a forest and distribute a tree from it to each employee.",
+      text: "How much How much heating oil do you use at home in KWh",
     },
   },
   {
     Illustration: Pix4,
     TextList: {
-      title: "Unique Reward ",
+      title: "Coal",
       link: "Unique-Reward",
-      text: "Reward respondents with newly planted trees for completing a survey. ",
+      text: "How much Coal do you use at home in KWh",
     },
   },
   {
     Illustration: Pix5,
     TextList: {
-      title: "Loyalty Program to Customers ",
+      title: "LPG",
       link: "Loyalty-Program-to-Customers",
-      text: "Provide clients with a way to convert points into trees to reduce your financial burden. ",
+      text: "How much LPG do you use at home in KWh",
     },
   },
   {
     Illustration: Pix7,
     TextList: {
-      title: "Use Tree in Corporate Social Responsibility (CSR) ",
+      title: "Propane",
       link: "Use-Tree-in-Corporate-Social-Responsibility-(CSR)",
-      text: "Offset your company's carbon emissions by planting a tree. ",
+      text: "How much Propane do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix7,
+    TextList: {
+      title: "Wood",
+      link: "Use-Tree-in-Corporate-Social-Responsibility-(CSR)",
+      text: "How much Wood do you use at home in KWh",
     },
   },
 ];
@@ -117,24 +125,25 @@ function FootprintSection() {
   function CompaniesList({ Pix, TextList, Index }) {
     return (
       <div className="BG-lgreen ">
-        <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
+        <div className="py-5  flex  flex-col  flex-wrapitems-center justify-center BG1">
           {Index % 2 === 0 ? (
-            <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 md:px-15 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
+            <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 md:px-15 text-gray-600  md:px-12 xl:px-22 bg-white  w-screen">
               <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
-                <div className="text-left md:6/12 lg:w-6/12 md:ml-12 mx-3">
+                <div className="text-center md:6/12 lg:w-6/12 md:ml-12 mx-3">
                   <h2 className="text-2xl lgreen font-bold md:text-4xl">
                     {TextList.title}
                   </h2>
                   <div className="mt-6 text-gray-600 leading-loose">
                     {TextList.text}
                   </div>
-                  <div className="flex flex-wrap gap-4 mt-10 text-center">
-                    <a
-                      className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                      href={`sponsors/companies/${TextList.link}`}
-                    >
-                      Read More . . .
-                    </a>
+                  <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
+                    <input
+                      type="number"
+                      id="state"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="0"
+                      required
+                    />
                   </div>
                 </div>
                 <div className="md:6/12 lg:w-6/12 w-8/10 mx-auto">
@@ -148,7 +157,7 @@ function FootprintSection() {
               </div>
             </div>
           ) : (
-            <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-white w-screen">
+            <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
               <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                 <div className="md:5/12 lg:w-6/12 w-9/10 mx-auto">
                   <img
@@ -158,20 +167,21 @@ function FootprintSection() {
                     className="mx-auto"
                   />
                 </div>
-                <div className="text-left md:6/12 lg:w-6/12 md:ml-12 mx-3">
+                <div className="text-center md:6/12 lg:w-6/12 md:ml-12 mx-3">
                   <h2 className="text-2xl lgreen font-bold md:text-4xl">
                     {TextList.title}
                   </h2>
                   <div className="mt-6 text-gray-600 leading-loose">
                     {TextList.text}
                   </div>
-                  <div className="flex flex-wrap gap-4 mt-10 text-center">
-                    <a
-                      className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                      href={`sponsors/companies/${TextList.link}`}
-                    >
-                      Read More . . .
-                    </a>
+                  <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
+                    <input
+                      type="number"
+                      id="state"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="0"
+                      required
+                    />
                   </div>
                 </div>
               </div>
@@ -515,14 +525,6 @@ function FootprintSection() {
             </div>
           </div>
         </div>
-        <div className="relative forestBG centerize">
-          <a
-            className=" px-10 py-4 text-base font-medium bg-white rounded-lg shadow-md lgreen  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-            href="/about"
-          >
-            Create Company Forest
-          </a>
-        </div>
       </div>
     );
   };
@@ -531,7 +533,7 @@ function FootprintSection() {
     return (
       <div className="BG-lgreen ">
         <h1 className="text-2xl  sm:(text-5xl !leading-tight) pt-8 mx-4 font-medium capitalize lgreen">
-          Your Individual Footprint Emitted at Home
+          Your Individual Footprint ue to Transportation
         </h1>
 
         <p className="mt-6 sm:leading-relaxed px-2 sm:text-xl">
@@ -549,7 +551,7 @@ function FootprintSection() {
                   NOTE: If youre calculating for your full household, and the
                   data you input is estimated for everyone keep it at 1
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 w-1/2">
                   {/* <label
                     for="state"
                     class="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
@@ -576,6 +578,13 @@ function FootprintSection() {
               </div>
             </div>
           </div>
+          {componentsArray.map((comp, i) => (
+            <CompaniesList
+              Pix={comp.Illustration}
+              TextList={comp.TextList}
+              Index={i}
+            />
+          ))}
         </div>
       </div>
     );
@@ -584,37 +593,28 @@ function FootprintSection() {
   const Ngos = () => {
     return (
       <div className="BG-lgreen ">
-        <div className=" sm:py-10 flex  flex-col  flex-wrapitems-center justify-center BG1">
-          <div className="container flex items-center max-w-screen-xl m-auto sm:py-20 py-10 px-5 text-gray-600 md:px-12 xl:px-22  BG-lgreen w-screen">
-            <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
-              <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
-                <h2 className="text-2xl lgreen font-bold md:text-4xl">
-                  Non Governmental Organizations
-                </h2>
-                <div className="mt-6 text-gray-600 leading-loose">
-                  Non-governmental Organizations can promote and sponsor tree
-                  planting and other carbon offsetting projects to tackle
-                  environmental issues and protect diversity.
-                </div>
-                <div className="flex flex-wrap gap-4 mt-10 text-center">
-                  <a
-                    className="block sm:w-1/2 w-full py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
-                    href="/about"
-                  >
-                    Read More . . .
-                  </a>
-                </div>
-              </div>
-              <div className="md:6/12 lg:w-6/12">
-                <img
-                  src={charity}
-                  alt="Location pins illustration"
-                  loading="lazy"
-                  className="mx-auto"
-                />
-              </div>
-            </div>
+        <h1 className="text-2xl  sm:(text-5xl !leading-tight) pt-8 mx-4 font-medium capitalize lgreen">
+          Your Individual Footprint due to Transportation
+        </h1>
+
+        <p className="mt-6 sm:leading-relaxed px-2 sm:text-xl px-4 sm:px-10">
+          This is calculated by taking into account, all forms of
+          transportation. Including Flight, Bus and Rails, Motorbike, Fuel
+          Expenses and Freight.
+        </p>
+        <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
+          <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 md:px-15 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
+            <h1 className="text-2xl  sm:(text-5xl !leading-tight) pt-8 mx-4 font-medium capitalize lgreen">
+              Flight
+            </h1>
           </div>
+          {componentsArray.map((comp, i) => (
+            <CompaniesList
+              Pix={comp.Illustration}
+              TextList={comp.TextList}
+              Index={i}
+            />
+          ))}
         </div>
       </div>
     );
