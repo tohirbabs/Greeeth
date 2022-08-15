@@ -291,7 +291,7 @@ function FootprintSection() {
     );
   }
 
-  const Companies = () => {
+  const Welcome = () => {
     return (
       <div>
         <div className="BG-lgreen ">
@@ -628,7 +628,7 @@ function FootprintSection() {
     );
   };
 
-  const Individuals = () => {
+  const Home = () => {
     return (
       <div className="BG-lgreen ">
         <h1 className="text-2xl  sm:(text-5xl !leading-tight) pt-8 mx-4 font-medium capitalize lgreen">
@@ -689,7 +689,7 @@ function FootprintSection() {
     );
   };
 
-  const Ngos = () => {
+  const Transport = () => {
     return (
       <div className="BG-lgreen ">
         <h1 className="text-2xl  sm:(text-5xl !leading-tight) pt-8 mx-4 font-medium capitalize lgreen">
@@ -787,11 +787,11 @@ function FootprintSection() {
     );
   };
 
-  const Gos = () => {
+  const Waste = () => {
     return (
       <>
         {wasteArray.map((comp, i) => (
-          <FreightList
+          <CompaniesList
             Pix={comp.Illustration}
             TextList={comp.TextList}
             Index={i}
@@ -801,29 +801,31 @@ function FootprintSection() {
     );
   };
 
-  const HeaderLink = ({ item, index }) => {
-    const [current, setCurrent] = useState(false);
+  const Cloth = () => {
     return (
-      <a
-        onClick={() => setCurrent(true)}
-        key={item.name}
-        href={item.href}
-        className={classNames(
-          item.current ? " lgreen border-bt" : "darkgrey hover:lgreen ",
-          "px-3 py-3 flex items-center cursor-pointer"
-        )}
-        aria-current={item.current ? "page" : undefined}
-      >
-        <span
-          className={classNames(
-            item.current ? " lgreen" : "  text-gray-400",
-            "inline-flex items-center justify-center h-10 w-12"
-          )}
-        >
-          <i className={`bx bxs-${item.icon} bx-sm`}></i>
-        </span>
-        <span className=" text-base font-medium">{item.name}</span>
-      </a>
+      <>
+        {wasteArray.map((comp, i) => (
+          <CompaniesList
+            Pix={comp.Illustration}
+            TextList={comp.TextList}
+            Index={i}
+          />
+        ))}
+      </>
+    );
+  };
+
+  const Sec = () => {
+    return (
+      <>
+        {wasteArray.map((comp, i) => (
+          <CompaniesList
+            Pix={comp.Illustration}
+            TextList={comp.TextList}
+            Index={i}
+          />
+        ))}
+      </>
     );
   };
 
@@ -1042,15 +1044,19 @@ function FootprintSection() {
       <header className="bg-white shadow"></header>
       <main>
         {showWelcome ? (
-          <Companies />
+          <Welcome />
         ) : showHome ? (
-          <Individuals />
-        ) : showWaste ? (
-          <Ngos />
+          <Home />
         ) : showTransport ? (
-          <Gos />
+          <Transport />
+        ) : showWaste ? (
+          <Waste />
+        ) : showCloth ? (
+          <Cloth />
+        ) : showSec ? (
+          <Sec />
         ) : (
-          <Companies />
+          <Welcome />
         )}
       </main>
     </div>
