@@ -927,50 +927,65 @@ function FootprintSection() {
           <div className="py-5  flex  flex-col  flex-wrapitems-center justify-center BG1">
             <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-5 md:px-15 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
               <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
-                <div className="text-left md:6/12  lg:w-6/12 md:mx-12 mx-3">
+                <div className="text-left md:6/12  lg:w-6/12 md:mx-4 mx-3">
                   <div className="flex justify-between items-center ">
-                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                    <h2 className="text-base text-gray-900 font-bold md:text-base">
                       Home Emissions
                     </h2>
 
-                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
-                      0
+                    <div class="block text-gray-900">
+                      <p className="lgreen font-bold text-base px-4 py-2 bg-white rounded">
+                        0.00
+                      </p>
+                      metric tonnes of CO2e
                     </div>
                   </div>
                   <div className="flex justify-between mt-4 items-center ">
-                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                    <h2 className="text-base text-gray-900 font-bold md:text-base">
                       Transportation Emissions
                     </h2>
 
-                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
-                      0
+                    <div class="block text-gray-900">
+                      <p className="lgreen font-bold text-base px-4 py-2 bg-white rounded">
+                        0.00
+                      </p>
+                      metric tonnes of CO2e
                     </div>
                   </div>
                   <div className="flex justify-between mt-4 items-center ">
-                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                    <h2 className="text-base text-gray-900 font-bold md:text-base">
                       Waste Emissions
                     </h2>
 
-                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
-                      0
+                    <div class="block text-gray-900">
+                      <p className="lgreen font-bold text-base px-4 py-2 bg-white rounded">
+                        0.00
+                      </p>
+                      metric tonnes of CO2e
                     </div>
                   </div>
                   <div className="flex justify-between mt-4 items-center ">
-                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                    <h2 className="text-base text-gray-900 font-bold md:text-base">
                       Clothing and Footwear Emission
                     </h2>
 
-                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
-                      0
+                    <div class="block text-gray-900">
+                      <p className="lgreen font-bold text-base px-4 py-2 bg-white rounded">
+                        0.00
+                      </p>
+                      metric tonnes of CO2e
                     </div>
                   </div>
                   <div className="flex justify-between mt-4 items-center ">
-                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                    <h2 className="text-base text-gray-900 font-bold md:text-base">
                       Secondary Emission
                     </h2>
 
-                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
-                      0
+                    <div class="block text-gray-900">
+                      <p className="lgreen font-bold text-base px-4 py-2 bg-white rounded">
+                        0.00
+                      </p>
+                      metric tonnes of CO2e
                     </div>
                   </div>
                 </div>
