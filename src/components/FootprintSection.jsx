@@ -234,7 +234,7 @@ const secArray = [
   {
     Illustration: Pix3,
     TextList: {
-      title: "Financial Intermediation Services(Except insurance and",
+      title: "Financial Intermediation Services(Except insurance and pension)",
       link: "Use-as-Employee-engagement",
       text: "How much How much heating oil do you use at home in KWh",
     },
@@ -242,7 +242,7 @@ const secArray = [
   {
     Illustration: Pix4,
     TextList: {
-      title: "Plastic Waste",
+      title: "Bank Fee",
       link: "Unique-Reward",
       text: "How much Coal do you use at home in KWh",
     },
@@ -250,7 +250,23 @@ const secArray = [
   {
     Illustration: Pix4,
     TextList: {
-      title: "Metal Waste",
+      title: "Education",
+      link: "Unique-Reward",
+      text: "How much Coal do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix4,
+    TextList: {
+      title: "Food and Beverage",
+      link: "Unique-Reward",
+      text: "How much Coal do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix4,
+    TextList: {
+      title: "Restaurant",
       link: "Unique-Reward",
       text: "How much Coal do you use at home in KWh",
     },
@@ -265,6 +281,7 @@ function FootprintSection() {
   const [showWelcome, setshowWelcome] = useState(true);
   const [showCloth, setshowCloth] = useState(false);
   const [showSec, setshowSec] = useState(false);
+  const [showResult, setshowResult] = useState(false);
   const [err, setErr] = useState("");
 
   function CompaniesList({ Pix, TextList, Index }) {
@@ -899,6 +916,82 @@ function FootprintSection() {
     );
   };
 
+  const Result = () => {
+    return (
+      <>
+        <div className="BG-lgreen ">
+          <h1 className="text-2xl pt-10 sm:(text-5xl !leading-tight) mx-4 font-medium capitalize lgreen">
+            Your Carbon Footprint
+          </h1>
+
+          <div className="py-5  flex  flex-col  flex-wrapitems-center justify-center BG1">
+            <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-5 md:px-15 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
+              <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
+                <div className="text-left md:6/12  lg:w-6/12 md:mx-12 mx-3">
+                  <div className="flex justify-between items-center ">
+                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                      Home Emissions
+                    </h2>
+
+                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
+                      0
+                    </div>
+                  </div>
+                  <div className="flex justify-between mt-4 items-center ">
+                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                      Transportation Emissions
+                    </h2>
+
+                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
+                      0
+                    </div>
+                  </div>
+                  <div className="flex justify-between mt-4 items-center ">
+                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                      Waste Emissions
+                    </h2>
+
+                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
+                      0
+                    </div>
+                  </div>
+                  <div className="flex justify-between mt-4 items-center ">
+                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                      Clothing and Footwear Emission
+                    </h2>
+
+                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
+                      0
+                    </div>
+                  </div>
+                  <div className="flex justify-between mt-4 items-center ">
+                    <h2 className="text-xl text-gray-900 font-bold md:text-2xl">
+                      Secondary Emission
+                    </h2>
+
+                    <div class="block px-4 py-2 text-2xl font-medium lgreen bg-white rounded border-red">
+                      0
+                    </div>
+                  </div>
+                </div>
+
+                <div className="md:6/12 lg:w-6/12 w-8/10 mx-auto">
+                  <img
+                    src={Pix1}
+                    alt="Location pins illustration"
+                    loading="lazy"
+                    className="mx-auto"
+                    onClick={() => climatiq()}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  };
+
   const climatiq = async () => {
     try {
       const body = JSON.stringify({
@@ -946,6 +1039,7 @@ function FootprintSection() {
                           setshowTransport(false);
                           setshowCloth(false);
                           setshowSec(false);
+                          setshowResult(false);
                         }}
                         className={classNames(
                           showWelcome
@@ -958,12 +1052,12 @@ function FootprintSection() {
                         <span
                           className={classNames(
                             showWelcome ? " lgreen" : "  text-gray-400",
-                            "inline-flex items-center justify-center h-10 w-12"
+                            "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
                           <i className={`bx bxs-building-house bx-sm`}></i>
                         </span>
-                        <span className=" text-base font-medium">Welcome</span>
+                        <span className=" text-sm font-medium">Welcome</span>
                       </div>
                       <div
                         onClick={() => {
@@ -973,6 +1067,7 @@ function FootprintSection() {
                           setshowTransport(false);
                           setshowCloth(false);
                           setshowSec(false);
+                          setshowResult(false);
                         }}
                         className={classNames(
                           showHome
@@ -985,12 +1080,12 @@ function FootprintSection() {
                         <span
                           className={classNames(
                             showHome ? " lgreen" : "  text-gray-400",
-                            "inline-flex items-center justify-center h-10 w-12"
+                            "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
                           <i className={`bx bxs-user bx-sm`}></i>
                         </span>
-                        <span className=" text-base font-medium">
+                        <span className=" text-sm font-medium">
                           Home Energy
                         </span>
                       </div>
@@ -1008,18 +1103,19 @@ function FootprintSection() {
                           setshowTransport(true);
                           setshowCloth(false);
                           setshowSec(false);
+                          setshowResult(false);
                         }}
                         aria-current={showTransport ? "page" : undefined}
                       >
                         <span
                           className={classNames(
                             showTransport ? " lgreen" : "  text-gray-400",
-                            "inline-flex items-center justify-center h-10 w-12"
+                            "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
                           <i className={`bx bxs-building-house bx-sm`}></i>
                         </span>
-                        <span className=" text-base font-medium">
+                        <span className=" text-sm font-medium">
                           Transportation Effects
                         </span>
                       </div>
@@ -1038,18 +1134,19 @@ function FootprintSection() {
                           setshowTransport(false);
                           setshowCloth(false);
                           setshowSec(false);
+                          setshowResult(false);
                         }}
                         aria-current={showWaste ? "page" : undefined}
                       >
                         <span
                           className={classNames(
                             showWaste ? " lgreen" : "  text-gray-400",
-                            "inline-flex items-center justify-center h-10 w-12"
+                            "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
                           <i className={`bx bxs-user bx-sm`}></i>
                         </span>
-                        <span className=" text-base font-medium">Waste</span>
+                        <span className=" text-sm font-medium">Waste</span>
                       </div>
                       <div
                         className={classNames(
@@ -1065,18 +1162,19 @@ function FootprintSection() {
                           setshowTransport(false);
                           setshowCloth(true);
                           setshowSec(false);
+                          setshowResult(false);
                         }}
                         aria-current={showCloth ? "page" : undefined}
                       >
                         <span
                           className={classNames(
                             showCloth ? " lgreen" : "  text-gray-400",
-                            "inline-flex items-center justify-center h-10 w-12"
+                            "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
                           <i className={`bx bxs-user bx-sm`}></i>
                         </span>
-                        <span className=" text-base font-medium">
+                        <span className=" text-sm font-medium">
                           Clothing and Footwear
                         </span>
                       </div>
@@ -1095,20 +1193,47 @@ function FootprintSection() {
                           setshowTransport(false);
                           setshowCloth(false);
                           setshowSec(true);
+                          setshowResult(false);
                         }}
                         aria-current={showSec ? "page" : undefined}
                       >
                         <span
                           className={classNames(
                             showSec ? " lgreen" : "  text-gray-400",
-                            "inline-flex items-center justify-center h-10 w-12"
+                            "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
                           <i className={`bx bxs-user bx-sm`}></i>
                         </span>
-                        <span className=" text-base font-medium">
-                          Secondary
+                        <span className=" text-sm font-medium">Secondary</span>
+                      </div>
+                      <div
+                        className={classNames(
+                          showResult
+                            ? " lgreen border-bt"
+                            : "darkgrey hover:lgreen ",
+                          "px-3 !ml-0 sm:ml-75px py-3 flex items-center cursor-pointer"
+                        )}
+                        onClick={() => {
+                          setshowHome(false);
+                          setshowWelcome(false);
+                          setshowWaste(false);
+                          setshowTransport(false);
+                          setshowCloth(false);
+                          setshowSec(false);
+                          setshowResult(true);
+                        }}
+                        aria-current={showResult ? "page" : undefined}
+                      >
+                        <span
+                          className={classNames(
+                            showResult ? " lgreen" : "  text-gray-400",
+                            "inline-flex items-center justify-center h-10 w-8"
+                          )}
+                        >
+                          <i className={`bx bxs-user bx-sm`}></i>
                         </span>
+                        <span className=" text-sm font-medium">Results</span>
                       </div>
                     </div>
                   </div>
@@ -1154,6 +1279,8 @@ function FootprintSection() {
           <Cloth />
         ) : showSec ? (
           <Sec />
+        ) : showResult ? (
+          <Result />
         ) : (
           <Welcome />
         )}

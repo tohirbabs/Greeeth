@@ -37,6 +37,7 @@ import Wallet from "./screens/dashboard/Wallet";
 import CarbonOffset from "./screens/dashboard/CarbonOffset";
 import CarbonFootprint from "./screens/dashboard/CarbonFootprint";
 import { Footprint } from "./screens/Footprint";
+import Map from "./components/Map";
 
 export const PageContext = createContext({});
 
@@ -227,6 +228,14 @@ function App() {
               element={
                 <Layout>
                   <Footprint />
+                </Layout>
+              }
+            />
+            <Route
+              path="/map"
+              element={
+                <Layout>
+                  <Map />
                 </Layout>
               }
             />

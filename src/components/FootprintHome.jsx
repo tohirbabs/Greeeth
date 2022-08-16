@@ -15,10 +15,7 @@ function FootprintHome() {
             The Personal Carbon Footprint attempts to quantify environmental
             effects. Its computation enables you to reduce or optimize your
             energy efficiency and adjust your consumption patterns to lessen
-            your environmental effect. Many of our regular activities, such as
-            consuming power, transportation, housing, food, and trash disposal,
-            contribute to greenhouse gas emissions. These emissions add together
-            to form a household's carbon footprint.
+            your environmental effect.
           </p>
         </div>
         <img
