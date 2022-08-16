@@ -7,6 +7,7 @@ import { Pix1, Pix2, Pix3, Pix4, Pix5, Pix7 } from "../../assets/GetInvolved";
 import { Disclosure } from "@headlessui/react";
 // import Carouseler from "./Carousel";
 import { FreightList } from "./FlightList";
+import { POST } from "../../utils/request";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -212,6 +213,50 @@ const wasteArray = [
   },
 ];
 
+const secArray = [
+  {
+    Illustration: Pix1,
+    TextList: {
+      title: "Holiday (travel/accomodation)",
+      link: "How much Motorbike do you use at home in KWh",
+
+      text: "How much Motorbike do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix2,
+    TextList: {
+      title: "Hotal Stay",
+      link: "Corporate-gifting-to-customers",
+      text: "How much Natural Gas do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix3,
+    TextList: {
+      title: "Financial Intermediation Services(Except insurance and",
+      link: "Use-as-Employee-engagement",
+      text: "How much How much heating oil do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix4,
+    TextList: {
+      title: "Plastic Waste",
+      link: "Unique-Reward",
+      text: "How much Coal do you use at home in KWh",
+    },
+  },
+  {
+    Illustration: Pix4,
+    TextList: {
+      title: "Metal Waste",
+      link: "Unique-Reward",
+      text: "How much Coal do you use at home in KWh",
+    },
+  },
+];
+
 function FootprintSection() {
   const {} = useContext(PageContext);
   const [showWaste, setshowWaste] = useState(false);
@@ -220,6 +265,7 @@ function FootprintSection() {
   const [showWelcome, setshowWelcome] = useState(true);
   const [showCloth, setshowCloth] = useState(false);
   const [showSec, setshowSec] = useState(false);
+  const [err, setErr] = useState("");
 
   function CompaniesList({ Pix, TextList, Index }) {
     return (
@@ -618,6 +664,7 @@ function FootprintSection() {
                     alt="Location pins illustration"
                     loading="lazy"
                     className="mx-auto"
+                    onClick={() => climatiq()}
                   />
                 </div>
               </div>
@@ -841,7 +888,7 @@ function FootprintSection() {
   const Sec = () => {
     return (
       <>
-        {wasteArray.map((comp, i) => (
+        {secArray.map((comp, i) => (
           <CompaniesList
             Pix={comp.Illustration}
             TextList={comp.TextList}
@@ -850,6 +897,35 @@ function FootprintSection() {
         ))}
       </>
     );
+  };
+
+  const climatiq = async () => {
+    try {
+      const body = JSON.stringify({
+        emission_factor: {
+          activity_id: "electricity-energy_source_biogas_corn_chp",
+        },
+        parameters: {
+          energy: 30,
+          energy_unit: "TJ",
+        },
+      });
+
+      const response = await POST(body);
+
+      if (response.ok) {
+        const result = await response.json();
+
+        console.log("result is: ", JSON.stringify(result));
+      }
+
+      response.json().then((text) => {
+        console.log(text);
+      });
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+    }
   };
 
   return (
