@@ -285,6 +285,7 @@ function FootprintSection() {
   // const [homeElecVal, setHomeElec] = useState(0);
   let homeElecVal = 0;
   let homeGasVal = 0;
+  let homeWoodVal = 0;
   // const [homeGasVal, setHomeGas] = useState(0);
   const [err, setErr] = useState("");
 
@@ -701,6 +702,7 @@ function FootprintSection() {
       const [calcHomeEmission, setcalcHomeEmission] = useState(0.0);
       const [calcHomeElec, setcalcHomeElec] = useState(0.0);
       const [calcHomeGas, setcalcHomeGas] = useState(0.0);
+      const [calcHomeWood, setcalcHomeWood] = useState(0.0);
       const homeElec = async () => {
         try {
           const body = JSON.stringify({
@@ -760,7 +762,36 @@ function FootprintSection() {
         } finally {
         }
       };
-      // setcalcHomeEmission((calcHomeElec + calcHomeGas).toFixed(2));
+      const homeWood = async () => {
+        try {
+          const body = JSON.stringify({
+            emission_factor: {
+              activity_id: "heat-and-steam-type_wood_logs",
+            },
+            parameters: {
+              energy: parseInt(homeWoodVal),
+              energy_unit: "kWh",
+            },
+          });
+
+          const response = await POST(body);
+
+          if (response.ok) {
+            const result = await response.json();
+
+            console.log(result.constituent_gases.co2e_total);
+            setcalcHomeWood(result.constituent_gases.co2e_total);
+          }
+
+          response.json().then((text) => {
+            console.log(text);
+          });
+        } catch (err) {
+          setErr(err.message);
+        } finally {
+        }
+      };
+      // setcalcHomeEmission(calcHomeElec);
       return (
         <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 md:px-15 text-gray-600  md:px-12 xl:px-22 bg-white  w-screen">
           <div className="space-y-6 md:space-y-0  m-auto ">
@@ -769,16 +800,20 @@ function FootprintSection() {
                 Total Emissions due to Home Energy
               </h2>
               <div className="gap-4 mt-10 mx-auto text-center w-1/2">
-                <a
+                <div
                   className="block  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
-                  href="/get-involved/sponsors/apply"
+                  onClick={() => {
+                    homeElec();
+                    homeGas();
+                    homeWood();
+                  }}
                 >
                   Calculate Emissions
-                </a>
+                </div>
               </div>
               <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
                 <div class="bg-gray-50 border border-gray-300 lgreen text-2xl bold text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                  {calcHomeEmission}
+                  {(calcHomeGas + calcHomeElec + calcHomeWood).toFixed(2)}
                 </div>
               </div>
             </div>
@@ -947,11 +982,9 @@ function FootprintSection() {
                     </div>
                     <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
                       <input
-                        type="number"
-                        id="state"
+                        type="text"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="0"
-                        required
+                        onInput={(e) => (homeWoodVal = e.target.value)}
                       />
                     </div>
                   </div>
