@@ -760,7 +760,7 @@ function FootprintSection() {
         } finally {
         }
       };
-      setcalcHomeEmission((calcHomeElec + calcHomeGas).toFixed(2));
+      // setcalcHomeEmission((calcHomeElec + calcHomeGas).toFixed(2));
       return (
         <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 md:px-15 text-gray-600  md:px-12 xl:px-22 bg-white  w-screen">
           <div className="space-y-6 md:space-y-0  m-auto ">
@@ -957,7 +957,7 @@ function FootprintSection() {
                   </div>
                 </div>
               </div>
-              {/* <HomeEmissions /> */}
+              <HomeEmissions />
             </div>
           </div>
         </div>
