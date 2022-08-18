@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { calcEmission } from "../../../assets/CarbonEmissions";
+import { homeElec, homeGas, homeWood } from "./API";
 
 export const CalcEmission = ({ title, text }) => {
+  let homeElecVal = 0;
+  let homeGasVal = 0;
+  let homeWoodVal = 0;
+  const [calcHomeElec, setcalcHomeElec] = useState(0.0);
+  const [calcHomeGas, setcalcHomeGas] = useState(0.0);
+  const [calcHomeWood, setcalcHomeWood] = useState(0.0);
   return (
     <div className="mt-8">
       <h2 className="text-2xl lgreen font-bold md:text-4xl">{title}</h2>
@@ -12,18 +19,18 @@ export const CalcEmission = ({ title, text }) => {
 
             <div className="flex flex-wrap gap-4 mb-10 text-center mx-auto">
               <div class="bg-gray-50 border border-gray-300 lgreen text-2xl bold text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                {/* {(calcHomeGas + calcHomeElec + calcHomeWood).toFixed(2)} */}
-                0.00 Kg
+                {(calcHomeGas + calcHomeElec + calcHomeWood).toFixed(2)}
+                {/* 0.00 Kg */}
               </div>
             </div>
             <div className="flex flex-wrap gap-4 text-center mx-auto ">
               <div
-                className="block  p-4  text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
-                //   onClick={() => {
-                //     homeElec();
-                //     homeGas();
-                //     homeWood();
-                //   }}
+                className="block  p-4  text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring mx-auto"
+                onClick={() => {
+                  homeElec(homeElecVal, setcalcHomeElec);
+                  homeGas(homeGasVal, setcalcHomeGas);
+                  homeWood(homeWoodVal, setcalcHomeWood);
+                }}
               >
                 Calculate Emissions
               </div>

@@ -60,7 +60,7 @@ function NavBar() {
             <li className="my-3 lg:my-auto  ml-2  flex items-center ">
               <a
                 className="px-2 flex items-center text-base font-medium  text-zinc-800 hover:opacity-75"
-                href="#somelinks"
+                href="/map"
               >
                 <span className="ml-2 py-2">Map</span>
               </a>
