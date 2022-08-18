@@ -282,11 +282,11 @@ function FootprintSection() {
   const [showCloth, setshowCloth] = useState(false);
   const [showSec, setshowSec] = useState(false);
   const [showResult, setshowResult] = useState(false);
-  const [HomeElec, setHomeElec] = useState(0);
-  const [HomeGas, setHomeGas] = useState(0);
+  // const [homeElecVal, setHomeElec] = useState(0);
+  let homeElecVal = 0;
+  let homeGasVal = 0;
+  // const [homeGasVal, setHomeGas] = useState(0);
   const [err, setErr] = useState("");
-  const [calcHomeElec, setcalcHomeElec] = useState(0.0);
-  const [calcHomeGas, setcalcHomeGas] = useState(0.0);
 
   function CompaniesList({ Pix, TextList, Index }) {
     return (
@@ -697,6 +697,104 @@ function FootprintSection() {
   };
 
   const Home = () => {
+    const HomeEmissions = () => {
+      const [calcHomeEmission, setcalcHomeEmission] = useState(0.0);
+      const [calcHomeElec, setcalcHomeElec] = useState(0.0);
+      const [calcHomeGas, setcalcHomeGas] = useState(0.0);
+      const homeElec = async () => {
+        try {
+          const body = JSON.stringify({
+            emission_factor: {
+              activity_id: "electricity-energy_source_grid_mix",
+            },
+            parameters: {
+              energy: parseInt(homeElecVal),
+              energy_unit: "kWh",
+            },
+          });
+
+          const response = await POST(body);
+
+          if (response.ok) {
+            const result = await response.json();
+
+            console.log(result.constituent_gases.co2e_total);
+            setcalcHomeElec(result.constituent_gases.co2e_total);
+          }
+
+          response.json().then((text) => {
+            console.log(text);
+          });
+        } catch (err) {
+          setErr(err.message);
+        } finally {
+        }
+      };
+
+      const homeGas = async () => {
+        try {
+          const body = JSON.stringify({
+            emission_factor: {
+              activity_id: "heat-and-steam-type_cooking_natural_gas",
+            },
+            parameters: {
+              energy: parseInt(homeGasVal),
+              energy_unit: "kWh",
+            },
+          });
+
+          const response = await POST(body);
+
+          if (response.ok) {
+            const result = await response.json();
+
+            console.log(result.constituent_gases.co2e_total);
+            setcalcHomeGas(result.constituent_gases.co2e_total);
+          }
+
+          response.json().then((text) => {
+            console.log(text);
+          });
+        } catch (err) {
+          setErr(err.message);
+        } finally {
+        }
+      };
+      setcalcHomeEmission((calcHomeElec + calcHomeGas).toFixed(2));
+      return (
+        <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 md:px-15 text-gray-600  md:px-12 xl:px-22 bg-white  w-screen">
+          <div className="space-y-6 md:space-y-0  m-auto ">
+            <div className="text-center mx-3 mb-6">
+              <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                Total Emissions due to Home Energy
+              </h2>
+              <div className="gap-4 mt-10 mx-auto text-center w-1/2">
+                <a
+                  className="block  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+                  href="/get-involved/sponsors/apply"
+                >
+                  Calculate Emissions
+                </a>
+              </div>
+              <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
+                <div class="bg-gray-50 border border-gray-300 lgreen text-2xl bold text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  {calcHomeEmission}
+                </div>
+              </div>
+            </div>
+            <div className="w-8/10 mx-auto">
+              <img
+                src="/assets/calculate/calc.png"
+                alt="Location pins illustration"
+                loading="lazy"
+                className="mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      );
+    };
+
     return (
       <div className="BG-lgreen ">
         <h1 className="text-2xl  sm:(text-5xl !leading-tight) pt-8 mx-4 font-medium capitalize lgreen">
@@ -708,7 +806,7 @@ function FootprintSection() {
           house by the number of people.
         </p>
         <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
-          <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 md:px-15 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
+          <div className="container flex justify-center items-center max-w-screen-xl m-auto py-10 md:py-20 md:px-15 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
             <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
               <div className="text-left md:6/12 lg:w-6/12 md:ml-12 mx-3">
                 <h2 className="text-2xl lgreen font-bold md:text-4xl">
@@ -737,7 +835,7 @@ function FootprintSection() {
               </div>
               <div className="md:6/12 lg:w-6/12 w-8/10 mx-auto">
                 <img
-                  src={Pix1}
+                  src="/assets/calculate/family.png"
                   alt="Location pins illustration"
                   loading="lazy"
                   className="mx-auto"
@@ -758,11 +856,9 @@ function FootprintSection() {
                     </div>
                     <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
                       <input
-                        type="number"
-                        id="state"
+                        type="text"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="0"
-                        onChange={(e) => setHomeElec(e.target.value)}
+                        onInput={(e) => (homeElecVal = e.target.value)}
                       />
                     </div>
                   </div>
@@ -776,7 +872,7 @@ function FootprintSection() {
                   </div>
                 </div>
               </div>
-              <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
+              <div className="container flex justify-center  items-center max-w-screen-xl m-auto py-5 md:py-10 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
                 <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                   <div className="md:5/12 lg:w-6/12 w-9/10 mx-auto">
                     <img
@@ -795,11 +891,9 @@ function FootprintSection() {
                     </div>
                     <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
                       <input
-                        type="number"
-                        id="state"
+                        type="text"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="0"
-                        onChange={(e) => setHomeGas(e.target.value)}
+                        onInput={(e) => (homeGasVal = e.target.value)}
                       />
                     </div>
                   </div>
@@ -819,7 +913,7 @@ function FootprintSection() {
                         type="number"
                         id="state"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="0"
+                        // placeholder="0"
                         required
                       />
                     </div>
@@ -834,11 +928,11 @@ function FootprintSection() {
                   </div>
                 </div>
               </div>
-              <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
+              <div className="container flex justify-center items-center max-w-screen-xl m-auto py-5 md:py-10 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
                 <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                   <div className="md:5/12 lg:w-6/12 w-9/10 mx-auto">
                     <img
-                      src="/assets/calculate/wood.png"
+                      src="/assets/calculate/log.png"
                       alt="Location pins illustration"
                       loading="lazy"
                       className="mx-auto"
@@ -863,6 +957,7 @@ function FootprintSection() {
                   </div>
                 </div>
               </div>
+              {/* <HomeEmissions /> */}
             </div>
           </div>
         </div>
@@ -1052,7 +1147,7 @@ function FootprintSection() {
 
                     <div class="block text-gray-900">
                       <p className="lgreen font-bold text-base px-4 py-2 bg-white rounded">
-                        {calcHomeElec + calcHomeGas}
+                        {(calcHomeElec + calcHomeGas).toFixed(2)}
                       </p>
                       metric tonnes of CO2e
                     </div>
@@ -1122,66 +1217,6 @@ function FootprintSection() {
         </div>
       </>
     );
-  };
-
-  const homeElec = async () => {
-    try {
-      const body = JSON.stringify({
-        emission_factor: {
-          activity_id: "electricity-energy_source_grid_mix",
-        },
-        parameters: {
-          energy: HomeElec,
-          energy_unit: "kWh",
-        },
-      });
-
-      const response = await POST(body);
-
-      if (response.ok) {
-        const result = await response.json();
-
-        console.log(result.constituent_gases.co2e_total);
-        setcalcHomeElec(result.constituent_gases.co2e_total);
-      }
-
-      response.json().then((text) => {
-        console.log(text);
-      });
-    } catch (err) {
-      setErr(err.message);
-    } finally {
-    }
-  };
-
-  const homeGas = async () => {
-    try {
-      const body = JSON.stringify({
-        emission_factor: {
-          activity_id: "heat-and-steam-type_cooking_natural_gas",
-        },
-        parameters: {
-          energy: HomeGas,
-          energy_unit: "kWh",
-        },
-      });
-
-      const response = await POST(body);
-
-      if (response.ok) {
-        const result = await response.json();
-
-        console.log(result.constituent_gases.co2e_total);
-        setcalcHomeGas(result.constituent_gases.co2e_total);
-      }
-
-      response.json().then((text) => {
-        console.log(text);
-      });
-    } catch (err) {
-      setErr(err.message);
-    } finally {
-    }
   };
 
   return (
