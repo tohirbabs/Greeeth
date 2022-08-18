@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { calc, elec, family, gas, log } from "../../../assets/CarbonEmissions";
+import { elec, family, gas, log } from "../../../assets/CarbonEmissions";
+import { calc } from "../../../assets/GetInvolved";
 import { POST } from "../../../utils/request";
 import { EmissionEntry } from "../SectionElements.jsx/EmissionEntry";
 import { CalcEmission } from "./CalcEmission";
@@ -161,21 +162,21 @@ export const HomeEmissions = () => {
         <EmissionEntry
           rightimg={true}
           title="Electricity"
-          text=""
+          text="How much household electricity do you use in kWh?"
           img={elec}
           val={homeElecVal}
         />
         <EmissionEntry
           rightimg={false}
           title="Natural Gas"
-          text=""
+          text="Do you use natural Gas? if yes, enter the amount in kWh. if not enter 0."
           img={gas}
           val={homeGasVal}
         />
         <EmissionEntry
           rightimg={true}
           title="Wood"
-          text=""
+          text="Do you use wood for heating and other domestic uses ? if yes, enter the amount in kWh. if not enter 0."
           img={log}
           val={homeWoodVal}
         />

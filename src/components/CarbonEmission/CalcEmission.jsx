@@ -13,7 +13,7 @@ export const CalcEmission = ({ title, text }) => {
             <div className="flex flex-wrap gap-4 mb-10 text-center mx-auto">
               <div class="bg-gray-50 border border-gray-300 lgreen text-2xl bold text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 {/* {(calcHomeGas + calcHomeElec + calcHomeWood).toFixed(2)} */}
-                0.00
+                0.00 Kg
               </div>
             </div>
             <div className="flex flex-wrap gap-4 text-center mx-auto ">
@@ -29,14 +29,14 @@ export const CalcEmission = ({ title, text }) => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="md:6/12 lg:w-6/12 w-8/10 mx-auto">
-          <img
-            src={calcEmission}
-            alt="Location pins illustration"
-            loading="lazy"
-            className="mx-auto"
-          />
+          <div className="md:6/12 lg:w-6/12 w-8/10 mx-auto">
+            <img
+              src={calcEmission}
+              alt="Location pins illustration"
+              loading="lazy"
+              className="mx-auto"
+            />
+          </div>
         </div>
       </div>
     </div>
