@@ -282,7 +282,11 @@ function FootprintSection() {
   const [showCloth, setshowCloth] = useState(false);
   const [showSec, setshowSec] = useState(false);
   const [showResult, setshowResult] = useState(false);
+  const [HomeElec, setHomeElec] = useState(0);
+  const [HomeGas, setHomeGas] = useState(0);
   const [err, setErr] = useState("");
+  const [calcHomeElec, setcalcHomeElec] = useState(0.0);
+  const [calcHomeGas, setcalcHomeGas] = useState(0.0);
 
   function CompaniesList({ Pix, TextList, Index }) {
     return (
@@ -364,7 +368,7 @@ function FootprintSection() {
 
           <div className="py-10  flex  flex-col  flex-wrapitems-center justify-center BG1">
             <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 md:px-15 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
-              <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
+              <div className="space-y-6 md:space-y-0 md:flex justify-between w-full m-auto md:gap-6 lg:items-center lg:gap-12 ">
                 <div className="text-left md:6/12 lg:w-6/12 md:ml-12 mx-3">
                   <h2 className="text-2xl lgreen font-bold md:text-4xl">
                     Where do you Live?
@@ -677,7 +681,7 @@ function FootprintSection() {
                 </div>
                 <div className="md:6/12 lg:w-6/12 w-8/10 mx-auto">
                   <img
-                    src={Pix1}
+                    src="/assets/calculate/map.png"
                     alt="Location pins illustration"
                     loading="lazy"
                     className="mx-auto"
@@ -741,13 +745,126 @@ function FootprintSection() {
               </div>
             </div>
           </div>
-          {componentsArray.map((comp, i) => (
-            <CompaniesList
-              Pix={comp.Illustration}
-              TextList={comp.TextList}
-              Index={i}
-            />
-          ))}
+          <div className="BG-lgreen ">
+            <div className="py-5  flex  flex-col  flex-wrapitems-center justify-center BG1">
+              <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 md:px-15 text-gray-600  md:px-12 xl:px-22 bg-white  w-screen">
+                <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
+                  <div className="text-center md:6/12 lg:w-6/12 md:ml-12 mx-3">
+                    <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                      Electricity
+                    </h2>
+                    <div className="mt-6 text-gray-600 leading-loose">
+                      How much Electricity do you use at home in KWh
+                    </div>
+                    <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
+                      <input
+                        type="number"
+                        id="state"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="0"
+                        onChange={(e) => setHomeElec(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                  <div className="md:6/12 lg:w-6/12 w-8/10 mx-auto">
+                    <img
+                      src="/assets/calculate/elec.png"
+                      alt="Location pins illustration"
+                      loading="lazy"
+                      className="mx-auto"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
+                <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+                  <div className="md:5/12 lg:w-6/12 w-9/10 mx-auto">
+                    <img
+                      src="/assets/calculate/gas.png"
+                      alt="Location pins illustration"
+                      loading="lazy"
+                      className="mx-auto"
+                    />
+                  </div>
+                  <div className="text-center md:6/12 lg:w-6/12 md:ml-12 mx-3">
+                    <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                      Natural Gas
+                    </h2>
+                    <div className="mt-6 text-gray-600 leading-loose">
+                      How much Electricity do you use at home in KWh
+                    </div>
+                    <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
+                      <input
+                        type="number"
+                        id="state"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="0"
+                        onChange={(e) => setHomeGas(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 md:px-15 text-gray-600  md:px-12 xl:px-22 bg-white  w-screen">
+                <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
+                  <div className="text-center md:6/12 lg:w-6/12 md:ml-12 mx-3">
+                    <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                      Coal
+                    </h2>
+                    <div className="mt-6 text-gray-600 leading-loose">
+                      How much Electricity do you use at home in KWh
+                    </div>
+                    <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
+                      <input
+                        type="number"
+                        id="state"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="0"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="md:6/12 lg:w-6/12 w-8/10 mx-auto">
+                    <img
+                      src="/assets/calculate/map.png"
+                      alt="Location pins illustration"
+                      loading="lazy"
+                      className="mx-auto"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="container flex items-center max-w-screen-xl m-auto py-5 md:py-10 text-gray-600  md:px-12 xl:px-22  BG-lgreen w-screen">
+                <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+                  <div className="md:5/12 lg:w-6/12 w-9/10 mx-auto">
+                    <img
+                      src="/assets/calculate/wood.png"
+                      alt="Location pins illustration"
+                      loading="lazy"
+                      className="mx-auto"
+                    />
+                  </div>
+                  <div className="text-center md:6/12 lg:w-6/12 md:ml-12 mx-3">
+                    <h2 className="text-2xl lgreen font-bold md:text-4xl">
+                      Wood
+                    </h2>
+                    <div className="mt-6 text-gray-600 leading-loose">
+                      How much Electricity do you use at home in KWh
+                    </div>
+                    <div className="flex flex-wrap gap-4 mt-10 text-center mx-auto w-1/2">
+                      <input
+                        type="number"
+                        id="state"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="0"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -935,7 +1052,7 @@ function FootprintSection() {
 
                     <div class="block text-gray-900">
                       <p className="lgreen font-bold text-base px-4 py-2 bg-white rounded">
-                        0.00
+                        {calcHomeElec + calcHomeGas}
                       </p>
                       metric tonnes of CO2e
                     </div>
@@ -1007,15 +1124,15 @@ function FootprintSection() {
     );
   };
 
-  const climatiq = async () => {
+  const homeElec = async () => {
     try {
       const body = JSON.stringify({
         emission_factor: {
-          activity_id: "electricity-energy_source_biogas_corn_chp",
+          activity_id: "electricity-energy_source_grid_mix",
         },
         parameters: {
-          energy: 30,
-          energy_unit: "TJ",
+          energy: HomeElec,
+          energy_unit: "kWh",
         },
       });
 
@@ -1024,7 +1141,38 @@ function FootprintSection() {
       if (response.ok) {
         const result = await response.json();
 
-        console.log("result is: ", JSON.stringify(result));
+        console.log(result.constituent_gases.co2e_total);
+        setcalcHomeElec(result.constituent_gases.co2e_total);
+      }
+
+      response.json().then((text) => {
+        console.log(text);
+      });
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+    }
+  };
+
+  const homeGas = async () => {
+    try {
+      const body = JSON.stringify({
+        emission_factor: {
+          activity_id: "heat-and-steam-type_cooking_natural_gas",
+        },
+        parameters: {
+          energy: HomeGas,
+          energy_unit: "kWh",
+        },
+      });
+
+      const response = await POST(body);
+
+      if (response.ok) {
+        const result = await response.json();
+
+        console.log(result.constituent_gases.co2e_total);
+        setcalcHomeGas(result.constituent_gases.co2e_total);
       }
 
       response.json().then((text) => {
@@ -1070,7 +1218,7 @@ function FootprintSection() {
                             "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
-                          <i className={`bx bxs-building-house bx-sm`}></i>
+                          <i className={`bx bxs-calculator bx-sm`}></i>
                         </span>
                         <span className=" text-sm font-medium">Welcome</span>
                       </div>
@@ -1094,11 +1242,11 @@ function FootprintSection() {
                       >
                         <span
                           className={classNames(
-                            showHome ? " lgreen" : "  text-gray-400",
+                            showHome ? " lgreen" : "text-gray-400",
                             "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
-                          <i className={`bx bxs-user bx-sm`}></i>
+                          <i className={`bx bxs-home bx-sm`}></i>
                         </span>
                         <span className=" text-sm font-medium">
                           Home Energy
@@ -1128,9 +1276,9 @@ function FootprintSection() {
                             "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
-                          <i className={`bx bxs-building-house bx-sm`}></i>
+                          <i className={`bx bxs-plane-take-off bx-sm`}></i>
                         </span>
-                        <span className=" text-sm font-medium">
+                        <span className="text-sm font-medium">
                           Transportation Effects
                         </span>
                       </div>
@@ -1159,7 +1307,7 @@ function FootprintSection() {
                             "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
-                          <i className={`bx bxs-user bx-sm`}></i>
+                          <i className={`bx bxs-trash bx-sm`}></i>
                         </span>
                         <span className=" text-sm font-medium">Waste</span>
                       </div>
@@ -1187,7 +1335,7 @@ function FootprintSection() {
                             "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
-                          <i className={`bx bxs-user bx-sm`}></i>
+                          <i className={`bx bxs-t-shirt bx-sm`}></i>
                         </span>
                         <span className=" text-sm font-medium">
                           Clothing and Footwear
@@ -1218,7 +1366,7 @@ function FootprintSection() {
                             "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
-                          <i className={`bx bxs-user bx-sm`}></i>
+                          <i className={`bx bx-money bx-sm`}></i>
                         </span>
                         <span className=" text-sm font-medium">Secondary</span>
                       </div>
@@ -1237,6 +1385,8 @@ function FootprintSection() {
                           setshowCloth(false);
                           setshowSec(false);
                           setshowResult(true);
+                          homeElec();
+                          homeGas();
                         }}
                         aria-current={showResult ? "page" : undefined}
                       >
@@ -1246,7 +1396,7 @@ function FootprintSection() {
                             "inline-flex items-center justify-center h-10 w-8"
                           )}
                         >
-                          <i className={`bx bxs-user bx-sm`}></i>
+                          <i className={`bx bxs-check-shield bx-sm`}></i>
                         </span>
                         <span className=" text-sm font-medium">Results</span>
                       </div>

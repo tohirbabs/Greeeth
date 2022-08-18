@@ -253,6 +253,14 @@ function SponsorsSection() {
                   to greenhouse gas emissions. These emissions add together to
                   form a household's carbon footprint.
                 </div>
+                <div className="flex w-full  mt-10 text-center">
+                  <a
+                    className="block mx-auto px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-1/4 hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                    href={`/calculate-footprint`}
+                  >
+                    Calculate
+                  </a>
+                </div>
               </div>
               <div className="">
                 <img
