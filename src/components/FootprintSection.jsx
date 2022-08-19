@@ -10,6 +10,7 @@ import { FreightList } from "./FlightList";
 import { POST } from "../../utils/request";
 import Welcome from "./CarbonEmission/Welcome";
 import { HomeEmissions } from "./CarbonEmission/HomeEmissions";
+import { TransportEmissions } from "./CarbonEmission/TransportEmissions";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -868,7 +869,7 @@ function FootprintSection() {
         ) : showHome ? (
           <HomeEmissions />
         ) : showTransport ? (
-          <Transport />
+          <TransportEmissions />
         ) : showWaste ? (
           <Waste />
         ) : showCloth ? (
