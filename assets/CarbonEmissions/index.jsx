@@ -11,3 +11,5 @@ export { default as ship } from "./ship.png";
 export { default as taxi } from "./taxi.png";
 export { default as bike } from "./bike.png";
 export { default as train } from "./train.png";
+export { default as greenhouse } from "./greenhouse.jpg";
+export { default as homicon } from "./homicon.png";
