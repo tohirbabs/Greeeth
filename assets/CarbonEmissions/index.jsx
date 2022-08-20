@@ -13,3 +13,4 @@ export { default as bike } from "./bike.png";
 export { default as train } from "./train.png";
 export { default as greenhouse } from "./greenhouse.jpg";
 export { default as homicon } from "./homicon.png";
+export { default as transicon } from "./transicon.png";
