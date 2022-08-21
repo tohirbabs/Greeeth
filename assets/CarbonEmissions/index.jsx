@@ -14,3 +14,8 @@ export { default as train } from "./train.png";
 export { default as greenhouse } from "./greenhouse.jpg";
 export { default as homicon } from "./homicon.png";
 export { default as transicon } from "./transicon.png";
+export { default as food } from "./food.png";
+export { default as sec } from "./sec.png";
+export { default as greensec } from "./greensec.jpg";
+export { default as vegan } from "./vegan.jpg";
+export { default as travel } from "./travel.jpg";

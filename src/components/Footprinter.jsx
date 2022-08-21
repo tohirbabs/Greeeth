@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import { greenhouse, homicon, transicon } from "../../assets/CarbonEmissions";
+import { sec, food, homicon, transicon } from "../../assets/CarbonEmissions";
 import { calc } from "../../assets/GetInvolved";
 import { Query } from "./CarbonEmission/QuerySection";
 
@@ -67,7 +67,7 @@ export const Footprinter = () => {
     },
     {
       title: "FOOD",
-      icon: { transicon },
+      icon: { food },
       questions: [
         "How would you best describe your diet?",
         "In a week, how much do you spend on food from restaurants, canteens and takeaways?",
@@ -92,7 +92,7 @@ export const Footprinter = () => {
     },
     {
       title: "SECONDARY",
-      icon: { transicon },
+      icon: { sec },
       questions: [
         "In the last 12 months, have you bought any of these new household items?",
         "In a typical month, how much do you spend on clothes and footwear?",

@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import {
+  food,
   greenhouse,
+  greensec,
   homicon,
+  sec,
   transicon,
+  travel,
+  vegan,
 } from "../../../assets/CarbonEmissions";
 
 export const Query = ({
@@ -14,7 +19,8 @@ export const Query = ({
   dataSections,
 }) => {
   console.log("query");
-  const icons = [homicon, transicon];
+  const icons = [homicon, transicon, food, sec];
+  const displayImgs = [greenhouse, travel, vegan, greensec];
   let maxQuery = dataSet.questions.length;
   const [questionCount, setquestionCount] = useState(1);
   const [countRatio, setcountRatio] = useState(
@@ -139,7 +145,7 @@ export const Query = ({
         </div>
       </div>
       <div className="right sm:w-9/20 bg-lgreen text-white rounded-3xl p-1 flex flex-col items-center overflow-hidden">
-        <img className="rounded-3xl" src={greenhouse} alt="" />
+        <img className="rounded-3xl" src={displayImgs[dataIndex]} alt="" />
         <div className="text-sm text-left w-9/10 my-6">
           <div className=" px-4 py-2 bg-white rounded w-max lgreen font-bold text-2xl">
             DID YOU KNOW?
