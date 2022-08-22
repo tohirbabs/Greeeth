@@ -13,8 +13,47 @@ import {
 
 export const Query = ({ dataSet }) => {
   console.log("query");
-  const icons = [homicon, transicon, food, sec];
-  const displayImgs = [greenhouse, travel, vegan, greensec];
+  const icons = [
+    homicon,
+    homicon,
+    homicon,
+    homicon,
+    homicon,
+    transicon,
+    transicon,
+    transicon,
+    transicon,
+    transicon,
+    food,
+    food,
+    food,
+    food,
+    sec,
+    sec,
+    sec,
+    sec,
+    sec,
+  ];
+  const displayImgs = [
+    greenhouse,
+    greenhouse,
+    greenhouse,
+    greenhouse,
+    greenhouse,
+    travel,
+    travel,
+    travel,
+    travel,
+    travel,
+    vegan,
+    vegan,
+    vegan,
+    vegan,
+    greensec,
+    greensec,
+    greensec,
+    greensec,
+  ];
   const [selected, setselected] = useState(false);
   const [selectedOption, setselectedOption] = useState(-1);
 
@@ -75,7 +114,7 @@ export const Query = ({ dataSet }) => {
         <div className="my-4">
           <div className="flex justify-between text-base  items-center font-bold">
             <div className="flex gap-2 items-center">
-              <img src={dataSet[questionCount].icon} alt="" />
+              <img src={icons[questionCount]} alt="" />
               <p>{dataSet[questionCount].title}</p>
             </div>
             <p>
@@ -139,11 +178,7 @@ export const Query = ({ dataSet }) => {
         </div>
       </div>
       <div className="right sm:w-9/20 bg-lgreen text-white rounded-3xl p-1 flex flex-col items-center overflow-hidden">
-        <img
-          className="rounded-3xl"
-          src={dataSet[questionCount].displayImg}
-          alt=""
-        />
+        <img className="rounded-3xl" src={displayImgs[questionCount]} alt="" />
         <div className="text-sm text-left w-9/10 my-6">
           <div className=" px-4 py-2 bg-white rounded w-max lgreen font-bold text-2xl">
             DID YOU KNOW?
