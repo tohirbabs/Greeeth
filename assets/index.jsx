@@ -10,3 +10,4 @@ export { default as Monitor } from "./Monitor.svg";
 export { default as Speedometer } from "./Speedometer.svg";
 export { default as Logo } from "./Logo.jsx";
 export { default as GreenLogo } from "./GreenLogo.jsx";
+export { default as profilePic } from "./profile.png";

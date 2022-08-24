@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { ShopIcon } from "../../assets";
+import { profilePic, ShopIcon } from "../../assets";
 import DropdownNavItem from "./DropdownNavItem";
 
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import DropdownTopNavItem from "./DropdownTopNavItem";
+import { SearchIcon } from "@heroicons/react/solid";
 
 const TopBar = () => {
   const getInvolvedMenuItems = [
@@ -21,30 +22,23 @@ const TopBar = () => {
       <div className="flex justify-between items-center sm:mr-4">
         <div className="">
           <div className="flex items-center sm:gap-4 gap-2">
-            <img
-              src="/assets/profile.png"
-              alt=""
-              className="w-2.5rem h-2.5rem"
-            />
-            <input
-              className="rounded border sm:p-2 p-1 sm:w-30vw text-sm sm:text-base"
-              placeholder="Search here"
-              type="search"
-              name=""
-              id=""
-            />
-            <button
-              className="bg-lgreen p-2 sm:px-4 text-white rounded text-sm sm:text-base"
-              type="submit"
-            >
-              search
-            </button>
+            <img src={profilePic} alt="" className="w-2.5rem h-2.5rem" />
+            <div className="flex border rounded-xl bg-white p-2">
+              <SearchIcon className="sm:hidden block h-8 w-8 ligreen" />
+              <input
+                className="p-1 sm:w-30vw text-sm sm:text-base"
+                placeholder="Search here"
+                type="search"
+                name=""
+                id=""
+              />
+            </div>
           </div>
         </div>
         <DropdownTopNavItem
           itemName={
             <MenuIcon
-              className="sm:hidden block h-8 w-8 lgreen"
+              className="sm:hidden block h-8 w-8 ligreen"
               aria-hidden="true"
             />
           }
