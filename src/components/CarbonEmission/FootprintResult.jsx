@@ -21,28 +21,28 @@ export const FootprintResult = () => {
         </div>
       </div>
       <div className="averages font-bold text-left sm:w-1/2 flex flex-col  gap-8 ligreen">
-        <div className="year bg-white sm:h-1/2 rounded-xl p-8 px-4 flex items-center gap-4">
+        <div className="year bg-white sm:h-1/2 rounded-xl p-4 px-4 flex items-center gap-4">
           <img
-            className="max-w-25"
+            className="max-w-1/3"
             src="../../../assets/CarbonEmissions/globe.png"
             alt=""
           />
           <div className="">
-            <h3 className="text-2xl">WORLD AVERAGE FOOTPRINT FOR 2022</h3>
-            <p className="text-5xl">10.5</p>
+            <h3 className="text-lg">WORLD AVERAGE FOOTPRINT FOR 2022</h3>
+            <p className="text-5xl mt-6">10.5</p>
             <p className="text-3xl">TONNES</p>
           </div>
         </div>
-        <div className="percent sm:h-1/2 bg-white rounded-xl p-8 px-4 flex items-center gap-4">
+        <div className="percent sm:h-1/2 bg-white rounded-xl p-4 px-4 flex items-center gap-4">
           <img
-            className="max-w-30 max-h-30"
+            className="max-w-1/3 max-h-30"
             src="../../../assets/CarbonEmissions/percent.png"
             alt=""
           />
           <div className="">
-            <h3 className="text-2xl">YOUR FOOTPRINT IS</h3>
-            <p className="text-5xl">70%</p>
-            <p className="text-3xl">OF THE GLOBAL AVERAGE FOR 2022</p>
+            <h3 className="sm:text-xl text-lg">YOUR FOOTPRINT IS</h3>
+            <p className="text-5xl mt-6">70%</p>
+            <p className="sm:text-xl text-lg">OF THE GLOBAL AVERAGE FOR 2022</p>
           </div>
         </div>
       </div>
