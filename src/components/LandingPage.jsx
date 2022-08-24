@@ -601,18 +601,16 @@ const LandingPage = () => {
         </div>
 
         <Facts />
-        <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-white w-screen">
+        <div className="container flex items-center max-w-screen-xl rounded-3xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-lgreen w-screen">
           <div className="space-y-6 md:space-y-0 px-4 lg:items-center">
-            <h1 className="text-3xl text-left sm:(text-5xl !leading-tight) font-medium capitalize text-zinc-800">
+            <h1 className="text-3xl text-left sm:(text-5xl !leading-tight) font-medium capitalize text-white">
               Interactive map to explore
             </h1>
-            <div className="mx-auto">
-              <img
-                src={map}
-                alt="Location pins illustration"
-                loading="lazy"
-                className="mx-auto my-4"
-              />
+            <div className="mx-auto rounded-xl overflow-hidden">
+              <iframe
+                className="mx-auto sm:w-80vw w-95vw sm:h-70vh h-50vh"
+                src="https://my.gfw-mapbuilder.org/v1.latest/?appid=b6cd16603b95427ba7dddc5b30133de6"
+              ></iframe>
             </div>
           </div>
         </div>
