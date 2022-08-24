@@ -12,11 +12,11 @@ export const FootprintResult = () => {
           Your annual footprint is well below the Global average. Keep up the
           great work and share your score!
         </p>
-        <div className="mt-4 font-bold flex flex-col items-center gap-6 mt-20">
+        <div className="mt-4 font-bold flex flex-col items-center gap-6 sm:mt-20">
           <p className="sm:text-2xl text-xl">YOUR FOOTPRINT IS EQUAL TO</p>
-          <p className="text-7xl">7.4</p>
-          <p className="text-5xl">TONNES*</p>
-          <div className=" rounded-xl p-4 w-full relative w-9/10 p-3 text-base  my-3 cursor-pointer  bg-lgreen text-white">
+          <p className="sm:text-7xl text-4xl">7.4</p>
+          <p className="sm:text-5xl text-2xl">TONNES*</p>
+          <div className=" rounded-xl sm:p-4 p-2 w-full relative w-9/10 p-3 text-base  my-3 cursor-pointer  bg-lgreen text-white">
             SHARE SCORE
           </div>
         </div>
@@ -26,15 +26,15 @@ export const FootprintResult = () => {
           <img className="max-w-1/3" src={global} alt="" />
           <div className="">
             <h3 className="text-lg">WORLD AVERAGE FOOTPRINT FOR 2022</h3>
-            <p className="text-5xl mt-6">10.5</p>
-            <p className="text-3xl">TONNES</p>
+            <p className="sm:text-5xl text-4xl mt-4">10.5</p>
+            <p className="sm:text-3xl text-2xl">TONNES</p>
           </div>
         </div>
         <div className="percent sm:h-1/2 bg-lgreen rounded-xl p-4 px-4 flex items-center gap-4">
           <img className="max-w-1/3 max-h-30" src={percent} alt="" />
           <div className="">
             <h3 className="sm:text-xl text-lg">YOUR FOOTPRINT IS</h3>
-            <p className="text-5xl mt-6">70%</p>
+            <p className="sm:text-5xl text-4xl mt-4">70%</p>
             <p className="sm:text-xl text-lg">OF THE GLOBAL AVERAGE FOR 2022</p>
           </div>
         </div>
