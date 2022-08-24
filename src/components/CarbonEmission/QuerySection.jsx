@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import {
   clean,
@@ -69,31 +69,30 @@ export const Query = ({ dataSet }) => {
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
+  const Questions = () => {
+    return <div>QuerySection</div>;
+  };
+
   const Options = ({ option, optindex }) => {
     const [cookies, setCookie] = useCookies();
     const HandleClick = () => {
-      setselectedOption(optindex);
+      setselectedOption(option);
       console.log(cookies);
 
-      setCookie(`${dataSet[questionCount].query}`, `${optindex}`, {
+      setCookie(`${dataSet[questionCount].query}`, `${option}`, {
         path: "/",
       });
     };
 
-    useCallback(() => {
-      if (cookies[dataSet[questionCount].query]) {
-        setselectedOption(cookies[dataSet[questionCount].query]);
-      }
-    });
     console.log(selectedOption);
     return (
       <div
         onClick={() => {
           HandleClick();
-          console.log(selectedOption == optindex);
+          console.log(selectedOption == option);
         }}
         className={classNames(
-          selectedOption == optindex
+          selectedOption == option
             ? "bg-white lgreen"
             : "bg-lgreen hover-lgreen text-white hover:bg-white",
           " rounded border-2 bd-lgreen relative w-9/10 p-3 text-base  my-3 cursor-pointer  "
@@ -101,7 +100,7 @@ export const Query = ({ dataSet }) => {
       >
         <span
           className={classNames(
-            selectedOption == optindex ? "" : "hidden",
+            selectedOption == option ? "" : "hidden",
             "absolute left-5"
           )}
         >
@@ -112,6 +111,12 @@ export const Query = ({ dataSet }) => {
     );
   };
   console.log(dataSet[questionCount].icon);
+
+  useCallback(() => {
+    if (cookies[dataSet[questionCount].query]) {
+      setselectedOption(cookies[dataSet[questionCount].query]);
+    }
+  }, [selectedOption]);
   return (
     <div className="flex flex-col sm:flex-row justify-center text-zinc-800 gap-3rem mt-10 sm:text-xl items-center py-10 pb-20">
       <div className="left sm:w-10/20 w-full">
@@ -142,42 +147,48 @@ export const Query = ({ dataSet }) => {
           <p className="text-left mb-6">{dataSet[questionCount].query}</p>
           <div className="options w-full flex flex-col items-center">
             {dataSet[questionCount].options.map((option, i) => (
-              <Options option={option} optindex={i} />
+              <Options option={option} />
             ))}
           </div>
 
           <div className="w-full flex justify-center gap-4rem my-8">
             <div
               onClick={() => {
-                // console.log(dataSections);
-                // console.log(dataIndex);
                 console.log(questionCount);
                 if (questionCount >= 1) {
-                  // console.log(dataIndex);
+                  setselectedOption(-1);
                   setquestionCount(questionCount - 1);
                 }
-                // if (dataSections <= dataIndex + 1 && questionCount == 1) {
-                //   console.log(dataIndex);
-                //   prevQuery(dataIndex);
-                //   setquestionCount(dataSet.questions.length);
-                // }
               }}
               className="prev bg-white rounded lgreen px-6 py-2 cursor-pointer"
             >
               Prev
             </div>
-            <div
-              onClick={() => {
-                console.log(questionCount);
-                if (questionCount + 1 < dataSet.length) {
-                  // console.log(dataIndex);
-                  setquestionCount(questionCount + 1);
-                }
-              }}
-              className="next bg-lgreen rounded text-white px-6 py-2 cursor-pointer"
-            >
-              Next
-            </div>
+            {questionCount + 1 == dataSet.length ? (
+              <a
+                href="/footprint-results"
+                className="next bg-lgreen rounded text-white px-6 py-2 cursor-pointer"
+              >
+                Finish
+              </a>
+            ) : (
+              <div
+                onClick={() => {
+                  console.log(questionCount);
+                  if (questionCount + 1 < dataSet.length) {
+                    setselectedOption(-1);
+                    setquestionCount(questionCount + 1);
+                  }
+                  if (questionCount + 1 == dataSet.length) {
+                    setselectedOption(-1);
+                    setquestionCount(questionCount + 1);
+                  }
+                }}
+                className="next bg-lgreen rounded text-white px-6 py-2 cursor-pointer"
+              >
+                Next
+              </div>
+            )}
           </div>
         </div>
       </div>

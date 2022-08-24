@@ -41,6 +41,7 @@ import Map from "./components/Map";
 import DashboardLayout from "./components/DashboardLayout";
 import { Footprinter } from "./components/Footprinter";
 import { CookiesProvider } from "react-cookie";
+import { FootprintResult } from "./components/CarbonEmission/FootprintResult";
 
 export const PageContext = createContext({});
 
@@ -235,6 +236,14 @@ function App() {
                 element={
                   <DashboardLayout>
                     <Footprinter />
+                  </DashboardLayout>
+                }
+              />
+              <Route
+                path="/footprint-results"
+                element={
+                  <DashboardLayout>
+                    <FootprintResult />
                   </DashboardLayout>
                 }
               />
