@@ -23,7 +23,7 @@ const TopBar = () => {
         <div className="">
           <div className="flex items-center sm:gap-4 gap-2">
             <img src={profilePic} alt="" className="w-2.5rem h-2.5rem" />
-            <div className="flex border rounded-xl bg-white p-2">
+            <div className="flex border rounded-xl bg-white p-1">
               <SearchIcon className="sm:hidden block h-8 w-8 ligreen" />
               <input
                 className="p-1 sm:w-30vw text-sm sm:text-base"
