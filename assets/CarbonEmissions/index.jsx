@@ -16,6 +16,8 @@ export { default as homicon } from "./homicon.png";
 export { default as transicon } from "./transicon.png";
 export { default as food } from "./food.png";
 export { default as fooder } from "./fooder.png";
+export { default as global } from "./globe.png";
+export { default as percent } from "./percent.png";
 export { default as home } from "./home.png";
 export { default as clean } from "./clean.png";
 export { default as sec } from "./sec.png";
