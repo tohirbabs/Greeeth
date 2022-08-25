@@ -240,6 +240,7 @@ export const Footprinter = () => {
         "Motorbike",
         "Neither - I walk, cycle or use public transport for all my journeys",
       ],
+      values: [0, 0, 0],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "TRAVEL OFTEN REPRESENTS A SIGNIFICANT PART OF PEOPLE’S FOOTPRINT.",
@@ -261,8 +262,9 @@ export const Footprinter = () => {
         "5 to 15 hours",
         "15 to 25 hours",
         "Over 25 hours",
-        "I dont travel by train",
+        "I dont travel by car/motorbike",
       ],
+      values: [25, 50, 180, 360, 550, 0],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "TRAVEL OFTEN REPRESENTS A SIGNIFICANT PART OF PEOPLE’S FOOTPRINT.",
@@ -286,6 +288,7 @@ export const Footprinter = () => {
         "Over 25 hours",
         "I dont travel by train",
       ],
+      values: [4, 8, 20, 40, 60, 0],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "FLIGHT OFTEN REPRESENTS A SIGNIFICANT PART OF PEOPLE’S FOOTPRINT.",
@@ -310,6 +313,7 @@ export const Footprinter = () => {
         "Over 10 hours",
         "I dont travel by bus",
       ],
+      values: [4, 8, 16, 28, 60, 0],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "TRAVEL OFTEN REPRESENTS A SIGNIFICANT PART OF PEOPLE’S FOOTPRINT.",
@@ -327,6 +331,7 @@ export const Footprinter = () => {
       query:
         "In the last year, how many local and International flights have you made in total ?",
       options: ["None", "1 - 10", "10 - 20", "20 - 30", "30 or more"],
+      values: [0, 90, 270, 450, 1000],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "FLIGHT OFTEN REPRESENTS A SIGNIFICANT PART OF PEOPLE’S FOOTPRINT.",
@@ -348,6 +353,7 @@ export const Footprinter = () => {
         "Meat/beef in meals very rarely",
         "Meat/beef in meals frequently",
       ],
+      values: [100, 84, 120, 350],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle: "YOUR DIET IS AN IMPORTANT PART OF YOUR CARBON FOOTPRINT.",
       displayText:
@@ -364,6 +370,7 @@ export const Footprinter = () => {
       query:
         "In a week, how much do you spend on food from restaurants, canteens and takeaways?",
       options: ["$0", "$1 - $10", "$10 - $60", "more than $60"],
+      values: [0, 5, 20, 35],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle: "YOUR DIET IS AN IMPORTANT PART OF YOUR CARBON FOOTPRINT.",
       displayText:
@@ -379,6 +386,7 @@ export const Footprinter = () => {
 
       query: "Of the food you buy how much is wasted and thrown away?",
       options: ["None", "0% - 10%", "10% - 30%", "more than 30%"],
+      values: [0, 3, 6, 10],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle: "YOUR DIET IS AN IMPORTANT PART OF YOUR CARBON FOOTPRINT.",
       displayText:
@@ -399,6 +407,7 @@ export const Footprinter = () => {
         "Some of the food I buy is locally sourced",
         "I don't worry about where my food comes from",
       ],
+      values: [15, 10, 30],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle: "YOUR DIET IS AN IMPORTANT PART OF YOUR CARBON FOOTPRINT.",
       displayText:
@@ -420,6 +429,7 @@ export const Footprinter = () => {
         "Washing machine/Dishwasher or Fridge",
         "Mobile phone or tablet",
       ],
+      values: [331, 80, 300, 85],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "THE PRODUCTION PROCESS REQUIRES MASSIVE AMOUNTS OF ENERGY.",
@@ -437,6 +447,7 @@ export const Footprinter = () => {
       query:
         "In a typical month, how much do you spend on clothes and footwear?",
       options: ["$0 - $10", "$10 - $60", "$60+"],
+      values: [10, 60, 150],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "THE PRODUCTION PROCESS REQUIRES MASSIVE AMOUNTS OF ENERGY.",
@@ -454,6 +465,7 @@ export const Footprinter = () => {
       query:
         "In a typical month, how much do you spend on phone, internet and TV contracts?",
       options: ["$0 - $25", "$25 - $50", "$50 - $75", "$75+"],
+      values: [3, 6, 12, 20],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "THE PRODUCTION PROCESS REQUIRES MASSIVE AMOUNTS OF ENERGY.",
@@ -471,6 +483,7 @@ export const Footprinter = () => {
       query:
         "In a typical month, how much do you spend on entertainment and hobbies (sports/gym, cinema, books, newspapers, gardening, computer games)",
       options: ["$0 - $25", "$25 - $50", "$50 - $75", "$75+"],
+      values: [3, 9, 17, 30],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "THE PRODUCTION PROCESS REQUIRES MASSIVE AMOUNTS OF ENERGY.",
@@ -487,6 +500,7 @@ export const Footprinter = () => {
 
       query: "Which of these types of waste do you recycle and/or compost?",
       options: ["Food", "Paper", "Tin cans", "Plastic", "Glass"],
+      values: [45, 8, 5, 3, 2],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
         "THE PRODUCTION PROCESS REQUIRES MASSIVE AMOUNTS OF ENERGY.",
