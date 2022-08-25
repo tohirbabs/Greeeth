@@ -83,10 +83,20 @@ export const FootprintResult = () => {
   return (
     <div className="">
       <div className="my-10 bg-lgreen sm:p-6 p-4 px-2 rounded-xl text-white ">
-        <div className="">LET'S BREAK IT DOWN</div>
+        <div className=" text-left p-4 bg-white ligreen w-max px-6 font-bold mb-10 rounded-md">
+          LET'S BREAK IT DOWN
+        </div>
         <div className="">
-          <p>YOUR FOOTPRINT IS EQUAL TO {totalfoot / 1000}T</p>
-          <div className="">sections</div>
+          <p className="font-bold text-lg text-right">
+            YOUR FOOTPRINT IS EQUAL TO {totalfoot / 1000}T
+          </p>
+          <div className="flex w-full h-4px bg-white my-2 rounded">
+            <div className="home h-4px bg-blue-200"></div>
+            <div className="travel h-4px">
+              <div className="food h-4px"></div>
+              <div className="sec h-4px"></div>
+            </div>
+          </div>
         </div>
         <div className=" flex flex-wrap gap-4 justify-center max-w-1000px mx-auto my-10">
           <div className="flex bg-white sm:min-h-230px ligreen sm:w-10/21 rounded-xl overflow-hidden">
