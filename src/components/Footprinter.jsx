@@ -419,7 +419,7 @@ export const Footprinter = () => {
       index: 1,
       totalindex: 5,
       width: "w-1/5",
-      multiple: false,
+      multiple: true,
 
       query:
         "In the last 12 months, have you bought any of these new household items?",
@@ -496,7 +496,7 @@ export const Footprinter = () => {
       index: 5,
       totalindex: 5,
       width: "w-5/5",
-      multiple: false,
+      multiple: true,
 
       query: "Which of these types of waste do you recycle and/or compost?",
       options: ["Food", "Paper", "Tin cans", "Plastic", "Glass"],

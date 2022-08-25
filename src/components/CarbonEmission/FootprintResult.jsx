@@ -55,11 +55,11 @@ export const FootprintResult = () => {
       ]
     );
   var secfoot =
-    parseInt(
-      cookies[
-        "In the last 12 months, have you bought any of these new household items?"
-      ]
-    ) +
+    // parseInt(
+    //   cookies[
+    //     "In the last 12 months, have you bought any of these new household items?"
+    //   ]
+    // ) +
     parseInt(
       cookies[
         "In a typical month, how much do you spend on clothes and footwear?"
@@ -74,10 +74,10 @@ export const FootprintResult = () => {
       cookies[
         "In a typical month, how much do you spend on entertainment and hobbies (sports/gym, cinema, books, newspapers, gardening, computer games)"
       ]
-    ) +
-    parseInt(
-      cookies["Which of these types of waste do you recycle and/or compost?"]
     );
+  // parseInt(
+  //   cookies["Which of these types of waste do you recycle and/or compost?"]
+  // );
 
   var totalfoot = homefoot + travelfoot + foodfoot + secfoot;
   return (

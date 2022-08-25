@@ -207,24 +207,26 @@ export const Query = ({ dataSet }) => {
               <div
                 onClick={() => {
                   console.log(questionCount);
+                  console.log(dataSet.length);
+                  console.log(selectedOption != -1);
+                  console.log(dataSet[questionCount].multiple);
+                  console.log(questionCount + 1 <= dataSet.length);
                   if (selectedOption != -1) {
-                    if (questionCount + 1 < dataSet.length) {
+                    if (questionCount + 1 <= dataSet.length) {
                       setselectedOption(-1);
                       setquestionCount(questionCount + 1);
                     }
-                    if (questionCount + 1 == dataSet.length) {
-                      setselectedOption(-1);
-                      setquestionCount(questionCount + 1);
-                    }
-                    if (dataSet[questionCount].multiple) {
-                      setCookie(
-                        `${dataSet[questionCount].query}`,
-                        `${selectedOptions}`,
-                        {
-                          path: "/",
-                        }
-                      );
-                    }
+                  }
+                  if (dataSet[questionCount].multiple) {
+                    setCookie(
+                      `${dataSet[questionCount].query}`,
+                      `${selectedOptions}`,
+                      {
+                        path: "/",
+                      }
+                    );
+                    setselectedOptions([]);
+                    setquestionCount(questionCount + 1);
                   }
                 }}
                 className="next bg-lgreen rounded text-white px-6 py-2 cursor-pointer"
