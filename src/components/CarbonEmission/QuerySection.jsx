@@ -60,7 +60,8 @@ export const Query = ({ dataSet }) => {
   ];
   const [selected, setselected] = useState(false);
   const [selectedOption, setselectedOption] = useState(-1);
-
+  const [selectedOptions, setselectedOptions] = useState([]);
+  const [cookies, setCookie] = useCookies();
   const [questionCount, setquestionCount] = useState(0);
   // const [countRatio, setcountRatio] = useState(
   //   (questionCount * 100) / maxQuery
@@ -74,29 +75,61 @@ export const Query = ({ dataSet }) => {
   };
 
   const Options = ({ option, optindex }) => {
-    const [cookies, setCookie] = useCookies();
     const HandleClick = () => {
       setselectedOption(option);
       console.log(cookies);
+      console.log(dataSet[questionCount].values);
+      console.log(optindex);
+      console.log(dataSet[questionCount].options.indexOf(option));
 
-      setCookie(`${dataSet[questionCount].query}`, `${option}`, {
-        path: "/",
-      });
+      setCookie(
+        `${dataSet[questionCount].query}`,
+        `${dataSet[questionCount].values[optindex]}`,
+        {
+          path: "/",
+        }
+      );
+    };
+    const removeItem = (index) => {
+      setselectedOptions([
+        ...selectedOptions.slice(0, index),
+        ...selectedOptions.slice(index + 1),
+      ]);
+    };
+
+    const HandleClicked = () => {
+      setselectedOptions((selectedOptions) => [...selectedOptions, option]);
+
+      console.log(selectedOptions);
     };
 
     console.log(selectedOption);
+    console.log(dataSet[questionCount].multiple);
     return (
       <div
         onClick={() => {
-          HandleClick();
-          console.log(selectedOption == option);
+          if (dataSet[questionCount].multiple) {
+            HandleClicked();
+          } else {
+            HandleClick();
+            console.log(selectedOption == option);
+          }
         }}
-        className={classNames(
-          selectedOption == option
-            ? "bg-white lgreen"
-            : "bg-lgreen hover-lgreen text-white hover:bg-white",
-          " rounded border-2 bd-lgreen relative w-9/10 p-3 text-base  my-3 cursor-pointer  "
-        )}
+        className={
+          dataSet[questionCount].multiple
+            ? classNames(
+                selectedOptions.includes(option)
+                  ? "bg-white lgreen"
+                  : "bg-lgreen hover-lgreen text-white hover:bg-white",
+                " rounded border-2 bd-lgreen relative w-9/10 p-3 text-base  my-3 cursor-pointer  "
+              )
+            : classNames(
+                selectedOption == option
+                  ? "bg-white lgreen"
+                  : "bg-lgreen hover-lgreen text-white hover:bg-white",
+                " rounded border-2 bd-lgreen relative w-9/10 p-3 text-base  my-3 cursor-pointer  "
+              )
+        }
       >
         <span
           className={classNames(
@@ -117,6 +150,7 @@ export const Query = ({ dataSet }) => {
       setselectedOption(cookies[dataSet[questionCount].query]);
     }
   }, [selectedOption]);
+  console.log(dataSet[questionCount].totalindex);
   return (
     <div className="flex flex-col sm:flex-row justify-center text-zinc-800 gap-3rem mt-10 sm:text-xl items-center py-10 pb-20">
       <div className="left sm:w-10/20 w-full">
@@ -133,13 +167,7 @@ export const Query = ({ dataSet }) => {
           </div>
           <div className="bar h-6px rounded bg-grey my-3 w-full flex justify-left items-center">
             <div
-              className={classNames(
-                dataSet[questionCount].index ==
-                  dataSet[questionCount].totalIndex
-                  ? " w-full"
-                  : `w-2/5`,
-                "progress h-4px bg-lgreen rounded"
-              )}
+              className={`${dataSet[questionCount].width} progress h-4px bg-lgreen rounded`}
             ></div>
           </div>
         </div>
@@ -147,7 +175,10 @@ export const Query = ({ dataSet }) => {
           <p className="text-left mb-6">{dataSet[questionCount].query}</p>
           <div className="options w-full flex flex-col items-center">
             {dataSet[questionCount].options.map((option, i) => (
-              <Options option={option} />
+              <Options
+                option={option}
+                optindex={dataSet[questionCount].options.indexOf(option)}
+              />
             ))}
           </div>
 
@@ -175,13 +206,24 @@ export const Query = ({ dataSet }) => {
               <div
                 onClick={() => {
                   console.log(questionCount);
-                  if (questionCount + 1 < dataSet.length) {
-                    setselectedOption(-1);
-                    setquestionCount(questionCount + 1);
-                  }
-                  if (questionCount + 1 == dataSet.length) {
-                    setselectedOption(-1);
-                    setquestionCount(questionCount + 1);
+                  if (selectedOption != -1) {
+                    if (questionCount + 1 < dataSet.length) {
+                      setselectedOption(-1);
+                      setquestionCount(questionCount + 1);
+                    }
+                    if (questionCount + 1 == dataSet.length) {
+                      setselectedOption(-1);
+                      setquestionCount(questionCount + 1);
+                    }
+                    if (dataSet[questionCount].multiple) {
+                      setCookie(
+                        `${dataSet[questionCount].query}`,
+                        `${selectedOptions}`,
+                        {
+                          path: "/",
+                        }
+                      );
+                    }
                   }
                 }}
                 className="next bg-lgreen rounded text-white px-6 py-2 cursor-pointer"

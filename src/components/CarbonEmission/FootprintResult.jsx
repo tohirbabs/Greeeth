@@ -1,7 +1,17 @@
 import React from "react";
 import { global, percent } from "../../../assets/CarbonEmissions";
+import { useCookies } from "react-cookie";
 
 export const FootprintResult = () => {
+  const [cookies, setCookie] = useCookies();
+  console.log(cookies["How much energy do you use on average?"]);
+  var totalfoot =
+    parseInt(cookies["How much energy do you use on average?"]) +
+    parseInt(cookies["What kind of house do you live in?"]) +
+    parseInt(
+      cookies["How many people (aged 17 and over) live in your house?"]
+    ) +
+    parseInt(cookies["How many bedrooms does your house have?"]);
   return (
     <div className="sm:flex-row flex flex-col gap-10 my-10 sm:pb-20">
       <div className="footprint   sm:w-1/2 bg-white rounded-xl p-8 px-2 sm:px-8 ligreen flex flex-col items-center sm:pb-20">
@@ -14,7 +24,7 @@ export const FootprintResult = () => {
         </p>
         <div className="mt-4 font-bold flex flex-col items-center gap-6 sm:mt-20">
           <p className="sm:text-2xl text-xl">YOUR FOOTPRINT IS EQUAL TO</p>
-          <p className="sm:text-7xl text-4xl">7.4</p>
+          <p className="sm:text-7xl text-4xl">{totalfoot / 1000}</p>
           <p className="sm:text-5xl text-2xl">TONNES*</p>
           <div className=" rounded-xl sm:p-4 p-2 w-full relative w-9/10 p-3 text-base  my-3 cursor-pointer  bg-lgreen text-white">
             SHARE SCORE
@@ -34,7 +44,9 @@ export const FootprintResult = () => {
           <img className="max-w-1/3 max-h-30" src={percent} alt="" />
           <div className="">
             <h3 className="sm:text-xl text-lg">YOUR FOOTPRINT IS</h3>
-            <p className="sm:text-5xl text-4xl mt-4">70%</p>
+            <p className="sm:text-5xl text-4xl mt-4">
+              {(totalfoot / 105).toFixed(1)}%
+            </p>
             <p className="sm:text-xl text-lg">OF THE GLOBAL AVERAGE FOR 2022</p>
           </div>
         </div>
