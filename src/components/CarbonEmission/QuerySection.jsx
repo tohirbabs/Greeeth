@@ -57,6 +57,7 @@ export const Query = ({ dataSet }) => {
     clean,
     clean,
     clean,
+    clean,
   ];
   const [selected, setselected] = useState(false);
   const [selectedOption, setselectedOption] = useState(-1);
