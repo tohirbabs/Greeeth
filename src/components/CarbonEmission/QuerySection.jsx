@@ -1,17 +1,24 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import {
+  bike,
+  bus,
   clean,
+  clothes,
+  flight,
   food,
   fooder,
   greenhouse,
   greensec,
   home,
   homicon,
+  recycle,
   sec,
+  taxi,
   train,
   transicon,
   travel,
+  tv,
   vegan,
 } from "../../../assets/CarbonEmissions";
 
@@ -44,20 +51,21 @@ export const Query = ({ dataSet }) => {
     home,
     home,
     home,
+
+    taxi,
+    bike,
     train,
-    train,
-    train,
-    train,
-    train,
+    bus,
+    flight,
     fooder,
     fooder,
     fooder,
     fooder,
     clean,
+    clothes,
+    tv,
     clean,
-    clean,
-    clean,
-    clean,
+    recycle,
   ];
   const [selected, setselected] = useState(false);
   const [selectedOption, setselectedOption] = useState(-1);
@@ -120,13 +128,13 @@ export const Query = ({ dataSet }) => {
           dataSet[questionCount].multiple
             ? classNames(
                 selectedOptions.includes(option)
-                  ? "bg-white lgreen"
+                  ? "bg-white ligreen"
                   : "bg-lgreen hover-lgreen text-white hover:bg-white",
                 " rounded border-2 bd-lgreen relative w-9/10 p-3 text-base  my-3 cursor-pointer  "
               )
             : classNames(
                 selectedOption == option
-                  ? "bg-white lgreen"
+                  ? "bg-white ligreen"
                   : "bg-lgreen hover-lgreen text-white hover:bg-white",
                 " rounded border-2 bd-lgreen relative w-9/10 p-3 text-base  my-3 cursor-pointer  "
               )
@@ -243,10 +251,10 @@ export const Query = ({ dataSet }) => {
           <div className=" px-4 py-2 bg-white rounded w-max lgreen font-bold text-2xl">
             DID YOU KNOW?
           </div>
-          <h3 className="font-bold text-xl my-4">
+          {/* <h3 className="font-bold text-xl my-4">
             {dataSet[questionCount].displayTitle}
-          </h3>
-          <p>{dataSet[questionCount].displayText}</p>
+          </h3> */}
+          <p className="mt-4 text-base">{dataSet[questionCount].displayText}</p>
         </div>
       </div>
     </div>

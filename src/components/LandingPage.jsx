@@ -75,7 +75,9 @@ const LandingPage = () => {
 
     return (
       <>
-        <h2 className="text-3xl mt-5rem lgreen font-bold md:text-5xl">Facts</h2>
+        <h2 className="text-3xl mt-5rem ligreen font-bold md:text-5xl">
+          Facts
+        </h2>
         <div className="Facts">
           <ul className="carousel__list">
             {reviews.map((review, index) => {
@@ -258,7 +260,7 @@ const LandingPage = () => {
               />
             </div>
             <div className="text-left ">
-              <h2 className="text-2xl lgreen my-2 font-bold md:text-3xl">
+              <h2 className="text-2xl ligreen my-2 font-bold md:text-3xl">
                 Detect planting location
               </h2>
             </div>
@@ -282,7 +284,7 @@ const LandingPage = () => {
                   />
                 </div>
                 <div className="text-left ">
-                  <h2 className="text-2xl lgreen my-2 font-bold md:text-3xl">
+                  <h2 className="text-2xl ligreen my-2 font-bold md:text-3xl">
                     Detect planting location
                   </h2>
                 </div>
@@ -365,7 +367,7 @@ const LandingPage = () => {
           />
         </div>
         <div className="text-center ">
-          <h2 className="text-xl lgreen my-2 font-bold md:text-2xl">
+          <h2 className="text-xl ligreen my-2 font-bold md:text-2xl">
             {TextList.title}
           </h2>
         </div>
@@ -385,7 +387,7 @@ const LandingPage = () => {
           />
         </div>
         <div className="text-left ">
-          <h2 className="text-2xl lgreen my-2 font-bold md:text-3xl">
+          <h2 className="text-2xl ligreen my-2 font-bold md:text-3xl">
             {TextList.title}
           </h2>
           <p>{TextList.text}</p>
@@ -406,7 +408,7 @@ const LandingPage = () => {
           />
         </div>
         <div className="text-left w-7/10">
-          <h2 className="text-2xl lgreen my-2 font-bold md:text-3xl">
+          <h2 className="text-2xl ligreen my-2 font-bold md:text-3xl">
             {TextList.title}
           </h2>
           <p>{TextList.text}</p>
@@ -418,12 +420,12 @@ const LandingPage = () => {
   return (
     <div className="bg-milkgreen flex justify-center">
       <div className="container flex flex-col items-center">
-        <section className=" grad-lgreen flex-wrap items-center justify-center  flex flex-col">
+        <section className=" grad-ligreen flex-wrap items-center justify-center  flex flex-col">
           <div className="h-full  lg:mx-6 my-3 flex flex-col items-center justify-around lg:max-w-screen-xl px-2 py-2 lg:ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
             <div className="lg:max-w-9/11 text-center darkgreen">
               <h1 className="text-3xl  sm:(text-7xl !leading-tight) font-medium capitalize text-zinc-800">
                 Offset your carbon blueprint with
-                <span className="lgreen"> GREEETH</span>
+                <span className="ligreen"> GREEETH</span>
               </h1>
 
               <p className="mt-6 sm:leading-relaxed px-2 sm:text-xl">
@@ -432,7 +434,7 @@ const LandingPage = () => {
               </p>
               <div className="gap-4 mt-10 mx-auto text-center w-1/2">
                 <a
-                  className="block  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+                  className="block  py-4 text-base font-normal bg-ligreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
                   href="/get-involved/sponsors/apply"
                 >
                   Plant Now
@@ -495,7 +497,7 @@ const LandingPage = () => {
         <div className="flex flex-col items-center max-w-screen-xl m-auto sm:py-20 sm:px-15 pb-10 px-5 text-gray-600 md:px-12">
           <div className="space-y-6 md:space-y-0 md:flex justify-center py-5rem m-auto md:gap-6 lg:items-center lg:gap-12 ">
             <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
-              <h2 className="text-2xl lgreen font-bold md:text-4xl">
+              <h2 className="text-2xl ligreen font-bold md:text-4xl">
                 Plant by human
               </h2>
               <div className="mt-6 text-gray-600 leading-loose">
@@ -517,7 +519,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="space-y-6 md:space-y-0 md:flex justify-center m-auto md:gap-6 lg:items-center lg:gap-12 ">
-            <h2 className="text-2xl text-left sm:hidden lgreen font-bold md:text-4xl">
+            <h2 className="text-2xl text-left sm:hidden ligreen font-bold md:text-4xl">
               Plant with drone
             </h2>
             <div className="md:6/12 lg:w-6/12">
@@ -529,7 +531,7 @@ const LandingPage = () => {
               />
             </div>
             <div className="text-left md:6/12 lg:w-6/12 sm:ml-12">
-              <h2 className="text-2xl hidden sm:block lgreen font-bold md:text-4xl">
+              <h2 className="text-2xl hidden sm:block ligreen font-bold md:text-4xl">
                 Plant with drone
               </h2>
               <div className="mt-6 text-gray-600 leading-loose">
@@ -545,7 +547,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="BG1 max-w-3xl px-2 flex flex-col items-center mb-30">
-          <h2 className="text-3xl my-2rem lgreen font-bold md:text-5xl">
+          <h2 className="text-3xl my-2rem ligreen font-bold md:text-5xl">
             Virtual Tree
           </h2>
           <div className="md:4/12 lg:w-6/12 mb-8">
@@ -560,7 +562,7 @@ const LandingPage = () => {
             <div className="flex justify-between w-10/12 lg:w-8/12">
               <div className="flex flex-wrap gap-4 text-center">
                 <a
-                  className="block w-full  p-3 px-8 lgreen text-base font-normal bg-grey rounded-lg shadow-md  sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                  className="block w-full  p-3 px-8 ligreen text-base font-normal bg-grey rounded-lg shadow-md  sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                   href="sponsors/individuals/gift-tree"
                 >
                   Previous
@@ -568,7 +570,7 @@ const LandingPage = () => {
               </div>
               <div className="flex flex-wrap gap-4 text-center">
                 <a
-                  className="block w-full  p-3 px-12 white text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                  className="block w-full  p-3 px-12 white text-base font-normal bg-ligreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                   href="sponsors/individuals/gift-tree"
                 >
                   Next
@@ -602,7 +604,7 @@ const LandingPage = () => {
         </div>
 
         <Facts />
-        <div className="container flex items-center max-w-screen-xl rounded-3xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-lgreen w-screen">
+        <div className="container flex items-center max-w-screen-xl rounded-3xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-ligreen w-screen">
           <div className="space-y-6 md:space-y-0 px-4 lg:items-center">
             <h1 className="text-3xl text-left sm:(text-5xl !leading-tight) font-medium capitalize text-white">
               Interactive map to explore
@@ -642,14 +644,14 @@ const LandingPage = () => {
               />
             </div>
             <div className="text-left md:6/12 lg:w-6/12 md:ml-12 mx-3">
-              <h2 className="text-2xl lgreen font-bold md:text-4xl">Shop</h2>
+              <h2 className="text-2xl ligreen font-bold md:text-4xl">Shop</h2>
               <div className="mt-6 text-gray-600 leading-loose">
                 Represent carbon offsetting in real world and show that you care
                 about it by purchasing carbon neutral and zero carbon product.
               </div>
               <div className="flex flex-wrap gap-4 mt-10 text-center">
                 <a
-                  className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                  className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-ligreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                   href="/shop"
                 >
                   Go to Shop

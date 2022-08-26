@@ -291,7 +291,7 @@ export const Footprinter = () => {
       values: [4, 8, 20, 40, 60, 0],
       displayImg: "../../../assets/CarbonEmissions/train.png",
       displayTitle:
-        "FLIGHT OFTEN REPRESENTS A SIGNIFICANT PART OF PEOPLE’S FOOTPRINT.",
+        "TRAVEL OFTEN REPRESENTS A SIGNIFICANT PART OF PEOPLE’S FOOTPRINT.",
       displayText:
         "Swedish climate activist Greta Thunberg made headlines when she spent two days travelling from Rome to London via train to address Parliament.",
     },
