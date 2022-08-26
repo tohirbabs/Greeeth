@@ -25,6 +25,7 @@ import droneplant from "../../assets/landing/drone plant.png";
 
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import { PlantTree } from "./PlantTree";
 
 // import Steps from "./Steps";
 
@@ -488,7 +489,7 @@ const LandingPage = () => {
             </h1>
           </div>
 
-          {/* <Steps /> */}
+          <PlantTree />
         </div>
 
         <div className="flex flex-col items-center max-w-screen-xl m-auto sm:py-20 sm:px-15 pb-10 px-5 text-gray-600 md:px-12">
