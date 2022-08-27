@@ -3,32 +3,32 @@ import TreeBG from "../../assets/GetInvolved/Pix1.png";
 
 function BenefitsHome() {
   return (
-    <section className=" grad-lgreen flex-wrap items-center justify-center h-viewheight flex flex-col">
-      <div className="container overflow-hidden h-full  lg:mx-6 my-3 flex flex-col items-center sm:justify-between justify-arounf lg:max-w-screen-xl px-2 py-2 lg:ml-12 lg:h-full  lg:items-center lg:flex text-zinc-800">
-        <div className="lg:max-w-6/11 text-center darkgreen">
-          <h1 className="text-4xl  sm:(text-5xl !leading-tight) font-medium capitalize lgreen">
+    <section className=" ">
+      
+        <div className="mt-12">
+          <h1 className="text-4xl font-bold capitalize text-green-600 md:text-5xl lg:text-6xl lg:font-extrabold 2xl:text-7xl" style={{color: "rgb(2, 128, 0)"}}>
             Benefits of Trees
           </h1>
 
-          <p className="mt-6 sm:leading-relaxed px-2 sm:text-xl">
-            Companies, Individuals, Non-Governmental Organization and
-            Governmental Organizations
+          <p className="mb-8 mt-4 lg:text-xl text-center px-2  lg:text-left  lg:w-max mx-auto">
+            Companies, Individuals, Non-Governmental Organization and <br />
+            <span className="lg:pl-16 lg:pt-8">Governmental Organizations</span>
           </p>
-          <div className="gap-4 mt-10 mx-auto text-center w-1/2">
+          
             <a
-              className="block  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+              className="block py-4 text-base border-2 font-normal bg-lgreen rounded-lg shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce  mx-auto max-w-xs "
               href="/get-involved/sponsors/apply"
             >
               Sponsor
             </a>
-          </div>
+          
         </div>
         <img
           src={TreeBG}
           alt="Tree illustration"
-          className="mx-auto lg:max-w-6/11"
+          className="mx-auto lg:max-w-6/11 block"
         />
-      </div>
+      
     </section>
   );
 }

@@ -4,10 +4,10 @@ import BenefitsSection from "../../../components/BenefitsSection";
 
 function Benefits() {
   return (
-    <div>
+    <>
       <BenefitsHome />
       <BenefitsSection />
-    </div>
+    </>
   );
 }
 
