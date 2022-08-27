@@ -500,7 +500,7 @@ const LandingPage = () => {
               <h2 className="text-2xl ligreen font-bold md:text-4xl">
                 Plant by human
               </h2>
-              <div className="mt-6 text-gray-600 leading-loose">
+              <div className="mt-6 text-gray-600 sm:text-lg leading-loose">
                 Allows trees to be planted in locations easily accessible by
                 human . Planters plants the tree wirb selected planting pattern
                 and geo-tag with our Geospatial technology getting the GPS
@@ -534,7 +534,7 @@ const LandingPage = () => {
               <h2 className="text-2xl hidden sm:block ligreen font-bold md:text-4xl">
                 Plant with drone
               </h2>
-              <div className="mt-6 text-gray-600 leading-loose">
+              <div className="mt-6 text-gray-600 sm:text-lg leading-loose">
                 We use unmanned drone to plant tree on a large area (e.g Forest)
                 or location that are not easily accessible by human by seed
                 bombing or seed firing with predefined planting patterns. Trees

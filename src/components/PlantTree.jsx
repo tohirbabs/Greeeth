@@ -8,12 +8,12 @@ import confirm from "../../assets/landing/confirm.png";
 export const PlantTree = () => {
   const Card = ({ img, text, tag }) => {
     return (
-      <div className="sm:p-4 p-2 bg-white rounded-xl relative text-center w-4/12 flex flex-col items-center max-w-150px">
+      <div className="sm:p-4 p-2 bg-white rounded-xl relative text-center w-4/12 flex flex-col items-center max-w-180px">
         <p className="text-xl font-bold ligreen absolute left-2 top-1">
           {tag}.
         </p>
         <img src={img} alt="" />
-        <p className="mt-4 text-sm">{text}</p>
+        <p className="mt-4 text-base">{text}</p>
       </div>
     );
   };
