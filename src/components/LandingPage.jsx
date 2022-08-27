@@ -434,7 +434,7 @@ const LandingPage = () => {
               </p>
               <div className="gap-4 mt-10 mx-auto text-center w-1/2">
                 <a
-                  className="block  py-4 text-base font-normal bg-ligreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+                  className="block  py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
                   href="/get-involved/sponsors/apply"
                 >
                   Plant Now
@@ -570,7 +570,7 @@ const LandingPage = () => {
               </div>
               <div className="flex flex-wrap gap-4 text-center">
                 <a
-                  className="block w-full  p-3 px-12 white text-base font-normal bg-ligreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                  className="block w-full  p-3 px-12 white text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                   href="sponsors/individuals/gift-tree"
                 >
                   Next
@@ -604,7 +604,7 @@ const LandingPage = () => {
         </div>
 
         <Facts />
-        <div className="container flex items-center max-w-screen-xl rounded-3xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-ligreen w-screen">
+        <div className="container flex items-center max-w-screen-xl rounded-3xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-lgreen w-screen">
           <div className="space-y-6 md:space-y-0 px-4 lg:items-center">
             <h1 className="text-3xl text-left sm:(text-5xl !leading-tight) font-medium capitalize text-white">
               Interactive map to explore
@@ -651,7 +651,7 @@ const LandingPage = () => {
               </div>
               <div className="flex flex-wrap gap-4 mt-10 text-center">
                 <a
-                  className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-ligreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
+                  className="block md:w-3/4 w-2/4 px-4 py-4 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring"
                   href="/shop"
                 >
                   Go to Shop
