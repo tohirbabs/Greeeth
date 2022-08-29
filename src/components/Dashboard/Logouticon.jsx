@@ -1,12 +1,12 @@
 import React from "react";
 
-export const Logouticon = () => {
+export const Logouticon = ({ clr }) => {
   return (
     <svg
       width="24"
       height="18"
       viewBox="0 0 24 18"
-      fill="none"
+      fill={clr}
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect
@@ -14,7 +14,7 @@ export const Logouticon = () => {
         y="-9.73926"
         width="39.5033"
         height="29.9667"
-        fill="white"
+        fill={clr}
       />
     </svg>
   );

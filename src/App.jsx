@@ -247,6 +247,8 @@ function App() {
                   </DashboardLayout>
                 }
               />
+              <Route path="/dashboard" element={<DashboardLayout />} />
+
               {/* <Route
               path="/calculate-footprint"
               element={

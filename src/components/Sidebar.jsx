@@ -13,8 +13,39 @@ import FootLogo from "../../assets/FootLogo";
 // import { Treeicon } from "./Dashboard/Treeicon";
 // import { Logouticon } from "./Dashboard/Logouticon";
 // import { Offseticon } from "./Dashboard/Offseticon";
+import { useCookies } from "react-cookie";
 
 const Sidebar = () => {
+  const [cookies, setCookie] = useCookies();
+
+  const SideNavItem = ({ Icon, name }) => {
+    return (
+      <div
+        onClick={() => {
+          setCookie("dashnav", `${name}`, {
+            path: "/",
+          });
+          console.log(cookies);
+        }}
+        className={
+          cookies.dashnav === `${name}`
+            ? "bg-white rounded-lg flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2 cursor-pointer"
+            : "flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2 cursor-pointer"
+        }
+      >
+        <Icon clr={cookies.dashnav === `${name}` ? "#404040" : "white"} />
+        <p
+          className={
+            cookies.dashnav === `${name}`
+              ? "text-[#404040] hidden lg:block"
+              : "text-white hidden lg:block"
+          }
+        >
+          {name}
+        </p>
+      </div>
+    );
+  };
   return (
     <div className="bg-lgreen lg:px-8 lg:py-10 py-2 fixed min-h-100vh">
       <div className="lg:block hidden">
@@ -26,46 +57,14 @@ const Sidebar = () => {
 
       <div className="mt-16 sm:pl-4  sm:pl-0">
         <ul className="mx-auto">
-          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
-            <Dashicon clr="white" />
-            <p className="text-white hidden lg:block">Overview</p>
-          </div>
-          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
-            <Walleticon />
-            <p className="text-white hidden lg:block">Wallet</p>
-          </div>
-          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
-            <Footprinticon />
-            <p className="text-white hidden lg:block">Carbon footprint</p>
-          </div>
-          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
-            <Offseticon />
-            <p className="text-white hidden lg:block">Carbon offset</p>
-          </div>
-          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
-            <Projecticon />
-            <p className="text-white hidden lg:block">Project</p>
-          </div>
-          {/* <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
-            <Treeicon />
-            <p className="text-white hidden lg:block">Trees</p>
-          </div> */}
-          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
-            <Cycleicon />
-            <p className="text-white hidden lg:block">Life cycle analysis</p>
-          </div>
-          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
-            <Goalicon />
-            <p className="text-white hidden lg:block">Goal</p>
-          </div>
-          <div className="flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2">
-            <Badgeicon />
-            <p className="text-white hidden lg:block">Badge</p>
-          </div>
-          {/* <div className="flex items-center justify-center sm:justify-start my-6 mt-10 sm:p-4 p-1 sm:gap-2">
-            <Logouticon />
-            <p className="text-white hidden lg:block">Log out</p>
-          </div> */}
+          <SideNavItem Icon={Dashicon} name="Overview" />
+          <SideNavItem Icon={Walleticon} name="Wallet" />
+          <SideNavItem Icon={Footprinticon} name="Carbon footprint" />
+          <SideNavItem Icon={Offseticon} name="Carbon Offset" />
+          <SideNavItem Icon={Projecticon} name="Project" />
+          <SideNavItem Icon={Cycleicon} name="Life cycle analysis" />
+          <SideNavItem Icon={Goalicon} name="Goal" />
+          <SideNavItem Icon={Badgeicon} name="Badge" />
         </ul>
       </div>
     </div>
