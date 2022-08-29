@@ -162,14 +162,17 @@ const Signin = () => {
                           </label>
                         </div>
 
-                        <div className="text-center flex justify-center mt-6">
+                        <a
+                          href="/dashboard"
+                          className="text-center flex justify-center mt-6"
+                        >
                           <button
                             className="block px-15 py-3 text-base font-normal bg-lgreen rounded-xl shadow-md text-white sm:w-auto hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring "
                             type="button"
                           >
                             Sign In
                           </button>
-                        </div>
+                        </a>
                       </form>
                     </div>
                   </div>

@@ -11,3 +11,7 @@ export { default as Speedometer } from "./Speedometer.svg";
 export { default as Logo } from "./Logo.jsx";
 export { default as GreenLogo } from "./GreenLogo.jsx";
 export { default as profilePic } from "./profile.png";
+export { default as wallet } from "./wallet.png";
+export { default as sent } from "./sent.png";
+export { default as received } from "./received.png";
+export { default as purchased } from "./purchased.png";

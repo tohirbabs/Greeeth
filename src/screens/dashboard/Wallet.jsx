@@ -11,6 +11,7 @@ import BarChart from "../../components/BarChart";
 import { DonutChart } from "../../components/DonutChart";
 import { Tabler } from "../../components/Table";
 import BarCharter from "../../components/BarCharter";
+import { purchased, received, sent, wallet } from "../../../assets";
 // import DonutChart from "../../components/DonutChart";
 
 // import Map from "../../components/Dashboard/Map";
@@ -29,11 +30,7 @@ const Wallet = () => {
             <div className="flex sm:gap-4 gap-2">
               <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
                 <div className="flex sm:p-4 gap-1 items-center">
-                  <img
-                    src="/assets/wallet.png"
-                    alt=""
-                    className="sm:h-1.5rem h-1rem"
-                  />
+                  <img src={wallet} alt="" className="sm:h-1.5rem h-1rem" />
                   <h3 className="font-bold sm:text-2xl text-xl ">Wallet</h3>
                 </div>
 
@@ -47,11 +44,7 @@ const Wallet = () => {
               </div>
               <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
                 <div className="flex sm:p-4 gap-1 items-center">
-                  <img
-                    src="/assets/purchased.png"
-                    alt=""
-                    className="sm:h-1.5rem h-1rem"
-                  />
+                  <img src={purchased} alt="" className="sm:h-1.5rem h-1rem" />
                   <h3 className="font-bold sm:text-2xl text-xl ">Purchased</h3>
                 </div>
                 <div className=" bg-[#F2FCFF] py-4 sm:py-6 p-2 sm:p-6 sm:pt-8 sm:pr-15 sm:pb-20 rounded shadow flex-1 ">
@@ -68,11 +61,7 @@ const Wallet = () => {
             <div className="flex sm:gap-4 gap-2">
               <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
                 <div className="flex sm:p-4 gap-1 items-center">
-                  <img
-                    src="/assets/sent.png"
-                    alt=""
-                    className="sm:h-1.5rem h-1rem"
-                  />
+                  <img src={sent} alt="" className="sm:h-1.5rem h-1rem" />
                   <h3 className="font-bold sm:text-2xl text-xl ">Sent</h3>
                 </div>
                 <div className="bg-[#FFF9F9] py-4 sm:py-6 p-2 sm:p-6 sm:pt-8 sm:pr-15 sm:pb-20 rounded shadow flex-1 ">
@@ -87,11 +76,7 @@ const Wallet = () => {
               </div>
               <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
                 <div className="flex sm:p-4 gap-1 items-center">
-                  <img
-                    src="/assets/received.png"
-                    alt=""
-                    className="sm:h-1.5rem h-1rem"
-                  />
+                  <img src={received} alt="" className="sm:h-1.5rem h-1rem" />
                   <h3 className="font-bold sm:text-2xl text-xl ">Received</h3>
                 </div>
                 <div className="bg-[#FFF9E5] py-4 sm:py-6 p-2 sm:p-6 sm:pt-8 sm:pr-15 sm:pb-20 rounded shadow flex-1 ">

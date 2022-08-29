@@ -48,12 +48,12 @@ const Sidebar = () => {
   };
   return (
     <div className="bg-lgreen lg:px-8 lg:py-10 py-2 fixed min-h-100vh">
-      <div className="lg:block hidden">
+      <a href="/" className="lg:block hidden">
         <FootLogo />
-      </div>
-      <div className="lg:hidden">
+      </a>
+      <a href="/" className="lg:hidden">
         <FootLogo small={true} />
-      </div>
+      </a>
 
       <div className="mt-16 sm:pl-4  sm:pl-0">
         <ul className="mx-auto">

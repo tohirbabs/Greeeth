@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fseehawer/react-circular-slider": "^2.5.9",
     "@headlessui/react": "^1.6.5",
     "@heroicons/react": "^1.0.6",
     "carousel-react-rcdev": "^0.0.4",

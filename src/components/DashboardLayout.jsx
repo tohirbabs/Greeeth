@@ -6,6 +6,7 @@ import Overview from "../screens/dashboard/Overview";
 import Wallet from "../screens/dashboard/Wallet";
 import CarbonFootprint from "../screens/dashboard/CarbonFootprint";
 import CarbonOffset from "../screens/dashboard/CarbonOffset";
+import Goal from "../screens/dashboard/Goal";
 
 const DashboardLayout = ({ children }) => {
   const [cookies, setCookie] = useCookies();
@@ -21,6 +22,8 @@ const DashboardLayout = ({ children }) => {
         return <CarbonFootprint />;
       case "Carbon Offset":
         return <CarbonOffset />;
+      case "Goal":
+        return <Goal />;
 
       default:
         return <Overview />;
