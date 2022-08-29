@@ -44,11 +44,19 @@ function NavBar() {
           }`}
         >
           <ul className="flex flex-col h-scrn md:h-55px justify-center pt-10 lg:pt-0 items-center list-none md:flex-row list-none md:ml-auto">
-            <li className="my-5 lg:my-auto ml-6 px-2 flex items-center">
+            {/* <li className="my-5 lg:my-auto ml-6 px-2 flex items-center">
               <DropdownNavItem
                 itemName="What We Do"
                 itemMenu={getInvolvedMenuItems}
               />
+            </li> */}
+            <li className="my-3 lg:my-auto  ml-2  flex items-center ">
+              <a
+                className="px-2 flex items-center text-base font-medium  text-zinc-800 hover:opacity-75"
+                href="/"
+              >
+                <span className="ml-2 py-2">What We Do</span>
+              </a>
             </li>
             <li className="my-5 lg:my-auto ml-6 px-2 flex items-center">
               <DropdownNavItem

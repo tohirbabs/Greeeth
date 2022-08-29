@@ -1,9 +1,76 @@
 import React from "react";
-import { useState } from "react";
+import { useContext, useState, useId } from "react";
+import { POST } from "../../../utils/request";
 import { google, facebook, linkedin, GreenLogo } from "../../../assets";
 
 const Signin = () => {
   const [showsignin, setShowsignin] = useState(true);
+  // const [cookies, setCookie] = useCookies();
+
+  const email = useId();
+  const password = useId();
+  // const router = useRouter();
+  const [mailInput, setMailInput] = useState("");
+  const [firstNameInput, setfirstNameInput] = useState("");
+  const [lastNameInput, setlastNameInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+  const [data, setData] = useState({ data: [] });
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState("");
+  const [status, setstatus] = useState("");
+  const [signedIn, setsignedIn] = useState(false);
+
+  // console.log(cookies);
+
+  const postSignup = async () => {
+    setIsLoading(true);
+
+    try {
+      const body = JSON.stringify({
+        // email: mailInput,
+        // first_name: firstNameInput,
+        // last_name: lastNameInput,
+        // password: passwordInput,
+        email: "tohirbabs@gmail.com",
+        first_name: "Tohir",
+        last_name: "Babs",
+        password: "1234",
+      });
+
+      const response = await POST("/accounts/register/", body);
+
+      if (response.ok) {
+        const result = await response.json();
+
+        console.log("result is: ", JSON.stringify(result));
+        // toast(`${result.message}`, {
+        //   style: {
+        //     backgroundColor: "#f59024",
+        //     color: "white",
+        //   },
+        // });
+        // setstatus(result.status);
+        // if (result.status == "success") {
+        //   setCookie("email", `${result.data.email}`, { path: "/" });
+        //   setsignedIn(true);
+        // }
+      }
+
+      response.json().then((text) => {
+        console.log(text);
+        // toast(`${text.message}`, {
+        //   style: {
+        //     backgroundColor: "#f59024",
+        //     color: "white",
+        //   },
+        // });
+      });
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
@@ -21,7 +88,10 @@ const Signin = () => {
                 <div className="w-full px-4">
                   <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
                     <div className="rounded-t flex flex-col items-center">
-                      <h1 className="text-3xl my-4 text-center sm:(text-3xl !leading-tight) font-medium capitalize text-lgreen">
+                      <h1
+                        onClick={postSignup}
+                        className="text-3xl my-4 text-center sm:(text-3xl !leading-tight) font-medium capitalize text-lgreen"
+                      >
                         Welcome back to Greeeth
                       </h1>
                       <h6 className="text-blueGray-500 text-base font-bold text-center flex flex-col w-5/7">
