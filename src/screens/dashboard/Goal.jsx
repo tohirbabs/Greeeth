@@ -55,27 +55,41 @@ const Goal = () => {
             </div>
 
             <div className="text-left mb-10 bg-white sm:px-8 px-2 py-10">
-              <h3 className="font-bold ">Critical Categories</h3>
+              <h3 className="font-bold">Critical Categories</h3>
               <p className="text-sm">
-                Here’s where you are emitting the most co2
+                Here's where you are emitting the most co2
               </p>
               <div className="dash-card p-4 sm:pb-18 rounded-lg shadow my-4">
-                <div className="car">
-                  <p className="my-2">Car</p>
+                <div className="car my-4">
+                  <p className="my-2 font-bold">Car</p>
                   <div className="border-[#E0AE58] border-1px w-full h-10px rounded-full bg-white">
                     <div className="w-3/10 h-full rounded-full bg-[#E0AE58]"></div>
                   </div>
-                  <div className="flex justify-between mt-2 text-sm w-7/10 flex-end">
+                  <div className="flex justify-between mt-2 text-sm flex-end">
                     <p>1000kgCo2</p>
                     <p>Status:High</p>
                   </div>
                 </div>
 
-                <div className="ligreen font-bold p-2 sm:p-4">
-                  Trees Gifted: 200
+                <div className="car my-4">
+                  <p className="my-2 font-bold">Car</p>
+                  <div className="border-[#E0AE58] border-1px w-full h-10px rounded-full bg-white">
+                    <div className="w-3/10 h-full rounded-full bg-[#E0AE58]"></div>
+                  </div>
+                  <div className="flex justify-between mt-2 text-sm flex-end">
+                    <p>1000kgCo2</p>
+                    <p>Status:High</p>
+                  </div>
                 </div>
-                <div className="ligreen font-bold p-2 sm:p-4">
-                  Trees Received: 200
+                <div className="car my-4">
+                  <p className="my-2 font-bold">Car</p>
+                  <div className="border-[#E0AE58] border-1px w-full h-10px rounded-full bg-white">
+                    <div className="w-3/10 h-full rounded-full bg-[#E0AE58]"></div>
+                  </div>
+                  <div className="flex justify-between mt-2 text-sm flex-end">
+                    <p>1000kgCo2</p>
+                    <p>Status:High</p>
+                  </div>
                 </div>
               </div>
             </div>
