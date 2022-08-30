@@ -42,6 +42,7 @@ import DashboardLayout from "./components/DashboardLayout";
 import { Footprinter } from "./components/Footprinter";
 import { CookiesProvider } from "react-cookie";
 import { FootprintResult } from "./components/CarbonEmission/FootprintResult";
+import Dashboard from "./components/Dashboard";
 
 export const PageContext = createContext({});
 
@@ -221,16 +222,7 @@ function App() {
                   </Layout>
                 }
               />
-              <Route path="/dashboard/overview" element={<Overview />} />
-              <Route path="/dashboard/wallet" element={<Wallet />} />
-              <Route
-                path="/dashboard/carbon-offset"
-                element={<CarbonOffset />}
-              />
-              <Route
-                path="/dashboard/carbon-footprint"
-                element={<CarbonFootprint />}
-              />
+
               <Route
                 path="/calculate-footprint"
                 element={
@@ -247,7 +239,7 @@ function App() {
                   </DashboardLayout>
                 }
               />
-              <Route path="/dashboard" element={<DashboardLayout />} />
+              <Route path="/dashboard" element={<Dashboard />} />
 
               {/* <Route
               path="/calculate-footprint"

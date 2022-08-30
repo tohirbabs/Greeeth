@@ -15,6 +15,7 @@ import FootLogo from "../../assets/FootLogo";
 // import { Offseticon } from "./Dashboard/Offseticon";
 import { useCookies } from "react-cookie";
 import { Treeicon } from "./Dashboard/Treeicon";
+import { Calcicon } from "./Dashboard/Calcicon";
 
 const Sidebar = () => {
   const [cookies, setCookie] = useCookies();

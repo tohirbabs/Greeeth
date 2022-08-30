@@ -9,20 +9,41 @@ import CarbonOffset from "../screens/dashboard/CarbonOffset";
 import Goal from "../screens/dashboard/Goal";
 import Tree from "../screens/dashboard/Tree";
 
-const DashboardLayout = ({ children }) => {
+const Dashboard = ({ children }) => {
   const [cookies, setCookie] = useCookies();
 
+  const dashSection = () => {
+    switch (cookies.dashnav) {
+      case "Overview":
+        return <Overview />;
+
+      case "Wallet":
+        return <Wallet />;
+      case "Carbon footprint":
+        return <CarbonFootprint />;
+      case "Carbon Offset":
+        return <CarbonOffset />;
+      case "Goal":
+        return <Goal />;
+      case "Tree":
+        return <Tree />;
+
+      default:
+        return <Overview />;
+    }
+  };
   return (
     <div className="flex bg-lightgreen">
       <Sidebar />
       <div className="lg:ml-257px ml-50px flex-1">
         <TopBar />
         <div className=" bg-lightgreen sm:px-10 px-2 ">
-          <main>{children}</main>
+          {/* <main>{children}</main> */}
+          {dashSection()}
         </div>
       </div>
     </div>
   );
 };
 
-export default DashboardLayout;
+export default Dashboard;
