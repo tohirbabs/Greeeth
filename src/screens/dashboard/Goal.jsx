@@ -14,17 +14,20 @@ import BarChart from "../../components/BarChart";
 // import CircularSlider from "@fseehawer/react-circular-slider";
 import { Tabler } from "../../components/Table";
 import { Tables } from "../../components/Tables";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const Goal = () => {
+  const percentage = 66;
   return (
     // <DashboardLayout>
     <div className="sm:my-12 my-2">
       <div className="flex flex-col md:flex-row sm:gap-10 gap-5 my-10 sm:px-8">
-        <div className="w-full sm:w-4/10">
+        <div className="w-full sm:w-1/2">
           <div className="">
             <div className="flex gap-4 sm:flex-col">
               <div className="text-left mb-5 flex flex-1 flex-col ">
@@ -132,6 +135,10 @@ const Goal = () => {
                 console.log(value);
               }}
             /> */}
+            <div className="max-w-400px">
+              <CircularProgressbar value={percentage} text={`${percentage}%`} />
+            </div>
+
             <div className=" text-sm sm:text-base m-2">
               <p>You are to save 300 kg and emit maximum of 2,700 kg</p>
             </div>
