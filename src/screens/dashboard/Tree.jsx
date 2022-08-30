@@ -24,20 +24,20 @@ const Tree = () => {
           <h3 className="ligreen font-bold sm:text-4xl my-6">
             Plant new tree and geotag
           </h3>
-          <p className="my-4 sm:text-lg">
+          <p className="sm:my-4 my-2 sm:text-lg">
             Trees are geotagged to get real time data of the tree planting done.
             With this, we will get the GPS cordinate, time swap, tree type, tree
             image, weather data, and who planted the tree.
           </p>
-          <p className="my-4 sm:text-lg">
+          <p className="sm:my-4 my-2 sm:text-lg">
             The GPS coordinate and photo goes online and can be accessed by
             everyone on the interactive map.
           </p>
-          <p className="my-4 sm:text-lg">
+          <p className="sm:my-4 my-2 sm:text-lg">
             With geotagging we can have traceability, accountability,
             transparency, no double counting, monitoring and validity.
           </p>
-          <p className="my-4 sm:text-lg">
+          <p className="sm:my-4 my-2 sm:text-lg">
             Steps: <br />
             <ol>
               <li className="my-3">1. Click on the geotag button.</li>
@@ -65,12 +65,12 @@ const Tree = () => {
             loading="lazy"
             className="mx-auto bg-white px-2rem py-1rem rounded-2xl shadow-md max-w-70vw"
           />
-          <div className="text-lg my-4">
+          <div className="text-lg sm:my-4 my-2">
             Click the button below to geotag Tree
           </div>
           <input
             accept="image/*"
-            className="block  p-4 mt-8  text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-8/10 mx-auto hover:text-white hover:bg-green-900 focus:outline-none animate-bounce"
+            className="block  p-4 mt-8 w-8/10 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-8/10 mx-auto hover:text-white hover:bg-green-900 focus:outline-none animate-bounce"
             id="icon-button-file"
             type="file"
             capture="environment"
