@@ -11,7 +11,7 @@ import BarChart from "../../components/BarChart";
 
 // import Map from "../../components/Dashboard/Map";
 
-import CircularSlider from "@fseehawer/react-circular-slider";
+// import CircularSlider from "@fseehawer/react-circular-slider";
 import { Tabler } from "../../components/Table";
 import { Tables } from "../../components/Tables";
 
@@ -117,7 +117,7 @@ const Goal = () => {
             {/* <h3 className="text-sm sm:text:base font-bold text-left mb-2">
               Estimated CO2 emitted balance and offset balance
             </h3> */}
-            <CircularSlider
+            {/* <CircularSlider
               label="Footprint Reduced by"
               labelColor="#008000"
               knobColor="#393939"
@@ -131,7 +131,7 @@ const Goal = () => {
               onChange={(value) => {
                 console.log(value);
               }}
-            />
+            /> */}
             <div className=" text-sm sm:text-base m-2">
               <p>You are to save 300 kg and emit maximum of 2,700 kg</p>
             </div>

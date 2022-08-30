@@ -36,7 +36,7 @@ const DashboardLayout = ({ children }) => {
         <TopBar />
         <div className=" bg-lightgreen sm:px-10 px-2 ">
           {/* <main>{children}</main> */}
-          {/* {dashSection()} */}
+          {dashSection()}
         </div>
       </div>
     </div>
