@@ -143,7 +143,7 @@ const Goal = () => {
       </div>
       <div className="shadow bg-white rounded max-w-80vw">
         {/* <Map /> */}
-        <Tables />
+        {/* <Tables /> */}
       </div>
     </div>
     // </DashboardLayout>

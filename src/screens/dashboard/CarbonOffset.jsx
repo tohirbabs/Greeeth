@@ -84,7 +84,7 @@ const CarbonOffset = () => {
         <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">CarbonOffset</h3>
         <div className="shadow bg-white rounded max-w-80vw">
           {/* <Map /> */}
-          <Tabler />
+          {/* <Tabler /> */}
         </div>
       </div>
     </div>
