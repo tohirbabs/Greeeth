@@ -50,7 +50,7 @@ const Goal = () => {
                     <div className="w-1/2 h-full rounded-full bg-lgreen"></div>
                   </div>
                   <div className="flex justify-between mt-2">
-                    <p>July 2022</p>
+                    <p>September 2022</p>
                     <p>50%</p>
                   </div>
                 </div>
