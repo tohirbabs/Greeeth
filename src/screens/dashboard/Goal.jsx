@@ -29,7 +29,7 @@ const Goal = () => {
       <div className="flex flex-col md:flex-row sm:gap-10 gap-5 my-10 sm:px-8">
         <div className="w-full sm:w-1/2">
           <div className="">
-            <div className="flex gap-4 sm:flex-col">
+            <div className="flex gap-4 flex-col">
               <div className="text-left mb-5 flex flex-1 flex-col ">
                 <h3 className="font-bold sm:text-xl text-lg sm:p-4 ">
                   Tree Planting Goal
