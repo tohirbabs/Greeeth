@@ -11,7 +11,7 @@ import Goal from "../screens/dashboard/Goal";
 const DashboardLayout = ({ children }) => {
   const [cookies, setCookie] = useCookies();
 
-  const DashSection = () => {
+  const dashSection = () => {
     switch (cookies.dashnav) {
       case "Overview":
         return <Overview />;
@@ -27,7 +27,6 @@ const DashboardLayout = ({ children }) => {
 
       default:
         return <Overview />;
-        break;
     }
   };
   return (
@@ -37,7 +36,7 @@ const DashboardLayout = ({ children }) => {
         <TopBar />
         <div className=" bg-lightgreen sm:px-10 px-2 ">
           {/* <main>{children}</main> */}
-          <DashSection />
+          {dashSection()}
         </div>
       </div>
     </div>
