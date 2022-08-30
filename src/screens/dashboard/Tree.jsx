@@ -56,23 +56,25 @@ const Tree = () => {
           </p>
         </div>
         <div className="flex-1">
-          <h3 className="ligreen font-bold sm:text-4xl my-6">
+          <h3 className="ligreen font-bold sm:text-2xl my-6">
             Geotagged tree sample
           </h3>
           <img
             src={plant}
             alt="Location pins illustration"
             loading="lazy"
-            className="mx-auto bg-white px-2rem py-1rem rounded-2xl shadow-md"
+            className="mx-auto bg-white px-2rem py-1rem rounded-2xl shadow-md max-w-70vw"
           />
-          <div className="block  p-4 mt-8  text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-8/10 mx-auto hover:text-white hover:bg-green-900 focus:outline-none animate-bounce">
-            Click to geotag Tree
+          <div className="text-lg my-4">
+            Click the button below to geotag Tree
           </div>
           <input
             accept="image/*"
+            className="block  p-4 mt-8  text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-8/10 mx-auto hover:text-white hover:bg-green-900 focus:outline-none animate-bounce"
             id="icon-button-file"
             type="file"
             capture="environment"
+            onChange={(e) => handleCapture(e.target)}
           />
         </div>
       </div>
