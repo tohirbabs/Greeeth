@@ -14,6 +14,7 @@ import FootLogo from "../../assets/FootLogo";
 // import { Logouticon } from "./Dashboard/Logouticon";
 // import { Offseticon } from "./Dashboard/Offseticon";
 import { useCookies } from "react-cookie";
+import { Treeicon } from "./Dashboard/Tree";
 
 const Sidebar = () => {
   const [cookies, setCookie] = useCookies();
@@ -29,8 +30,8 @@ const Sidebar = () => {
         }}
         className={
           cookies.dashnav === `${name}`
-            ? "bg-white rounded-lg flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2 cursor-pointer"
-            : "flex items-center justify-center sm:justify-start my-6 sm:p-4 p-1 sm:gap-2 cursor-pointer"
+            ? "bg-white rounded-lg flex items-center justify-center sm:justify-start my-4 sm:p-2 p-2 sm:gap-2 cursor-pointer"
+            : "flex items-center justify-center sm:justify-start my-4 sm:p-2 p-2 sm:gap-2 cursor-pointer"
         }
       >
         <Icon clr={cookies.dashnav === `${name}` ? "#404040" : "white"} />
@@ -62,6 +63,7 @@ const Sidebar = () => {
           <SideNavItem Icon={Footprinticon} name="Carbon footprint" />
           <SideNavItem Icon={Offseticon} name="Carbon Offset" />
           <SideNavItem Icon={Projecticon} name="Project" />
+          <SideNavItem Icon={Treeicon} name="Tree" />
           <SideNavItem Icon={Cycleicon} name="Life cycle analysis" />
           <SideNavItem Icon={Goalicon} name="Goal" />
           <SideNavItem Icon={Badgeicon} name="Badge" />

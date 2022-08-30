@@ -7,6 +7,7 @@ import Wallet from "../screens/dashboard/Wallet";
 import CarbonFootprint from "../screens/dashboard/CarbonFootprint";
 import CarbonOffset from "../screens/dashboard/CarbonOffset";
 import Goal from "../screens/dashboard/Goal";
+import Tree from "../screens/dashboard/Tree";
 
 const DashboardLayout = ({ children }) => {
   const [cookies, setCookie] = useCookies();
@@ -24,6 +25,8 @@ const DashboardLayout = ({ children }) => {
         return <CarbonOffset />;
       case "Goal":
         return <Goal />;
+      case "Tree":
+        return <Tree />;
 
       default:
         return <Overview />;
