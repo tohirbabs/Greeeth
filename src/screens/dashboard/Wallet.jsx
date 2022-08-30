@@ -120,7 +120,7 @@ const Wallet = () => {
         </h3>
         <div className="shadow rounded max-w-80vw">
           {/* <Map /> */}
-          {/* <Tabler /> */}
+          <Tabler />
         </div>
       </div>
     </div>
