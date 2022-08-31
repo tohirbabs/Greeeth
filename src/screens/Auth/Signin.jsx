@@ -31,8 +31,8 @@ const Signin = () => {
         // first_name: firstNameInput,
         // last_name: lastNameInput,
         // password: passwordInput,
-        email: "tohirbabs@gmail.com",
-        first_name: "Tohir",
+        email: "admin@admin.com",
+        first_name: "",
         last_name: "Babs",
         password: "1234",
       });

@@ -246,7 +246,7 @@ a {
 .bg-login {
   background-image: url("/assets/login.png");
   background-size: contain;
-  background-color: #393939;
+  background-color: #121212;
   background-blend-mode: multiply;
   background-position: center;
 }
@@ -254,7 +254,7 @@ a {
 .bg-signup {
   background-image: url("/assets/signup.png");
   background-size: contain;
-  background-color: #393939;
+  background-color: #121212;
   background-blend-mode: multiply;
   background-position: center;
 }
