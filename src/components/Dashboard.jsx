@@ -8,6 +8,7 @@ import CarbonFootprint from "../screens/dashboard/CarbonFootprint";
 import CarbonOffset from "../screens/dashboard/CarbonOffset";
 import Goal from "../screens/dashboard/Goal";
 import Tree from "../screens/dashboard/Tree";
+import { Project } from "../screens/dashboard/Project";
 
 const Dashboard = ({ children }) => {
   const [cookies, setCookie] = useCookies();
@@ -27,6 +28,8 @@ const Dashboard = ({ children }) => {
         return <Goal />;
       case "Tree":
         return <Tree />;
+      case "Project":
+        return <Project />;
 
       default:
         return <Overview />;
