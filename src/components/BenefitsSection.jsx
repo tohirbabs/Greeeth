@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useContext } from "react";
+import React, { useRef } from "react";
+import { useState, useContext, useEffect } from "react";
 import ForestBG from "../../assets/company forest.png";
 import { PageContext } from "../App";
 import {
@@ -22,6 +22,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 // import Carouseler from "./Carousel";
 import Carousel from "./Carousel";
+import BenefitsSectionCarousel from "./BenefitsSectionCarousel";
 
 const user = {
   name: "Tom Cook",
@@ -114,6 +115,8 @@ function BenefitsSection() {
   const [showGo, setshowGo] = useState(false);
   const [showIndividuals, setshowIndividuals] = useState(false);
   const [showCompanies, setshowCompanies] = useState(true);
+
+
   function CompaniesList({ Pix, TextList, Index }) {
     return (
       <div className="BG-lgreen ">
@@ -406,7 +409,7 @@ function BenefitsSection() {
   };
 
   return (
-    <div className="min-h-full">
+    <>
       {/* <Disclosure as="nav" className="shadow-md">
         {({ open }) => (
           <>
@@ -531,10 +534,13 @@ function BenefitsSection() {
         )}
       </Disclosure> */}
 
-      <header className="bg-white shadow"></header>
-      <main>
-        <div className="flex flex-col px-4 mx-auto sm:flex-row lg:max-w-screen-lg mb-40 mt-10 gap-10 leading-loose lgreen text-left text-lg">
-          <div className="">
+  
+
+
+      
+        <BenefitsSectionCarousel>
+          
+          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
             <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
               Trees Are Our Only Source of Oxygen
             </h1>
@@ -553,7 +559,7 @@ function BenefitsSection() {
               enough oxygen for 18 people in a year.
             </p>
           </div>
-          <div className="">
+          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
             <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
               Trees Absorb Other Harmful Gases
             </h1>
@@ -572,9 +578,125 @@ function BenefitsSection() {
               on land that borders water - this is called the riparian zone.
             </p>
           </div>
-        </div>
-      </main>
-    </div>
+        
+          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+            <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+              Trees Are Our Only Source of Oxygen
+            </h1>
+            <p className="mt-4 text-gray-600 text-base">
+              Creatures on the earth are alive because they inhale oxygen from
+              the air, which helps run their bodily mechanisms and exhale carbon
+              dioxide as a by-product of the function of the body. Nature's only
+              source of oxygen is the trees. Through a process called
+              photosynthesis, trees prepare food for their survival.
+            </p>
+            <p className="mt-4 text-gray-600 text-base">
+              This process requires carbon dioxide from the air as a material
+              and produces oxygen as a by-product. Trees emit this gas into the
+              air, increasing its proportion and thereby meeting the need of the
+              living creatures. An acre of land full of mature trees can produce
+              enough oxygen for 18 people in a year.
+            </p>
+          </div>
+          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+            <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+              Trees Absorb Other Harmful Gases
+            </h1>
+            <p className="mt-4 text-gray-600 text-base">
+              Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
+              ammonia, and ozone from the air and purify them. They filter
+              particulates out of the air and trap them on their barks and
+              leaves.
+            </p>
+            <p className="mt-4 text-gray-600 text-base">
+              Trees and shrubs, like all plants, also help to protect us from
+              pollutants by acting as natural filters. Harmful heavy metals,
+              nitrogen, potassium, and phosphorus on our land surfaces can
+              contaminate our water, but the roots of shrubs intercept these
+              pollutants. This is why it is especially important to plant shrubs
+              on land that borders water - this is called the riparian zone.
+            </p>
+          </div>
+          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+            <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+              Trees Are Our Only Source of Oxygen
+            </h1>
+            <p className="mt-4 text-gray-600 text-base">
+              Creatures on the earth are alive because they inhale oxygen from
+              the air, which helps run their bodily mechanisms and exhale carbon
+              dioxide as a by-product of the function of the body. Nature's only
+              source of oxygen is the trees. Through a process called
+              photosynthesis, trees prepare food for their survival.
+            </p>
+            <p className="mt-4 text-gray-600 text-base">
+              This process requires carbon dioxide from the air as a material
+              and produces oxygen as a by-product. Trees emit this gas into the
+              air, increasing its proportion and thereby meeting the need of the
+              living creatures. An acre of land full of mature trees can produce
+              enough oxygen for 18 people in a year.
+            </p>
+          </div>
+          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+            <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+              Trees Absorb Other Harmful Gases
+            </h1>
+            <p className="mt-4 text-gray-600 text-base">
+              Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
+              ammonia, and ozone from the air and purify them. They filter
+              particulates out of the air and trap them on their barks and
+              leaves.
+            </p>
+            <p className="mt-4 text-gray-600 text-base">
+              Trees and shrubs, like all plants, also help to protect us from
+              pollutants by acting as natural filters. Harmful heavy metals,
+              nitrogen, potassium, and phosphorus on our land surfaces can
+              contaminate our water, but the roots of shrubs intercept these
+              pollutants. This is why it is especially important to plant shrubs
+              on land that borders water - this is called the riparian zone.
+            </p>
+          </div>
+        
+          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+            <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+              Trees Are Our Only Source of Oxygen
+            </h1>
+            <p className="mt-4 text-gray-600 text-base">
+              Creatures on the earth are alive because they inhale oxygen from
+              the air, which helps run their bodily mechanisms and exhale carbon
+              dioxide as a by-product of the function of the body. Nature's only
+              source of oxygen is the trees. Through a process called
+              photosynthesis, trees prepare food for their survival.
+            </p>
+            <p className="mt-4 text-gray-600 text-base">
+              This process requires carbon dioxide from the air as a material
+              and produces oxygen as a by-product. Trees emit this gas into the
+              air, increasing its proportion and thereby meeting the need of the
+              living creatures. An acre of land full of mature trees can produce
+              enough oxygen for 18 people in a year.
+            </p>
+          </div>
+          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+            <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+              Trees Absorb Other Harmful Gases
+            </h1>
+            <p className="mt-4 text-gray-600 text-base">
+              Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
+              ammonia, and ozone from the air and purify them. They filter
+              particulates out of the air and trap them on their barks and
+              leaves.
+            </p>
+            <p className="mt-4 text-gray-600 text-base">
+              Trees and shrubs, like all plants, also help to protect us from
+              pollutants by acting as natural filters. Harmful heavy metals,
+              nitrogen, potassium, and phosphorus on our land surfaces can
+              contaminate our water, but the roots of shrubs intercept these
+              pollutants. This is why it is especially important to plant shrubs
+              on land that borders water - this is called the riparian zone.
+            </p>
+          </div>
+        </BenefitsSectionCarousel>
+      
+    </>
   );
 }
 
