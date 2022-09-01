@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import plant from "../../../assets/landing/plant.png";
 
-// import Map from "../../components/Dashboard/Map";
+import before from "../../components/Dashboard/before.png";
 
 // import CircularSlider from "@fseehawer/react-circular-slider";
 
@@ -81,24 +81,11 @@ const Maintenance = () => {
   return (
     // <DashboardLayout>
     <div className="sm:my-12 my-2">
-      <div className="flex flex-col gap-6 sm:gap-16 sm:flex-row sm:my-8">
-        <div className="text-left sm:w-5/10">
+      <div className="flex flex-col gap-6 sm:gap-10 sm:flex-row sm:my-8">
+        <div className="text-left sm:w-4/10">
           <h3 className="ligreen font-bold sm:text-4xl my-6">
-            Plant new tree and geotag
+            Procedure to getting tree for maintenance
           </h3>
-          <p className="sm:my-4 my-2 sm:text-base">
-            Trees are geotagged to get real time data of the tree planting done.
-            With this, we will get the GPS cordinate, time swap, tree type, tree
-            image, weather data, and who planted the tree.
-          </p>
-          <p className="sm:my-4 my-2 sm:text-base">
-            The GPS coordinate and photo goes online and can be accessed by
-            everyone on the interactive map.
-          </p>
-          <p className="sm:my-4 my-2 sm:text-base">
-            With geotagging we can have traceability, accountability,
-            transparency, no double counting, monitoring and validity.
-          </p>
           <p className="sm:my-4 my-2 sm:text-base">
             Steps: <br />
             <ol>
@@ -116,62 +103,68 @@ const Maintenance = () => {
               <li className="my-3">6. Input the tree name</li>
             </ol>
           </p>
+          <div className="">
+            <h3 className="ligreen font-bold sm:text-2xl mt-15 text-center">
+              Picture geotagged sample
+            </h3>
+            <div className="flex gap-4 justify-center text-center">
+              <div className="">
+                <p className="sm:my-4 my-2 sm:text-base">Before</p>
+                <img
+                  src={before}
+                  alt=""
+                  className="w-150px rounded-md h-180px"
+                />
+              </div>
+              <div className="">
+                <p className="sm:my-4 my-2 sm:text-base">After</p>
+                <img
+                  src={plant}
+                  alt=""
+                  className="w-150px rounded-md h-180px bg-white"
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div className="flex-1">
-          <h3 className="ligreen font-bold sm:text-2xl my-6">
-            Maintain tree sample
-          </h3>
-          <img
-            src={plant}
-            alt="Location pins illustration"
-            loading="lazy"
-            className="mx-auto bg-white px-2rem py-1rem rounded-2xl shadow-md max-w-70vw sm:w-8/10"
-          />
-          <div onClick={() => postTree()} className="text-lg sm:my-4 my-2">
-            Click the button below to geotag Tree
-          </div>
-          <input
-            accept="image/*"
-            className="block  p-4 mt-8 w-8/10 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-8/10 mx-auto hover:text-white hover:bg-green-900 focus:outline-none animate-bounce"
-            id="icon-button-file"
-            type="file"
-            capture="environment"
-            onChange={(e) => handleCapture(e.target)}
-          />
-          <div className="mx-auto w-6/10 mb-5 mt-8 ">
-            <label
-              className="block text-blueGray-600 text-base text-left font-bold mb-2"
-              htmlFor="tree-name"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              className="border-0 text-black  px-3 py-3 text-base font-bold placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              placeholder="Enter tree name"
-            />
-          </div>
-
-          <div className="mx-auto w-6/10 mb-5">
-            <label
-              className="block text-blueGray-600 text-base text-left font-bold text-base font-bold mb-2"
-              htmlFor="tree-height"
-            >
-              Height (mm*)
-            </label>
-            <input
-              type="number"
-              className="border-0 text-black px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              placeholder="Enter tree heights in millimeters*"
-            />
-          </div>
-          <div
-            onClick={() => {
-              postTree();
-            }}
-            className="block  p-4 mt-8 w-8/10 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-8/10 mx-auto hover:text-white hover:bg-green-900 focus:outline-none "
-          >
-            Maintain
+          <div className="text-left ">
+            <h3 className="ligreen font-bold sm:text-4xl my-6">
+              Good maintenance practice
+            </h3>
+            <p className="sm:my-4 my-2 sm:text-base">
+              Properly water: You must water trees, just like any other plant!
+              Check to see whether your tree needs a drink if it hasn't rained
+              in a few weeks.{" "}
+            </p>
+            <p className="sm:my-4 my-2 sm:text-base">
+              Mulch: Mulch prevents dry soil by insulating tree roots, shielding
+              them from lawnmower cuts. By removing the grass from beneath the
+              tree and applying 2 to 4 inches of mulch, you can assist the tree
+              in gaining these advantages. Take cautious not to enclose the
+              trunk's base.
+            </p>
+            <p className="sm:my-4 my-2 sm:text-base">
+              Fertilize: Natural plant matter feeds the soil around trees in a
+              forest. However, we rake and remove all those organic nutrients
+              from our yards, such as leaves and grass clippings. That issue is
+              resolved by fertilizer. To release nutrients into the soil, apply
+              a slow-release fertilizer frequently. Additionally, periodically
+              check your soil to determine if any elements are missing or in
+              short supply.
+            </p>
+            <p className="sm:my-4 my-2 sm:text-base">
+              Prune: Trimming trees correctly strengthens their structure and
+              gets rid of any deadwood that's been holding them back. When the
+              tree is dormant and without leaves, perform extensive pruning (if
+              possible). Then, over the summer, concentrate on organizing and
+              removing any small, dead, or broken twigs.{" "}
+            </p>
+            <p className="sm:my-4 my-2 sm:text-base">
+              Checkups: Scheduling your yearly examination? Schedule a time for
+              your tree as well! Early detection of illness or insect symptoms
+              can make all the difference.
+            </p>
           </div>
         </div>
       </div>
