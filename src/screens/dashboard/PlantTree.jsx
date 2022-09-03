@@ -62,13 +62,13 @@ const PlantTree = () => {
   const percentage = 66;
   var pic;
   var location;
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
-      location = `${position.coords.latitude}`;
-    });
-  });
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition(function (position) {
+  //     console.log("Latitude is :", position.coords.latitude);
+  //     console.log("Longitude is :", position.coords.longitude);
+  //     location = `${position.coords.latitude}`;
+  //   });
+  // });
   const handleCapture = (file) => {
     var reader = new FileReader();
     reader.onload = function () {

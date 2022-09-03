@@ -15,8 +15,8 @@ export const ProjectPage = () => {
         }}
         className={
           projectSection === `${name}`
-            ? "px-2 sm:px-12  py-2  text-sm sm:text-base font-bold rounded-md cursor-pointer bg-lgreen text-white"
-            : "px-2 sm:px-12 py-2  text-sm sm:text-base font-bold rounded-md cursor-pointer bg-white text-lgreen"
+            ? "px-2 sm:px-8  py-2  text-sm sm:text-base font-bold rounded-md cursor-pointer bg-lgreen text-white"
+            : "px-2 sm:px-8 py-2  text-sm sm:text-base font-bold rounded-md cursor-pointer bg-white text-lgreen"
         }
       >
         {name}
