@@ -29,36 +29,36 @@ const PlantTree = () => {
 
   // console.log(cookies);
   // console.log(pic.base64);
-  const postTree = async () => {
-    setIsLoading(true);
-    console.log(pic);
+  // const postTree = async () => {
+  //   setIsLoading(true);
+  //   console.log(pic);
 
-    try {
-      const body = JSON.stringify({
-        location: `${location}`,
-        height: "10",
-        image: pic,
-      });
-      console.log(body);
-      console.log("tree");
+  //   try {
+  //     const body = JSON.stringify({
+  //       location: `${location}`,
+  //       height: "10",
+  //       image: pic,
+  //     });
+  //     console.log(body);
+  //     console.log("tree");
 
-      const response = await POST("/trees/", body);
+  //     const response = await POST("/trees/", body);
 
-      if (response.ok) {
-        const result = await response.json();
+  //     if (response.ok) {
+  //       const result = await response.json();
 
-        console.log("result is: ", JSON.stringify(result));
-      }
+  //       console.log("result is: ", JSON.stringify(result));
+  //     }
 
-      response.json().then((text) => {
-        console.log(text);
-      });
-    } catch (err) {
-      setErr(err.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //     response.json().then((text) => {
+  //       console.log(text);
+  //     });
+  //   } catch (err) {
+  //     setErr(err.message);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
   const percentage = 66;
   var pic;
   var location;
@@ -127,7 +127,7 @@ const PlantTree = () => {
             loading="lazy"
             className="mx-auto bg-white px-2rem py-1rem rounded-2xl shadow-md max-w-70vw sm:w-8/10"
           />
-          <div onClick={() => postTree()} className="text-lg sm:my-4 my-2">
+          <div className="text-lg sm:my-4 my-2">
             Click the button below to geotag Tree
           </div>
           <input
@@ -166,9 +166,9 @@ const PlantTree = () => {
             />
           </div>
           <div
-            onClick={() => {
-              postTree();
-            }}
+            // onClick={() => {
+            //   postTree();
+            // }}
             className="block  p-4 mt-8 w-8/10 text-base font-normal bg-lgreen rounded-lg shadow-md text-white sm:w-8/10 mx-auto hover:text-white hover:bg-green-900 focus:outline-none "
           >
             Geotag
