@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { Profiler, useState } from "react";
 import { CompletedProjects } from "./CompletedProjects";
 import { OngoingProjects } from "./OngoingProjects";
 import { ProjectCard } from "./ProjectCard";
+import { ProjectForm } from "./ProjectForm";
 import { ProjectPage } from "./ProjectPage";
 
 export const Project = () => {
@@ -31,6 +32,9 @@ export const Project = () => {
         return <OngoingProjects setProject={setprojectSection} />;
       case "Completed Projects":
         return <CompletedProjects setProject={setprojectSection} />;
+
+      case "Create New Project":
+        return <ProjectForm setProject={setprojectSection} />;
 
       case "details":
         return <ProjectPage setProject={setprojectSection} />;

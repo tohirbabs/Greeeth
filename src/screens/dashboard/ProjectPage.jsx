@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import tree from "../../components/Dashboard/tree2.png";
 
 export const ProjectPage = () => {
-  const [projectSection, setprojectSection] = useState("Ongoing Projects");
+  const [projectSection, setprojectSection] = useState("Statement");
 
-  const [section, setsection] = useState("Ongoing Projects");
+  const [section, setsection] = useState("Statement");
 
   const NavItem = ({ name }) => {
     return (
