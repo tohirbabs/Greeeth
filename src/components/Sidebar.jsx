@@ -68,6 +68,7 @@ const Sidebar = () => {
           <SideNavItem Icon={Cycleicon} name="Life cycle analysis" />
           <SideNavItem Icon={Goalicon} name="Goal" />
           <SideNavItem Icon={Badgeicon} name="Badge" />
+          <SideNavItem Icon={Badgeicon} name="Impact" />
         </ul>
       </div>
     </div>
