@@ -26,8 +26,8 @@ const Dashboard = ({ children }) => {
         return <CarbonOffset />;
       case "Goal":
         return <Goal />;
-      case "Tree":
-        return <Tree />;
+      // case "Tree":
+      //   return <Tree />;
       case "Project":
         return <Project />;
 
