@@ -215,6 +215,7 @@ const PlantTree = () => {
               <button
                 className="block w-9/10 mx-auto p-4 text-base font-normal bg-lgreen rounded-3xl shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
                 type="submit"
+                onClick={closeModal}
               >
                 Geotag
               </button>
