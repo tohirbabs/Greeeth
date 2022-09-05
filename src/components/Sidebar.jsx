@@ -11,11 +11,11 @@ import { Projecticon } from "./Dashboard/Projecticon";
 import { Walleticon } from "./Dashboard/Walleticon";
 import FootLogo from "../../assets/FootLogo";
 // import { Treeicon } from "./Dashboard/Treeicon";
-// import { Logouticon } from "./Dashboard/Logouticon";
+import { Logouticon } from "./Dashboard/Logouticon";
 // import { Offseticon } from "./Dashboard/Offseticon";
 import { useCookies } from "react-cookie";
 import { Treeicon } from "./Dashboard/Treeicon";
-import { Calcicon } from "./Dashboard/Calcicon";
+import logout from "./Dashboard/Logout.png";
 import { Staricon } from "./Dashboard/Star";
 
 const Sidebar = () => {
@@ -70,6 +70,16 @@ const Sidebar = () => {
           <SideNavItem Icon={Goalicon} name="Goal" />
           <SideNavItem Icon={Badgeicon} name="Badge" />
           <SideNavItem Icon={Staricon} name="Impact" />
+
+          <ul className="mt-15">
+            <a
+              href="/"
+              className="flex items-center justify-center sm:justify-start my-4 sm:p-2 p-2 sm:gap-2 cursor-pointer"
+            >
+              <img className="max-w-7" src={logout} alt="" />
+              <p className="text-white hidden lg:block">Logout</p>
+            </a>
+          </ul>
         </ul>
       </div>
     </div>

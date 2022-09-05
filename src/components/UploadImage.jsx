@@ -35,7 +35,7 @@ export const UploadImage = () => {
         {imageURLs.map((imageSrc) => (
           <img
             src={imageSrc}
-            className="max-w-300px rounded-xl  sm:max-w-400px"
+            className="max-w-300px rounded-xl  my-2 sm:max-w-400px"
           />
         ))}
       </div>
