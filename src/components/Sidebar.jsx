@@ -16,6 +16,7 @@ import FootLogo from "../../assets/FootLogo";
 import { useCookies } from "react-cookie";
 import { Treeicon } from "./Dashboard/Treeicon";
 import { Calcicon } from "./Dashboard/Calcicon";
+import { Staricon } from "./Dashboard/Star";
 
 const Sidebar = () => {
   const [cookies, setCookie] = useCookies();
@@ -68,7 +69,7 @@ const Sidebar = () => {
           <SideNavItem Icon={Cycleicon} name="Life cycle analysis" />
           <SideNavItem Icon={Goalicon} name="Goal" />
           <SideNavItem Icon={Badgeicon} name="Badge" />
-          <SideNavItem Icon={Badgeicon} name="Impact" />
+          <SideNavItem Icon={Staricon} name="Impact" />
         </ul>
       </div>
     </div>

@@ -10,6 +10,7 @@ import { useContext, useState, useId } from "react";
 import { POST } from "../../../utils/request";
 import PlantTree from "./PlantTree";
 import Maintenance from "./Maintenance";
+import { TreeCards } from "./TreeCards";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -17,13 +18,13 @@ function classNames(...classes) {
 
 const Tree = () => {
   const [treeSection, settreeSection] = useState("Plant New Trees");
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
-      location = `${position.coords.latitude}`;
-    });
-  });
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition(function (position) {
+  //     console.log("Latitude is :", position.coords.latitude);
+  //     console.log("Longitude is :", position.coords.longitude);
+  //     location = `${position.coords.latitude}`;
+  //   });
+  // });
 
   const TreeNavItem = ({ name }) => {
     return (
@@ -45,22 +46,24 @@ const Tree = () => {
 
   const TreeSection = () => {
     switch (treeSection) {
+      case "Planted Trees":
+        return <TreeCards />;
       case "Plant New Trees":
         return <PlantTree />;
       case "Maintenance Task":
         return <Maintenance />;
 
       default:
-        return <PlantTree />;
+        return <TreeCards />;
     }
   };
   return (
     // <DashboardLayout>
     <div className="sm:my-12 my-2">
       <div className="flex flex-wrap sm:gap-6 gap-2">
+        <TreeNavItem name="Planted Trees" />
         <TreeNavItem name="Plant New Trees" />
         <TreeNavItem name="Maintenance Task" />
-        <TreeNavItem name="Planting Task" />
       </div>
       {TreeSection()}
     </div>

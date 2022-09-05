@@ -10,6 +10,7 @@ import Goal from "../screens/dashboard/Goal";
 import Tree from "../screens/dashboard/Tree";
 import { Project } from "../screens/dashboard/Project";
 import { Impact } from "../screens/dashboard/Impact";
+import { Badge } from "../screens/dashboard/Badge";
 
 const Dashboard = ({ children }) => {
   const [cookies, setCookie] = useCookies();
@@ -29,6 +30,8 @@ const Dashboard = ({ children }) => {
         return <Goal />;
       case "Tree":
         return <Tree />;
+      case "Badge":
+        return <Badge />;
       case "Impact":
         return <Impact />;
       case "Project":
