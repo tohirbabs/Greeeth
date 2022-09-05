@@ -29,54 +29,6 @@ const Maintenance = () => {
 
   // console.log(cookies);
   // console.log(pic.base64);
-  const postTree = async () => {
-    setIsLoading(true);
-    console.log(pic);
-
-    try {
-      const body = JSON.stringify({
-        location: `${location}`,
-        height: "10",
-        image: pic,
-      });
-      console.log(body);
-      console.log("tree");
-
-      const response = await POST("/trees/", body);
-
-      if (response.ok) {
-        const result = await response.json();
-
-        console.log("result is: ", JSON.stringify(result));
-      }
-
-      response.json().then((text) => {
-        console.log(text);
-      });
-    } catch (err) {
-      setErr(err.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  const percentage = 66;
-  var pic;
-  var location;
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
-      location = `${position.coords.latitude}`;
-    });
-  });
-  const handleCapture = (file) => {
-    var reader = new FileReader();
-    reader.onload = function () {
-      console.log(reader);
-      pic = reader.result;
-    };
-    reader.readAsDataURL(file.files[0]);
-  };
 
   return (
     // <DashboardLayout>

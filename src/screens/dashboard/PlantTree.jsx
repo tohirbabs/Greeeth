@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import Modal from "react-modal";
 import geobutt from "../../components/Dashboard/geobutt.png";
 
 import maped from "../../components/Dashboard/maped.png";
@@ -11,12 +11,41 @@ import treetag from "../../components/Dashboard/treetag.png";
 
 import { useContext, useState, useId } from "react";
 import { POST } from "../../../utils/request";
+import { UploadImage } from "../../components/UploadImage";
+import { Overlay } from "../../components/Modal";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    fontFamily: "DM Sans",
+  },
+};
 
 const PlantTree = () => {
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = "#f00";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   // console.log(cookies);
   // console.log(pic.base64);
   // const postTree = async () => {
@@ -143,7 +172,54 @@ const PlantTree = () => {
         </div>
         <div className="">
           {/* <h3 className="ligreen font-bold sm:text-xl my-2">Picture Sample</h3> */}
-          <img src={geobutt} alt="" />
+          <img onClick={openModal} src={geobutt} alt="" />
+          <Modal
+            isOpen={modalIsOpen}
+            onAfterOpen={afterOpenModal}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+            <h3 className="ligreen font-bold sm:text-4xl my-6">Geotag Tree</h3>
+            {/* <button onClick={closeModal}>close</button>
+            <div>I am a modal</div> */}
+            <form>
+              <UploadImage />
+              <div class="mb-6">
+                <label
+                  for="treeName"
+                  class="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
+                >
+                  Tree Name
+                </label>
+                <input
+                  type="text"
+                  id="treeName"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="treeHeight"
+                  class="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
+                >
+                  Tree Height (mm)
+                </label>
+                <input
+                  type="number"
+                  id="treeHeight"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Enter tree height in millimeters"
+                />
+              </div>
+              <button
+                className="block w-9/10 mx-auto p-4 text-base font-normal bg-lgreen rounded-3xl shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+                type="submit"
+              >
+                Geotag
+              </button>
+            </form>
+          </Modal>
         </div>
       </div>
     </div>
