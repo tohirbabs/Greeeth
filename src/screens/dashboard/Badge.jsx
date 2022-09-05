@@ -5,7 +5,7 @@ import badge from "../../components/Dashboard/badge.png";
 
 export const Badge = () => {
   return (
-    <div className="mt-6">
+    <div className="mt-6 min-h-100vh">
       <h3 className="font-bold sm:text-3xl text-lg text-left sm:p-4 my-4">
         Badge
       </h3>

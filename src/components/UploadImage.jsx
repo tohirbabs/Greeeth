@@ -31,9 +31,12 @@ export const UploadImage = () => {
         id="treeImage"
         className="imgFile"
       />
-      <div className=" rounded-xl m-2 overflow-hidden">
+      <div className=" m-2 overflow-hidden">
         {imageURLs.map((imageSrc) => (
-          <img src={imageSrc} className="max-w-300px sm:max-w-400px" />
+          <img
+            src={imageSrc}
+            className="max-w-300px rounded-xl  sm:max-w-400px"
+          />
         ))}
       </div>
     </div>
