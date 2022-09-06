@@ -85,7 +85,7 @@ export const Login = () => {
   return (
     <div className="flex items-center min-h-screen p-4 bg-lightgreen lg:justify-center">
       <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
-        <div className="p-4 py-6 text-white bg-login md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
+        <div className="p-4 py-6 text-white bg-lgreen md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
           <div className="my-3 text-4xl font-bold tracking-wider text-center">
             <a
               className="flex items-center justify-center px-2 inline-block whitespace-nowrap sm:mb-20 my-2  text-zinc-800"
