@@ -246,7 +246,7 @@ a {
 .bg-login {
   background-image: url("/assets/backg.png");
   background-size: contain;
-  background-color: #121212;
+  background-color: #4e4d4d;
   background-blend-mode: multiply;
   background-position: center;
 }

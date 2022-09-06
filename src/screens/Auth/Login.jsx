@@ -83,10 +83,10 @@ export const Login = () => {
   }
 
   return (
-    <div class="flex items-center min-h-screen p-4 bg-lightgreen lg:justify-center">
-      <div class="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
-        <div class="p-4 py-6 text-white bg-login md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
-          <div class="my-3 text-4xl font-bold tracking-wider text-center">
+    <div className="flex items-center min-h-screen p-4 bg-lightgreen lg:justify-center">
+      <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
+        <div className="p-4 py-6 text-white bg-login md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
+          <div className="my-3 text-4xl font-bold tracking-wider text-center">
             <a
               className="flex items-center justify-center px-2 inline-block whitespace-nowrap sm:mb-20 my-2  text-zinc-800"
               href="/"
@@ -94,37 +94,37 @@ export const Login = () => {
               <GreenLogo color="white" />
             </a>
           </div>
-          <p class="mt-6 font-normal text-center text-gray-300 md:mt-0">
+          <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
             Offset Your Carbon Blueprint With GREEETH. <br />
             The best way for individuals and organizations to plant trees,
             offset their carbon footprint to save the planet.
           </p>
-          <p class="flex flex-col items-center justify-center mt-10 text-center">
+          <p className="flex flex-col items-center justify-center mt-10 text-center">
             <span>Don't have an account?</span>
-            <a href="/auth/signup" class="underline">
+            <a href="/auth/signup" className="underline">
               Get Started!
             </a>
           </p>
-          <p class="mt-6 text-base text-center text-gray-300">
+          <p className="mt-6 text-base text-center text-gray-300">
             Read our{" "}
-            <a href="#" class="underline">
+            <a href="#" className="underline">
               terms
             </a>{" "}
             and{" "}
-            <a href="#" class="underline">
+            <a href="#" className="underline">
               conditions
             </a>
           </p>
         </div>
-        <div class="p-5 bg-white md:flex-1">
-          <h3 class="my-4 text-2xl font-semibold text-gray-700">
+        <div className="p-5 bg-white md:flex-1">
+          <h3 className="my-4 text-2xl font-semibold text-gray-700">
             Account Login
           </h3>
-          <form action="#" class="flex flex-col space-y-5">
-            <div class="flex flex-col space-y-1">
+          <form action="#" className="flex flex-col space-y-5">
+            <div className="flex flex-col space-y-1">
               <label
                 for={email}
-                class="text-base text-left font-semibold text-gray-500"
+                className="text-base text-left font-semibold text-gray-500"
               >
                 Email address
               </label>
@@ -133,22 +133,21 @@ export const Login = () => {
                 id={email}
                 value={mailInput}
                 onInput={(e) => setMailInput(e.target.value)}
-                autofocus
-                class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
 
-            <div class="flex flex-col space-y-1">
-              <div class="flex items-center justify-between">
+            <div className="flex flex-col space-y-1">
+              <div className="flex items-center justify-between">
                 <label
                   for="password"
-                  class="text-base font-semibold text-gray-500"
+                  className="text-base font-semibold text-gray-500"
                 >
                   Password
                 </label>
                 <a
                   href="#"
-                  class="text-base ligreen hover:underline focus:text-blue-800"
+                  className="text-base ligreen hover:underline focus:text-blue-800"
                 >
                   Forgot Password?
                 </a>
@@ -160,46 +159,46 @@ export const Login = () => {
                 value={passwordInput}
                 onInput={(e) => setPasswordInput(e.target.value)}
                 placeholder="*******"
-                class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
-            <div class="flex items-center space-x-2">
+            <div className="flex items-center space-x-2">
               <input
                 type="checkbox"
                 id="remember"
-                class="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
+                className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
               />
               <label
                 for="remember"
-                class="text-base font-semibold text-gray-500"
+                className="text-base font-semibold text-gray-500"
               >
                 Remember me
               </label>
             </div>
             <div>
-              <button
+              <div
                 onClick={() => {
                   postLogin();
                 }}
-                class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-lgreen rounded-md shadow hover-bd-lgreen hover-lgreen hover:bg-white border-2px focus:outline-none focus:ring-blue-200 focus:ring-4"
+                className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-lgreen rounded-md shadow hover-bd-lgreen hover-lgreen hover:bg-white border-2px focus:outline-none focus:ring-blue-200 focus:ring-4"
               >
                 Log in
-              </button>
+              </div>
             </div>
-            <div class="flex flex-col space-y-5">
-              <span class="flex items-center justify-center space-x-2">
-                <span class="h-px bg-gray-400 w-14"></span>
-                <span class="font-normal text-gray-500">or login with</span>
-                <span class="h-px bg-gray-400 w-14"></span>
+            <div className="flex flex-col space-y-5">
+              <span className="flex items-center justify-center space-x-2">
+                <span className="h-px bg-gray-400 w-14"></span>
+                <span className="font-normal text-gray-500">or login with</span>
+                <span className="h-px bg-gray-400 w-14"></span>
               </span>
-              <div class="flex flex-row gap-4">
+              <div className="flex flex-row gap-4">
                 <a
                   href="#"
-                  class="flex w-1/2 items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-gray-800 rounded-md group hover:bg-gray-800 focus:outline-none"
+                  className="flex w-1/2 items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-gray-800 rounded-md group hover:bg-gray-800 focus:outline-none"
                 >
                   <span>
                     {/* <svg
-                      class="w-5 h-5 text-gray-800 fill-current group-hover:text-white"
+                      className="w-5 h-5 text-gray-800 fill-current group-hover:text-white"
                       viewBox="0 0 16 16"
                       version="1.1"
                       aria-hidden="true"
@@ -215,17 +214,17 @@ export const Login = () => {
                       src={google}
                     />
                   </span>
-                  <span class="text-base font-medium text-gray-800 group-hover:text-white">
+                  <span className="text-base font-medium text-gray-800 group-hover:text-white">
                     Google
                   </span>
                 </a>
                 <a
                   href="#"
-                  class="flex w-1/2 items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-blue-500 rounded-md group hover:bg-blue-500 focus:outline-none"
+                  className="flex w-1/2 items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-blue-500 rounded-md group hover:bg-blue-500 focus:outline-none"
                 >
                   <span>
                     {/* <svg
-                      class="text-blue-500 group-hover:text-white"
+                      className="text-blue-500 group-hover:text-white"
                       width="20"
                       height="20"
                       fill="currentColor"
@@ -238,7 +237,7 @@ export const Login = () => {
                       src={facebook}
                     />
                   </span>
-                  <span class="text-base font-medium text-blue-500 group-hover:text-white">
+                  <span className="text-base font-medium text-blue-500 group-hover:text-white">
                     facebook
                   </span>
                 </a>
