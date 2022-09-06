@@ -1,7 +1,90 @@
-import React from "react";
+import React, { useId, useState } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router";
 import { facebook, google, GreenLogo } from "../../../assets";
+import { POST } from "../../../utils/request";
 
 export const Login = () => {
+  const email = useId();
+  const password = useId();
+  const [cookies, setCookie] = useCookies();
+  // const router = useRouter();
+  const [mailInput, setMailInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState("");
+
+  let navigate = useNavigate();
+  // const postLogin = async () => {
+  //   setIsLoading(true);
+
+  //   try {
+  //     const body = JSON.stringify({
+  //       username: mailInput,
+
+  //       password: passwordInput,
+  //     });
+
+  //     const response = await POST("/accounts/token/", body);
+
+  //     if (response.ok) {
+  //       const result = await response.json();
+
+  //       console.log("result is: ", JSON.stringify(result));
+
+  //       setCookie(`token`, "token", {
+  //         path: "/",
+  //       });
+  //       navigate("/auth/verify");
+  //     }
+
+  //     response.json().then((text) => {
+  //       console.log(text);
+  //     });
+  //   } catch (err) {
+  //     setErr(err.message);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
+  async function postLogin() {
+    setIsLoading(true);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append(
+      "Authorization",
+      "Token " + "ede76ad668d087d583a9531a0df871484aec5608"
+    );
+    const body = JSON.stringify({
+      username: mailInput,
+
+      password: passwordInput,
+    });
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: body,
+    };
+    console.log(requestOptions);
+    console.log(myHeaders);
+
+    try {
+      await fetch("https://api.greeeth.com/accounts/token/", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          if (result.key) {
+            navigate("/dashboard");
+          }
+        });
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
     <div class="flex items-center min-h-screen p-4 bg-lightgreen lg:justify-center">
       <div class="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
@@ -43,18 +126,21 @@ export const Login = () => {
           <form action="#" class="flex flex-col space-y-5">
             <div class="flex flex-col space-y-1">
               <label
-                for="email"
+                for={email}
                 class="text-base text-left font-semibold text-gray-500"
               >
                 Email address
               </label>
               <input
                 type="email"
-                id="email"
+                id={email}
+                value={mailInput}
+                onInput={(e) => setMailInput(e.target.value)}
                 autofocus
                 class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
+
             <div class="flex flex-col space-y-1">
               <div class="flex items-center justify-between">
                 <label
@@ -70,9 +156,13 @@ export const Login = () => {
                   Forgot Password?
                 </a>
               </div>
+
               <input
                 type="password"
-                id="password"
+                id={password}
+                value={passwordInput}
+                onInput={(e) => setPasswordInput(e.target.value)}
+                placeholder="*******"
                 class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
@@ -91,7 +181,9 @@ export const Login = () => {
             </div>
             <div>
               <button
-                type="submit"
+                onClick={() => {
+                  postLogin();
+                }}
                 class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-lgreen rounded-md shadow hover-bd-lgreen hover-lgreen hover:bg-white border-2px focus:outline-none focus:ring-blue-200 focus:ring-4"
               >
                 Log in

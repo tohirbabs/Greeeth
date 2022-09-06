@@ -1,7 +1,61 @@
-import React from "react";
+import React, { useId, useState } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router";
 import { facebook, google, GreenLogo } from "../../../assets";
+import { POST } from "../../../utils/request";
 
 export const Signup = () => {
+  const email = useId();
+  const password = useId();
+  const [cookies, setCookie] = useCookies();
+  // const router = useRouter();
+  const [mailInput, setMailInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+  const [firstNameInput, setfirstNameInput] = useState("");
+  const [lastNameInput, setlastNameInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState("");
+  const [verified, setverified] = useState(false);
+  const [token, settoken] = useState("none");
+  const [signedIn, setsignedIn] = useState(false);
+  const [status, setstatus] = useState("");
+
+  let navigate = useNavigate();
+  const postSignup = async () => {
+    setIsLoading(true);
+
+    try {
+      const body = JSON.stringify({
+        email: mailInput,
+        first_name: firstNameInput,
+        last_name: lastNameInput,
+        password: passwordInput,
+      });
+
+      const response = await POST("/accounts/register/", body);
+
+      if (response.ok) {
+        const result = await response.json();
+
+        console.log("result is: ", JSON.stringify(result));
+
+        setCookie(`email`, mailInput, {
+          path: "/",
+        });
+        navigate("/auth/verify");
+      }
+
+      response.json().then((text) => {
+        console.log(text);
+      });
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  console.log(cookies.email);
   return (
     <div class="flex items-center min-h-screen p-4 bg-lightgreen lg:justify-center">
       <div class="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
@@ -43,48 +97,69 @@ export const Signup = () => {
           <form action="#" class="flex flex-col space-y-5">
             <div class="flex flex-col space-y-1">
               <label
-                for="username"
+                for="firstname"
                 class="text-base text-left font-semibold text-gray-500"
               >
-                Username
+                First Name
               </label>
               <input
                 type="text"
-                id="username"
+                id="firstname"
+                value={firstNameInput}
+                onInput={(e) => setfirstNameInput(e.target.value)}
+                autofocus
+                class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+              />
+            </div>{" "}
+            <div class="flex flex-col space-y-1">
+              <label
+                for="lastname"
+                class="text-base text-left font-semibold text-gray-500"
+              >
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="lastname"
+                value={lastNameInput}
+                onInput={(e) => setlastNameInput(e.target.value)}
                 autofocus
                 class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
             <div class="flex flex-col space-y-1">
               <label
-                for="email"
+                for={email}
                 class="text-base text-left font-semibold text-gray-500"
               >
                 Email address
               </label>
               <input
                 type="email"
-                id="email"
+                id={email}
+                value={mailInput}
+                onInput={(e) => setMailInput(e.target.value)}
                 autofocus
                 class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
             <div class="flex flex-col space-y-1">
               <label
-                for="password"
-                class="text-base font-semibold text-gray-500"
+                for={password}
+                class="text-base text-left font-semibold text-gray-500"
               >
                 Password
               </label>
 
               <input
                 type="password"
-                id="password"
+                id={password}
+                value={passwordInput}
+                onInput={(e) => setPasswordInput(e.target.value)}
                 placeholder="*******"
                 class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
-
             <div class="flex items-center space-x-2">
               <input
                 type="checkbox"
@@ -100,10 +175,13 @@ export const Signup = () => {
             </div>
             <div>
               <button
+                onClick={() => {
+                  postSignup();
+                }}
                 type="submit"
                 class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-lgreen rounded-md shadow hover-bd-lgreen hover-lgreen hover:bg-white border-2px focus:outline-none focus:ring-blue-200 focus:ring-4"
               >
-                Log in
+                Sign Up
               </button>
             </div>
             <div class="flex flex-col space-y-5">
