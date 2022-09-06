@@ -52,10 +52,7 @@ export const Login = () => {
     setIsLoading(true);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append(
-      "Authorization",
-      "Token " + "ede76ad668d087d583a9531a0df871484aec5608"
-    );
+    myHeaders.append("Authorization", "Token " + `${cookies.key}`);
     const body = JSON.stringify({
       username: mailInput,
 
