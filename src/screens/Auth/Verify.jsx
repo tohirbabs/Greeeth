@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 import ReactInputVerificationCode from "react-input-verification-code";
+import { useNavigate } from "react-router";
 import { POST } from "../../../utils/request";
 
 export const Verify = () => {
+  let navigate = useNavigate();
   const [cookies, setCookie] = useCookies();
   const [code, setCode] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +17,7 @@ export const Verify = () => {
 
     try {
       const body = JSON.stringify({
-        email: "babstohir@gmail.com",
+        email: cookies.email,
         otp: code,
       });
       console.log(body);
@@ -30,8 +32,9 @@ export const Verify = () => {
         setCookie(`email`, result.email, {
           path: "/",
         });
-        navigate("/dashboard");
         console.log("result is: ", JSON.stringify(result));
+        console.log(result.key);
+        navigate("/dashboard");
       }
 
       //   response.json().then((text) => {
@@ -45,13 +48,13 @@ export const Verify = () => {
   };
   console.log(code);
   return (
-    <div class="flex items-center justify-center h-screen bg-lightgreen ">
-      <div class="bg-white rounded-2xl border shadow-xl sm:p-10 p-5 max-w-lg">
-        <div class="flex flex-col items-center space-y-4">
-          <h1 class="font-bold text-2xl text-gray-700 text-center">
+    <div className="flex items-center justify-center h-screen bg-lightgreen ">
+      <div className="bg-white rounded-2xl border shadow-xl sm:p-10 p-5 max-w-lg">
+        <div className="flex flex-col items-center space-y-4">
+          <h1 className="font-bold text-2xl text-gray-700 text-center">
             Verify your account
           </h1>
-          <p class="text-base text-gray-500 text-center w-5/6">
+          <p className="text-base text-gray-500 text-center w-5/6">
             We sent you the six digit code at{" "}
             <span className="lgreen font-bold ">{cookies.email}</span>
             <br /> Enter the code below to confirm your email address
@@ -69,7 +72,7 @@ export const Verify = () => {
             onClick={() => {
               verifyCode();
             }}
-            class="bg-lgreen text-white rounded-md font-semibold px-4 py-3 w-full"
+            className="bg-lgreen text-white rounded-md font-semibold px-4 py-3 w-full"
           >
             Verify
           </button>
