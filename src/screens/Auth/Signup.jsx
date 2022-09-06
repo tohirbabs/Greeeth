@@ -178,7 +178,6 @@ export const Signup = () => {
                 onClick={() => {
                   postSignup();
                 }}
-                type="submit"
                 class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-lgreen rounded-md shadow hover-bd-lgreen hover-lgreen hover:bg-white border-2px focus:outline-none focus:ring-blue-200 focus:ring-4"
               >
                 Sign Up
