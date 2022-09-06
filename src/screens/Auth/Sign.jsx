@@ -31,14 +31,14 @@ const Signin = () => {
         // first_name: firstNameInput,
         // last_name: lastNameInput,
         // password: passwordInput,
-        // email: "admin@admin.com",
-        // first_name: "",
-        // last_name: "Babs",
-        username: "admin@admin.com",
+        email: "lanrejani@gmail.com",
+        first_name: "Tohir",
+        last_name: "Babs",
+        // username: "admin@admin.com",
         password: "admin",
       });
 
-      const response = await POST("/accounts/token/", body);
+      const response = await POST("/accounts/register/", body);
 
       if (response.ok) {
         const result = await response.json();

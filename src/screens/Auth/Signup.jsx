@@ -1,7 +1,7 @@
 import React from "react";
 import { facebook, google, GreenLogo } from "../../../assets";
 
-export const Login = () => {
+export const Signup = () => {
   return (
     <div class="flex items-center min-h-screen p-4 bg-lightgreen lg:justify-center">
       <div class="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
@@ -20,9 +20,9 @@ export const Login = () => {
             offset their carbon footprint to save the planet.
           </p>
           <p class="flex flex-col items-center justify-center mt-10 text-center">
-            <span>Don't have an account?</span>
-            <a href="/auth/signup" class="underline">
-              Get Started!
+            <span>Already have an account?</span>
+            <a href="/auth/login" class="underline">
+              Log In
             </a>
           </p>
           <p class="mt-6 text-base text-center text-gray-300">
@@ -38,9 +38,23 @@ export const Login = () => {
         </div>
         <div class="p-5 bg-white md:flex-1">
           <h3 class="my-4 text-2xl font-semibold text-gray-700">
-            Account Login
+            Account Sign Up
           </h3>
           <form action="#" class="flex flex-col space-y-5">
+            <div class="flex flex-col space-y-1">
+              <label
+                for="username"
+                class="text-base text-left font-semibold text-gray-500"
+              >
+                Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                autofocus
+                class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+              />
+            </div>
             <div class="flex flex-col space-y-1">
               <label
                 for="email"
@@ -56,26 +70,21 @@ export const Login = () => {
               />
             </div>
             <div class="flex flex-col space-y-1">
-              <div class="flex items-center justify-between">
-                <label
-                  for="password"
-                  class="text-base font-semibold text-gray-500"
-                >
-                  Password
-                </label>
-                <a
-                  href="#"
-                  class="text-base ligreen hover:underline focus:text-blue-800"
-                >
-                  Forgot Password?
-                </a>
-              </div>
+              <label
+                for="password"
+                class="text-base font-semibold text-gray-500"
+              >
+                Password
+              </label>
+
               <input
                 type="password"
                 id="password"
+                placeholder="*******"
                 class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
+
             <div class="flex items-center space-x-2">
               <input
                 type="checkbox"

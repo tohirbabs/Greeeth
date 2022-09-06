@@ -104,7 +104,7 @@ function NavBar() {
             <li className="my-5 lg:my-auto  ml-2 flex items-center ">
               <a
                 className="px-3 flex  items-center text-base font-medium  text-zinc-800 hover:opacity-75"
-                href="/auth/sign-in"
+                href="/auth/login"
               >
                 <span className="ml-2 text-zinc-800 py-2 px-5 rounded-lg hover:text-white hover-bg-lgreen hover:border-white hover:border-1 bd-lgreen border-1">
                   Sign in

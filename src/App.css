@@ -244,15 +244,15 @@ a {
 }
 
 .bg-login {
-  background-image: url("/assets/login.png");
+  background-image: url("/assets/backg.png");
   background-size: contain;
-  background-color: #121212;
+  background-color: rgba(28, 56, 0, 0.8);
   background-blend-mode: multiply;
   background-position: center;
 }
 
 .bg-signup {
-  background-image: url("/assets/signup.png");
+  background-image: url("/assets/backg.png");
   background-size: contain;
   background-color: #121212;
   background-blend-mode: multiply;
@@ -473,4 +473,36 @@ a {
   width: 0.1px;
   height: 0.1px;
   position: absolute;
+}
+
+.custom-styles {
+  --ReactInputVerificationCode-itemWidth: 2.5rem;
+  --ReactInputVerificationCode-itemHeight: 3.5rem;
+}
+
+.custom-styles .ReactInputVerificationCode__item {
+  position: relative;
+  color: #262626;
+  font-weight: 500;
+}
+
+.custom-styles .ReactInputVerificationCode__item,
+.custom-styles .ReactInputVerificationCode__item.is-active {
+  box-shadow: none;
+}
+
+.custom-styles .ReactInputVerificationCode__item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ebebeb;
+  transition: background-color 0.2s ease-out;
+}
+
+.custom-styles .ReactInputVerificationCode__item.is-active:after {
+  background-color: #046cde;
 }

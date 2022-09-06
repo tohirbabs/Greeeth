@@ -12,7 +12,7 @@ import Schools from "./screens/GetInvolved/Schools/Schools";
 import Planters from "./screens/GetInvolved/Planters";
 import Partners from "./screens/GetInvolved/Partners";
 import Ambassadors from "./screens/GetInvolved/Ambassadors/Ambassadors";
-import Signin from "./screens/Auth/Signin";
+
 import Layout from "./components/Layout";
 import Sponsors from "./screens/GetInvolved/Sponsors/Sponsors";
 import SponsorApply from "./screens/GetInvolved/Sponsors/Apply";
@@ -43,6 +43,9 @@ import { Footprinter } from "./components/Footprinter";
 import { CookiesProvider } from "react-cookie";
 import { FootprintResult } from "./components/CarbonEmission/FootprintResult";
 import Dashboard from "./components/Dashboard";
+import { Login } from "./screens/Auth/Login";
+import { Signup } from "./screens/Auth/Signup";
+import { Verify } from "./screens/Auth/Verify";
 
 export const PageContext = createContext({});
 
@@ -77,14 +80,10 @@ function App() {
                   </Layout>
                 }
               />
-              <Route
-                path="/auth/sign-in"
-                element={
-                  <Layout>
-                    <Signin />
-                  </Layout>
-                }
-              />
+              <Route path="/auth/signup" element={<Signup />} />
+              <Route path="/auth/verify" element={<Verify />} />
+
+              <Route path="/auth/login" element={<Login />} />
               <Route
                 path="/get-involved/sponsors"
                 element={
