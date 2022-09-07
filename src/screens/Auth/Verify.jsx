@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 import ReactInputVerificationCode from "react-input-verification-code";
+import { ThreeDots } from "react-loader-spinner";
 import { useNavigate } from "react-router";
 import { POST } from "../../../utils/request";
 
@@ -72,9 +73,18 @@ export const Verify = () => {
             onClick={() => {
               verifyCode();
             }}
-            className="bg-lgreen text-white rounded-md font-semibold px-4 py-3 w-full"
+            className="bg-lgreen text-white rounded-md font-semibold px-4 py-3 w-full flex justify-center cursor-pointer"
           >
-            Verify
+            {true ? (
+              <ThreeDots
+                height="20"
+                width="100"
+                color="white"
+                ariaLabel="loading"
+              />
+            ) : (
+              "Verify"
+            )}
           </button>
         </div>
       </div>

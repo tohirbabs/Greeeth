@@ -1,5 +1,6 @@
 import React, { useId, useState } from "react";
 import { useCookies } from "react-cookie";
+import { ThreeDots } from "react-loader-spinner";
 import { useNavigate } from "react-router";
 import { facebook, google, GreenLogo } from "../../../assets";
 import { POST } from "../../../utils/request";
@@ -175,9 +176,18 @@ export const Signup = () => {
                 onClick={() => {
                   postSignup();
                 }}
-                className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-lgreen rounded-md shadow hover-bd-lgreen hover-lgreen hover:bg-white border-2px focus:outline-none focus:ring-blue-200 focus:ring-4"
+                className="w-full px-4 flex justify-center py-4 text-lg font-semibold text-white transition-colors duration-300 bg-lgreen rounded-md shadow  border-2px cursor-pointer"
               >
-                Sign Up
+                {isLoading ? (
+                  <ThreeDots
+                    height="20"
+                    width="100"
+                    color="white"
+                    ariaLabel="loading"
+                  />
+                ) : (
+                  "Sign Up"
+                )}
               </div>
             </div>
             <div className="flex flex-col space-y-5">
