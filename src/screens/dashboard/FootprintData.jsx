@@ -63,7 +63,7 @@ const FootprintData = () => {
           </div>
         </div>
       </div>
-      <div className="flex md:flex-row gap-4 ">
+      <div className="flex flex-col md:flex-row gap-4 ">
         <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
           <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
             Total Emission/offset
