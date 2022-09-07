@@ -75,7 +75,7 @@ export const Verify = () => {
             }}
             className="bg-lgreen text-white rounded-md font-semibold px-4 py-3 w-full flex justify-center cursor-pointer"
           >
-            {true ? (
+            {isLoading ? (
               <ThreeDots
                 height="20"
                 width="100"
