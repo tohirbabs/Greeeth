@@ -401,7 +401,7 @@ export const Footprinter = ({ result }) => {
       multiple: false,
 
       query:
-        " How often do you buy locally produced food that is not imported to your country?",
+        "How often do you buy locally produced food that is not imported to your country?",
       options: [
         "A lot of the food I buy is locally sourced",
         "Some of the food I buy is locally sourced",

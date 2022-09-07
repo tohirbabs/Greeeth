@@ -21,9 +21,11 @@ import {
   tv,
   vegan,
 } from "../../../assets/CarbonEmissions";
+var answers = {};
 
 export const Query = ({ dataSet, result }) => {
   console.log("query");
+
   const icons = [
     homicon,
     homicon,
@@ -70,11 +72,81 @@ export const Query = ({ dataSet, result }) => {
   const [selected, setselected] = useState(false);
   const [selectedOption, setselectedOption] = useState(-1);
   const [selectedOptions, setselectedOptions] = useState([]);
+
   const [cookies, setCookie] = useCookies();
   const [questionCount, setquestionCount] = useState(0);
   // const [countRatio, setcountRatio] = useState(
   //   (questionCount * 100) / maxQuery
   // );
+
+  function totalFoot() {
+    var homefoot =
+      answers["How much energy do you use on average?"] +
+      answers["What kind of house do you live in?"] +
+      answers["How many people (aged 17 and over) live in your house?"] +
+      answers["How many bedrooms does your house have?"];
+
+    var travelfoot =
+      answers[
+        "How many hours a week do you spend in your car or on your motorbike for personal use including commuting?"
+      ] +
+      answers[
+        "How many hours a week do you spend on the train for commuting?"
+      ] +
+      answers[
+        "How many hours a week do you spend on the bus for personal use including commuting?"
+      ] +
+      answers[
+        "In the last year, how many local and International flights have you made in total ?"
+      ];
+
+    var foodfoot =
+      answers["How would you best describe your diet?"] +
+      answers[
+        "In a week, how much do you spend on food from restaurants, canteens and takeaways?"
+      ] +
+      answers["Of the food you buy how much is wasted and thrown away?"] +
+      answers[
+        "How often do you buy locally produced food that is not imported to your country?"
+      ];
+    var secfoot =
+      // parseInt(
+      //   cookies[
+      //     "In the last 12 months, have you bought any of these new household items?"
+      //   ]
+      // ) +
+      answers[
+        "In a typical month, how much do you spend on clothes and footwear?"
+      ] +
+      answers[
+        "In a typical month, how much do you spend on phone, internet and TV contracts?"
+      ] +
+      answers[
+        "In a typical month, how much do you spend on entertainment and hobbies (sports/gym, cinema, books, newspapers, gardening, computer games)"
+      ];
+    // parseInt(
+    //   cookies["Which of these types of waste do you recycle and/or compost?"]
+    // );
+
+    var totalfoot = homefoot + travelfoot + foodfoot + secfoot;
+    console.log(totalfoot);
+    setCookie("homefoot", `${homefoot}`, {
+      path: "/",
+    });
+    setCookie("travelfoot", `${travelfoot}`, {
+      path: "/",
+    });
+    setCookie("foodfoot", `${foodfoot}`, {
+      path: "/",
+    });
+    setCookie("secfoot", `${secfoot}`, {
+      path: "/",
+    });
+    setCookie("totalfoot", `${totalfoot}`, {
+      path: "/",
+    });
+    result("result");
+  }
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -86,18 +158,16 @@ export const Query = ({ dataSet, result }) => {
   const Options = ({ option, optindex }) => {
     const HandleClick = () => {
       setselectedOption(option);
-      console.log(cookies);
-      console.log(dataSet[questionCount].values);
-      console.log(optindex);
-      console.log(dataSet[questionCount].options.indexOf(option));
-
-      setCookie(
-        `${dataSet[questionCount].query}`,
-        `${dataSet[questionCount].values[optindex]}`,
-        {
-          path: "/",
-        }
-      );
+      answers[dataSet[questionCount].query] =
+        dataSet[questionCount].values[optindex];
+      // setCookie(
+      //   `${dataSet[questionCount].query}`,
+      //   `${dataSet[questionCount].values[optindex]}`,
+      //   {
+      //     path: "/",
+      //   }
+      // );
+      console.log(answers);
     };
     const removeItem = (index) => {
       setselectedOptions([
@@ -112,8 +182,6 @@ export const Query = ({ dataSet, result }) => {
       console.log(selectedOptions);
     };
 
-    console.log(selectedOption);
-    console.log(dataSet[questionCount].multiple);
     return (
       <div
         onClick={() => {
@@ -207,7 +275,7 @@ export const Query = ({ dataSet, result }) => {
             {questionCount + 1 == dataSet.length ? (
               <div
                 onClick={() => {
-                  result("result");
+                  totalFoot();
                 }}
                 className="next bg-lgreen rounded text-white px-6 py-2 cursor-pointer"
               >
