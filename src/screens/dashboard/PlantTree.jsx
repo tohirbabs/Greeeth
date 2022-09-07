@@ -82,14 +82,14 @@ const PlantTree = () => {
   // };
   const percentage = 66;
   var pic;
-  var location;
-  // useEffect(() => {
-  //   navigator.geolocation.getCurrentPosition(function (position) {
-  //     console.log("Latitude is :", position.coords.latitude);
-  //     console.log("Longitude is :", position.coords.longitude);
-  //     location = `${position.coords.latitude}`;
-  //   });
-  // });
+  var location = "";
+  function locate() {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+      location = `${position.coords.latitude}`;
+    });
+  }
   // const handleCapture = (file) => {
   //   var reader = new FileReader();
   //   reader.onload = function () {
@@ -98,6 +98,8 @@ const PlantTree = () => {
   //   };
   //   reader.readAsDataURL(file.files[0]);
   // };
+
+  console.log(location);
 
   return (
     // <DashboardLayout>
@@ -174,7 +176,14 @@ const PlantTree = () => {
         </div>
         <div className="">
           {/* <h3 className="ligreen font-bold sm:text-xl my-2">Picture Sample</h3> */}
-          <img onClick={openModal} src={geobutt} alt="" />
+          <img
+            onClick={() => {
+              openModal();
+              locate();
+            }}
+            src={geobutt}
+            alt=""
+          />
           <Modal
             isOpen={modalIsOpen}
             onAfterOpen={afterOpenModal}
@@ -187,30 +196,30 @@ const PlantTree = () => {
             <div>I am a modal</div> */}
             <form>
               <UploadImage />
-              <div class="mb-6">
+              <div className="mb-6">
                 <label
-                  for="treeName"
-                  class="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
+                  htmlFor="treeName"
+                  className="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                 >
                   Tree Name
                 </label>
                 <input
                   type="text"
                   id="treeName"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
-              <div class="mb-6">
+              <div className="mb-6">
                 <label
-                  for="treeHeight"
-                  class="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
+                  htmlFor="treeHeight"
+                  className="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                 >
                   Tree Height (mm)
                 </label>
                 <input
                   type="number"
                   id="treeHeight"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter tree height in millimeters"
                 />
               </div>
