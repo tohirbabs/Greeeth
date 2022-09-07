@@ -75,6 +75,8 @@ export const Query = ({ dataSet, result }) => {
 
   const [cookies, setCookie] = useCookies();
   const [questionCount, setquestionCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState("");
   // const [countRatio, setcountRatio] = useState(
   //   (questionCount * 100) / maxQuery
   // );
@@ -145,7 +147,45 @@ export const Query = ({ dataSet, result }) => {
     setCookie("totalfoot", `${totalfoot}`, {
       path: "/",
     });
-    result("result");
+
+    async function postFootprint() {
+      setIsLoading(true);
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append(
+        "Authorization",
+        "Token 87866a159fc0ff8f8147b777c5dde53ed8c4f631"
+      );
+      const body = JSON.stringify({
+        total: `${totalfoot}`,
+        home_emmission: `${homefoot}`,
+        travel_emmission: `${travelfoot}`,
+        food_emmission: `${foodfoot}`,
+        secondary_emmission: `${secfoot}`,
+      });
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: body,
+      };
+      console.log(requestOptions);
+      console.log(myHeaders);
+
+      try {
+        await fetch("https://api.greeeth.com/carbonfootprint/", requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
+          });
+      } catch (err) {
+        setErr(err.message);
+      } finally {
+        setIsLoading(false);
+        result("result");
+      }
+    }
+
+    postFootprint();
   }
 
   function classNames(...classes) {
