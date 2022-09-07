@@ -63,10 +63,11 @@ const Sidebar = () => {
           <SideNavItem Icon={Dashicon} name="Overview" />
           <SideNavItem Icon={Walleticon} name="Wallet" />
           <SideNavItem Icon={Footprinticon} name="Carbon footprint" />
+
           <SideNavItem Icon={Offseticon} name="Carbon Offset" />
           <SideNavItem Icon={Projecticon} name="Project" />
           <SideNavItem Icon={Treeicon} name="Tree" />
-          <SideNavItem Icon={Cycleicon} name="Life cycle analysis" />
+          {/* <SideNavItem Icon={Cycleicon} name="Life cycle analysis" /> */}
           <SideNavItem Icon={Goalicon} name="Goal" />
           <SideNavItem Icon={Badgeicon} name="Badge" />
           <SideNavItem Icon={Staricon} name="Impact" />

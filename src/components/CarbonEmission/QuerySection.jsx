@@ -22,7 +22,7 @@ import {
   vegan,
 } from "../../../assets/CarbonEmissions";
 
-export const Query = ({ dataSet }) => {
+export const Query = ({ dataSet, result }) => {
   console.log("query");
   const icons = [
     homicon,
@@ -205,12 +205,14 @@ export const Query = ({ dataSet }) => {
               Prev
             </div>
             {questionCount + 1 == dataSet.length ? (
-              <a
-                href="/footprint-results"
+              <div
+                onClick={() => {
+                  result("result");
+                }}
                 className="next bg-lgreen rounded text-white px-6 py-2 cursor-pointer"
               >
                 Finish
-              </a>
+              </div>
             ) : (
               <div
                 onClick={() => {

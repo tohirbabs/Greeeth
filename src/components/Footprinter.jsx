@@ -12,7 +12,7 @@ import {
 import { calc } from "../../assets/GetInvolved";
 import { Query } from "./CarbonEmission/QuerySection";
 
-export const Footprinter = () => {
+export const Footprinter = ({ result }) => {
   const dataset = [
     {
       title: "HOME",
@@ -527,7 +527,7 @@ export const Footprinter = () => {
     //   dataIndex={dataIndex}
     //   dataSets={dataset}
     // />
-    <Query dataSet={qureyDataset} />
+    <Query dataSet={qureyDataset} result={result} />
     // <div className="">work</div>
   );
 };
