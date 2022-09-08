@@ -16,39 +16,6 @@ export const Login = () => {
   const [err, setErr] = useState("");
 
   let navigate = useNavigate();
-  // const postLogin = async () => {
-  //   setIsLoading(true);
-
-  //   try {
-  //     const body = JSON.stringify({
-  //       username: mailInput,
-
-  //       password: passwordInput,
-  //     });
-
-  //     const response = await POST("/accounts/token/", body);
-
-  //     if (response.ok) {
-  //       const result = await response.json();
-
-  //       console.log("result is: ", JSON.stringify(result));
-
-  //       setCookie(`token`, "token", {
-  //         path: "/",
-  //       });
-  //       navigate("/auth/verify");
-  //     }
-
-  //     response.json().then((text) => {
-  //       console.log(text);
-  //     });
-  //   } catch (err) {
-  //     setErr(err.message);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
-
   async function postLogin() {
     setIsLoading(true);
     var myHeaders = new Headers();
@@ -71,6 +38,9 @@ export const Login = () => {
       await fetch("https://api.greeeth.com/accounts/token/", requestOptions)
         .then((response) => response.json())
         .then((result) => {
+          setCookie(`token`, result.key, {
+            path: "/",
+          });
           console.log(result);
           if (result.key) {
             navigate("/dashboard");

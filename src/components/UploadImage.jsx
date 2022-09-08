@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export const UploadImage = () => {
-  const [images, setImages] = useState([]);
+export const UploadImage = ({ setImages, images }) => {
   const [imageURLs, setImageURLs] = useState([]);
   const newImageURLs = [];
   useEffect(() => {

@@ -152,10 +152,7 @@ export const Query = ({ dataSet, result }) => {
       setIsLoading(true);
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
-      myHeaders.append(
-        "Authorization",
-        "Token 87866a159fc0ff8f8147b777c5dde53ed8c4f631"
-      );
+      myHeaders.append("Authorization", `Token ${cookies.key}`);
       const body = JSON.stringify({
         total: `${totalfoot}`,
         home_emmission: `${homefoot}`,

@@ -14,6 +14,7 @@ import { Badge } from "../screens/dashboard/Badge";
 
 const Dashboard = ({ children }) => {
   const [cookies, setCookie] = useCookies();
+  console.log(cookies.token);
 
   const dashSection = () => {
     switch (cookies.dashnav) {

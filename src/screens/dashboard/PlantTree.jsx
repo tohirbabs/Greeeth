@@ -13,6 +13,7 @@ import { useContext, useState, useId } from "react";
 import { POST } from "../../../utils/request";
 import { UploadImage } from "../../components/UploadImage";
 import { Overlay } from "../../components/Modal";
+import { useCookies } from "react-cookie";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -34,6 +35,10 @@ const customStyles = {
 const PlantTree = () => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [cookies, setCookie] = useCookies();
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState("");
+  const [images, setImages] = useState([]);
 
   function openModal() {
     setIsOpen(true);
@@ -47,59 +52,72 @@ const PlantTree = () => {
   function closeModal() {
     setIsOpen(false);
   }
+  console.log(cookies.key);
+  // prettier-ignore
+  function postTree() {
+    setIsLoading(true);
+    var myHeaders = new Headers();
+    // myHeaders.append("Content-Type", "application/json");
 
-  // console.log(cookies);
-  // console.log(pic.base64);
-  // const postTree = async () => {
-  //   setIsLoading(true);
-  //   console.log(pic);
+    myHeaders.append("Authorization", `Token ${cookies.key}`);
+    let form_data = new FormData();
+    form_data.append("image", images[0]);
+    form_data.append("location", {
+      "type": "Point",
+      "coordinates": `${ [12.33, 43.44]}`,
+    });
+    form_data.append("height", 25);
 
-  //   try {
-  //     const body = JSON.stringify({
-  //       location: `${location}`,
-  //       height: "10",
-  //       image: pic,
-  //     });
-  //     console.log(body);
-  //     console.log("tree");
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: form_data,
+    };
+    console.log(requestOptions);
+    console.log(myHeaders);
 
-  //     const response = await POST("/trees/", body);
+    try {
+      fetch("https://api.greeeth.com/trees/", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          // setCookie(`token`, result.key, {
+          //   path: "/",
+          // });
+          console.log(result);
+          // if (result.key) {
+          //   navigate("/dashboard");
+          // }
+        });
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
-  //     if (response.ok) {
-  //       const result = await response.json();
-
-  //       console.log("result is: ", JSON.stringify(result));
-  //     }
-
-  //     response.json().then((text) => {
-  //       console.log(text);
-  //     });
-  //   } catch (err) {
-  //     setErr(err.message);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
   const percentage = 66;
   var pic;
-  var location = "";
+  var locationLon;
+  var locationLat;
   function locate() {
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Latitude is :", position.coords.latitude);
       console.log("Longitude is :", position.coords.longitude);
-      location = `${position.coords.latitude}`;
+      locationLat = position.coords.latitude;
+      locationLon = position.coords.longitude;
     });
   }
-  // const handleCapture = (file) => {
-  //   var reader = new FileReader();
-  //   reader.onload = function () {
-  //     console.log(reader);
-  //     pic = reader.result;
-  //   };
-  //   reader.readAsDataURL(file.files[0]);
-  // };
+  const handleCapture = (file) => {
+    var reader = new FileReader();
+    reader.onload = function () {
+      console.log(reader);
+      pic = reader.result;
+    };
+    reader.readAsDataURL(file.files[0]);
+  };
+  useEffect(() => locate());
 
-  console.log(location);
+  // console.log(location);
 
   return (
     // <DashboardLayout>
@@ -195,7 +213,7 @@ const PlantTree = () => {
             {/* <button onClick={closeModal}>close</button>
             <div>I am a modal</div> */}
             <form>
-              <UploadImage />
+              <UploadImage setImages={setImages} images={images} />
               <div className="mb-6">
                 <label
                   htmlFor="treeName"
@@ -223,13 +241,13 @@ const PlantTree = () => {
                   placeholder="Enter tree height in millimeters"
                 />
               </div>
-              <button
+              <div
                 className="block w-9/10 mx-auto p-4 text-base font-normal bg-lgreen rounded-3xl shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
-                type="submit"
-                onClick={closeModal}
+                // type="submit"
+                onClick={() => postTree()}
               >
                 Geotag
-              </button>
+              </div>
             </form>
           </Modal>
         </div>
