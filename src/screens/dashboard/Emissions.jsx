@@ -20,45 +20,45 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Emissions = ({ result }) => {
-  console.log(result);
+const Emissions = () => {
+  // console.log(result);
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState("");
 
   const [cookies, setCookie] = useCookies();
   const [emissionSection, setemissionSection] = useState(
-    cookies.footprint.length > 0 ? "result" : "query"
+    cookies.totalfoot ? "result" : "query"
   );
-  function postFootprint() {
-    // setIsLoading(true);
-    console.log("posting");
-    console.log(cookies.key);
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", `Token ${cookies.key}`);
+  // function postFootprint() {
+  //   // setIsLoading(true);
+  //   console.log("posting");
+  //   console.log(cookies.key);
+  //   var myHeaders = new Headers();
+  //   myHeaders.append("Content-Type", "application/json");
+  //   myHeaders.append("Authorization", `Token ${cookies.key}`);
 
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-    };
-    console.log(requestOptions);
-    console.log(myHeaders);
+  //   var requestOptions = {
+  //     method: "GET",
+  //     headers: myHeaders,
+  //   };
+  //   console.log(requestOptions);
+  //   console.log(myHeaders);
 
-    try {
-      fetch("https://api.greeeth.com/carbonfootprint/", requestOptions)
-        .then((response) => response.json())
-        .then((result) => {
-          console.log(result);
-        });
-    } catch (err) {
-      // setErr(err.message);
-    } finally {
-      // setIsLoading(false);
-    }
-  }
-  useEffect(() => {
-    postFootprint();
-  });
+  //   try {
+  //     fetch("https://api.greeeth.com/carbonfootprint/", requestOptions)
+  //       .then((response) => response.json())
+  //       .then((result) => {
+  //         console.log(result);
+  //       });
+  //   } catch (err) {
+  //     // setErr(err.message);
+  //   } finally {
+  //     // setIsLoading(false);
+  //   }
+  // }
+  // useEffect(() => {
+  //   postFootprint();
+  // });
 
   const EmissionSection = () => {
     switch (emissionSection) {

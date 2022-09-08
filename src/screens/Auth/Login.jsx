@@ -38,7 +38,7 @@ export const Login = () => {
       await fetch("https://api.greeeth.com/accounts/token/", requestOptions)
         .then((response) => response.json())
         .then((result) => {
-          setCookie(`token`, result.key, {
+          setCookie(`key`, result.key, {
             path: "/",
           });
           console.log(result);
