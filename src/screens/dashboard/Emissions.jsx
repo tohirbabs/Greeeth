@@ -26,9 +26,7 @@ const Emissions = () => {
   const [err, setErr] = useState("");
 
   const [cookies, setCookie] = useCookies();
-  const [emissionSection, setemissionSection] = useState(
-    cookies.totalfoot ? "result" : "query"
-  );
+  const [emissionSection, setemissionSection] = useState("query");
   // function postFootprint() {
   //   // setIsLoading(true);
   //   console.log("posting");
