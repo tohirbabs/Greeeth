@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
 import { useCookies } from "react-cookie";
@@ -11,10 +11,47 @@ import Tree from "../screens/dashboard/Tree";
 import { Project } from "../screens/dashboard/Project";
 import { Impact } from "../screens/dashboard/Impact";
 import { Badge } from "../screens/dashboard/Badge";
+import { useState } from "react";
 
 const Dashboard = ({ children }) => {
   const [cookies, setCookie] = useCookies();
-  console.log(cookies.token);
+  const [footData, setfootData] = useState();
+
+  console.log(cookies.key);
+
+  function postFootprint() {
+    // setIsLoading(true);
+    console.log("posting");
+    console.log(cookies.key);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Token ${cookies.key}`);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+    };
+    console.log(requestOptions);
+    console.log(myHeaders);
+
+    try {
+      fetch("https://api.greeeth.com/carbonfootprint/", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          setCookie(`footprintData`, result, {
+            path: "/",
+          });
+        });
+    } catch (err) {
+      // setErr(err.message);
+    } finally {
+      // setIsLoading(false);
+    }
+  }
+  useEffect(() => {
+    postFootprint();
+  }, [cookies.key]);
 
   const dashSection = () => {
     switch (cookies.dashnav) {
