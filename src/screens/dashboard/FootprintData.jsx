@@ -20,6 +20,7 @@ import {
   ecosec,
   ecotravel,
 } from "../../../assets/CarbonEmissions";
+import { useEffect } from "react";
 
 // import Map from "../../components/Dashboard/Map";
 
@@ -32,6 +33,39 @@ const FootprintData = () => {
   console.log(cookies.footprintData[0]);
 
   console.log(cookies.footprintData.total);
+  function postFootprint() {
+    // setIsLoading(true);
+    console.log("posting");
+    console.log(cookies.key);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Token ${cookies.key}`);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+    };
+    console.log(requestOptions);
+    console.log(myHeaders);
+
+    try {
+      fetch("https://api.greeeth.com/carbonfootprint/", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          setCookie(`footprintData`, result, {
+            path: "/",
+          });
+        });
+    } catch (err) {
+      // setErr(err.message);
+    } finally {
+      // setIsLoading(false);
+    }
+  }
+  useEffect(() => {
+    postFootprint();
+  }, [cookies.key]);
 
   return (
     // <DashboardLayout>
