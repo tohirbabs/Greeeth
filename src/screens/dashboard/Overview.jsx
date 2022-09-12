@@ -19,7 +19,7 @@ const Overview = () => {
   return (
     // <DashboardLayout>
     <div className="sm:my-12 my-2">
-      <div className="flex flex-wrap sm:gap-6 gap-2">
+      {/* <div className="flex flex-wrap sm:gap-6 gap-2">
         <div className="sm:px-6 px-2 py-2 border-2 text-sm sm:text-base font-bold rounded-md bg-white text-lgreen">
           Plant New Trees
         </div>
@@ -29,7 +29,7 @@ const Overview = () => {
         <div className="sm:px-6 px-2 py-2 border-2 text-sm sm:text-base font-bold rounded-md bg-white text-lgreen">
           Planting Task
         </div>
-      </div>
+      </div> */}
       <div className="flex flex-col md:flex-row sm:gap-10 gap-5 my-10 sm:px-8">
         <div className="w-full sm:w-auto">
           <div className="">

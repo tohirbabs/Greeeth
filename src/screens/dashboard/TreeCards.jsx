@@ -1,7 +1,45 @@
 import React from "react";
+import { useEffect } from "react";
+import { useCookies } from "react-cookie";
 import treepic from "../../components/Dashboard/treepic.png";
 
 export const TreeCards = () => {
+  const [cookies, setCookie] = useCookies();
+
+  function getTrees() {
+    // setIsLoading(true);
+    console.log("posting");
+    console.log(cookies.key);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Token ${cookies.key}`);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+    };
+    console.log(requestOptions);
+    console.log(myHeaders);
+
+    try {
+      fetch("https://api.greeeth.com/trees/", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          setCookie(`treesData`, result, {
+            path: "/",
+          });
+        });
+    } catch (err) {
+      // setErr(err.message);
+    } finally {
+      // setIsLoading(false);
+    }
+  }
+  useEffect(() => {
+    getTrees();
+  }, [cookies.key]);
+  console.log(cookies.treesData);
   const TreeCard = () => {
     return (
       <div className="">
@@ -23,8 +61,18 @@ export const TreeCards = () => {
   };
   return (
     <div className="flex flex-wrap justify-between">
-      <TreeCard />
-      <TreeCard />
+      {cookies.treesData !== undefined ? (
+        cookies.treesData.length !== 0 ? (
+          <>
+            <TreeCard />
+            <TreeCard />
+          </>
+        ) : (
+          <></>
+        )
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

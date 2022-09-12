@@ -62,9 +62,7 @@ const PlantTree = () => {
     myHeaders.append("Authorization", `Token ${cookies.key}`);
     let form_data = new FormData();
     form_data.append("image", images[0]);
-    form_data.append("location", {
-      "type": "Point",
-      "coordinates": `${ [12.33, 43.44]}`,
+    form_data.append("location", {"type":"Point","coordinates": [564.77,12.56]
     });
     form_data.append("height", 25);
 
