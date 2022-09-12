@@ -1,4 +1,4 @@
-import Carosel from "carousel-react-rcdev";
+// import Carosel from "carousel-react-rcdev";
 import React from "react";
 import offset from "../../../../assets/GetInvolved/gift.png";
 import Carousel from "../../../components/Carousel";
