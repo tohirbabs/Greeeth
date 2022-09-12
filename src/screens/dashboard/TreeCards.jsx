@@ -40,36 +40,39 @@ export const TreeCards = () => {
     getTrees();
   }, [cookies.key]);
   console.log(cookies.treesData);
-  const TreeCard = () => {
+  const TreeCard = ({ tree }) => {
     return (
       <div className="">
-        <div className="flex my-10 mx-2 gap-2 bg-white rounded-xl  sm:w-max ">
-          <img
-            src={cookies.treesData[0].image}
-            alt=""
-            className="max-w-150px sm:max-h-30vw "
-          />
+        <div className="flex my-10 mx-2 gap-1 bg-white rounded-xl  sm:w-max ">
+          <img src={tree.image} alt="" className="max-w-150px sm:max-h-30vw " />
           <div className="p-2 flex flex-col text-left font-bold ligreen sm:text-base justify-between gap-2 text-sm mr-8">
-            <p>Tree No: #004/657</p>
+            <p>Tree ID: #{tree.id}</p>
             <p>Tree Type: </p>
-            <p>Location: </p>
-            <p>Age</p>
-            <p>Date Planted: </p>
-            <p>CO2 Sequestrated: </p>
-            <p>Weather Forcast: </p>
+            <p>
+              Location: {tree.location.coordinates[0]}Lat,
+              <br />
+              {tree.location.coordinates[1]}Long
+            </p>
+            {/* <p>Age</p> */}
+            <p>Date Planted: {tree.created_on.slice(0, 10)}</p>
+            {/* <p>CO2 Sequestrated: </p>
+            <p>Weather Forcast: </p> */}
           </div>
         </div>
         <div className=""></div>
       </div>
     );
   };
+  let trees = [1, 2, 3];
+  console.log(trees);
   return (
     <div className="flex flex-wrap justify-between">
       {cookies.treesData !== undefined ? (
         cookies.treesData.length !== 0 ? (
           <>
-            <TreeCard />
-            <TreeCard />
+            {cookies.treesData.map((tree, i) => (
+              <TreeCard tree={tree} key={i} />
+            ))}
           </>
         ) : (
           <></>
