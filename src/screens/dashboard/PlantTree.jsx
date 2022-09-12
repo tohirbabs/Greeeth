@@ -14,6 +14,7 @@ import { POST } from "../../../utils/request";
 import { UploadImage } from "../../components/UploadImage";
 import { Overlay } from "../../components/Modal";
 import { useCookies } from "react-cookie";
+import { ThreeDots } from "react-loader-spinner";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -208,8 +209,8 @@ const PlantTree = () => {
             contentLabel="Example Modal"
           >
             <h3 className="ligreen font-bold sm:text-4xl my-6">Geotag Tree</h3>
-            {/* <button onClick={closeModal}>close</button>
-            <div>I am a modal</div> */}
+            <button onClick={closeModal}>close</button>
+            {/* <div>I am a modal</div> */}
             <form>
               <UploadImage setImages={setImages} images={images} />
               <div className="mb-6">
@@ -244,7 +245,16 @@ const PlantTree = () => {
                 // type="submit"
                 onClick={() => postTree()}
               >
-                Geotag
+                {isLoading ? (
+                  <ThreeDots
+                    height="20"
+                    width="100"
+                    color="white"
+                    ariaLabel="loading"
+                  />
+                ) : (
+                  "Geotag"
+                )}
               </div>
             </form>
           </Modal>
