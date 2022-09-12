@@ -40,6 +40,8 @@ const PlantTree = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState("");
   const [images, setImages] = useState([]);
+  const [treeNameInput, setTreeNameInput] = useState("");
+  const [treeHeightInput, setTreeHeightInput] = useState(0);
 
   function openModal() {
     setIsOpen(true);
@@ -63,9 +65,9 @@ const PlantTree = () => {
     myHeaders.append("Authorization", `Token ${cookies.key}`);
     let form_data = new FormData();
     form_data.append("image", images[0]);
-    form_data.append("location", `{"type":"Point","coordinates": [564.77,12.56]
+    form_data.append("location", `{"type":"Point","coordinates": [${locationLat},${locationLon}]
     }`);
-    form_data.append("height", 25);
+    form_data.append("height", treeHeightInput);
 
     var requestOptions = {
       method: "POST",
@@ -223,6 +225,8 @@ const PlantTree = () => {
                 <input
                   type="text"
                   id="treeName"
+                  value={treeNameInput}
+                  onInput={(e) => setTreeNameInput(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
@@ -236,6 +240,8 @@ const PlantTree = () => {
                 <input
                   type="number"
                   id="treeHeight"
+                  value={treeHeightInput}
+                  onInput={(e) => setTreeHeightInput(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter tree height in millimeters"
                 />
