@@ -30,7 +30,6 @@ function classNames(...classes) {
 
 const FootprintData = () => {
   const [cookies, setCookie] = useCookies();
-  console.log(cookies.footprintData[0]);
 
   function postFootprint() {
     // setIsLoading(true);
@@ -65,7 +64,6 @@ const FootprintData = () => {
   useEffect(() => {
     postFootprint();
   }, [cookies.key]);
-  console.log(cookies.footprintData);
 
   return (
     // <DashboardLayout>
