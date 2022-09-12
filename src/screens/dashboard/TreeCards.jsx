@@ -44,7 +44,11 @@ export const TreeCards = () => {
     return (
       <div className="">
         <div className="flex my-10 mx-2 gap-2 bg-white rounded-xl  sm:w-max ">
-          <img src={treepic} alt="" className="max-w-150px sm:max-h-30vw " />
+          <img
+            src={cookies.treesData[0].image}
+            alt=""
+            className="max-w-150px sm:max-h-30vw "
+          />
           <div className="p-2 flex flex-col text-left font-bold ligreen sm:text-base justify-between gap-2 text-sm mr-8">
             <p>Tree No: #004/657</p>
             <p>Tree Type: </p>
