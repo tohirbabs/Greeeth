@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useCookies } from "react-cookie";
 import treepic from "../../components/Dashboard/treepic.png";
@@ -7,9 +7,6 @@ export const TreeCards = () => {
   const [cookies, setCookie] = useCookies();
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState("");
-  setCookie(`treesData`, [], {
-    path: "/",
-  });
 
   function getTrees() {
     setIsLoading(true);
