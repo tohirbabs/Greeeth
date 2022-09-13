@@ -33,7 +33,7 @@ export const TreeCards = () => {
     } catch (err) {
       // setErr(err.message);
     } finally {
-      // setIsLoading(false);
+      setIsLoading(false);
     }
   }
   useEffect(() => {

@@ -220,7 +220,7 @@ const PlantTree = () => {
                   htmlFor="treeName"
                   className="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
                 >
-                  Tree Name
+                  Tree type
                 </label>
                 <input
                   type="text"
@@ -247,7 +247,7 @@ const PlantTree = () => {
                 />
               </div>
               <div
-                className="block w-9/10 mx-auto p-4 text-base font-normal bg-lgreen rounded-3xl shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+                className="block w-9/10 mx-auto p-4 flex justify-center text-base text-center font-normal bg-lgreen rounded-3xl shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
                 // type="submit"
                 onClick={() => postTree()}
               >
