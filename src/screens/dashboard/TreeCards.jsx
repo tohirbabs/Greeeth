@@ -31,7 +31,7 @@ export const TreeCards = () => {
           });
         });
     } catch (err) {
-      // setErr(err.message);
+      setErr(err.message);
     } finally {
       setIsLoading(false);
     }
