@@ -7,6 +7,9 @@ export const TreeCards = () => {
   const [cookies, setCookie] = useCookies();
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState("");
+  setCookie(`treesData`, {
+    path: "/",
+  });
 
   function getTrees() {
     setIsLoading(true);
