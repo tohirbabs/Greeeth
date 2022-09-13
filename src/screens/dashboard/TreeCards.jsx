@@ -8,6 +8,8 @@ export const TreeCards = () => {
 
   function getTrees() {
     // setIsLoading(true);
+    const [isLoading, setIsLoading] = useState(false);
+    const [err, setErr] = useState("");
     console.log("posting");
     console.log(cookies.key);
     var myHeaders = new Headers();
