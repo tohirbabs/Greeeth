@@ -42,7 +42,6 @@ export const TreeCards = () => {
   useEffect(() => {
     getTrees();
   }, [cookies.key]);
-  console.log(cookies.treesData);
   const TreeCard = ({ tree }) => {
     return (
       <div className="">
