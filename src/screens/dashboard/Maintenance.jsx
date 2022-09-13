@@ -8,6 +8,19 @@ import before from "../../components/Dashboard/before.png";
 
 import { useContext, useState, useId } from "react";
 import { POST } from "../../../utils/request";
+import Modal from "react-modal";
+import geobutt from "../../components/Dashboard/geobutt.png";
+
+import maped from "../../components/Dashboard/maped.png";
+import treetag from "../../components/Dashboard/treetag.png";
+
+// import Map from "../../components/Dashboard/Map";
+
+// import CircularSlider from "@fseehawer/react-circular-slider";
+
+import { UploadImage } from "../../components/UploadImage";
+
+import { ThreeDots } from "react-loader-spinner";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -27,8 +40,66 @@ const Maintenance = () => {
   const [status, setstatus] = useState("");
   const [signedIn, setsignedIn] = useState(false);
 
-  // console.log(cookies);
-  // console.log(pic.base64);
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [cookies, setCookie] = useCookies();
+
+  const [images, setImages] = useState([]);
+  const [treeNameInput, setTreeNameInput] = useState("");
+  const [treeHeightInput, setTreeHeightInput] = useState(0);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = "#f00";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+  console.log(cookies.key);
+  // prettier-ignore
+  function postTree() {
+    setIsLoading(true);
+    var myHeaders = new Headers();
+    // myHeaders.append("Content-Type", "application/json");
+
+    myHeaders.append("Authorization", `Token ${cookies.key}`);
+    let form_data = new FormData();
+    form_data.append("image", images[0]);
+    form_data.append("location", `{"type":"Point","coordinates": [${locationLat},${locationLon}]
+    }`);
+    form_data.append("height", treeHeightInput);
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: form_data,
+    };
+    console.log(requestOptions);
+    console.log(myHeaders);
+
+    try {
+      fetch("https://api.greeeth.com/trees/", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          // setCookie(`token`, result.key, {
+          //   path: "/",
+          // });
+          console.log(result);
+          // if (result.key) {
+          //   navigate("/dashboard");
+          // }
+        });
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   return (
     // <DashboardLayout>
@@ -80,6 +151,80 @@ const Maintenance = () => {
           </div>
         </div>
         <div className="flex-1">
+          <div className="">
+            {/* <h3 className="ligreen font-bold sm:text-xl my-2">Picture Sample</h3> */}
+            <img
+              onClick={() => {
+                openModal();
+                locate();
+              }}
+              src={geobutt}
+              alt=""
+            />
+            <Modal
+              isOpen={modalIsOpen}
+              onAfterOpen={afterOpenModal}
+              onRequestClose={closeModal}
+              style={customStyles}
+              contentLabel="Example Modal"
+            >
+              <h3 className="ligreen font-bold sm:text-4xl my-6">
+                Geotag Tree
+              </h3>
+              <button onClick={closeModal}>close</button>
+              {/* <div>I am a modal</div> */}
+              <form>
+                <UploadImage setImages={setImages} images={images} />
+                <div className="mb-6">
+                  <label
+                    htmlFor="treeName"
+                    className="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
+                  >
+                    Tree type
+                  </label>
+                  <input
+                    type="text"
+                    id="treeName"
+                    value={treeNameInput}
+                    onInput={(e) => setTreeNameInput(e.target.value)}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <div className="mb-6">
+                  <label
+                    htmlFor="treeHeight"
+                    className="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
+                  >
+                    Tree Height (mm)
+                  </label>
+                  <input
+                    type="number"
+                    id="treeHeight"
+                    value={treeHeightInput}
+                    onInput={(e) => setTreeHeightInput(e.target.value)}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Enter tree height in millimeters"
+                  />
+                </div>
+                <div
+                  className="block w-9/10 mx-auto p-4 flex justify-center text-base text-center font-normal bg-lgreen rounded-3xl shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+                  // type="submit"
+                  onClick={() => postTree()}
+                >
+                  {isLoading ? (
+                    <ThreeDots
+                      height="20"
+                      width="100"
+                      color="white"
+                      ariaLabel="loading"
+                    />
+                  ) : (
+                    "Geotag"
+                  )}
+                </div>
+              </form>
+            </Modal>
+          </div>
           <div className="text-left ">
             <h3 className="ligreen font-bold sm:text-4xl my-6">
               Good maintenance practice
