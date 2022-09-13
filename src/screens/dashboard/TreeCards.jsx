@@ -5,11 +5,12 @@ import treepic from "../../components/Dashboard/treepic.png";
 
 export const TreeCards = () => {
   const [cookies, setCookie] = useCookies();
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState("");
 
   function getTrees() {
-    // setIsLoading(true);
-    const [isLoading, setIsLoading] = useState(false);
-    const [err, setErr] = useState("");
+    setIsLoading(true);
+
     console.log("posting");
     console.log(cookies.key);
     var myHeaders = new Headers();
