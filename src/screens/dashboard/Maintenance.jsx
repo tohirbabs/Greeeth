@@ -21,10 +21,25 @@ import treetag from "../../components/Dashboard/treetag.png";
 import { UploadImage } from "../../components/UploadImage";
 
 import { ThreeDots } from "react-loader-spinner";
+import { useCookies } from "react-cookie";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    maxHeight: "90vh",
+    overflow: "scroll",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    fontFamily: "DM Sans",
+  },
+};
 
 const Maintenance = () => {
   const email = useId();
@@ -153,14 +168,15 @@ const Maintenance = () => {
         <div className="flex-1">
           <div className="">
             {/* <h3 className="ligreen font-bold sm:text-xl my-2">Picture Sample</h3> */}
-            <img
+            <div
               onClick={() => {
                 openModal();
                 locate();
               }}
-              src={geobutt}
-              alt=""
-            />
+              className="block w-9/10 mx-auto p-4 flex justify-center text-base text-center font-normal bg-lgreen rounded-3xl shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
+            >
+              Maintain tree
+            </div>
             <Modal
               isOpen={modalIsOpen}
               onAfterOpen={afterOpenModal}
@@ -169,7 +185,7 @@ const Maintenance = () => {
               contentLabel="Example Modal"
             >
               <h3 className="ligreen font-bold sm:text-4xl my-6">
-                Geotag Tree
+                Tree Maintenance
               </h3>
               <button onClick={closeModal}>close</button>
               {/* <div>I am a modal</div> */}

@@ -1,7 +1,88 @@
 import React, { useState } from "react";
 import { CountryOptions } from "../../components/FormElements/CountryOptions";
+import { useCookies } from "react-cookie";
 
 export const ProjectForm = () => {
+  const [cookies, setCookie] = useCookies();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [name, setname] = useState("");
+
+  const [location, setlocation] = useState("");
+
+  const [date, setdate] = useState("");
+  const [err, setErr] = useState("");
+  function postProject() {
+    setIsLoading(true);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    myHeaders.append("Authorization", `Token ${cookies.key}`);
+    let data = {
+      name: name,
+      status: "active",
+      ended_on: date,
+      location: location,
+    };
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: data,
+    };
+    console.log(requestOptions);
+    console.log(myHeaders);
+
+    try {
+      fetch("https://api.greeeth.com/projects/create", requestOptions)
+        .then((response) => console.log(response))
+        .then((result) => {
+          // setCookie(`token`, result.key, {
+          //   path: "/",
+          // });
+          console.log(result);
+          // if (result.key) {
+          //   navigate("/dashboard");
+          // }
+        });
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+  function getProject() {
+    setIsLoading(true);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    myHeaders.append("Authorization", `Token ${cookies.key}`);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+    };
+    console.log(requestOptions);
+    console.log(myHeaders);
+
+    try {
+      fetch("https://api.greeeth.com/projects/create", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          // setCookie(`token`, result.key, {
+          //   path: "/",
+          // });
+          console.log(result);
+          // if (result.key) {
+          //   navigate("/dashboard");
+          // }
+        });
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   const ImpactOption = ({ option }) => {
     const [active, setActive] = useState(false);
     return (
@@ -33,7 +114,7 @@ export const ProjectForm = () => {
   return (
     <div className="BG-lgreen ">
       <div className="max-w-6xl mx-auto p-5 sm:p-16">
-        <form>
+        <div>
           <h2 className="text-3xl text-left  mb-10 sm:(text-4xl !leading-tight) font-medium capitalize lgreen">
             Create a new project
           </h2>
@@ -46,10 +127,11 @@ export const ProjectForm = () => {
             </label>
             <input
               type="text"
-              id="email"
+              id="project title"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               // placeholder="Enter the name of your organization"
-              required
+              // required
+              onInput={(e) => setname(e.target.value)}
             />
           </div>
           <div className="mb-6">
@@ -64,7 +146,7 @@ export const ProjectForm = () => {
               id="favtree"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-30 p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Please Briefly explain the project background"
-              required
+              // required
             />
           </div>
           <div className="mb-6">
@@ -79,7 +161,7 @@ export const ProjectForm = () => {
               id="favtree"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-30 p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Briefly explain the problem you are trying to solve with this project"
-              required
+              // required
             />
           </div>
           <div className="mb-6">
@@ -94,7 +176,7 @@ export const ProjectForm = () => {
               id="favtree"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-30 p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Briefly explain the solution to this project"
-              required
+              // required
             />
           </div>
           <div className="mb-6">
@@ -106,10 +188,11 @@ export const ProjectForm = () => {
             </label>
             <input
               type="text"
-              id="email"
+              id="location"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               // placeholder="Enter the name of your organization"
-              required
+              // required
+              onInput={(e) => setlocation(e.target.value)}
             />
           </div>
 
@@ -164,7 +247,7 @@ export const ProjectForm = () => {
                 id="first_name"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="e.g www.greeethxyz.com"
-                required
+                // required
               />
             </div>
             <div>
@@ -178,8 +261,9 @@ export const ProjectForm = () => {
                 type="date"
                 id="last_name"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder=""
-                required
+                onInput={(e) => setdate(e.target.value)}
+
+                // required
               />
             </div>
             <div>
@@ -194,7 +278,7 @@ export const ProjectForm = () => {
                 id="company"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder=""
-                required
+                // required
               />
             </div>
             <div>
@@ -209,7 +293,7 @@ export const ProjectForm = () => {
                 id="phone"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder=""
-                required
+                // required
               />
             </div>
             <div>
@@ -224,7 +308,7 @@ export const ProjectForm = () => {
                 id="phone"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Enter zip code"
-                required
+                // required
               />
             </div>
           </div>
@@ -245,12 +329,15 @@ export const ProjectForm = () => {
           </div>
 
           <button
-            type="submit"
+            onClick={() => {
+              // postProject();
+              getProject();
+            }}
             className="text-white mt-5  bg-lgreen hover:bg-green hover:lgreen focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base w-full px-5 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Submit
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );
