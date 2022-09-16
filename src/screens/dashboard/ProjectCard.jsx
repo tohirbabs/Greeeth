@@ -8,19 +8,18 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 
-export const ProjectCard = ({ projectInfo, expand }) => {
+export const ProjectCard = ({ projectInfo }) => {
   var percentage = 50;
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
-  console.log(expand);
 
   return (
     <div
       class="flex justify-center"
-      onClick={() => {
-        expand("details");
-      }}
+      // onClick={() => {
+      //   expand("details");
+      // }}
     >
       <div class="block rounded-lg shadow-lg bg-white max-w-sm sm:min-w-400px min-w-80vw text-center">
         <div class="py-3 px-6 border-b border-gray-300">
@@ -29,14 +28,14 @@ export const ProjectCard = ({ projectInfo, expand }) => {
         <img src={tree} alt="" className="cursor-pointer max-h-250px mx-auto" />
         <div class="p-6">
           <h5 className="text-gray-900 text-xl font-medium mb-2">
-            Project Title - {projectInfo.title}
+            Project Title - {projectInfo.name}
           </h5>
           <div class="text-gray-700 text-base mb-4 flex items-center justify-center gap-4">
             Status:{"  "}
             <span class="py-1 px-2 text-white bg-lgreen rounded">
               {projectInfo.status}
             </span>
-            <div className="font-bold ligreen">{projectInfo.percent}%</div>
+            {/* <div className="font-bold ligreen">{projectInfo.percent}%</div> */}
           </div>
           <div className="flex mx-auto justify-center gap-6">
             <Menu as="div" className="relative text-left">

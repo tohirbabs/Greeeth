@@ -18,12 +18,12 @@ export const ProjectForm = () => {
     myHeaders.append("Content-Type", "application/json");
 
     myHeaders.append("Authorization", `Token ${cookies.key}`);
-    let data = {
+    const data = JSON.stringify({
       name: name,
       status: "active",
       ended_on: date,
       location: location,
-    };
+    });
     var requestOptions = {
       method: "POST",
       headers: myHeaders,
@@ -34,7 +34,7 @@ export const ProjectForm = () => {
 
     try {
       fetch("https://api.greeeth.com/projects/create", requestOptions)
-        .then((response) => console.log(response))
+        .then((response) => response.json())
         .then((result) => {
           // setCookie(`token`, result.key, {
           //   path: "/",
@@ -330,8 +330,8 @@ export const ProjectForm = () => {
 
           <button
             onClick={() => {
-              // postProject();
-              getProject();
+              postProject();
+              // getProject();
             }}
             className="text-white mt-5  bg-lgreen hover:bg-green hover:lgreen focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base w-full px-5 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >

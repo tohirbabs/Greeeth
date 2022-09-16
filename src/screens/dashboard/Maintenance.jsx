@@ -235,7 +235,7 @@ const Maintenance = () => {
                       ariaLabel="loading"
                     />
                   ) : (
-                    "Geotag"
+                    "Maintain Tree"
                   )}
                 </div>
               </form>

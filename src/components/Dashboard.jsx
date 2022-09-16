@@ -17,7 +17,7 @@ const Dashboard = ({ children }) => {
   const [cookies, setCookie] = useCookies();
   const [footData, setfootData] = useState();
 
-  console.log(cookies.key);
+  // console.log(cookies.key);
 
   const dashSection = () => {
     switch (cookies.dashnav) {
