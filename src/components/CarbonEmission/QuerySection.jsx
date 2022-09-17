@@ -266,7 +266,7 @@ export const Query = ({ dataSet, result }) => {
   }, [selectedOption]);
   console.log(dataSet[questionCount].totalindex);
   return (
-    <div className="flex flex-col sm:flex-row justify-center text-zinc-800 gap-3rem mt-10 sm:text-xl items-center py-10 pb-20">
+    <div className="flex flex-col sm:flex-row justify-center text-zinc-800 gap-3rem sm:text-xl items-center py-10 pb-20">
       <div className="left sm:w-10/20 w-full">
         <div className="my-4">
           <div className="flex justify-between text-base  items-center font-bold">

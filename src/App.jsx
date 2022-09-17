@@ -46,6 +46,7 @@ import Dashboard from "./components/Dashboard";
 import { Login } from "./screens/Auth/Login";
 import { Signup } from "./screens/Auth/Signup";
 import { Verify } from "./screens/Auth/Verify";
+import DashConsole from "./components/DashConsole";
 
 export const PageContext = createContext({});
 
@@ -238,7 +239,7 @@ function App() {
                   </DashboardLayout>
                 }
               />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard" element={<DashConsole />} />
 
               {/* <Route
               path="/calculate-footprint"
