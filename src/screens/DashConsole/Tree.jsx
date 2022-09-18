@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Modal from "react-modal";
+import TreeBG from "/assets/landing/home-bg.png";
 
 // import Map from "../../components/Dashboard/Map";
 
@@ -13,6 +14,10 @@ import { GeotagIcon } from "../../components/Dashboard/GeotagIcon";
 import { TreeCards } from "./TreeCards";
 import { useCookies } from "react-cookie";
 import { UploadImage } from "../../components/UploadImage";
+import { Footprinticon } from "../../components/Dashboard/Footprinticon";
+import { Walleticon } from "../../components/Dashboard/Walleticon";
+import { Treeicon } from "../../components/Dashboard/Tree";
+import { Locate } from "../../components/Dashboard/locate";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -45,7 +50,9 @@ const Tree = () => {
   const [cookies, setCookie] = useCookies();
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [images, setImages] = useState([]);
+  const [image, setImage] = useState("no image");
+  const [geotag, setgeotag] = useState(false);
+
   const [treeNameInput, setTreeNameInput] = useState("");
   const [treeHeightInput, setTreeHeightInput] = useState(0);
 
@@ -153,80 +160,86 @@ const Tree = () => {
   };
   return (
     // <DashboardLayout>
+
     <div className="my-2 py-6">
       <div className="flex flex-wrap sm:gap-6 gap-2">
-        <div className="">
-          {/* <h3 className="ligreen font-bold sm:text-xl my-2">Picture Sample</h3> */}
-          <div
-            onClick={() => {
-              locate();
-              openModal();
-            }}
-            className="p-1 cursor-pointer bg-lgreen border  rounded-full flex justify-between items-center"
-          >
-            <div className="left flex gap-4 items-center mr-5">
+        {geotag ? (
+          <div className="left flex gap-4 items-center mr-5 ">
+            <div className="p-2 cursor-pointer bg-lgreen border   rounded-full flex justify-between items-center">
               <div className="bg-lightgreen p-2 rounded-full">
-                <GeotagIcon />
+                <Treeicon clr="#008000" />
               </div>
-              <div className="flex flex-col text-left">
+              <div className="flex flex-col text-left ml-2">
                 <div className="text-md font-bold text-white">
-                  Geotag a Planted Tree
+                  Provide Tree Catalogue
                 </div>
               </div>
             </div>
           </div>
-          <Modal
-            isOpen={modalIsOpen}
-            // onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
-          >
-            <h3 className="ligreen font-bold sm:text-4xl my-6">Geotag Tree</h3>
-            <button onClick={closeModal}>close</button>
-            {/* <div>I am a modal</div> */}
-            <form>
-              <UploadImage setImages={setImages} images={images} />
-              <div className="mb-6">
-                <label
-                  htmlFor="treeName"
-                  className="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Tree type
-                </label>
-                <input
-                  type="text"
-                  id="treeName"
-                  value={treeNameInput}
-                  onInput={(e) => setTreeNameInput(e.target.value)}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                />
+        ) : (
+          <UploadImage
+            setImage={setImage}
+            image={image}
+            setGeotag={setgeotag}
+          />
+        )}
+      </div>
+      <div className="mx-auto my-auto flex justify-center">
+        <div
+          className={
+            geotag
+              ? "dash-card mt-6 sm:max-w-400px  shadow-lg rounded-2xl"
+              : "hidden"
+          }
+        >
+          <div className="bg-lgreen flex text-white rounded-2xl p-2 text-xl font-bold  justify-end items-center">
+            <div className="bg-lightgreen p-1 rounded-full my-auto mr-2">
+              <Locate clr="#008000" />
+            </div>
+            <div>Recent Activities</div>
+          </div>
+          <img
+            src={TreeBG}
+            alt="Tree illustration"
+            className="sm:max-w-[400px] max-w-[300px] p-4"
+          />
+          <div className="sm:p-6 sm:pb-4 p-4 flex flex-col gap-2">
+            <div className="p-1 border cursor-pointer hover:bg-lightgreen bd-lgreen border w-full rounded-full flex  items-center">
+              <div className="bg-lightgreen p-2 ml-1 mr-4 rounded-full my-auto">
+                <Footprinticon clr="#008000" />
               </div>
-              <div className="mb-6">
-                <label
-                  htmlFor="treeHeight"
-                  className="block text-left pl-4 mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Tree Height (mm)
-                </label>
-                <input
-                  type="number"
-                  id="treeHeight"
-                  value={treeHeightInput}
-                  onInput={(e) => setTreeHeightInput(e.target.value)}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-4 sm:min-w-400px min-w-320px dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Enter tree height in millimeters"
-                />
+              <input
+                type="text"
+                placeholder="Enter Tree type"
+                id="treeName"
+                value={treeNameInput}
+                onInput={(e) => setTreeNameInput(e.target.value)}
+                className="text-gray-900 text-base"
+              />
+            </div>
+            <div className="p-1 border cursor-pointer hover:bg-lightgreen bd-lgreen border w-full rounded-full flex  items-center">
+              <div className="bg-lightgreen p-2 ml-1 mr-4 rounded-full my-auto">
+                <Footprinticon clr="#008000" />
               </div>
+              <select id="employeenum" name="employeenum">
+                <option value="one">Enter tree Height</option>
+                <option value="two">10mm - 49mm</option>
+                <option value="three">50mm - 99mm</option>
+                <option value="four">100mm - 499mm</option>
+                <option value="five">500mm+</option>
+              </select>
+            </div>
+            <div className="p-4 cursor-pointer bg-lgreen border   rounded-full">
               <div
-                className="block w-9/10 mx-auto p-4 flex justify-center text-base text-center font-normal bg-lgreen rounded-3xl shadow-md text-white  hover:text-white hover:bg-green-900 hover:border-white hover:border-2 active:text-rose-500 focus:outline-none focus:ring animate-bounce"
-                // type="submit"
-                onClick={() => postTree()}
+                onClick={() => {
+                  setgeotag(false);
+                }}
+                className="text-md font-bold text-white"
               >
-                Geotag
+                Submit Tree
               </div>
-            </form>
-          </Modal>
+            </div>
+          </div>
         </div>
       </div>
       <TreeCards />

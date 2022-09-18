@@ -1,42 +1,55 @@
 import React, { useEffect, useState } from "react";
+import { GeotagIcon } from "./Dashboard/GeotagIcon";
 
-export const UploadImage = ({ setImages, images }) => {
-  const [imageURLs, setImageURLs] = useState([]);
-  const newImageURLs = [];
+export const UploadImage = ({ setImage, image, setGeotag }) => {
+  const [imageURL, setImageURL] = useState("no image");
+  const newImageURL = {};
+  console.log(image);
   useEffect(() => {
-    if (images.length < 1) {
+    if (image == "no image") {
       return;
     }
 
-    console.log(URL.createObjectURL(images[0]));
-
-    images.forEach((image) => newImageURLs.push(URL.createObjectURL(image)));
-    setImageURLs(newImageURLs);
-  }, [images]);
+    // newImageURL = URL.createObjectURL(image);
+    // setImageURL(newImageURL);
+    setGeotag(true);
+  }, [image]);
   function onImageChange(e) {
-    setImages([...e.target.files]);
+    setImage(e.target.files);
   }
-  console.log(imageURLs);
+  console.log(imageURL);
   return (
     <div className="my-6">
-      <label for="treeImage" className="imgButton ">
-        Capture Tree
+      <label for="treeImage" className="">
+        <div className="left flex gap-4 items-center mr-5 ">
+          <div className="p-2 cursor-pointer bg-lgreen border   rounded-full flex justify-between items-center">
+            <div className="bg-lightgreen p-2 rounded-full">
+              <GeotagIcon />
+            </div>
+            <div className="flex flex-col text-left ml-2">
+              <div className="text-md font-bold text-white">
+                Geotag a Planted Tree
+              </div>
+            </div>
+          </div>
+        </div>
       </label>
       <input
         type="file"
-        multiple
         accept="image/*"
         onChange={onImageChange}
         id="treeImage"
         className="imgFile"
       />
       <div className=" m-2 overflow-hidden">
-        {imageURLs.map((imageSrc) => (
+        {imageURL === "no image" ? (
+          <></>
+        ) : (
           <img
-            src={imageSrc}
+            src={imageURL}
             className="max-w-300px rounded-xl  my-2 sm:max-w-400px"
           />
-        ))}
+        )}
       </div>
     </div>
   );

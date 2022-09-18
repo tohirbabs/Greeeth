@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useCookies } from "react-cookie";
+import { Footprinticon } from "../../components/Dashboard/Footprinticon";
+import { Locate } from "../../components/Dashboard/locate";
 import treepic from "../../components/Dashboard/treepic.png";
 
 export const TreeCards = () => {
@@ -45,28 +47,43 @@ export const TreeCards = () => {
   const TreeCard = ({ tree }) => {
     return (
       <div className="">
-        <div className="flex my-10 mx-2 gap-1 bg-white rounded-xl  sm:w-max ">
-          <img src={tree.image} alt="" className="max-w-150px sm:max-h-30vw " />
-          <div className="p-2 flex flex-col text-left font-bold ligreen sm:text-base justify-between gap-2 text-sm mr-8">
-            <p>Tree ID: #{tree.id}</p>
-            <p>Tree Type: </p>
-            <p>
-              Location: {tree.location.coordinates[0]}Lat,
+        <div className="dash-card mt-6 sm:max-w-400px  shadow-lg rounded-2xl">
+          <div className="bg-lgreen flex text-white rounded-2xl p-2 text-xl font-bold  justify-end items-center">
+            <div className="bg-lightgreen p-1 rounded-full my-auto mr-2">
+              <Locate clr="#008000" />
+            </div>
+            <div>
+              {tree.location.coordinates[0]}Lat,
               <br />
               {tree.location.coordinates[1]}Long
-            </p>
-            {/* <p>Age</p> */}
-            <p>Date Planted: {tree.created_on.slice(0, 10)}</p>
-            {/* <p>CO2 Sequestrated: </p>
-            <p>Weather Forcast: </p> */}
+            </div>
+          </div>
+          <img
+            src={tree.image}
+            alt="Tree illustration"
+            className="w-[300px] sm:h-[310px] h-[300px] m-3 rounded-2xl"
+          />
+          <div className="sm:p-6 sm:pb-4 p-4 flex flex-col gap-2">
+            <div className="p-1 border cursor-pointer hover:bg-lightgreen bd-lgreen border w-full rounded-full flex  items-center">
+              <div className="bg-lightgreen p-2 ml-1 mr-4 rounded-full my-auto">
+                <Footprinticon clr="#008000" />
+              </div>
+            </div>
+            <div className="p-1 border cursor-pointer hover:bg-lightgreen bd-lgreen border w-full rounded-full flex  items-center">
+              <div className="bg-lightgreen p-2 ml-1 mr-4 rounded-full my-auto">
+                <Footprinticon clr="#008000" />
+              </div>
+            </div>
+            <div className="p-4 cursor-pointer bg-lgreen border   rounded-full">
+              <div className="text-md font-bold text-white">Submit Tree</div>
+            </div>
           </div>
         </div>
-        <div className=""></div>
       </div>
     );
   };
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex flex-wrap justify-center gap-10 mt-10">
       {cookies.treesData !== undefined ? (
         cookies.treesData.length !== 0 ? (
           <>
