@@ -42,9 +42,9 @@ export const TreeCards = () => {
       setIsLoading(false);
     }
   }
-  useEffect(() => {
-    getTrees();
-  }, [cookies.key]);
+  // useEffect(() => {
+  //   getTrees();
+  // }, [cookies.key]);
   const TreeCard = ({ tree }) => {
     return (
       <div className="">
