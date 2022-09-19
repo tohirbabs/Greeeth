@@ -34,14 +34,14 @@ export const UploadImage = ({ setImage, image, setGeotag }) => {
           </div>
         </div>
       </label>
-      <input
+      {/* <input
         type="file"
         accept="image/*"
         onChange={onImageChange}
         id="treeImage"
         className="imgFile"
-      />
-      <div className=" m-2 overflow-hidden">
+      /> */}
+      {/* <div className=" m-2 overflow-hidden">
         {imageURL === "no image" ? (
           <></>
         ) : (
@@ -50,7 +50,7 @@ export const UploadImage = ({ setImage, image, setGeotag }) => {
             className="max-w-300px rounded-xl  my-2 sm:max-w-400px"
           />
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
