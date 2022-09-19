@@ -118,7 +118,9 @@ export const DashOverview = ({ setsection }) => {
                 </div>
 
                 <div className="bg-lgreen  text-white rounded-lg p-2 text-sm sm:text-base text-right">
-                  {cookies.footprintData[0].calculated_on.slice(0, 10)}
+                  {cookies.footprintData
+                    ? cookies.footprintData[0].calculated_on.slice(0, 10)
+                    : ""}
                 </div>
               </div>
             </div>
