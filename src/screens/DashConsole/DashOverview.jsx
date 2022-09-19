@@ -21,7 +21,7 @@ export const DashOverview = ({ setsection }) => {
 
                     <div className="flex items-center lgreen">
                       <p className=" sm:text-4xl font-bold pr-2">
-                        {cookies.walletBalance ? cookies.walletBalance : 0}
+                        {cookies.walletBalance ? cookies.walletBalance : "0"}
                       </p>
                       <p>Points</p>
                     </div>
@@ -46,7 +46,7 @@ export const DashOverview = ({ setsection }) => {
 
                   <div className="flex items-center lgreen sm:pr-30">
                     <p className=" sm:text-4xl font-bold pr-2">
-                      {cookies.treesData ? cookies.treesData.length : 0}
+                      {cookies.treesData ? cookies.treesData.length : "0"}
                     </p>
                     <p>Trees</p>
                   </div>
@@ -75,7 +75,7 @@ export const DashOverview = ({ setsection }) => {
                     <p className=" sm:text-4xl font-bold pr-2">
                       {cookies.footprintData[0]
                         ? parseInt(cookies.footprintData[0].total)
-                        : 0}
+                        : "0"}
                     </p>
                     <p>KG</p>
                   </div>
@@ -93,7 +93,7 @@ export const DashOverview = ({ setsection }) => {
 
                   <div className="flex items-center lgreen mb-4">
                     <p className=" sm:text-4xl font-bold pr-2">
-                      {cookies.offset ? cookies.offset : 0}
+                      {cookies.offset ? cookies.offset : "0"}
                     </p>
                     <p>KG</p>
                   </div>
