@@ -4,6 +4,7 @@ import { useCookies } from "react-cookie";
 import { Footprinticon } from "../../components/Dashboard/Footprinticon";
 import { Locate } from "../../components/Dashboard/locate";
 import treepic from "../../components/Dashboard/treepic.png";
+import TreeBG from "/assets/landing/home-bg.png";
 
 export const TreeCards = () => {
   const [cookies, setCookie] = useCookies();
@@ -48,35 +49,15 @@ export const TreeCards = () => {
     return (
       <div className="">
         <div className="dash-card mt-6 sm:max-w-400px  shadow-lg rounded-2xl">
-          <div className="bg-lgreen flex text-white rounded-2xl p-2 text-xl font-bold  justify-end items-center">
-            <div className="bg-lightgreen p-1 rounded-full my-auto mr-2">
-              <Locate clr="#008000" />
-            </div>
-            <div>
-              {tree.location.coordinates[0]}Lat,
-              <br />
-              {tree.location.coordinates[1]}Long
-            </div>
-          </div>
           <img
-            src={tree.image}
+            // src={tree.image}
+            src={TreeBG}
             alt="Tree illustration"
-            className="w-[300px] sm:h-[310px] h-[300px] m-3 rounded-2xl"
+            className="w-[300px] sm:h-[310px] h-[300px] m-3 p-3 rounded-2xl"
           />
-          <div className="sm:p-6 sm:pb-4 p-4 flex flex-col gap-2">
-            <div className="p-1 border cursor-pointer hover:bg-lightgreen bd-lgreen border w-full rounded-full flex  items-center">
-              <div className="bg-lightgreen p-2 ml-1 mr-4 rounded-full my-auto">
-                <Footprinticon clr="#008000" />
-              </div>
-            </div>
-            <div className="p-1 border cursor-pointer hover:bg-lightgreen bd-lgreen border w-full rounded-full flex  items-center">
-              <div className="bg-lightgreen p-2 ml-1 mr-4 rounded-full my-auto">
-                <Footprinticon clr="#008000" />
-              </div>
-            </div>
-            <div className="p-4 cursor-pointer bg-lgreen border   rounded-full">
-              <div className="text-md font-bold text-white">Submit Tree</div>
-            </div>
+
+          <div className="bg-lgreen text-white rounded-2xl p-2 text-xl text-center">
+            Banana Tree
           </div>
         </div>
       </div>

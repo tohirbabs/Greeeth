@@ -19,7 +19,7 @@ export const UploadImage = ({ setImage, image, setGeotag }) => {
   }
   console.log(imageURL);
   return (
-    <div className="my-6">
+    <div className="my-1">
       <label for="treeImage" className="">
         <div className="left flex gap-4 items-center mr-5 ">
           <div className="p-2 cursor-pointer bg-lgreen border   rounded-full flex justify-between items-center">
