@@ -4,9 +4,45 @@ import { Walleticon } from "../../components/Dashboard/Walleticon";
 import { Treeicon } from "../../components/Dashboard/Tree";
 import { useCookies } from "react-cookie";
 import TreeBG from "/assets/landing/home-bg.png";
+import { useEffect } from "react";
 
 export const DashOverview = ({ setsection }) => {
   const [cookies, setCookie] = useCookies();
+
+  function getPrintData() {
+    // setIsLoading(true);
+
+    console.log("posting");
+    console.log(cookies.key);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Token ${cookies.key}`);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+    };
+    console.log(requestOptions);
+    console.log(myHeaders);
+
+    try {
+      fetch("https://api.greeeth.com/carbonfootprint/", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          setCookie(`footprintData`, result, {
+            path: "/",
+          });
+        });
+    } catch (err) {
+      //   setErr(err.message);
+    } finally {
+      //   setIsLoading(false);
+    }
+  }
+  useEffect(() => {
+    getPrintData();
+  }, [cookies.key]);
 
   return (
     <div className="sm:mt-8 my-2 sm:py-6 py-4 ">
@@ -73,7 +109,7 @@ export const DashOverview = ({ setsection }) => {
 
                   <div className="flex items-center lgreen mb-4">
                     <p className=" sm:text-4xl font-bold pr-2">
-                      {cookies.footprintData[0]
+                      {cookies.footprintData
                         ? parseInt(cookies.footprintData[0].total)
                         : "0"}
                     </p>
