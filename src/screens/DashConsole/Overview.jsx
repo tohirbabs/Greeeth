@@ -11,7 +11,7 @@ function classNames(...classes) {
 
 const Overview = () => {
   const [cookies, setCookie] = useCookies();
-  const [section, setsection] = useState("DashOverview");
+  const [section, setsection] = useState("Footprint");
 
   console.log(cookies.treesData);
   console.log(section);
@@ -27,7 +27,7 @@ const Overview = () => {
         return <ReduceFootprint setsection={setsection} />;
 
       default:
-        return <DashOverview setsection={setsection} />;
+        return <Footprint setsection={setsection} />;
     }
   };
 
