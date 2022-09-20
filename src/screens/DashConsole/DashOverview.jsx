@@ -11,6 +11,9 @@ export const DashOverview = ({ setsection }) => {
   console.log(cookies.footprintData);
   // if (cookies.footprintData == ) {
   // }
+  setCookie(`footprintData`, [], {
+    path: "/",
+  });
 
   function getPrintData() {
     // setIsLoading(true);
