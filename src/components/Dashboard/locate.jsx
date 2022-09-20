@@ -5,8 +5,8 @@ export const Locate = ({ clr }) => {
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="15"
+      height="15"
       viewBox="0 0 930.000000 1280.000000"
       preserveAspectRatio="xMidYMid meet"
     >

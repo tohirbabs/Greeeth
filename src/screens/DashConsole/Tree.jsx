@@ -18,6 +18,7 @@ import { Footprinticon } from "../../components/Dashboard/Footprinticon";
 import { Walleticon } from "../../components/Dashboard/Walleticon";
 import { Treeicon } from "../../components/Dashboard/Tree";
 import { Locate } from "../../components/Dashboard/locate";
+import { ThreeDots } from "react-loader-spinner";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -93,10 +94,10 @@ const Tree = () => {
 
     myHeaders.append("Authorization", `Token ${cookies.key}`);
     let form_data = new FormData();
-    form_data.append("image", images[0]);
+    form_data.append("image", image);
     form_data.append(
       "location",
-      `{"type":"Point","coordinates": [12.234,3.56]
+      `{"type":"Point","coordinates": [${cookies.locationLat},${cookies.locationLong}]
     }`
     );
     form_data.append("height", treeHeightInput);
@@ -125,6 +126,7 @@ const Tree = () => {
       setErr(err.message);
     } finally {
       setIsLoading(false);
+      setgeotag(false);
     }
   }
 
@@ -194,11 +196,13 @@ const Tree = () => {
               : "hidden"
           }
         >
-          <div className="bg-lgreen flex text-white rounded-2xl p-2 text-xl font-bold  justify-end items-center">
+          <div className="bg-lgreen flex text-white rounded-2xl p-2 justify-end items-center">
             <div className="bg-lightgreen p-1 rounded-full my-auto mr-2">
               <Locate clr="#008000" />
             </div>
-            <div>Recent Activities</div>
+            <div className="mr-4">
+              {cookies.locationLat}&#176;N, {cookies.locationLong}&#176;E
+            </div>
           </div>
           <img
             src={imageURL}
@@ -234,11 +238,20 @@ const Tree = () => {
             <div className="p-4 cursor-pointer bg-lgreen border   rounded-full">
               <div
                 onClick={() => {
-                  setgeotag(false);
+                  postTree();
                 }}
                 className="text-md font-bold text-white"
               >
-                Submit Tree
+                {isLoading ? (
+                  <ThreeDots
+                    height="20"
+                    width="100"
+                    color="white"
+                    ariaLabel="loading"
+                  />
+                ) : (
+                  "Submit"
+                )}
               </div>
             </div>
           </div>

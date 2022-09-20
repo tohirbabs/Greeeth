@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { GeotagIcon } from "./Dashboard/GeotagIcon";
+import { useCookies } from "react-cookie";
 
 export const UploadImage = ({ setImage, image, setGeotag, setImageURL }) => {
   // const [imageURL, setImageURL] = useState("no image");
+  const [cookies, setCookie] = useCookies();
+
   const newImageURL = {};
-  console.log(image);
+  var locationLon;
+  var locationLat;
+  // console.log(image);
   function locate() {
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Latitude is :", position.coords.latitude);
       console.log("Longitude is :", position.coords.longitude);
       locationLat = position.coords.latitude;
       locationLon = position.coords.longitude;
+      setCookie(`locationLat`, parseInt(position.coords.latitude), {
+        path: "/",
+      });
+      setCookie(`locationLong`, parseInt(position.coords.longitude), {
+        path: "/",
+      });
     });
   }
   useEffect(() => {
@@ -20,10 +31,11 @@ export const UploadImage = ({ setImage, image, setGeotag, setImageURL }) => {
 
     // newImageURL = ;
     setImageURL(URL.createObjectURL(image));
-    setGeotag(true);
   }, [image]);
   function onImageChange(e) {
+    locate();
     setImage(e.target.files[0]);
+    setGeotag(true);
   }
   return (
     <div className="my-1">
