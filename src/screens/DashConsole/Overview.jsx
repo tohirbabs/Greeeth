@@ -13,7 +13,7 @@ const Overview = () => {
   const [cookies, setCookie] = useCookies();
   const [section, setsection] = useState("DashOverview");
 
-  console.log(cookies.treesData);
+  // console.log(cookies.treesData);
   console.log(section);
 
   const overviewSection = () => {

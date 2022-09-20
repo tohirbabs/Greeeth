@@ -13,7 +13,7 @@ export const DashOverview = ({ setsection }) => {
     // setIsLoading(true);
 
     console.log("posting");
-    console.log(cookies.key);
+    // console.log(cookies.key);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", `Token ${cookies.key}`);
