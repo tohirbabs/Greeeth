@@ -11,9 +11,6 @@ export const DashOverview = ({ setsection }) => {
   console.log(cookies.footprintData);
   // if (cookies.footprintData == ) {
   // }
-  setCookie(`footprintData`, [], {
-    path: "/",
-  });
 
   function getPrintData() {
     // setIsLoading(true);
@@ -35,9 +32,11 @@ export const DashOverview = ({ setsection }) => {
       fetch("https://api.greeeth.com/carbonfootprint/", requestOptions)
         .then((response) => response.json())
         .then((result) => {
-          setCookie(`footprintData`, [], {
-            path: "/",
-          });
+          if (!result.detail) {
+            setCookie(`footprintData`, result, {
+              path: "/",
+            });
+          }
         });
     } catch (err) {
       //   setErr(err.message);
