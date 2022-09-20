@@ -8,6 +8,9 @@ import { useEffect } from "react";
 
 export const DashOverview = ({ setsection }) => {
   const [cookies, setCookie] = useCookies();
+  console.log(cookies.footprintData);
+  // if (cookies.footprintData == ) {
+  // }
 
   function getPrintData() {
     // setIsLoading(true);
@@ -29,8 +32,7 @@ export const DashOverview = ({ setsection }) => {
       fetch("https://api.greeeth.com/carbonfootprint/", requestOptions)
         .then((response) => response.json())
         .then((result) => {
-          console.log(result);
-          setCookie(`footprintData`, result, {
+          setCookie(`footprintData`, [], {
             path: "/",
           });
         });
@@ -109,7 +111,7 @@ export const DashOverview = ({ setsection }) => {
 
                   <div className="flex items-center lgreen mb-4">
                     <p className=" sm:text-4xl font-bold pr-2">
-                      {cookies.footprintData
+                      {cookies.footprintData[0]
                         ? parseInt(cookies.footprintData[0].total)
                         : "0"}
                     </p>
@@ -118,7 +120,7 @@ export const DashOverview = ({ setsection }) => {
                 </div>
 
                 <div className="bg-lgreen  text-white rounded-lg p-2 text-sm sm:text-base text-right">
-                  {cookies.footprintData
+                  {cookies.footprintData[0]
                     ? cookies.footprintData[0].calculated_on.slice(0, 10)
                     : ""}
                 </div>
