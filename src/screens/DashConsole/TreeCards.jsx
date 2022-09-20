@@ -50,8 +50,8 @@ export const TreeCards = () => {
       <div className="">
         <div className="dash-card mt-6 sm:max-w-400px  shadow-lg rounded-2xl">
           <img
-            // src={tree.image}
-            src={TreeBG}
+            src={tree.image}
+            // src={TreeBG}
             alt="Tree illustration"
             className="w-[300px] sm:h-[310px] h-[300px] m-3 p-3 rounded-2xl"
           />

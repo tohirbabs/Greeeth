@@ -1,23 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { GeotagIcon } from "./Dashboard/GeotagIcon";
 
-export const UploadImage = ({ setImage, image, setGeotag }) => {
-  const [imageURL, setImageURL] = useState("no image");
+export const UploadImage = ({ setImage, image, setGeotag, setImageURL }) => {
+  // const [imageURL, setImageURL] = useState("no image");
   const newImageURL = {};
   console.log(image);
+  function locate() {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+      locationLat = position.coords.latitude;
+      locationLon = position.coords.longitude;
+    });
+  }
   useEffect(() => {
     if (image == "no image") {
       return;
     }
 
-    // newImageURL = URL.createObjectURL(image);
-    // setImageURL(newImageURL);
+    // newImageURL = ;
+    setImageURL(URL.createObjectURL(image));
     setGeotag(true);
   }, [image]);
   function onImageChange(e) {
-    setImage(e.target.files);
+    setImage(e.target.files[0]);
   }
-  console.log(imageURL);
   return (
     <div className="my-1">
       <label for="treeImage" className="">
@@ -34,23 +41,13 @@ export const UploadImage = ({ setImage, image, setGeotag }) => {
           </div>
         </div>
       </label>
-      {/* <input
+      <input
         type="file"
         accept="image/*"
         onChange={onImageChange}
         id="treeImage"
         className="imgFile"
-      /> */}
-      {/* <div className=" m-2 overflow-hidden">
-        {imageURL === "no image" ? (
-          <></>
-        ) : (
-          <img
-            src={imageURL}
-            className="max-w-300px rounded-xl  my-2 sm:max-w-400px"
-          />
-        )}
-      </div> */}
+      />
     </div>
   );
 };

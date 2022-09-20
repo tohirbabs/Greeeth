@@ -52,6 +52,7 @@ const Tree = () => {
   const [err, setErr] = useState("");
   const [image, setImage] = useState("no image");
   const [geotag, setgeotag] = useState(false);
+  const [imageURL, setImageURL] = useState("no image");
 
   const [treeNameInput, setTreeNameInput] = useState("");
   const [treeHeightInput, setTreeHeightInput] = useState(0);
@@ -181,6 +182,7 @@ const Tree = () => {
             setImage={setImage}
             image={image}
             setGeotag={setgeotag}
+            setImageURL={setImageURL}
           />
         )}
       </div>
@@ -199,14 +201,14 @@ const Tree = () => {
             <div>Recent Activities</div>
           </div>
           <img
-            src={TreeBG}
+            src={imageURL}
             alt="Tree illustration"
-            className="sm:max-w-[400px] max-w-[300px] p-4"
+            className="sm:max-w-[350px] max-w-[300px] m-4 rounded-2xl"
           />
           <div className="sm:p-6 sm:pb-4 p-4 flex flex-col gap-2">
             <div className="p-1 border cursor-pointer hover:bg-lightgreen bd-lgreen border w-full rounded-full flex  items-center">
               <div className="bg-lightgreen p-2 ml-1 mr-4 rounded-full my-auto">
-                <Footprinticon clr="#008000" />
+                <Treeicon clr="#008000" />
               </div>
               <input
                 type="text"
@@ -219,7 +221,7 @@ const Tree = () => {
             </div>
             <div className="p-1 border cursor-pointer hover:bg-lightgreen bd-lgreen border w-full rounded-full flex  items-center">
               <div className="bg-lightgreen p-2 ml-1 mr-4 rounded-full my-auto">
-                <Footprinticon clr="#008000" />
+                <Treeicon clr="#008000" />
               </div>
               <select id="employeenum" name="employeenum">
                 <option value="one">Enter tree Height</option>
