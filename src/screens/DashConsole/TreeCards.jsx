@@ -57,7 +57,7 @@ export const TreeCards = () => {
           />
 
           <div className="bg-lgreen text-white rounded-2xl p-2 text-xl text-center">
-            Banana Tree
+            Tree ID - #{tree.id}
           </div>
         </div>
       </div>
