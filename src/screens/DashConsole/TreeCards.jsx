@@ -32,9 +32,11 @@ export const TreeCards = () => {
         .then((response) => response.json())
         .then((result) => {
           console.log(result);
-          setCookie(`treesData`, result, {
-            path: "/",
-          });
+          if (!result.detail) {
+            setCookie(`treesData`, result, {
+              path: "/",
+            });
+          }
         });
     } catch (err) {
       setErr(err.message);
@@ -45,6 +47,7 @@ export const TreeCards = () => {
   useEffect(() => {
     getTrees();
   }, [cookies.key]);
+  console.log(cookies);
   const TreeCard = ({ tree }) => {
     return (
       <div className="">
@@ -65,7 +68,7 @@ export const TreeCards = () => {
   };
   return (
     <div className="flex flex-wrap justify-center gap-10 mt-10">
-      {cookies.treesData !== undefined ? (
+      {cookies.treesData !== undefined && !cookies.treesData.detail ? (
         cookies.treesData.length !== 0 ? (
           <>
             {cookies.treesData.map((tree, i) => (
@@ -73,6 +76,7 @@ export const TreeCards = () => {
             ))}
           </>
         ) : (
+          // <></>
           <></>
         )
       ) : (

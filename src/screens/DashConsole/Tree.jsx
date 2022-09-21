@@ -45,7 +45,7 @@ const Tree = () => {
       locationLon = position.coords.longitude;
     });
   }
-  let subtitle;
+  // console.log(cookies);
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [cookies, setCookie] = useCookies();
