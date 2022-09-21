@@ -87,11 +87,11 @@ const SideNav = () => {
           <SideNavItem Icon={Footprinticon} name="Calculate Footprint" />
           <div
             onClick={() => {
-              getTrees();
+              //   getTrees();
               setCookie("dashnav", `Trees`, {
                 path: "/",
               });
-              console.log(cookies);
+              //   console.log(cookies);
             }}
             className={
               cookies.dashnav === `Trees`

@@ -31,12 +31,11 @@ export const TreeCards = () => {
       fetch("https://api.greeeth.com/trees/", requestOptions)
         .then((response) => response.json())
         .then((result) => {
+          setCookie(`treesData`, result, {
+            path: "/",
+          });
+
           console.log(result);
-          if (!result.detail) {
-            setCookie(`treesData`, result, {
-              path: "/",
-            });
-          }
         });
     } catch (err) {
       setErr(err.message);
@@ -47,7 +46,7 @@ export const TreeCards = () => {
   useEffect(() => {
     getTrees();
   }, [cookies.key]);
-  console.log(cookies);
+  console.log(cookies.treesData);
   const TreeCard = ({ tree }) => {
     return (
       <div className="">
