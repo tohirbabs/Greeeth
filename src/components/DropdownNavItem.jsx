@@ -8,7 +8,6 @@ function classNames(...classes) {
 }
 
 function DropdownNavItem({ itemName, itemMenu }) {
-  console.log(itemMenu);
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
