@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.dashboard__card {
+  width: 329.22px;
+  height: 401.17px;
+  background: #ffffff;
+  box-shadow: 6.54081px 8.72108px 36.3378px rgba(0, 0, 0, 0.1),
+    1.45351px 2.18027px 2.90703px -0.726757px rgba(0, 0, 0, 0.25);
+  border-radius: 7.26757px;
+}
+
+.bdBottom {
+  border-bottoms: 1px solid #e9f2ff;
+}
+
+.bgColor {
+  background: #e9f2ff;
+  border: 1px solid #e9f2ff;
+}
+
+.borderGray {
+  border: 1px solid #e9f2ff;
+  border-radius: 5px;
+}
+
+.btnFill {
+  background: #028000;
+  border: 1px solid #028000;
+  box-shadow: 0px 8px 16px rgba(9, 26, 54, 0.15);
+  border-radius: 5px;
+  color: #ffffff;
+}
+.btnFill:hover {
+  background: #ffffff;
+  border: 1px solid #028000;
+  color: #028000;
+  transition: all 0.25s ease;
+}
+
+.btnOutline {
+  background: #ffffff;
+  border: 1px solid #028000;
+  border-radius: 5px;
+  color: #028000;
+}
+.btnOutline:hover {
+  background: #028000;
+  border: 1px solid #028000;
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+.textGreen {
+  color: #028000;
+}
+.textProgress {
+  color: #ff7500;
+}
+.bgn {
+  background: #028000;
+}
