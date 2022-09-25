@@ -11,115 +11,43 @@ import {
 export const FootprintResult = () => {
   const [cookies, setCookie] = useCookies();
   console.log(cookies["How much energy do you use on average?"]);
-  var homefoot =
-    parseInt(cookies["How much energy do you use on average?"]) +
-    parseInt(cookies["What kind of house do you live in?"]) +
-    parseInt(
-      cookies["How many people (aged 17 and over) live in your house?"]
-    ) +
-    parseInt(cookies["How many bedrooms does your house have?"]);
 
-  var travelfoot =
-    parseInt(
-      cookies[
-        "How many hours a week do you spend in your car or on your motorbike for personal use including commuting?"
-      ]
-    ) +
-    parseInt(
-      cookies["How many hours a week do you spend on the train for commuting?"]
-    ) +
-    parseInt(
-      cookies[
-        "How many hours a week do you spend on the bus for personal use including commuting?"
-      ]
-    ) +
-    parseInt(
-      cookies[
-        "In the last year, how many local and International flights have you made in total ?"
-      ]
-    );
-
-  var foodfoot =
-    parseInt(cookies["How would you best describe your diet?"]) +
-    parseInt(
-      cookies[
-        "In a week, how much do you spend on food from restaurants, canteens and takeaways?"
-      ]
-    ) +
-    parseInt(
-      cookies["Of the food you buy how much is wasted and thrown away?"]
-    ) +
-    parseInt(
-      cookies[
-        "How often do you buy locally produced food that is not imported to your country?"
-      ]
-    );
-  var secfoot =
-    // parseInt(
-    //   cookies[
-    //     "In the last 12 months, have you bought any of these new household items?"
-    //   ]
-    // ) +
-    parseInt(
-      cookies[
-        "In a typical month, how much do you spend on clothes and footwear?"
-      ]
-    ) +
-    parseInt(
-      cookies[
-        "In a typical month, how much do you spend on phone, internet and TV contracts?"
-      ]
-    ) +
-    parseInt(
-      cookies[
-        "In a typical month, how much do you spend on entertainment and hobbies (sports/gym, cinema, books, newspapers, gardening, computer games)"
-      ]
-    );
-  // parseInt(
-  //   cookies["Which of these types of waste do you recycle and/or compost?"]
-  // );
-
-  var totalfoot = homefoot + travelfoot + foodfoot + secfoot;
+  console.log(cookies.totalfoot);
   return (
-    <div className="">
-      <div className="sm:flex-row flex flex-col gap-10 my-10 ">
-        <div className="footprint   sm:w-1/2 bg-white rounded-xl p-8 px-2 sm:px-8 ligreen flex flex-col items-center sm:pb-20">
-          <h3 className="text-3xl font-bold w-full sm:text-left">
-            CONGRATULATIONS!
-          </h3>
-          <p className="w-full text-lg mt-6 sm:text-left text-gray">
-            Your annual footprint is well below the Global average. Keep up the
-            great work and share your score!
-          </p>
-          <div className="mt-4 font-bold flex flex-col items-center gap-6 sm:mt-20">
-            <p className="sm:text-2xl text-xl">YOUR FOOTPRINT IS EQUAL TO</p>
-            <p className="sm:text-7xl text-4xl">{totalfoot / 1000}</p>
-            <p className="sm:text-5xl text-2xl">TONNES*</p>
-            <div className=" rounded-xl sm:p-4 p-2 w-full relative w-9/10 p-3 text-base  my-3 cursor-pointer  bg-lgreen text-white">
-              SHARE SCORE
+    <div className="py-6">
+      <div className="averages font-bold text-left  flex   gap-8 text-white">
+        <div className="dash-card shadow-lg hover:bg-lightgreen cursor-pointer rounded-xl">
+          <div className="sm:p-6 sm:pb-4 p-4 mb-4">
+            <h3 className="font-bold text-xl text-gray-900">
+              WORLD AVERAGE FOOTPRINT
+            </h3>
+
+            <div className="flex items-center lgreen">
+              <p className=" sm:text-4xl font-bold pr-2">7.2</p>
+              <p>Tonnes</p>
             </div>
+          </div>
+
+          <div className="bg-lgreen text-white rounded-lg p-2 text-sm sm:text-base text-right">
+            Total 5000 Point
           </div>
         </div>
-        <div className="averages font-bold text-left sm:w-1/2 flex flex-col  gap-8 text-white">
-          <div className="year bg-lgreen sm:h-1/2 rounded-xl p-4 px-4 flex items-center gap-4">
-            <img className="max-w-1/3" src={global} alt="" />
-            <div className="">
-              <h3 className="text-lg">WORLD AVERAGE FOOTPRINT FOR 2022</h3>
-              <p className="sm:text-5xl text-4xl mt-4">10.5</p>
-              <p className="sm:text-3xl text-2xl">TONNES</p>
+        <div className="dash-card shadow-lg hover:bg-lightgreen cursor-pointer rounded-xl">
+          <div className="sm:p-6 sm:pb-4 p-4 mb-4">
+            <h3 className="font-bold text-xl text-gray-900">
+              YOUR FOOTPRINT IS
+            </h3>
+
+            <div className="flex items-center lgreen">
+              <p className=" sm:text-4xl font-bold pr-2">
+                {(parseInt(cookies.totalfoot) / 70).toFixed(1)}
+              </p>
+              <p>% OF THE GLOBAL AVERAGE</p>
             </div>
           </div>
-          <div className="percent sm:h-1/2 bg-lgreen rounded-xl p-4 px-4 flex items-center gap-4">
-            <img className="max-w-1/3 max-h-30" src={percent} alt="" />
-            <div className="">
-              <h3 className="sm:text-xl text-lg">YOUR FOOTPRINT IS</h3>
-              <p className="sm:text-5xl text-4xl mt-4">
-                {(totalfoot / 105).toFixed(1)}%
-              </p>
-              <p className="sm:text-xl text-lg">
-                OF THE GLOBAL AVERAGE FOR 2022
-              </p>
-            </div>
+
+          <div className="bg-lgreen text-white rounded-lg p-2 text-sm sm:text-base text-right">
+            Total 5000 Point
           </div>
         </div>
       </div>
@@ -129,7 +57,7 @@ export const FootprintResult = () => {
         </div>
         <div className="">
           <p className="font-bold text-lg text-right">
-            YOUR FOOTPRINT IS EQUAL TO {totalfoot / 1000}T
+            YOUR FOOTPRINT IS EQUAL TO {parseInt(cookies.totalfoot) / 1000}T
           </p>
           <div className="flex w-full h-4px bg-white my-2 rounded">
             <div className="home h-4px bg-blue-200"></div>
@@ -144,7 +72,11 @@ export const FootprintResult = () => {
             <div className="sm:w-1/2 w-3/8 flex flex-col gap-2 py-5 justify-center items-center bg-blue-200">
               <img className="sm:w-2/4 w-3/4" src={ecohome} alt="" />
               <p className="text-4xl font-bold ligreen">
-                {((homefoot * 100) / totalfoot).toFixed(1)}%
+                {(
+                  (parseInt(cookies.homefoot) * 100) /
+                  parseInt(cookies.totalfoot)
+                ).toFixed(1)}
+                %
               </p>
             </div>
             <div className="sm:w-1/2 w-5/8 text-left sm:px-4 px-2 flex flex-col justify-center ">
@@ -161,7 +93,11 @@ export const FootprintResult = () => {
             <div className="sm:w-1/2 w-3/8 flex flex-col gap-2 py-5 justify-center items-center bg-red-200">
               <img className="sm:w-2/4 w-3/4" src={ecotravel} alt="" />
               <p className="text-4xl font-bold ligreen">
-                {((travelfoot * 100) / totalfoot).toFixed(1)}%
+                {(
+                  (parseInt(cookies.travelfoot) * 100) /
+                  parseInt(cookies.totalfoot)
+                ).toFixed(1)}
+                %
               </p>
             </div>
             <div className="sm:w-1/2 w-5/8 text-left sm:px-4 px-2 flex flex-col justify-center ">
@@ -178,7 +114,11 @@ export const FootprintResult = () => {
             <div className="sm:w-1/2 w-3/8 flex flex-col gap-2 py-5 justify-center items-center bg-amber-400">
               <img className="sm:w-2/4 w-3/4" src={ecofood} alt="" />
               <p className="text-4xl font-bold ligreen">
-                {((foodfoot * 100) / totalfoot).toFixed(1)}%
+                {(
+                  (parseInt(cookies.foodfoot) * 100) /
+                  parseInt(cookies.totalfoot)
+                ).toFixed(1)}
+                %
               </p>
             </div>
             <div className="sm:w-1/2 w-5/8 text-left sm:px-4 px-2 flex flex-col justify-center ">
@@ -195,7 +135,11 @@ export const FootprintResult = () => {
             <div className="sm:w-1/2 w-3/8 flex flex-col gap-2 py-5 justify-center items-center bg-sky-300">
               <img className="sm:w-2/4 w-3/4" src={ecosec} alt="" />
               <p className="text-4xl font-bold ligreen">
-                {((secfoot * 100) / totalfoot).toFixed(1)}%
+                {(
+                  (parseInt(cookies.secfoot) * 100) /
+                  parseInt(cookies.totalfoot)
+                ).toFixed(1)}
+                %
               </p>
             </div>
             <div className="sm:w-1/2 w-5/8 text-left sm:px-4 px-2 flex flex-col justify-center ">

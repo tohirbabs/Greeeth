@@ -21,9 +21,11 @@ import {
   tv,
   vegan,
 } from "../../../assets/CarbonEmissions";
+var answers = {};
 
-export const Query = ({ dataSet }) => {
+export const Query = ({ dataSet, result }) => {
   console.log("query");
+
   const icons = [
     homicon,
     homicon,
@@ -70,11 +72,118 @@ export const Query = ({ dataSet }) => {
   const [selected, setselected] = useState(false);
   const [selectedOption, setselectedOption] = useState(-1);
   const [selectedOptions, setselectedOptions] = useState([]);
+
   const [cookies, setCookie] = useCookies();
   const [questionCount, setquestionCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState("");
   // const [countRatio, setcountRatio] = useState(
   //   (questionCount * 100) / maxQuery
   // );
+
+  function totalFoot() {
+    var homefoot =
+      answers["How much energy do you use on average?"] +
+      answers["What kind of house do you live in?"] +
+      answers["How many people (aged 17 and over) live in your house?"] +
+      answers["How many bedrooms does your house have?"];
+
+    var travelfoot =
+      answers[
+        "How many hours a week do you spend in your car or on your motorbike for personal use including commuting?"
+      ] +
+      answers[
+        "How many hours a week do you spend on the train for commuting?"
+      ] +
+      answers[
+        "How many hours a week do you spend on the bus for personal use including commuting?"
+      ] +
+      answers[
+        "In the last year, how many local and International flights have you made in total ?"
+      ];
+
+    var foodfoot =
+      answers["How would you best describe your diet?"] +
+      answers[
+        "In a week, how much do you spend on food from restaurants, canteens and takeaways?"
+      ] +
+      answers["Of the food you buy how much is wasted and thrown away?"] +
+      answers[
+        "How often do you buy locally produced food that is not imported to your country?"
+      ];
+    var secfoot =
+      // parseInt(
+      //   cookies[
+      //     "In the last 12 months, have you bought any of these new household items?"
+      //   ]
+      // ) +
+      answers[
+        "In a typical month, how much do you spend on clothes and footwear?"
+      ] +
+      answers[
+        "In a typical month, how much do you spend on phone, internet and TV contracts?"
+      ] +
+      answers[
+        "In a typical month, how much do you spend on entertainment and hobbies (sports/gym, cinema, books, newspapers, gardening, computer games)"
+      ];
+    // parseInt(
+    //   cookies["Which of these types of waste do you recycle and/or compost?"]
+    // );
+
+    var totalfoot = homefoot + travelfoot + foodfoot + secfoot;
+    console.log(totalfoot);
+    setCookie("homefoot", `${homefoot}`, {
+      path: "/",
+    });
+    setCookie("travelfoot", `${travelfoot}`, {
+      path: "/",
+    });
+    setCookie("foodfoot", `${foodfoot}`, {
+      path: "/",
+    });
+    setCookie("secfoot", `${secfoot}`, {
+      path: "/",
+    });
+    setCookie("totalfoot", `${totalfoot}`, {
+      path: "/",
+    });
+
+    async function postFootprint() {
+      setIsLoading(true);
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append("Authorization", `Token ${cookies.key}`);
+      const body = JSON.stringify({
+        total: `${totalfoot}`,
+        home_emmission: `${homefoot}`,
+        travel_emmission: `${travelfoot}`,
+        food_emmission: `${foodfoot}`,
+        secondary_emmission: `${secfoot}`,
+      });
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: body,
+      };
+      console.log(requestOptions);
+      console.log(myHeaders);
+
+      try {
+        await fetch("https://api.greeeth.com/carbonfootprint/", requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
+          });
+      } catch (err) {
+        setErr(err.message);
+      } finally {
+        setIsLoading(false);
+        result("result");
+      }
+    }
+
+    postFootprint();
+  }
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -86,18 +195,16 @@ export const Query = ({ dataSet }) => {
   const Options = ({ option, optindex }) => {
     const HandleClick = () => {
       setselectedOption(option);
-      console.log(cookies);
-      console.log(dataSet[questionCount].values);
-      console.log(optindex);
-      console.log(dataSet[questionCount].options.indexOf(option));
-
-      setCookie(
-        `${dataSet[questionCount].query}`,
-        `${dataSet[questionCount].values[optindex]}`,
-        {
-          path: "/",
-        }
-      );
+      answers[dataSet[questionCount].query] =
+        dataSet[questionCount].values[optindex];
+      // setCookie(
+      //   `${dataSet[questionCount].query}`,
+      //   `${dataSet[questionCount].values[optindex]}`,
+      //   {
+      //     path: "/",
+      //   }
+      // );
+      console.log(answers);
     };
     const removeItem = (index) => {
       setselectedOptions([
@@ -112,8 +219,6 @@ export const Query = ({ dataSet }) => {
       console.log(selectedOptions);
     };
 
-    console.log(selectedOption);
-    console.log(dataSet[questionCount].multiple);
     return (
       <div
         onClick={() => {
@@ -161,7 +266,7 @@ export const Query = ({ dataSet }) => {
   }, [selectedOption]);
   console.log(dataSet[questionCount].totalindex);
   return (
-    <div className="flex flex-col sm:flex-row justify-center text-zinc-800 gap-3rem mt-10 sm:text-xl items-center py-10 pb-20">
+    <div className="flex flex-col sm:flex-row justify-center text-zinc-800 gap-3rem sm:text-xl items-center py-10 pb-20">
       <div className="left sm:w-10/20 w-full">
         <div className="my-4">
           <div className="flex justify-between text-base  items-center font-bold">
@@ -205,12 +310,14 @@ export const Query = ({ dataSet }) => {
               Prev
             </div>
             {questionCount + 1 == dataSet.length ? (
-              <a
-                href="/footprint-results"
+              <div
+                onClick={() => {
+                  totalFoot();
+                }}
                 className="next bg-lgreen rounded text-white px-6 py-2 cursor-pointer"
               >
                 Finish
-              </a>
+              </div>
             ) : (
               <div
                 onClick={() => {

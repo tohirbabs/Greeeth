@@ -1,97 +1,72 @@
-import React from "react";
-import DashboardLayout from "../../components/DashboardLayout";
-import down from "../../components/Dashboard/down.png";
-import maptree from "../../components/Dashboard/maptree.png";
+import React, { useEffect } from "react";
 
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/solid";
-import Slider from "rc-slider";
-import BarChart from "../../components/BarChart";
-import { Tabler } from "../../components/Table";
-import { PieChart } from "../../components/PieChart";
-import { DonutChart } from "../../components/DonutChart";
+import plant from "../../../assets/landing/plant.png";
 
 // import Map from "../../components/Dashboard/Map";
+
+// import CircularSlider from "@fseehawer/react-circular-slider";
+
+import { useContext, useState, useId } from "react";
+import { POST } from "../../../utils/request";
+import PlantTree from "./PlantTree";
+import Maintenance from "./Maintenance";
+import { TreeCards } from "./TreeCards";
+import FootprintData from "./FootprintData";
+import { Footprinter } from "../../components/Footprinter";
+import Emissions from "./Emissions";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const CarbonFootprint = () => {
+  const [footprintSection, setFootprintSection] = useState("Footprint Data");
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition(function (position) {
+  //     console.log("Latitude is :", position.coords.latitude);
+  //     console.log("Longitude is :", position.coords.longitude);
+  //     location = `${position.coords.latitude}`;
+  //   });
+  // });
+
+  const FootprintNavItem = ({ name }) => {
+    return (
+      <div
+        onClick={() => {
+          setFootprintSection(name);
+          console.log(name);
+        }}
+        className={
+          footprintSection === `${name}`
+            ? "sm:px-6 px-2 py-2 border-2 text-sm sm:text-base font-bold rounded-md cursor-pointer bg-lgreen text-white"
+            : "sm:px-6 px-2 py-2 border-2 text-sm sm:text-base font-bold rounded-md cursor-pointer bg-white text-lgreen"
+        }
+      >
+        {name}
+      </div>
+    );
+  };
+
+  const FootprintSection = () => {
+    switch (footprintSection) {
+      case "Footprint Data":
+        return <FootprintData />;
+
+      case "Calculate Footprint":
+        return <Emissions />;
+
+      default:
+        return <FootprintData />;
+    }
+  };
   return (
     // <DashboardLayout>
-    <div className="sm:my-12 my-6">
-      <div className="flex flex-col md:flex-row sm:gap-10 gap-5 my-10 sm:px-8">
-        <div className="w-full sm:w-auto">
-          <div className="">
-            <div className="flex gap-4 flex-col">
-              <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
-                <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-                  Carbon Footprint
-                </h3>
-                <div className="dash-card p-4 pb-10 sm:p-6 sm:pt-8 sm:pr-15 sm:pb-20 rounded shadow flex-1 px-5">
-                  <p className="font-bold sm:text-xl">Offsetted</p>
-                  <div className="flex items-center lgreen">
-                    <p className=" sm:text-4xl text-base font-bold pr-2">
-                      300,000
-                    </p>
-                    <p>KG</p>
-                  </div>
-                </div>
-              </div>
-              <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
-                {/* <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-                    Carbon Footprint
-                  </h3> */}
-                <div className="dash-card p-4 pb-10  sm:p-6 sm:pt-8 sm:pr-15 sm:pb-20 rounded shadow flex-1 px-5">
-                  <p className="font-bold sm:text-xl">Not Yet Offset</p>
-                  <div className="flex items-center lgreen">
-                    <p className=" sm:text-4xl text-base font-bold pr-2">
-                      300,000
-                    </p>
-                    <p>KG</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex-1">
-          <div className="my-8">
-            <BarChart />
-          </div>
-        </div>
+    <div className="sm:my-12 my-2">
+      <div className="flex flex-wrap sm:gap-6 gap-2">
+        <FootprintNavItem name="Calculate Footprint" />
+        <FootprintNavItem name="Footprint Data" />
       </div>
-      <div className="flex flex-wrap md:flex-row gap-4 ">
-        <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
-          <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-            Total Emission/offset
-          </h3>
-          <PieChart />
-        </div>
-        <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
-          <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-            Total Earned
-          </h3>
-          <DonutChart />
-        </div>
-        <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
-          <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-            Compensated Emissions
-          </h3>
-          <DonutChart />
-        </div>
-      </div>
-      <div className="text-left sm:mb-10 mb-5 flex flex-1 flex-col">
-        <h3 className="font-bold sm:text-2xl text-xl sm:p-4 ">
-          Transaction history
-        </h3>
-        <div className="shadow rounded max-w-80vw">
-          {/* <Map /> */}
-          <Tabler />
-        </div>
-      </div>
+      {FootprintSection()}
     </div>
     // </DashboardLayout>
   );

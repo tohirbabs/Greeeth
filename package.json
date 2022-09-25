@@ -11,7 +11,6 @@
     "@fseehawer/react-circular-slider": "^2.5.9",
     "@headlessui/react": "^1.6.5",
     "@heroicons/react": "^1.0.6",
-    "carousel-react-rcdev": "^0.0.4",
     "chart.js": "^3.9.1",
     "rc-slider": "^10.0.1",
     "react": "^18.0.0",
@@ -20,6 +19,9 @@
     "react-cookie": "^4.1.1",
     "react-dom": "^18.0.0",
     "react-donut-chart": "^1.3.1",
+    "react-input-verification-code": "^1.0.2",
+    "react-loader-spinner": "^5.3.3",
+    "react-modal": "^3.15.1",
     "react-router": "^6.3.0"
   },
   "devDependencies": {

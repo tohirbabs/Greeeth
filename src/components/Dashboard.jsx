@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
 import { useCookies } from "react-cookie";
@@ -8,9 +8,16 @@ import CarbonFootprint from "../screens/dashboard/CarbonFootprint";
 import CarbonOffset from "../screens/dashboard/CarbonOffset";
 import Goal from "../screens/dashboard/Goal";
 import Tree from "../screens/dashboard/Tree";
+import { Project } from "../screens/dashboard/Project";
+import { Impact } from "../screens/dashboard/Impact";
+import { Badge } from "../screens/dashboard/Badge";
+import { useState } from "react";
 
 const Dashboard = ({ children }) => {
   const [cookies, setCookie] = useCookies();
+  const [footData, setfootData] = useState();
+
+  // console.log(cookies.key);
 
   const dashSection = () => {
     switch (cookies.dashnav) {
@@ -27,6 +34,12 @@ const Dashboard = ({ children }) => {
         return <Goal />;
       case "Tree":
         return <Tree />;
+      case "Badge":
+        return <Badge />;
+      case "Impact":
+        return <Impact />;
+      case "Project":
+        return <Project />;
 
       default:
         return <Overview />;

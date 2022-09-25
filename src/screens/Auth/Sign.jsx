@@ -5,7 +5,7 @@ import { google, facebook, linkedin, GreenLogo } from "../../../assets";
 
 const Signin = () => {
   const [showsignin, setShowsignin] = useState(true);
-  // const [cookies, setCookie] = useCookies();
+  const [cookies, setCookie] = useCookies();
 
   const email = useId();
   const password = useId();
@@ -27,43 +27,25 @@ const Signin = () => {
 
     try {
       const body = JSON.stringify({
-        // email: mailInput,
-        // first_name: firstNameInput,
-        // last_name: lastNameInput,
-        // password: passwordInput,
-        email: "admin@admin.com",
-        first_name: "",
-        last_name: "Babs",
-        password: "1234",
+        email: mailInput,
+        first_name: firstNameInput,
+        last_name: lastNameInput,
+        password: passwordInput,
       });
 
       const response = await POST("/accounts/register/", body);
 
       if (response.ok) {
         const result = await response.json();
+        setCookie(`email`, mailInput, {
+          path: "/",
+        });
 
         console.log("result is: ", JSON.stringify(result));
-        // toast(`${result.message}`, {
-        //   style: {
-        //     backgroundColor: "#f59024",
-        //     color: "white",
-        //   },
-        // });
-        // setstatus(result.status);
-        // if (result.status == "success") {
-        //   setCookie("email", `${result.data.email}`, { path: "/" });
-        //   setsignedIn(true);
-        // }
       }
 
       response.json().then((text) => {
         console.log(text);
-        // toast(`${text.message}`, {
-        //   style: {
-        //     backgroundColor: "#f59024",
-        //     color: "white",
-        //   },
-        // });
       });
     } catch (err) {
       setErr(err.message);
@@ -71,6 +53,8 @@ const Signin = () => {
       setIsLoading(false);
     }
   };
+
+  console.log(cookies.email);
 
   return (
     <>

@@ -15,3 +15,4 @@ export { default as wallet } from "./wallet.png";
 export { default as sent } from "./sent.png";
 export { default as received } from "./received.png";
 export { default as purchased } from "./purchased.png";
+export { default as backg } from "./backg.png";

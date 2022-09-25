@@ -1,0 +1,42 @@
+import React from "react";
+
+export const Staricon = ({ clr }) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill={clr}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <mask
+        id="mask0_3349_6126"
+        // style="mask-type:alpha"
+        maskUnits="userSpaceOnUse"
+        x="1"
+        y="1"
+        width="23"
+        height="22"
+      >
+        <path
+          d="M12.4731 21.1734L15.2061 15.1784L21.5506 13.3184L16.6671 8.87838L16.8511 2.29688L11.1001 5.54837L4.87006 3.34037L6.19856 9.79037L2.16406 15.0069L8.73656 15.7419L12.4731 21.1734Z"
+          fill={clr}
+          stroke={clr}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18.0859 18.0195L22.0859 22.0015"
+          stroke={clr}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </mask>
+      <g mask="url(#mask0_3349_6126)">
+        <path d="M0 0H24V24H0V0Z" fill={clr} />
+      </g>
+    </svg>
+  );
+};

@@ -12,7 +12,7 @@ import Schools from "./screens/GetInvolved/Schools/Schools";
 import Planters from "./screens/GetInvolved/Planters";
 import Partners from "./screens/GetInvolved/Partners";
 import Ambassadors from "./screens/GetInvolved/Ambassadors/Ambassadors";
-import Signin from "./screens/Auth/Signin";
+
 import Layout from "./components/Layout";
 import Sponsors from "./screens/GetInvolved/Sponsors/Sponsors";
 import SponsorApply from "./screens/GetInvolved/Sponsors/Apply";
@@ -56,6 +56,11 @@ import LearningPageDashboardSettings from "./components/Learning/LearningPageDas
 import LearningPageDashboardCertificates from "./components/Learning/LearningPageDashboardCertificates";
 import LearningPageDashboardExplore from "./components/Learning/LearningPageDashboardExplore";
 import LearningDashboardAccountSettings from "./components/Learning/LearningDashboardAccountSettings";
+import { Login } from "./screens/Auth/Login";
+import { Signup } from "./screens/Auth/Signup";
+import { Verify } from "./screens/Auth/Verify";
+import DashConsole from "./components/DashConsole";
+
 
 export const PageContext = createContext({});
 
@@ -113,14 +118,10 @@ function App() {
                   </Layout>
                 }
               />
-              <Route
-                path="/auth/sign-in"
-                element={
-                  <Layout>
-                    <Signin />
-                  </Layout>
-                }
-              />
+              <Route path="/auth/signup" element={<Signup />} />
+              <Route path="/auth/verify" element={<Verify />} />
+
+              <Route path="/auth/login" element={<Login />} />
               <Route
                 path="/get-involved/sponsors"
                 element={
@@ -275,7 +276,7 @@ function App() {
                   </DashboardLayout>
                 }
               />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard" element={<DashConsole />} />
 
               {/* <Route
               path="/calculate-footprint"
