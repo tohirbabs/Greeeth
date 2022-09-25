@@ -43,14 +43,51 @@ import { Footprinter } from "./components/Footprinter";
 import { CookiesProvider } from "react-cookie";
 import { FootprintResult } from "./components/CarbonEmission/FootprintResult";
 import Dashboard from "./components/Dashboard";
+import LearningHome from "./components/Learning/LearningHome";
+import LearningCoursePage from "./components/Learning/LearningCoursePage";
+import planet from "../assets/learing-assets/tree-pic.png"
+import LearningPageCartNav from "./components/Learning/LearningPageCart";
+import LearningPageCheckout from "./components/Learning/LearningPageCheckout";
+import LearningPageAll from "./components/Learning/LearningPageAll";
+import LearningPageLayout from "./components/Learning/LearningPageLayout";
+import LearningPageDashboardHome from "./components/Learning/LearningPageDashboardHome";
+import LearningPageDashboardMyCourses from "./components/Learning/LearningPageDashboardMyCourses";
+import LearningPageDashboardSettings from "./components/Learning/LearningPageDashboardSettings";
+import LearningPageDashboardCertificates from "./components/Learning/LearningPageDashboardCertificates";
+import LearningPageDashboardExplore from "./components/Learning/LearningPageDashboardExplore";
+import LearningDashboardAccountSettings from "./components/Learning/LearningDashboardAccountSettings";
 import { Login } from "./screens/Auth/Login";
 import { Signup } from "./screens/Auth/Signup";
 import { Verify } from "./screens/Auth/Verify";
 import DashConsole from "./components/DashConsole";
 
+
 export const PageContext = createContext({});
 
+import { courses } from "./components/Learning/courses";
+
+
 function App() {
+
+  const [cart, setCart] = useState([]);
+  const [selectedCourse, setSelectedCourse] = useState({
+    ...courses[0]
+  })
+	function addToCart (courseid) {
+    const selected = courses.find((course) => course.courseid === parseInt(courseid))
+    setSelectedCourse(selected)
+
+    if(!cart.includes(selected)) {
+      setCart([...cart, selected])
+    } 
+	}
+
+  function removeFromcart (courseid) {
+    const filteredCourse = courses.filter((course) => course.courseid === parseInt(courseid))
+    setCart([...filteredCourse])
+  }
+
+
   return (
     <CookiesProvider>
       <PageContext.Provider value={{}}>
@@ -257,7 +294,52 @@ function App() {
                   </Layout>
                 }
               />
+              <Route path="/learning" element={
+                <LearningHome courses={courses}  cart={cart} addToCart={addToCart} setSelectedCourse={setSelectedCourse} />
+              }>
+              </Route>
+              <Route path="/learning/all" element={
+                <LearningPageAll courses={courses} setSelectedCourse={setSelectedCourse} />
+              }></Route>
+          
+              <Route path="/learning/dashboard" element={
+              <LearningPageLayout>
+                <LearningPageDashboardHome courses={courses} setSelectedCourse={setSelectedCourse} />
+              </LearningPageLayout>}/>
+              <Route path="/learning/mycourses" element={
+              <LearningPageLayout>
+                <LearningPageDashboardMyCourses />
+              </LearningPageLayout>}/>
+              <Route path="/learning/explore" element={
+              <LearningPageLayout>
+                <LearningPageDashboardExplore courses={courses} setSelectedCourse={setSelectedCourse}  />
+              </LearningPageLayout>}/>
+              <Route path="/learning/certificates" element={
+              <LearningPageLayout>
+                <LearningPageDashboardCertificates />
+              </LearningPageLayout>}/>
+              <Route path="/learning/account" element={<LearningPageDashboardSettings />}
+              />
+              <Route path="/learning/settings" element={
+              <LearningPageLayout>
+                <LearningDashboardAccountSettings />
+              </LearningPageLayout>}/>
+              <Route path="/learning/:courseid" element={
+                 <LearningCoursePage addToCart={addToCart} selectedCourse={selectedCourse}/>
+                 }>
+              </Route>
+              <Route path="/learning/cart" element={<LearningPageCartNav removeFromcart={removeFromcart}/>} cart={cart}/>
+              <Route path="learning/checkout" element={<LearningPageCheckout />}/>
+              <Route
+                path="*"
+                element={
+                  <Layout>
+                    <LandingPage />
+                  </Layout>
+                }
+              />
             </Routes>
+
           </BrowserRouter>
         </div>
       </PageContext.Provider>
