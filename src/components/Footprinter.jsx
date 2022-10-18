@@ -518,16 +518,5 @@ export const Footprinter = ({ result }) => {
 
   const [dataIndex, setdataIndex] = useState(0);
   console.log(dataset.length);
-  return (
-    // <Query
-    //   dataSet={dataset[dataIndex]}
-    //   dataSections={dataset.length}
-    //   nextQuery={nextQuery}
-    //   prevQuery={prevQuery}
-    //   dataIndex={dataIndex}
-    //   dataSets={dataset}
-    // />
-    <Query dataSet={qureyDataset} result={result} />
-    // <div className="">work</div>
-  );
+  return <Query dataSet={qureyDataset} result={result} />;
 };

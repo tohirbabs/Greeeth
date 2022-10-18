@@ -43,7 +43,6 @@ const navigation = [
   {
     name: "Governmental Organizations",
     href: "#",
-
     icon: "building-house",
   },
 ];
@@ -115,7 +114,6 @@ function BenefitsSection() {
   const [showGo, setshowGo] = useState(false);
   const [showIndividuals, setshowIndividuals] = useState(false);
   const [showCompanies, setshowCompanies] = useState(true);
-
 
   function CompaniesList({ Pix, TextList, Index }) {
     return (
@@ -534,168 +532,158 @@ function BenefitsSection() {
         )}
       </Disclosure> */}
 
-  
+      <BenefitsSectionCarousel>
+        <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+          <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+            Trees Are Our Only Source of Oxygen
+          </h1>
+          <p className="mt-4 text-gray-600 text-base">
+            Creatures on the earth are alive because they inhale oxygen from the
+            air, which helps run their bodily mechanisms and exhale carbon
+            dioxide as a by-product of the function of the body. Nature's only
+            source of oxygen is the trees. Through a process called
+            photosynthesis, trees prepare food for their survival.
+          </p>
+          <p className="mt-4 text-gray-600 text-base">
+            This process requires carbon dioxide from the air as a material and
+            produces oxygen as a by-product. Trees emit this gas into the air,
+            increasing its proportion and thereby meeting the need of the living
+            creatures. An acre of land full of mature trees can produce enough
+            oxygen for 18 people in a year.
+          </p>
+        </div>
+        <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+          <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+            Trees Absorb Other Harmful Gases
+          </h1>
+          <p className="mt-4 text-gray-600 text-base">
+            Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
+            ammonia, and ozone from the air and purify them. They filter
+            particulates out of the air and trap them on their barks and leaves.
+          </p>
+          <p className="mt-4 text-gray-600 text-base">
+            Trees and shrubs, like all plants, also help to protect us from
+            pollutants by acting as natural filters. Harmful heavy metals,
+            nitrogen, potassium, and phosphorus on our land surfaces can
+            contaminate our water, but the roots of shrubs intercept these
+            pollutants. This is why it is especially important to plant shrubs
+            on land that borders water - this is called the riparian zone.
+          </p>
+        </div>
 
+        <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+          <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+            Trees Are Our Only Source of Oxygen
+          </h1>
+          <p className="mt-4 text-gray-600 text-base">
+            Creatures on the earth are alive because they inhale oxygen from the
+            air, which helps run their bodily mechanisms and exhale carbon
+            dioxide as a by-product of the function of the body. Nature's only
+            source of oxygen is the trees. Through a process called
+            photosynthesis, trees prepare food for their survival.
+          </p>
+          <p className="mt-4 text-gray-600 text-base">
+            This process requires carbon dioxide from the air as a material and
+            produces oxygen as a by-product. Trees emit this gas into the air,
+            increasing its proportion and thereby meeting the need of the living
+            creatures. An acre of land full of mature trees can produce enough
+            oxygen for 18 people in a year.
+          </p>
+        </div>
+        <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+          <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+            Trees Absorb Other Harmful Gases
+          </h1>
+          <p className="mt-4 text-gray-600 text-base">
+            Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
+            ammonia, and ozone from the air and purify them. They filter
+            particulates out of the air and trap them on their barks and leaves.
+          </p>
+          <p className="mt-4 text-gray-600 text-base">
+            Trees and shrubs, like all plants, also help to protect us from
+            pollutants by acting as natural filters. Harmful heavy metals,
+            nitrogen, potassium, and phosphorus on our land surfaces can
+            contaminate our water, but the roots of shrubs intercept these
+            pollutants. This is why it is especially important to plant shrubs
+            on land that borders water - this is called the riparian zone.
+          </p>
+        </div>
+        <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+          <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+            Trees Are Our Only Source of Oxygen
+          </h1>
+          <p className="mt-4 text-gray-600 text-base">
+            Creatures on the earth are alive because they inhale oxygen from the
+            air, which helps run their bodily mechanisms and exhale carbon
+            dioxide as a by-product of the function of the body. Nature's only
+            source of oxygen is the trees. Through a process called
+            photosynthesis, trees prepare food for their survival.
+          </p>
+          <p className="mt-4 text-gray-600 text-base">
+            This process requires carbon dioxide from the air as a material and
+            produces oxygen as a by-product. Trees emit this gas into the air,
+            increasing its proportion and thereby meeting the need of the living
+            creatures. An acre of land full of mature trees can produce enough
+            oxygen for 18 people in a year.
+          </p>
+        </div>
+        <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+          <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+            Trees Absorb Other Harmful Gases
+          </h1>
+          <p className="mt-4 text-gray-600 text-base">
+            Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
+            ammonia, and ozone from the air and purify them. They filter
+            particulates out of the air and trap them on their barks and leaves.
+          </p>
+          <p className="mt-4 text-gray-600 text-base">
+            Trees and shrubs, like all plants, also help to protect us from
+            pollutants by acting as natural filters. Harmful heavy metals,
+            nitrogen, potassium, and phosphorus on our land surfaces can
+            contaminate our water, but the roots of shrubs intercept these
+            pollutants. This is why it is especially important to plant shrubs
+            on land that borders water - this is called the riparian zone.
+          </p>
+        </div>
 
-      
-        <BenefitsSectionCarousel>
-          
-          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
-            <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
-              Trees Are Our Only Source of Oxygen
-            </h1>
-            <p className="mt-4 text-gray-600 text-base">
-              Creatures on the earth are alive because they inhale oxygen from
-              the air, which helps run their bodily mechanisms and exhale carbon
-              dioxide as a by-product of the function of the body. Nature's only
-              source of oxygen is the trees. Through a process called
-              photosynthesis, trees prepare food for their survival.
-            </p>
-            <p className="mt-4 text-gray-600 text-base">
-              This process requires carbon dioxide from the air as a material
-              and produces oxygen as a by-product. Trees emit this gas into the
-              air, increasing its proportion and thereby meeting the need of the
-              living creatures. An acre of land full of mature trees can produce
-              enough oxygen for 18 people in a year.
-            </p>
-          </div>
-          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
-            <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
-              Trees Absorb Other Harmful Gases
-            </h1>
-            <p className="mt-4 text-gray-600 text-base">
-              Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
-              ammonia, and ozone from the air and purify them. They filter
-              particulates out of the air and trap them on their barks and
-              leaves.
-            </p>
-            <p className="mt-4 text-gray-600 text-base">
-              Trees and shrubs, like all plants, also help to protect us from
-              pollutants by acting as natural filters. Harmful heavy metals,
-              nitrogen, potassium, and phosphorus on our land surfaces can
-              contaminate our water, but the roots of shrubs intercept these
-              pollutants. This is why it is especially important to plant shrubs
-              on land that borders water - this is called the riparian zone.
-            </p>
-          </div>
-        
-          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
-            <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
-              Trees Are Our Only Source of Oxygen
-            </h1>
-            <p className="mt-4 text-gray-600 text-base">
-              Creatures on the earth are alive because they inhale oxygen from
-              the air, which helps run their bodily mechanisms and exhale carbon
-              dioxide as a by-product of the function of the body. Nature's only
-              source of oxygen is the trees. Through a process called
-              photosynthesis, trees prepare food for their survival.
-            </p>
-            <p className="mt-4 text-gray-600 text-base">
-              This process requires carbon dioxide from the air as a material
-              and produces oxygen as a by-product. Trees emit this gas into the
-              air, increasing its proportion and thereby meeting the need of the
-              living creatures. An acre of land full of mature trees can produce
-              enough oxygen for 18 people in a year.
-            </p>
-          </div>
-          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
-            <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
-              Trees Absorb Other Harmful Gases
-            </h1>
-            <p className="mt-4 text-gray-600 text-base">
-              Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
-              ammonia, and ozone from the air and purify them. They filter
-              particulates out of the air and trap them on their barks and
-              leaves.
-            </p>
-            <p className="mt-4 text-gray-600 text-base">
-              Trees and shrubs, like all plants, also help to protect us from
-              pollutants by acting as natural filters. Harmful heavy metals,
-              nitrogen, potassium, and phosphorus on our land surfaces can
-              contaminate our water, but the roots of shrubs intercept these
-              pollutants. This is why it is especially important to plant shrubs
-              on land that borders water - this is called the riparian zone.
-            </p>
-          </div>
-          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
-            <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
-              Trees Are Our Only Source of Oxygen
-            </h1>
-            <p className="mt-4 text-gray-600 text-base">
-              Creatures on the earth are alive because they inhale oxygen from
-              the air, which helps run their bodily mechanisms and exhale carbon
-              dioxide as a by-product of the function of the body. Nature's only
-              source of oxygen is the trees. Through a process called
-              photosynthesis, trees prepare food for their survival.
-            </p>
-            <p className="mt-4 text-gray-600 text-base">
-              This process requires carbon dioxide from the air as a material
-              and produces oxygen as a by-product. Trees emit this gas into the
-              air, increasing its proportion and thereby meeting the need of the
-              living creatures. An acre of land full of mature trees can produce
-              enough oxygen for 18 people in a year.
-            </p>
-          </div>
-          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
-            <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
-              Trees Absorb Other Harmful Gases
-            </h1>
-            <p className="mt-4 text-gray-600 text-base">
-              Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
-              ammonia, and ozone from the air and purify them. They filter
-              particulates out of the air and trap them on their barks and
-              leaves.
-            </p>
-            <p className="mt-4 text-gray-600 text-base">
-              Trees and shrubs, like all plants, also help to protect us from
-              pollutants by acting as natural filters. Harmful heavy metals,
-              nitrogen, potassium, and phosphorus on our land surfaces can
-              contaminate our water, but the roots of shrubs intercept these
-              pollutants. This is why it is especially important to plant shrubs
-              on land that borders water - this is called the riparian zone.
-            </p>
-          </div>
-        
-          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
-            <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
-              Trees Are Our Only Source of Oxygen
-            </h1>
-            <p className="mt-4 text-gray-600 text-base">
-              Creatures on the earth are alive because they inhale oxygen from
-              the air, which helps run their bodily mechanisms and exhale carbon
-              dioxide as a by-product of the function of the body. Nature's only
-              source of oxygen is the trees. Through a process called
-              photosynthesis, trees prepare food for their survival.
-            </p>
-            <p className="mt-4 text-gray-600 text-base">
-              This process requires carbon dioxide from the air as a material
-              and produces oxygen as a by-product. Trees emit this gas into the
-              air, increasing its proportion and thereby meeting the need of the
-              living creatures. An acre of land full of mature trees can produce
-              enough oxygen for 18 people in a year.
-            </p>
-          </div>
-          <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
-            <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
-              Trees Absorb Other Harmful Gases
-            </h1>
-            <p className="mt-4 text-gray-600 text-base">
-              Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
-              ammonia, and ozone from the air and purify them. They filter
-              particulates out of the air and trap them on their barks and
-              leaves.
-            </p>
-            <p className="mt-4 text-gray-600 text-base">
-              Trees and shrubs, like all plants, also help to protect us from
-              pollutants by acting as natural filters. Harmful heavy metals,
-              nitrogen, potassium, and phosphorus on our land surfaces can
-              contaminate our water, but the roots of shrubs intercept these
-              pollutants. This is why it is especially important to plant shrubs
-              on land that borders water - this is called the riparian zone.
-            </p>
-          </div>
-        </BenefitsSectionCarousel>
-      
+        <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+          <h1 className="text-3xl  sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+            Trees Are Our Only Source of Oxygen
+          </h1>
+          <p className="mt-4 text-gray-600 text-base">
+            Creatures on the earth are alive because they inhale oxygen from the
+            air, which helps run their bodily mechanisms and exhale carbon
+            dioxide as a by-product of the function of the body. Nature's only
+            source of oxygen is the trees. Through a process called
+            photosynthesis, trees prepare food for their survival.
+          </p>
+          <p className="mt-4 text-gray-600 text-base">
+            This process requires carbon dioxide from the air as a material and
+            produces oxygen as a by-product. Trees emit this gas into the air,
+            increasing its proportion and thereby meeting the need of the living
+            creatures. An acre of land full of mature trees can produce enough
+            oxygen for 18 people in a year.
+          </p>
+        </div>
+        <div className=" flex-none w-full p-6 sm:p-8 lg:w-2/4">
+          <h1 className="text-3xl mt-4 sm: mt-0 sm:(text-4xl !leading-tight) font-bold capitalize  lgreen">
+            Trees Absorb Other Harmful Gases
+          </h1>
+          <p className="mt-4 text-gray-600 text-base">
+            Trees absorb pollutant gases like nitrogen oxides, sulfur dioxide,
+            ammonia, and ozone from the air and purify them. They filter
+            particulates out of the air and trap them on their barks and leaves.
+          </p>
+          <p className="mt-4 text-gray-600 text-base">
+            Trees and shrubs, like all plants, also help to protect us from
+            pollutants by acting as natural filters. Harmful heavy metals,
+            nitrogen, potassium, and phosphorus on our land surfaces can
+            contaminate our water, but the roots of shrubs intercept these
+            pollutants. This is why it is especially important to plant shrubs
+            on land that borders water - this is called the riparian zone.
+          </p>
+        </div>
+      </BenefitsSectionCarousel>
     </>
   );
 }

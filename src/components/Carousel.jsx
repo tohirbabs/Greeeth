@@ -7,9 +7,6 @@ import {
   weddings,
 } from "../../assets/GetInvolved";
 
-// Data
-// import data from "./data.json";
-
 let data = {
   resources: [
     {

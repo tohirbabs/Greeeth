@@ -1,6 +1,5 @@
 export { default as Home } from "./Home";
 export { default as PlantersHome } from "./PlantersHome";
-// export { default as Home } from "./Home";
 export { default as ManageEmission } from "./ManageEmission";
 export { default as NavBar } from "./NavBar";
 export { default as PlantByHuman } from "./PlantByHuman";
