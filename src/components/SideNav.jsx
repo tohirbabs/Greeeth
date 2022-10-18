@@ -8,6 +8,10 @@ import { useCookies } from "react-cookie";
 import logout from "./Dashboard/Logout.png";
 import { Treeicon } from "./Dashboard/Tree";
 import { useState } from "react";
+import { Projecticon } from "./Dashboard/Projecticon";
+import { Goalicon } from "./Dashboard/Goalicon";
+import Badgeicon from "./Dashboard/Badgeicon";
+import { Staricon } from "./Dashboard/Star";
 // import Tree from "../screens/dashboard/Tree";
 // import { Treeicon } from "./Dashboard/Treeicon";
 
@@ -112,7 +116,11 @@ const SideNav = () => {
           </div>
 
           <SideNavItem Icon={Walleticon} name="Wallet" />
+          <SideNavItem Icon={Projecticon} name="Project" />
+          <SideNavItem Icon={Goalicon} name="Goal" />
 
+          <SideNavItem Icon={Badgeicon} name="Badge" />
+          <SideNavItem Icon={Staricon} name="Impact" />
           <ul className="mt-15">
             <a
               href="/"

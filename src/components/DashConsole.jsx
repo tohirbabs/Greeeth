@@ -8,6 +8,10 @@ import TopNav from "./TopNav";
 import Overview from "../screens/DashConsole/Overview";
 import CarbonFootprint from "../screens/DashConsole/CarbonFootprint";
 import Tree from "../screens/DashConsole/Tree";
+import Goal from "../screens/dashboard/Goal";
+import { Badge } from "../screens/dashboard/Badge";
+import { Impact } from "../screens/DashConsole/Impact";
+import { Project } from "../screens/dashboard/Project";
 
 const DashConsole = ({ children }) => {
   const [cookies, setCookie] = useCookies();
@@ -25,6 +29,14 @@ const DashConsole = ({ children }) => {
         return <CarbonFootprint />;
       case "Trees":
         return <Tree />;
+      case "Goal":
+        return <Goal />;
+      case "Badge":
+        return <Badge />;
+      case "Impact":
+        return <Impact />;
+      case "Project":
+        return <Project />;
       default:
         return <Overview />;
     }
