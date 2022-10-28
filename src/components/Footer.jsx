@@ -35,7 +35,7 @@ function Footer() {
                         href="/somelink"
                         className="hover:text-stroke-lg transition"
                       >
-                        Plants
+                        Tree Planting
                       </a>
                     </li>
                     <li>
@@ -43,7 +43,7 @@ function Footer() {
                         href="/somelink"
                         className="hover:text-stroke-lg transition"
                       >
-                        Blockchain
+                        Academy/Learning
                       </a>
                     </li>
                     <li>
@@ -52,6 +52,14 @@ function Footer() {
                         className="hover:text-stroke-lg transition"
                       >
                         Track
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/somelink"
+                        className="hover:text-stroke-lg transition"
+                      >
+                        Footprint Calculator
                       </a>
                     </li>
                   </ul>
@@ -89,27 +97,6 @@ function Footer() {
                         className="hover:text-stroke-lg transition"
                       >
                         Sponsor
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h6 className="text-lg font-bold uppercase ">Crypto</h6>
-                  <ul className="list-inside text-base mt-5 lg:mt-10 space-y-4 ">
-                    <li>
-                      <a
-                        href="/somelink"
-                        className="hover:text-stroke-lg transition"
-                      >
-                        NFT
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/somelink"
-                        className="hover:text-stroke-lg transition"
-                      >
-                        Greeeth Coin
                       </a>
                     </li>
                   </ul>

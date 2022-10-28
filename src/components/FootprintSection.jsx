@@ -229,7 +229,7 @@ const secArray = [
   {
     Illustration: Pix2,
     TextList: {
-      title: "Hotal Stay",
+      title: "Hotel Stay",
       link: "Corporate-gifting-to-customers",
       text: "How much Natural Gas do you use at home in KWh",
     },
