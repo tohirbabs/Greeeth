@@ -26,6 +26,8 @@ import droneplant from "../../assets/landing/drone plant.png";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { PlantTree } from "./PlantTree";
+import { Gallery } from "./Gallery";
+import { Partners } from "./Partners";
 
 // import Steps from "./Steps";
 
@@ -168,6 +170,14 @@ const LandingPage = () => {
       TextList: {
         text: "Our platform monitors tree health and sends maintenance.",
         title: "Tree maintenance",
+      },
+    },
+    {
+      Illustration: offemission,
+      // background: BG1,
+      TextList: {
+        text: "Greeth makes it easier for individuals to sell their waste (plastic, glass, metal, paper) for it to be recycled, when they are calculating their carbon footprint.",
+        title: "Waste recycling",
       },
     },
     {
@@ -546,7 +556,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="BG1 max-w-3xl px-2 flex flex-col items-center mb-30">
+        {/* <div className="BG1 max-w-3xl px-2 flex flex-col items-center mb-30">
           <h2 className="text-3xl my-2rem ligreen font-bold md:text-5xl">
             Virtual Tree
           </h2>
@@ -584,7 +594,7 @@ const LandingPage = () => {
               on the platform.
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div className="pt-20 flex flex-col items-center justify-center  px-2 py-2    lg:items-center lg:flex text-zinc-800">
           <div className="lg:max-w-9/11 text-center darkgreen">
@@ -633,6 +643,8 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
+        <Gallery />
+        <Partners />
         <div className="container flex items-center max-w-screen-xl m-auto py-10 md:py-20 text-gray-600  md:px-12 xl:px-22  bg-white w-screen">
           <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
             <div className="md:5/12 lg:w-6/12 w-9/10 mx-auto">

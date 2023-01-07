@@ -47,6 +47,7 @@ import { Login } from "./screens/Auth/Login";
 import { Signup } from "./screens/Auth/Signup";
 import { Verify } from "./screens/Auth/Verify";
 import DashConsole from "./components/DashConsole";
+import { WasteShop } from "./screens/WasteShop";
 
 export const PageContext = createContext({});
 
@@ -62,6 +63,14 @@ function App() {
                 element={
                   <Layout>
                     <LandingPage />
+                  </Layout>
+                }
+              />
+              <Route
+                path="/waste-shop"
+                element={
+                  <Layout>
+                    <WasteShop />
                   </Layout>
                 }
               />
