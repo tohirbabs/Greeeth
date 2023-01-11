@@ -1,11 +1,11 @@
 import React from "react";
 import { easter } from "../../assets/GetInvolved/special_occasions/index";
-
+import waste from "../../assets/gall.png";
 export const WasteShop = () => {
   const WasteCard = () => {
     return (
       <div className="w-max relative BG-lgreen flex flex-col items-center rounded-3xl p-2">
-        <img src={easter} className="max-h-25rem rounded-3xl" />
+        <img src={waste} className="max-h-25rem rounded-3xl" />
         <div className="flex justify-between m-1rem w-full px-4">
           <div className="text-cyan-300 w-max p-2 px-4 bg-white font-bold  rounded-full text-left">
             PLASTIC
