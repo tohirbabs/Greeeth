@@ -32,8 +32,6 @@ export const WasteShop = () => {
       <WasteCard />
       <WasteCard />
       <WasteCard />
-      <WasteCard />
-      <WasteCard />
     </div>
   );
 };
