@@ -435,7 +435,7 @@ const LandingPage = () => {
             <div className="lg:max-w-9/11 text-center darkgreen">
               <h1 className="text-3xl  sm:(text-7xl !leading-tight) font-medium capitalize text-zinc-800">
                 Offset your carbon blueprint with
-                <span className="ligreen"> GREEETH</span>
+                <span className="ligreen"> GREEETHeth</span>
               </h1>
 
               <p className="mt-6 sm:leading-relaxed px-2 sm:text-xl">
